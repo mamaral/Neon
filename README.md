@@ -1,5 +1,4 @@
 # Neon
----
 
 ### Build your user interfaces like a boss, in Swift.
 
@@ -32,6 +31,7 @@ view20.alignBetweenVertical(align: .UnderCentered, topView: view17, bottomView: 
 
 ## Todo
 
+- [ ] Finish initial implementation
 - [ ] README documentation
 - [ ] Code documentation
 - [ ] Code coverage
