@@ -28,7 +28,7 @@ view1.anchorInCenter(width: size, height: size)
 ```
 
 ![Center](Screenshots/center.png)
----
+
 
 ### Filling Superview
 
@@ -45,7 +45,7 @@ view1.fillSuperview(left: padding, right: padding, top: padding, bottom: padding
 ```
 
 ![Fill](Screenshots/fill.png)
----
+
 
 ### Corner
 
@@ -59,7 +59,7 @@ view4.anchorInCorner(.BottomRight, xPad: padding, yPad: padding, width: size, he
 ```
 
 ![Corner](Screenshots/corner.png)
----
+
 
 ### Edge
 
@@ -73,7 +73,7 @@ view4.anchorToEdge(.Right, padding: padding, width: size, height: size)
 ```
 
 ![Edge](Screenshots/edge.png)
----
+
 
 
 ### Filling an edge
@@ -92,7 +92,7 @@ view4.anchorAndFillEdge(.Right, xPad: padding, yPad: padding, otherSize: size)
 
 > Note that `anchorAndFillEdge()` accepts a parameter called `otherSize`. That parameter is used to set the *other size* that isn't automatically calculated by filling the edge, meaning that if you specify that you want to anchor to and fill the top edge, the width will be automatically calculated, but the height is still unknown, so the value passed in to `otherSize` will be used to set the height. Subsequently, if you want to anchor to and fill the left edge, the height is automatically calculated and `otherSize` will be used to set the width of the view.
 > 
----
+
 
 ## Align
 
@@ -114,7 +114,7 @@ view12.align(.ToTheLeftMatchingTop, relativeTo: anchorView, padding: padding, wi
 ```
 
 ![Align](Screenshots/align.png)
----
+
 
 
 
