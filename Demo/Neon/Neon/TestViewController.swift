@@ -45,7 +45,6 @@ class TestViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
 
-        anchorView.anchorInCorner(.TopLeft, xPad: 200, yPad: 200, width: 220, height: 220)
-        view.groupAndAlign(group: .Horizontal, andAlign: .AboveCentered, views: [view1, view2, view3], relativeTo: anchorView, padding: 10, width: 30, height: 30)
+        view.groupInCorner(group: .Vertical, views: [view1, view2, view3], inCorner: .BottomRight, padding: 10, width: 100, height: 100)
     }
 }

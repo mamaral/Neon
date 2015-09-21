@@ -1083,10 +1083,8 @@ extension UIView {
     /// - parameters:
     ///   - group: The `Group` type specifying if the subviews will be laid out horizontally or vertically in the corner.
     ///
-    ///   - views: The array of views to grouped in the specified corner. **NOTE:** The order of these views is important;
-    /// the first view is the view placed in the specified `Corner`, and the other views are placed relative to this view,
-    /// in order, so if grouping vertically in the lower-right corner, the first view in the array will be the bottom-most 
-    /// subview, the second subview is placed above the first, etc.
+    ///   - views: The array of views to grouped in the specified corner. Depending on if the views are gouped horizontally
+    /// or vertically, they will be positioned in order from left-to-right and top-to-bottom, respectively.
     ///
     ///   - inCorner: The specified corner the views will be grouped in.
     ///
@@ -1097,66 +1095,14 @@ extension UIView {
     ///   - height: The height of each subview.
     ///
     func groupInCorner(group group: Group, views: [UIView], inCorner corner: Corner, padding: CGFloat, width: CGFloat, height: CGFloat) {
-        if superview == nil {
-            print("[NEON] Warning: Attempted to group subviews but view doesn't have a superview of its own.")
-            return
-        }
-
-        if views.count == 0 {
-            print("[NEON] Warning: No subviews provided to groupInCorner().")
-            return
-        }
-
-        var xOrigin : CGFloat = 0.0
-        var yOrigin : CGFloat = 0.0
-        var xAdjust : CGFloat = 0.0
-        var yAdjust : CGFloat = 0.0
-
         switch group {
         case .Horizontal:
-            xAdjust = width + padding
+            groupInCornerHorizontally(views, inCorner: corner, padding: padding, width: width, height: height)
             break
 
         case .Vertical:
-            yAdjust = height + padding
+            groupInCornerVertically(views, inCorner: corner, padding: padding, width: width, height: height)
             break
-        }
-
-        switch corner {
-        case .TopLeft:
-            xOrigin = padding
-            yOrigin = padding
-            break
-
-        case .TopRight:
-            xOrigin = self.width() - width - padding
-            yOrigin = padding
-            xAdjust = -xAdjust
-            break
-
-        case .BottomLeft:
-            xOrigin = padding
-            yOrigin = self.height() - height - padding
-            yAdjust = -yAdjust
-            break
-
-        case .BottomRight:
-            xOrigin = self.width() - width - padding
-            yOrigin = self.height() - height - padding
-            xAdjust = -xAdjust
-            yAdjust = -yAdjust
-            break
-        }
-
-        for view in views {
-            if view.superview != self {
-                fatalError("[NEON] Can't group view that is a subview of another view!")
-            }
-            
-            view.frame = CGRectMake(xOrigin, yOrigin, width, height)
-            
-            xOrigin += xAdjust
-            yOrigin += yAdjust
         }
     }
 
@@ -1167,8 +1113,8 @@ extension UIView {
     /// - parameters:
     ///   - group: The `Group` type specifying if the subviews will be laid out horizontally or vertically in the center.
     ///
-    ///   - views: The array of views to grouped in the center. **NOTE:** Depending on if the views are gouped horizontally
-    /// or vertically, they will be placed in order from left-to-right and top-to-bottom, respectively.
+    ///   - views: The array of views to grouped in the center. Depending on if the views are gouped horizontally
+    /// or vertically, they will be positioned in order from left-to-right and top-to-bottom, respectively.
     ///
     ///   - padding: The padding to be applied between the subviews.
     ///
@@ -1226,13 +1172,12 @@ extension UIView {
     ///   - group: The `Group` type specifying if the subviews will be laid out horizontally or vertically against the specified 
     /// edge.
     ///
-    ///   - views: The array of views to grouped in the specified corner. **NOTE:** The order of these views is important. If
-    /// grouping the views horizontally, the views will be laid out from left-to-right ***unless*** the `.Right` edge is specified,
-    /// in which case they would be laid out from right-t0-left.
+    ///   - views: The array of views to grouped against the spcified edge. Depending on if the views are gouped horizontally
+    /// or vertically, they will be positioned in-order from left-to-right and top-to-bottom, respectively.
     ///
     ///   - againstEdge: The specified edge the views will be grouped against.
     ///
-    ///   - padding: The padding to be applied between the subviews and their superview.
+    ///   - padding: The padding to be applied between each of the subviews and their superview.
     ///
     ///   - width: The width of each subview.
     ///
@@ -1316,6 +1261,27 @@ extension UIView {
         }
     }
 
+
+    /// Tell a view to group an array of its subviews relative to another of that view's subview, specifying the padding between
+    /// each.
+    ///
+    /// - parameters:
+    ///   - group: The `Group` type specifying if the subviews will be laid out horizontally or vertically against the specified
+    /// sibling.
+    ///
+    ///   - andAlign: the `Align` type specifying how the views will be aligned relative to the sibling.
+    ///
+    ///   - views: The array of views to grouped against the sibling. Depending on if the views are gouped horizontally
+    /// or vertically, they will be positioned in-order from left-to-right and top-to-bottom, respectively.
+    ///
+    ///   - relativeTo: The sibling view that the views will be aligned relative to.
+    ///
+    ///   - padding: The padding to be applied between each of the subviews and the sibling.
+    ///
+    ///   - width: The width of each subview.
+    ///
+    ///   - height: The height of each subview.
+    ///
     func groupAndAlign(group group: Group, andAlign align: Align, views: [UIView], relativeTo sibling: UIView, padding: CGFloat, width: CGFloat, height: CGFloat) {
         switch group {
         case .Horizontal:
@@ -1329,8 +1295,105 @@ extension UIView {
     }
 
 
+
     // MARK: Private utils
     //
+    private func groupInCornerHorizontally(views: [UIView], inCorner corner: Corner, padding: CGFloat, width: CGFloat, height: CGFloat) {
+        if superview == nil {
+            print("[NEON] Warning: Attempted to group subviews but view doesn't have a superview of its own.")
+            return
+        }
+
+        if views.count == 0 {
+            print("[NEON] Warning: No subviews provided to groupInCorner().")
+            return
+        }
+
+        var xOrigin : CGFloat = 0.0
+        var yOrigin : CGFloat = 0.0
+        let xAdjust : CGFloat = width + padding
+
+        switch corner {
+        case .TopLeft:
+            xOrigin = padding
+            yOrigin = padding
+            break
+
+        case .TopRight:
+            xOrigin = self.width() - ((CGFloat(views.count) * width) + (CGFloat(views.count) * padding))
+            yOrigin = padding
+            break
+
+        case .BottomLeft:
+            xOrigin = padding
+            yOrigin = self.height() - height - padding
+            break
+
+        case .BottomRight:
+            xOrigin = self.width() - ((CGFloat(views.count) * width) + (CGFloat(views.count) * padding))
+            yOrigin = self.height() - height - padding
+            break
+        }
+
+        for view in views {
+            if view.superview != self {
+                fatalError("[NEON] Can't group view that is a subview of another view!")
+            }
+
+            view.frame = CGRectMake(xOrigin, yOrigin, width, height)
+
+            xOrigin += xAdjust
+        }
+    }
+
+    private func groupInCornerVertically(views: [UIView], inCorner corner: Corner, padding: CGFloat, width: CGFloat, height: CGFloat) {
+        if superview == nil {
+            print("[NEON] Warning: Attempted to group subviews but view doesn't have a superview of its own.")
+            return
+        }
+
+        if views.count == 0 {
+            print("[NEON] Warning: No subviews provided to groupInCorner().")
+            return
+        }
+
+        var xOrigin : CGFloat = 0.0
+        var yOrigin : CGFloat = 0.0
+        let yAdjust : CGFloat = height + padding
+
+        switch corner {
+        case .TopLeft:
+            xOrigin = padding
+            yOrigin = padding
+            break
+
+        case .TopRight:
+            xOrigin = self.width() - width - padding
+            yOrigin = padding
+            break
+
+        case .BottomLeft:
+            xOrigin = padding
+            yOrigin = self.height() - ((CGFloat(views.count) * height) + (CGFloat(views.count) * padding))
+            break
+
+        case .BottomRight:
+            xOrigin = self.width() - width - padding
+            yOrigin = self.height() - ((CGFloat(views.count) * height) + (CGFloat(views.count) * padding))
+            break
+        }
+
+        for view in views {
+            if view.superview != self {
+                fatalError("[NEON] Can't group view that is a subview of another view!")
+            }
+            
+            view.frame = CGRectMake(xOrigin, yOrigin, width, height)
+            
+            yOrigin += yAdjust
+        }
+    }
+
     private func groupAndAlignHorizontal(align: Align, views: [UIView], relativeTo sibling: UIView, padding: CGFloat, width: CGFloat, height: CGFloat) {
         if superview == nil {
             print("[NEON] Warning: Attempted to group subviews but view doesn't have a superview of its own.")
