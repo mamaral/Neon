@@ -555,7 +555,7 @@ extension UIView {
             break
 
         case .UnderMatchingRight:
-            xOrigin = sibling.yMax() - width
+            xOrigin = sibling.xMax() - width
             yOrigin = sibling.yMax() + padding
             break
 
@@ -570,7 +570,7 @@ extension UIView {
             break
 
         case .AboveMatchingRight:
-            xOrigin = sibling.yMax() - width
+            xOrigin = sibling.xMax() - width
             yOrigin = sibling.y() - padding - height
             break
 
