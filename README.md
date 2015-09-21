@@ -29,6 +29,22 @@ view20.alignBetweenVertical(align: .UnderCentered, topView: view17, bottomView: 
 ```
 
 
+## The Fundamentals
+
+In order to keep the syntax as clear and concise as possible, Neon uses enumerated values to encapsulate most of the fundamental layout concepts. Once you learn the four primary ways we describe relationships between views on screen, building layouts will be super quick and intuitive: `Corner`, `Edge`, `Align`, and `Group`.
+
+### Corner
+
+`Corner` is rather self-explanatory; it is used to specify in what corner a subview is anchored in inside its superview. In the below example view #1 is anchored in the `.TopLeft` corner, view #2 is in the `.TopRight` corner, and naturally view #3 and view #4 are anchored in the `.BottomLeft` and `.BottomRight` corners, respectively. Pretty simple, so far.
+
+![Corner](Screenshots/corner.png)
+
+### Edge
+
+`Edge` is another pretty obvious one to follow. Views #1, #2, #3 and #4 are anchored to the `.Top`, `.Left`, `.Bottom`, and `.Right` edges, respectively.
+
+![Edge](Screenshots/edge.png)
+
 ## Todo
 
 - [ ] Finish initial implementation
