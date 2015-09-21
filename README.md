@@ -1,19 +1,12 @@
 # Neon
 
-### Build your user interfaces like a boss, in Swift.
+### Build dynamic and beautiful user interfaces like a boss, with Swift.
 
-More will be coming very soon, stay tuned!
+Neon is built around how user interfaces are naturally designed - primary views are anchored to the sides / corners of the screen, and secondary views are laid out relative to them. Views expand and shrink to fill the screen, so building dynamic layouts that look great on the smallest phones all the way up to biggest tablets is quick and easy. No more springs and struts. No more whacky visual format language. No more auto layout contraints. We're not robots, so why should we build our UIs like we are?
 
-
-#### In the meantime, here's an intentionally convoluted example to show how easy it is to build very complex and dynamic layouts with Neon. The following was created with only *20 lines of code*. That's one line of code per view!
+#### More will be coming very soon, so stay tuned! In the meantime, here's an intentionally convoluted example to show how easy it is to build very complex and dynamic layouts with Neon. The following was created with only *20 lines of code*. That's one line of code per view!
 
 ![Demo](Screenshots/demo.gif)
-
-
-
-## The Fundamentals
-
-Neon is built around how user interfaces are naturally designed - primary views are anchored to the sides / corners of the screen, and secondary views are laid out relative to them.
 
 ---
 
@@ -116,7 +109,17 @@ view12.align(.ToTheLeftMatchingTop, relativeTo: anchorView, padding: padding, wi
 ![Align](Screenshots/align.png)
 
 
+## Align and fill
 
+You don't always know or what to specify the size of a view that you want to layout relative to another, but rather you want to either fill the width, height, or the entire rest of the superview, after aligning with the sibling. Combined with all the different alignment types discussed earlier, we're starting to see how more complex layouts can be built very easily:
+
+```swift
+view2.alignAndFillWidth(align: .ToTheRightMatchingTop, relativeTo: view1, padding: padding, height: size / 2.0)
+view4.alignAndFillHeight(align: .AboveCentered, relativeTo: view3, padding: padding, width: size / 2.0)
+view6.alignAndFill(align: .ToTheLeftMatchingTop, relativeTo: view5, padding: padding)
+```
+
+![Align Fill](Screenshots/align_fill.png)
 
 ## Todo
 
