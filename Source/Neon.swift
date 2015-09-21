@@ -1328,6 +1328,9 @@ extension UIView {
         }
     }
 
+
+    // MARK: Private utils
+    //
     private func groupAndAlignHorizontal(align: Align, views: [UIView], relativeTo sibling: UIView, padding: CGFloat, width: CGFloat, height: CGFloat) {
         if superview == nil {
             print("[NEON] Warning: Attempted to group subviews but view doesn't have a superview of its own.")
@@ -1360,14 +1363,20 @@ extension UIView {
             break
 
         case .ToTheLeftMatchingTop:
+            xOrigin = sibling.x() - width - padding
+            yOrigin = sibling.y()
             xAdjust = -xAdjust
             break
 
         case .ToTheLeftMatchingBottom:
+            xOrigin = sibling.x() - width - padding
+            yOrigin = sibling.yMax() - height
             xAdjust = -xAdjust
             break
 
         case .ToTheLeftCentered:
+            xOrigin = sibling.x() - width - padding
+            yOrigin = sibling.yMid() - (height / 2.0)
             xAdjust = -xAdjust
             break
 
@@ -1377,18 +1386,28 @@ extension UIView {
             break
 
         case .UnderMatchingRight:
+            xOrigin = sibling.xMax() - (CGFloat(views.count) * width) - (CGFloat(views.count - 1) * padding)
+            yOrigin = sibling.yMax() + padding
             break
 
         case .UnderCentered:
+            xOrigin = sibling.xMid() - ((CGFloat(views.count) * width) + (CGFloat(views.count - 1) * padding)) / 2.0
+            yOrigin = sibling.yMax() + padding
             break
 
         case .AboveMatchingLeft:
+            xOrigin = sibling.x()
+            yOrigin = sibling.y() - height - padding
             break
 
         case .AboveMatchingRight:
+            xOrigin = sibling.xMax() - (CGFloat(views.count) * width) - (CGFloat(views.count - 1) * padding)
+            yOrigin = sibling.y() - height - padding
             break
 
         case .AboveCentered:
+            xOrigin = sibling.xMid() - ((CGFloat(views.count) * width) + (CGFloat(views.count - 1) * padding)) / 2.0
+            yOrigin = sibling.y() - height - padding
             break
         }
 
@@ -1420,24 +1439,38 @@ extension UIView {
 
         switch align {
         case .ToTheRightMatchingTop:
+            xOrigin = sibling.xMax() + padding
+            yOrigin = sibling.y()
             break
 
         case .ToTheRightMatchingBottom:
+            xOrigin = sibling.xMax() + padding
+            yOrigin = sibling.yMax() - (CGFloat(views.count) * height) - (CGFloat(views.count - 1) * padding)
             break
 
         case .ToTheRightCentered:
+            xOrigin = sibling.xMax() + padding
+            yOrigin = sibling.yMid() - ((CGFloat(views.count) * height) + CGFloat(views.count - 1) * padding) / 2.0
             break
 
         case .ToTheLeftMatchingTop:
+            xOrigin = sibling.x() - width - padding
+            yOrigin = sibling.y()
             break
 
         case .ToTheLeftMatchingBottom:
+            xOrigin = sibling.x() - width - padding
+            yOrigin = sibling.yMax() - (CGFloat(views.count) * height) - (CGFloat(views.count - 1) * padding)
             break
 
         case .ToTheLeftCentered:
+            xOrigin = sibling.x() - width - padding
+            yOrigin = sibling.yMid() - ((CGFloat(views.count) * height) + CGFloat(views.count - 1) * padding) / 2.0
             break
 
         case .UnderMatchingLeft:
+            xOrigin = sibling.x()
+            yOrigin = sibling.yMax() + padding
             break
 
         case .UnderMatchingRight:
@@ -1446,15 +1479,26 @@ extension UIView {
             break
 
         case .UnderCentered:
+            xOrigin = sibling.xMid() - (width / 2.0)
+            yOrigin = sibling.yMax() + padding
             break
 
         case .AboveMatchingLeft:
+            xOrigin = sibling.x()
+            yOrigin = sibling.y() - height - padding
+            yAdjust = -yAdjust
             break
 
         case .AboveMatchingRight:
+            xOrigin = sibling.xMax() - width
+            yOrigin = sibling.y() - height - padding
+            yAdjust = -yAdjust
             break
 
         case .AboveCentered:
+            xOrigin = sibling.xMid() - (width / 2.0)
+            yOrigin = sibling.y() - height - padding
+            yAdjust = -yAdjust
             break
         }
 

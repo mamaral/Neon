@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		27BE8FA61BAF8FDC00D41957 /* NeonUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BE8FA51BAF8FDC00D41957 /* NeonUnitTests.swift */; };
+		27BE8FAE1BAF905C00D41957 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BE8FAD1BAF905C00D41957 /* TestViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		27D2536A1BAF71AB00FA4FED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D253691BAF71AB00FA4FED /* AppDelegate.swift */; };
 		27D253711BAF71AB00FA4FED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27D253701BAF71AB00FA4FED /* Assets.xcassets */; };
 		27D253741BAF71AB00FA4FED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27D253721BAF71AB00FA4FED /* LaunchScreen.storyboard */; };
@@ -37,6 +38,7 @@
 		27BE8FA31BAF8FDC00D41957 /* NeonUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeonUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BE8FA51BAF8FDC00D41957 /* NeonUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeonUnitTests.swift; sourceTree = "<group>"; };
 		27BE8FA71BAF8FDC00D41957 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27BE8FAD1BAF905C00D41957 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		27D253661BAF71AB00FA4FED /* Neon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27D253691BAF71AB00FA4FED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27D253701BAF71AB00FA4FED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				27D253691BAF71AB00FA4FED /* AppDelegate.swift */,
+				27BE8FAD1BAF905C00D41957 /* TestViewController.swift */,
 				27D2539C1BAF721200FA4FED /* ViewController.swift */,
 				27D253A01BAF735300FA4FED /* Supporting Files */,
 			);
@@ -284,6 +287,7 @@
 			files = (
 				27D2539D1BAF721200FA4FED /* ViewController.swift in Sources */,
 				27D2539B1BAF720300FA4FED /* Neon.swift in Sources */,
+				27BE8FAE1BAF905C00D41957 /* TestViewController.swift in Sources */,
 				27D2536A1BAF71AB00FA4FED /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
