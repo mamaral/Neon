@@ -13,7 +13,7 @@ class NeonTests: XCTestCase {
     let testSuperview : UIView = UIView(frame: CGRectMake(0, 0, 1000, 1000))
     let testAnchorView : UIView = UIView()
     let testSiblingView : UIView = UIView()
-    
+
     override func setUp() {
         super.setUp()
 
@@ -23,7 +23,7 @@ class NeonTests: XCTestCase {
         testAnchorView.frame = CGRectZero
         testSiblingView.frame = CGRectMake(500, 500, 100, 100)
     }
-    
+
     override func tearDown() {
         testAnchorView.frame = CGRectZero
         testSiblingView.frame = CGRectZero
@@ -52,7 +52,7 @@ class NeonTests: XCTestCase {
         XCTAssertEqual(testAnchorView.width(), 30)
         XCTAssertEqual(testAnchorView.height(), 40)
     }
-    
+
     func testFillSuperview() {
         testAnchorView.removeFromSuperview()
         testAnchorView.fillSuperview()
@@ -188,11 +188,11 @@ class NeonTests: XCTestCase {
 
         testAnchorView.align(.AboveCentered, relativeTo: testSiblingView, padding: 10, width: 30, height: 40)
         XCTAssert(CGRectEqualToRect(testAnchorView.frame, CGRectMake(535, 450, 30, 40)))
-
+        
         testAnchorView.align(.AboveMatchingRight, relativeTo: testSiblingView, padding: 10, width: 30, height: 40)
         XCTAssert(CGRectEqualToRect(testAnchorView.frame, CGRectMake(570, 450, 30, 40)))
     }
-
+    
     // TODO: test alignAndFillWidth()
     // TODO: test alignAndFillHeight()
     // TODO: test all grouping methods

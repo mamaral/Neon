@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27BE8FA61BAF8FDC00D41957 /* NeonUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BE8FA51BAF8FDC00D41957 /* NeonUnitTests.swift */; };
 		27D2536A1BAF71AB00FA4FED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D253691BAF71AB00FA4FED /* AppDelegate.swift */; };
 		27D253711BAF71AB00FA4FED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27D253701BAF71AB00FA4FED /* Assets.xcassets */; };
 		27D253741BAF71AB00FA4FED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27D253721BAF71AB00FA4FED /* LaunchScreen.storyboard */; };
 		27D2538A1BAF71AB00FA4FED /* NeonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D253891BAF71AB00FA4FED /* NeonUITests.swift */; };
 		27D2539B1BAF720300FA4FED /* Neon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D2539A1BAF720300FA4FED /* Neon.swift */; settings = {ASSET_TAGS = (); }; };
 		27D2539D1BAF721200FA4FED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D2539C1BAF721200FA4FED /* ViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		27D2539F1BAF722900FA4FED /* NeonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D2539E1BAF722900FA4FED /* NeonTests.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		27D2537B1BAF71AB00FA4FED /* PBXContainerItemProxy */ = {
+		27BE8FA81BAF8FDC00D41957 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 27D2535E1BAF71AB00FA4FED /* Project object */;
 			proxyType = 1;
@@ -34,30 +34,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27BE8FA31BAF8FDC00D41957 /* NeonUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeonUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		27BE8FA51BAF8FDC00D41957 /* NeonUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeonUnitTests.swift; sourceTree = "<group>"; };
+		27BE8FA71BAF8FDC00D41957 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27D253661BAF71AB00FA4FED /* Neon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27D253691BAF71AB00FA4FED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27D253701BAF71AB00FA4FED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27D253731BAF71AB00FA4FED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27D253751BAF71AB00FA4FED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		27D2537A1BAF71AB00FA4FED /* Neon.temp_caseinsensitive_rename.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Neon.temp_caseinsensitive_rename.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		27D253801BAF71AB00FA4FED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		27D253851BAF71AB00FA4FED /* Neon.temp_caseinsensitive_rename.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Neon.temp_caseinsensitive_rename.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		27D253851BAF71AB00FA4FED /* NeonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27D253891BAF71AB00FA4FED /* NeonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeonUITests.swift; sourceTree = "<group>"; };
 		27D2538B1BAF71AB00FA4FED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27D2539A1BAF720300FA4FED /* Neon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Neon.swift; sourceTree = "<group>"; };
 		27D2539C1BAF721200FA4FED /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		27D2539E1BAF722900FA4FED /* NeonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeonTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		27D253631BAF71AB00FA4FED /* Frameworks */ = {
+		27BE8FA01BAF8FDC00D41957 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		27D253771BAF71AB00FA4FED /* Frameworks */ = {
+		27D253631BAF71AB00FA4FED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -74,12 +74,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27BE8FA41BAF8FDC00D41957 /* NeonUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				27BE8FA51BAF8FDC00D41957 /* NeonUnitTests.swift */,
+				27BE8FA71BAF8FDC00D41957 /* Info.plist */,
+			);
+			path = NeonUnitTests;
+			sourceTree = "<group>";
+		};
 		27D2535D1BAF71AB00FA4FED = {
 			isa = PBXGroup;
 			children = (
 				27D253971BAF71C700FA4FED /* Source */,
 				27D253681BAF71AB00FA4FED /* Demo */,
-				27D2537D1BAF71AB00FA4FED /* NeonTests */,
+				27BE8FA41BAF8FDC00D41957 /* NeonUnitTests */,
 				27D253881BAF71AB00FA4FED /* NeonUITests */,
 			);
 			sourceTree = "<group>";
@@ -88,8 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				27D253661BAF71AB00FA4FED /* Neon.app */,
-				27D2537A1BAF71AB00FA4FED /* Neon.temp_caseinsensitive_rename.xctest */,
-				27D253851BAF71AB00FA4FED /* Neon.temp_caseinsensitive_rename.xctest */,
+				27D253851BAF71AB00FA4FED /* NeonUITests.xctest */,
+				27BE8FA31BAF8FDC00D41957 /* NeonUnitTests.xctest */,
 			);
 			name = Products;
 			path = ..;
@@ -104,15 +113,6 @@
 			);
 			name = Demo;
 			path = Neon;
-			sourceTree = "<group>";
-		};
-		27D2537D1BAF71AB00FA4FED /* NeonTests */ = {
-			isa = PBXGroup;
-			children = (
-				27D2539E1BAF722900FA4FED /* NeonTests.swift */,
-				27D253801BAF71AB00FA4FED /* Info.plist */,
-			);
-			path = NeonTests;
 			sourceTree = "<group>";
 		};
 		27D253881BAF71AB00FA4FED /* NeonUITests */ = {
@@ -147,6 +147,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		27BE8FA21BAF8FDC00D41957 /* NeonUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27BE8FAC1BAF8FDC00D41957 /* Build configuration list for PBXNativeTarget "NeonUnitTests" */;
+			buildPhases = (
+				27BE8F9F1BAF8FDC00D41957 /* Sources */,
+				27BE8FA01BAF8FDC00D41957 /* Frameworks */,
+				27BE8FA11BAF8FDC00D41957 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27BE8FA91BAF8FDC00D41957 /* PBXTargetDependency */,
+			);
+			name = NeonUnitTests;
+			productName = NeonUnitTests;
+			productReference = 27BE8FA31BAF8FDC00D41957 /* NeonUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		27D253651BAF71AB00FA4FED /* Neon */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27D2538E1BAF71AB00FA4FED /* Build configuration list for PBXNativeTarget "Neon" */;
@@ -164,24 +182,6 @@
 			productReference = 27D253661BAF71AB00FA4FED /* Neon.app */;
 			productType = "com.apple.product-type.application";
 		};
-		27D253791BAF71AB00FA4FED /* NeonTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 27D253911BAF71AB00FA4FED /* Build configuration list for PBXNativeTarget "NeonTests" */;
-			buildPhases = (
-				27D253761BAF71AB00FA4FED /* Sources */,
-				27D253771BAF71AB00FA4FED /* Frameworks */,
-				27D253781BAF71AB00FA4FED /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				27D2537C1BAF71AB00FA4FED /* PBXTargetDependency */,
-			);
-			name = NeonTests;
-			productName = NeonTests;
-			productReference = 27D2537A1BAF71AB00FA4FED /* Neon.temp_caseinsensitive_rename.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		27D253841BAF71AB00FA4FED /* NeonUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27D253941BAF71AB00FA4FED /* Build configuration list for PBXNativeTarget "NeonUITests" */;
@@ -197,7 +197,7 @@
 			);
 			name = NeonUITests;
 			productName = NeonUITests;
-			productReference = 27D253851BAF71AB00FA4FED /* Neon.temp_caseinsensitive_rename.xctest */;
+			productReference = 27D253851BAF71AB00FA4FED /* NeonUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -210,12 +210,12 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Mike Amaral";
 				TargetAttributes = {
-					27D253651BAF71AB00FA4FED = {
-						CreatedOnToolsVersion = 7.0;
-					};
-					27D253791BAF71AB00FA4FED = {
+					27BE8FA21BAF8FDC00D41957 = {
 						CreatedOnToolsVersion = 7.0;
 						TestTargetID = 27D253651BAF71AB00FA4FED;
+					};
+					27D253651BAF71AB00FA4FED = {
+						CreatedOnToolsVersion = 7.0;
 					};
 					27D253841BAF71AB00FA4FED = {
 						CreatedOnToolsVersion = 7.0;
@@ -237,26 +237,26 @@
 			projectRoot = "";
 			targets = (
 				27D253651BAF71AB00FA4FED /* Neon */,
-				27D253791BAF71AB00FA4FED /* NeonTests */,
 				27D253841BAF71AB00FA4FED /* NeonUITests */,
+				27BE8FA21BAF8FDC00D41957 /* NeonUnitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		27BE8FA11BAF8FDC00D41957 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27D253641BAF71AB00FA4FED /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				27D253741BAF71AB00FA4FED /* LaunchScreen.storyboard in Resources */,
 				27D253711BAF71AB00FA4FED /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		27D253781BAF71AB00FA4FED /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +270,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		27BE8F9F1BAF8FDC00D41957 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27BE8FA61BAF8FDC00D41957 /* NeonUnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27D253621BAF71AB00FA4FED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -277,14 +285,6 @@
 				27D2539D1BAF721200FA4FED /* ViewController.swift in Sources */,
 				27D2539B1BAF720300FA4FED /* Neon.swift in Sources */,
 				27D2536A1BAF71AB00FA4FED /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		27D253761BAF71AB00FA4FED /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				27D2539F1BAF722900FA4FED /* NeonTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,10 +299,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		27D2537C1BAF71AB00FA4FED /* PBXTargetDependency */ = {
+		27BE8FA91BAF8FDC00D41957 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 27D253651BAF71AB00FA4FED /* Neon */;
-			targetProxy = 27D2537B1BAF71AB00FA4FED /* PBXContainerItemProxy */;
+			targetProxy = 27BE8FA81BAF8FDC00D41957 /* PBXContainerItemProxy */;
 		};
 		27D253871BAF71AB00FA4FED /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -323,6 +323,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		27BE8FAA1BAF8FDC00D41957 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = NeonUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MikeAmaral.NeonUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Neon.app/Neon";
+			};
+			name = Debug;
+		};
+		27BE8FAB1BAF8FDC00D41957 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = NeonUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MikeAmaral.NeonUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Neon.app/Neon";
+			};
+			name = Release;
+		};
 		27D2538C1BAF71AB00FA4FED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -430,40 +454,14 @@
 			};
 			name = Release;
 		};
-		27D253921BAF71AB00FA4FED /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = NeonTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.MikeAmaral.NeonTests;
-				PRODUCT_NAME = Neon.temp_caseinsensitive_rename;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Neon.temp_caseinsensitive_rename.app/Neon.temp_caseinsensitive_rename";
-			};
-			name = Debug;
-		};
-		27D253931BAF71AB00FA4FED /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = NeonTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.MikeAmaral.NeonTests;
-				PRODUCT_NAME = Neon.temp_caseinsensitive_rename;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Neon.temp_caseinsensitive_rename.app/Neon.temp_caseinsensitive_rename";
-			};
-			name = Release;
-		};
 		27D253951BAF71AB00FA4FED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = NeonUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MikeAmaral.NeonUITests;
-				PRODUCT_NAME = Neon.temp_caseinsensitive_rename;
+				PRODUCT_MODULE_NAME = NeonUITests;
+				PRODUCT_NAME = NeonUITests;
 				TEST_TARGET_NAME = Neon;
 				USES_XCTRUNNER = YES;
 			};
@@ -475,7 +473,8 @@
 				INFOPLIST_FILE = NeonUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MikeAmaral.NeonUITests;
-				PRODUCT_NAME = Neon.temp_caseinsensitive_rename;
+				PRODUCT_MODULE_NAME = NeonUITests;
+				PRODUCT_NAME = NeonUITests;
 				TEST_TARGET_NAME = Neon;
 				USES_XCTRUNNER = YES;
 			};
@@ -484,6 +483,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		27BE8FAC1BAF8FDC00D41957 /* Build configuration list for PBXNativeTarget "NeonUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27BE8FAA1BAF8FDC00D41957 /* Debug */,
+				27BE8FAB1BAF8FDC00D41957 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		27D253611BAF71AB00FA4FED /* Build configuration list for PBXProject "Neon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -498,15 +505,6 @@
 			buildConfigurations = (
 				27D2538F1BAF71AB00FA4FED /* Debug */,
 				27D253901BAF71AB00FA4FED /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		27D253911BAF71AB00FA4FED /* Build configuration list for PBXNativeTarget "NeonTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				27D253921BAF71AB00FA4FED /* Debug */,
-				27D253931BAF71AB00FA4FED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
