@@ -4,7 +4,7 @@
 
 Neon is built around how user interfaces are naturally designed - primary views are anchored to the sides / corners of the screen, and secondary views are laid out relative to them. Views expand and shrink to fill the screen, so building dynamic layouts that look great on the smallest phones all the way up to biggest tablets is quick and easy. No more springs and struts. No more whacky visual format language. No more auto layout contraints. We're not robots, so why should we build our UIs like we are?
 
-#### More will be coming very soon, so stay tuned! In the meantime, here's an intentionally convoluted example to show how easy it is to build very complex and dynamic layouts with Neon. The following was created with only *20 lines of code*. That's one line of code per view!
+#### More will be coming very soon, so stay tuned! In the meantime, here's an intentionally convoluted example to show how easy it is to build very complex and dynamic layouts with Neon. The following layout was created with only *20 lines of code*. That's one line of code per view!
 
 ![Demo](Screenshots/demo.gif)
 
@@ -111,7 +111,7 @@ view12.align(.ToTheLeftMatchingTop, relativeTo: anchorView, padding: padding, wi
 
 ## Align and fill
 
-You don't always know or want to specify the size of a view that you want to place relative to another. You may want to fill the width, height, or the entire rest of the superview after aligning with the sibling. Using `alignAndFillWidth()`, `alignAndFillHeight()`, and `alignAndFill()`, you can do just that!  Combined with the different alignment types discussed earlier, we're starting to see how more complex layouts can be built very easily:
+You don't always know or what to specify the size of a view that you want to layout relative to another, but rather you want to either fill the width, height, or the entire rest of the superview, after aligning with the sibling. Combined with all the different alignment types discussed earlier, we're starting to see how more complex layouts can be built very easily:
 
 ```swift
 view2.alignAndFillWidth(align: .ToTheRightMatchingTop, relativeTo: view1, padding: padding, height: size / 2.0)
@@ -121,12 +121,51 @@ view6.alignAndFill(align: .ToTheLeftMatchingTop, relativeTo: view5, padding: pad
 
 ![Align Fill](Screenshots/align_fill.png)
 
-## Todo
 
-- [ ] Finish initial implementation
-- [ ] README documentation
-- [ ] Code documentation
-- [ ] Code coverage
+## Align between
+
+Sometimes you want a view to sit between to other views, filling the space between them. Using alignBetweenHorizontal() and alignBetweenVertical(), doing that is super easy! Choose one of your sibling views you want to align your view relative to and pass that in as your `primaryView`. We will use the specified `align` parameter to match that `primaryView` appropriately, and automatically fill either the horizontal or vertical span between the it and the `secondaryView`.
+
+```swift
+view1.alignBetweenHorizontal(align: .ToTheRightMatchingTop, primaryView: anchorViewA, secondaryView: anchorViewB, padding: padding, height: size)
+view2.alignBetweenVertical(align: .UnderCentered, primaryView: anchorViewB, secondaryView: anchorViewD, padding: padding, width: size)
+view3.alignBetweenHorizontal(align: .ToTheLeftMatchingBottom, primaryView: anchorViewD, secondaryView: anchorViewC, padding: padding, height: size)
+view4.alignBetweenVertical(align: .AboveMatchingRight, primaryView: anchorViewC, secondaryView: anchorViewA, padding: padding, width: size)
+```
+
+![Align Between Fill](Screenshots/align_between_fill.png)
+
+
+## Grouping
+
+Another common use-case is the *grouping* of sibling views, aligned in a row or column. Using what we've already learned about anchoring views in the center, in a corner, or against an edge, we can also do the same with groups of views!
+
+The primary difference with grouping, is that it is done by the *parent view,* or `superview` of a group of views. For example, let's let two different views center a group of their subviews in each of the two different `Group` configurations, `.Horizontal` and `.Vertical`:
+
+```swift
+anchorViewA.groupInCenter(group: .Horizontal, views: [view1, view2, view3], padding: padding, width: size, height: size)
+anchorViewB.groupInCenter(group: .Vertical, views: [view4, view5, view6], padding: padding, width: size, height: size)
+```
+
+![Group in center](Screenshots/group_in_center.png)
+
+How about grouping views in the corner?
+
+```swift
+anchorViewA.groupInCorner(group: .Horizontal, views: [view1, view2, view3], inCorner: .TopLeft, padding: padding, width: size, height: size)
+anchorViewB.groupInCorner(group: .Vertical, views: [view4, view5, view6], inCorner: .BottomRight, padding: padding, width: size, height: size)
+```
+
+![Group in corner](Screenshots/group_in_corner.png)
+
+As you might have expected, you can also group either horizontally and vertically against any edge as well:
+
+```swift
+anchorViewA.groupAgainstEdge(group: .Horizontal, views: [view1, view2, view3], againstEdge: .Left, padding: padding, width: size, height: size)
+anchorViewB.groupAgainstEdge(group: .Vertical, views: [view4, view5, view6], againstEdge: .Bottom, padding: padding, width: size, height: size)
+```
+
+![Group against edge](Screenshots/group_against_edge.png)
 
 
 ## License

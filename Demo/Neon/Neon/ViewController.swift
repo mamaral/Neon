@@ -202,15 +202,15 @@ class ViewController: UIViewController {
         view6.alignAndFill(align: .UnderMatchingLeft, relativeTo: view2, padding: 10)
         view7.alignAndFillHeight(align: .AboveMatchingRight, relativeTo: view1, padding: 10, width: 60)
         view8.alignAndFillWidth(align: .ToTheLeftMatchingTop, relativeTo: view7, padding: 10, height: 70)
-        view9.alignBetweenVertical(align: .UnderMatchingLeft, topView: view8, bottomView: anchorView, padding: 10, width: 100)
-        view10.alignBetweenHorizontal(align: .ToTheRightMatchingTop, leftView: view9, rightView: view7, padding: 10, height: view9.height())
+        view9.alignBetweenVertical(align: .UnderMatchingLeft, primaryView: view8, secondaryView: anchorView, padding: 10, width: 100)
+        view10.alignBetweenHorizontal(align: .ToTheRightMatchingTop, primaryView: view9, secondaryView: view7, padding: 10, height: view9.height())
         view14.anchorInCorner(.BottomLeft, xPad: 10, yPad: 10, width: 100, height: 100)
-        view15.alignBetweenVertical(align: .UnderMatchingLeft, topView: view9, bottomView: view14, padding: 10, width: 50)
-        view16.alignBetweenHorizontal(align: .ToTheRightMatchingBottom, leftView: view14, rightView: view6, padding: 10, height: 40)
-        view17.alignBetweenHorizontal(align: .ToTheRightMatchingTop, leftView: view15, rightView: anchorView, padding: 10, height: 100)
-        view18.alignBetweenVertical(align: .UnderMatchingLeft, topView: anchorView, bottomView: view16, padding: 10, width: anchorView.width())
-        view19.alignBetweenHorizontal(align: .ToTheRightMatchingTop, leftView: view14, rightView: view18, padding: 10, height: 50)
-        view20.alignBetweenVertical(align: .UnderCentered, topView: view17, bottomView: view19, padding: 10, width: view17.width())
+        view15.alignBetweenVertical(align: .UnderMatchingLeft, primaryView: view9, secondaryView: view14, padding: 10, width: 50)
+        view16.alignBetweenHorizontal(align: .ToTheRightMatchingBottom, primaryView: view14, secondaryView: view6, padding: 10, height: 40)
+        view17.alignBetweenHorizontal(align: .ToTheRightMatchingTop, primaryView: view15, secondaryView: anchorView, padding: 10, height: 100)
+        view18.alignBetweenVertical(align: .UnderMatchingLeft, primaryView: anchorView, secondaryView: view16, padding: 10, width: anchorView.width())
+        view19.alignBetweenHorizontal(align: .ToTheRightMatchingTop, primaryView: view14, secondaryView: view18, padding: 10, height: 50)
+        view20.alignBetweenVertical(align: .UnderCentered, primaryView: view17, secondaryView: view19, padding: 10, width: view17.width())
     }
 
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {

@@ -950,58 +950,77 @@ extension UIView {
     //
 
     /// Align a view between two sibling views horizontally, automatically expanding the width to extend the full
-    /// span between the right side of the `leftView` and the left side of the `rightView`, with equal padding on
-    /// both sides.
+    /// horizontal span between the `primaryView` and the `secondaryView`, with equal padding on both sides.
     ///
     /// - parameters:
-    ///   - align: The `Align` type used to specify where and how this view is aligned with the *left-most sibling*.
-    /// This method assumes the view will be placed to the right of and aligned relative to the `leftView`, and as
-    /// such the only allowable alignment types are `.ToTheRightMatchingTop`, `.ToTheRightMatchingBottom`, and 
-    /// `.ToTheRightCentered`. Providing another `Align` type will result in a fatal error.
+    ///   - align: The `Align` type used to specify where and how this view is aligned with the primary view.
     ///
-    ///   - leftView: The primary sibling view this view will be aligned to the right of.
+    ///   - primaryView: The primary sibling view this view will be aligned relative to.
     ///
-    ///   - right: The secondary sibling view this view will be aligned to the left of.
+    ///   - secondaryView: The secondary sibling view this view will be automatically sized to fill the space between.
     ///
     ///   - padding: The horizontal padding to be applied between this view and both sibling views.
     ///
     ///   - height: The height of the view.
     ///
-    func alignBetweenHorizontal(align align: Align, leftView: UIView, rightView: UIView, padding: CGFloat, height: CGFloat) {
+    func alignBetweenHorizontal(align align: Align, primaryView: UIView, secondaryView: UIView, padding: CGFloat, height: CGFloat) {
         if superview == nil {
             print("[NEON] Warning: Can't align view without superview!")
             return
         }
 
-        if self == leftView || self == rightView {
+        if self == primaryView || self == secondaryView {
             fatalError("[NEON] Can't align view relative to itself!")
         }
 
-        if superview != leftView.superview || superview != rightView.superview  {
+        if superview != primaryView.superview || superview != secondaryView.superview  {
             fatalError("[NEON] Can't align view relative to another view in a different superview!")
         }
 
         let superviewWidth : CGFloat = superview!.width()
-        let xOrigin : CGFloat = leftView.xMax() + padding
+        var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0
-        var width : CGFloat = superviewWidth - leftView.xMax() - (superviewWidth - rightView.x()) - (2 * padding)
+        var width : CGFloat = 0.0
 
         switch align {
         case .ToTheRightMatchingTop:
-            yOrigin = leftView.y()
+            xOrigin = primaryView.xMax() + padding
+            yOrigin = primaryView.y()
+            width = superviewWidth - primaryView.xMax() - (superviewWidth - secondaryView.x()) - (2 * padding)
             break
 
         case .ToTheRightMatchingBottom:
-            yOrigin = leftView.yMax() - height
+            xOrigin = primaryView.xMax() + padding
+            yOrigin = primaryView.yMax() - height
+            width = superviewWidth - primaryView.xMax() - (superviewWidth - secondaryView.x()) - (2 * padding)
             break
 
         case .ToTheRightCentered:
-            yOrigin = leftView.yMid() - (height / 2.0)
+            xOrigin = primaryView.xMax() + padding
+            yOrigin = primaryView.yMid() - (height / 2.0)
+            width = superviewWidth - primaryView.xMax() - (superviewWidth - secondaryView.x()) - (2 * padding)
             break
 
-        case .ToTheLeftMatchingTop, .ToTheLeftMatchingBottom, .ToTheLeftCentered, .UnderMatchingLeft, .UnderMatchingRight, .UnderCentered,  .AboveMatchingLeft, .AboveMatchingRight, .AboveCentered:
-            fatalError("[NEON] Invalid Align specified for alignBetweenHorizonal(). Use .ToTheRightMatchingTop, .ToTheRightMatchingBottom, or .ToTheRightCentered instead.")
+        case .ToTheLeftMatchingTop:
+            xOrigin = secondaryView.xMax() + padding
+            yOrigin = primaryView.y()
+            width = superviewWidth - secondaryView.xMax() - (superviewWidth - primaryView.x()) - (2 * padding)
             break
+
+        case .ToTheLeftMatchingBottom:
+            xOrigin = secondaryView.xMax() + padding
+            yOrigin = primaryView.yMax() - height
+            width = superviewWidth - secondaryView.xMax() - (superviewWidth - primaryView.x()) - (2 * padding)
+            break
+
+        case .ToTheLeftCentered:
+            xOrigin = secondaryView.xMax() + padding
+            yOrigin = primaryView.yMid() - (height / 2.0)
+            width = superviewWidth - secondaryView.xMax() - (superviewWidth - primaryView.x()) - (2 * padding)
+            break
+
+        case .UnderMatchingLeft, .UnderMatchingRight, .UnderCentered,  .AboveMatchingLeft, .AboveMatchingRight, .AboveCentered:
+            fatalError("[NEON] Invalid Align specified for alignBetweenHorizonal().")
         }
 
         if width < 0.0 {
@@ -1013,57 +1032,77 @@ extension UIView {
 
 
     /// Align a view between two sibling views vertically, automatically expanding the height to extend the full
-    /// span between the bottom of the `topView` and the top of the `bottomView`, with equal padding above and below.
+    /// vertical span between the `primaryView` and the `secondaryView`, with equal padding above and below.
     ///
     /// - parameters:
-    ///   - align: The `Align` type used to specify where and how this view is aligned with the *top-most sibling*.
-    /// This method assumes the view will be placed under and aligned relative to the `topView`, and as
-    /// such the only allowable alignment types are `.UnderMatchingLeft`, `.UnderMatchingRight`, and `.UnderCentered`.
-    /// Providing another `Align` type will result in a fatal error.
+    ///   - align: The `Align` type used to specify where and how this view is aligned with the primary view.
     ///
-    ///   - topView: The primary sibling view this view will be aligned under.
+    ///   - primaryView: The primary sibling view this view will be aligned relative to.
     ///
-    ///   - bottomView: The secondary sibling view this view will be aligned above.
+    ///   - secondaryView: The secondary sibling view this view will be automatically sized to fill the space between.
     ///
-    ///   - padding: The vertical padding to be applied between this view and both sibling views.
+    ///   - padding: The horizontal padding to be applied between this view and both sibling views.
     ///
     ///   - width: The width of the view.
     ///
-    func alignBetweenVertical(align align: Align, topView: UIView, bottomView: UIView, padding: CGFloat, width: CGFloat) {
+    func alignBetweenVertical(align align: Align, primaryView: UIView, secondaryView: UIView, padding: CGFloat, width: CGFloat) {
         if superview == nil {
             print("[NEON] Warning: Can't align view without superview!")
             return
         }
 
-        if self == topView || self == bottomView {
+        if self == primaryView || self == secondaryView {
             fatalError("[NEON] Can't align view relative to itself!")
         }
 
-        if superview != topView.superview || superview != bottomView.superview  {
+        if superview != primaryView.superview || superview != secondaryView.superview  {
             fatalError("[NEON] Can't align view relative to another view in a different superview!")
         }
 
         let superviewHeight : CGFloat = superview!.height()
         var xOrigin : CGFloat = 0.0
-        let yOrigin : CGFloat = topView.yMax() + padding
-        var height : CGFloat = superviewHeight - topView.yMax() - (superviewHeight - bottomView.y()) - (2 * padding)
+        var yOrigin : CGFloat = 0.0
+        var height : CGFloat = 0.0
 
         switch align {
         case .UnderMatchingLeft:
-            xOrigin = topView.x()
+            xOrigin = primaryView.x()
+            yOrigin = primaryView.yMax() + padding
+            height = superviewHeight - primaryView.yMax() - (superviewHeight - secondaryView.y()) - (2 * padding)
             break
 
         case .UnderMatchingRight:
-            xOrigin = topView.xMax() - width
+            xOrigin = primaryView.xMax() - width
+            yOrigin = primaryView.yMax() + padding
+            height = superviewHeight - primaryView.yMax() - (superviewHeight - secondaryView.y()) - (2 * padding)
             break
 
         case .UnderCentered:
-            xOrigin = topView.xMid() - (width / 2.0)
+            xOrigin = primaryView.xMid() - (width / 2.0)
+            yOrigin = primaryView.yMax() + padding
+            height = superviewHeight - primaryView.yMax() - (superviewHeight - secondaryView.y()) - (2 * padding)
             break
 
-        case .ToTheLeftMatchingTop, .ToTheLeftMatchingBottom, .ToTheLeftCentered, .ToTheRightMatchingTop, .ToTheRightMatchingBottom, .ToTheRightCentered,  .AboveMatchingLeft, .AboveMatchingRight, .AboveCentered:
-            fatalError("[NEON] Invalid Align specified for alignBetweenHorizonal(). Use .ToTheRightMatchingTop, .ToTheRightMatchingBottom, or .ToTheRightCentered instead.")
+        case .AboveMatchingLeft:
+            xOrigin = primaryView.x()
+            yOrigin = secondaryView.yMax() + padding
+            height = superviewHeight - secondaryView.yMax() - (superviewHeight - primaryView.y()) - (2 * padding)
             break
+
+        case .AboveMatchingRight:
+            xOrigin = primaryView.xMax() - width
+            yOrigin = secondaryView.yMax() + padding
+            height = superviewHeight - secondaryView.yMax() - (superviewHeight - primaryView.y()) - (2 * padding)
+            break
+
+        case .AboveCentered:
+            xOrigin = primaryView.xMid() - (width / 2.0)
+            yOrigin = secondaryView.yMax() + padding
+            height = superviewHeight - secondaryView.yMax() - (superviewHeight - primaryView.y()) - (2 * padding)
+            break
+
+        case .ToTheLeftMatchingTop, .ToTheLeftMatchingBottom, .ToTheLeftCentered, .ToTheRightMatchingTop, .ToTheRightMatchingBottom, .ToTheRightCentered:
+            fatalError("[NEON] Invalid Align specified for alignBetweenVertical().")
         }
 
         if height < 0 {
@@ -1076,36 +1115,6 @@ extension UIView {
 
     // MARK: Grouping siblings
     //
-
-    /// Tell a view to group an array of its subviews in one of its corners, specifying the padding between each subview,
-    /// as well as the size of each.
-    ///
-    /// - parameters:
-    ///   - group: The `Group` type specifying if the subviews will be laid out horizontally or vertically in the corner.
-    ///
-    ///   - views: The array of views to grouped in the specified corner. Depending on if the views are gouped horizontally
-    /// or vertically, they will be positioned in order from left-to-right and top-to-bottom, respectively.
-    ///
-    ///   - inCorner: The specified corner the views will be grouped in.
-    ///
-    ///   - padding: The padding to be applied between the subviews and their superview.
-    ///
-    ///   - width: The width of each subview.
-    ///
-    ///   - height: The height of each subview.
-    ///
-    func groupInCorner(group group: Group, views: [UIView], inCorner corner: Corner, padding: CGFloat, width: CGFloat, height: CGFloat) {
-        switch group {
-        case .Horizontal:
-            groupInCornerHorizontally(views, inCorner: corner, padding: padding, width: width, height: height)
-            break
-
-        case .Vertical:
-            groupInCornerVertically(views, inCorner: corner, padding: padding, width: width, height: height)
-            break
-        }
-    }
-
 
     /// Tell a view to group an array of its subviews centered, specifying the padding between each subview,
     /// as well as the size of each.
@@ -1161,6 +1170,36 @@ extension UIView {
             
             xOrigin += xAdjust
             yOrigin += yAdjust
+        }
+    }
+
+
+    /// Tell a view to group an array of its subviews in one of its corners, specifying the padding between each subview,
+    /// as well as the size of each.
+    ///
+    /// - parameters:
+    ///   - group: The `Group` type specifying if the subviews will be laid out horizontally or vertically in the corner.
+    ///
+    ///   - views: The array of views to grouped in the specified corner. Depending on if the views are gouped horizontally
+    /// or vertically, they will be positioned in order from left-to-right and top-to-bottom, respectively.
+    ///
+    ///   - inCorner: The specified corner the views will be grouped in.
+    ///
+    ///   - padding: The padding to be applied between the subviews and their superview.
+    ///
+    ///   - width: The width of each subview.
+    ///
+    ///   - height: The height of each subview.
+    ///
+    func groupInCorner(group group: Group, views: [UIView], inCorner corner: Corner, padding: CGFloat, width: CGFloat, height: CGFloat) {
+        switch group {
+        case .Horizontal:
+            groupInCornerHorizontally(views, inCorner: corner, padding: padding, width: width, height: height)
+            break
+
+        case .Vertical:
+            groupInCornerVertically(views, inCorner: corner, padding: padding, width: width, height: height)
+            break
         }
     }
 

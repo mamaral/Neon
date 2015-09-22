@@ -9,9 +9,10 @@
 import UIKit
 
 class TestViewController: UIViewController {
-    let anchorView : UIView = UIView()
-   let anchorView2 : UIView = UIView()
-   let anchorView3 : UIView = UIView()
+    let anchorViewA : UILabel = UILabel()
+    let anchorViewB : UILabel = UILabel()
+    let anchorViewC : UILabel = UILabel()
+    let anchorViewD : UILabel = UILabel()
     let view1 : UILabel = UILabel()
     let view2 : UILabel = UILabel()
     let view3 : UILabel = UILabel()
@@ -22,73 +23,90 @@ class TestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        anchorView.backgroundColor = UIColor(red: 229/255.0, green: 72/255.0, blue: 26/255.0, alpha: 1.0)
-        view.addSubview(anchorView)
+        anchorViewA.backgroundColor = UIColor(red: 229/255.0, green: 72/255.0, blue: 26/255.0, alpha: 1.0)
+        anchorViewA.text = ""
+        anchorViewA.textAlignment = .Center
+        anchorViewA.font = UIFont.boldSystemFontOfSize(20)
+        anchorViewA.textColor = UIColor.whiteColor()
+        view.addSubview(anchorViewA)
 
-        anchorView2.backgroundColor = UIColor(red: 229/255.0, green: 72/255.0, blue: 26/255.0, alpha: 1.0)
-        view.addSubview(anchorView2)
+        anchorViewB.backgroundColor = UIColor(red: 229/255.0, green: 72/255.0, blue: 26/255.0, alpha: 1.0)
+        anchorViewB.text = ""
+        anchorViewB.textAlignment = .Center
+        anchorViewB.font = UIFont.boldSystemFontOfSize(20)
+        anchorViewB.textColor = UIColor.whiteColor()
+        view.addSubview(anchorViewB)
 
-        anchorView3.backgroundColor = UIColor(red: 229/255.0, green: 72/255.0, blue: 26/255.0, alpha: 1.0)
-        view.addSubview(anchorView3)
+        anchorViewC.backgroundColor = UIColor(red: 229/255.0, green: 72/255.0, blue: 26/255.0, alpha: 1.0)
+        anchorViewC.text = "C"
+        anchorViewC.textAlignment = .Center
+        anchorViewC.font = UIFont.boldSystemFontOfSize(20)
+        anchorViewC.textColor = UIColor.whiteColor()
+        view.addSubview(anchorViewC)
+
+        anchorViewD.backgroundColor = UIColor(red: 229/255.0, green: 72/255.0, blue: 26/255.0, alpha: 1.0)
+        anchorViewD.text = "D"
+        anchorViewD.textAlignment = .Center
+        anchorViewD.font = UIFont.boldSystemFontOfSize(20)
+        anchorViewD.textColor = UIColor.whiteColor()
+        view.addSubview(anchorViewD)
 
         view1.backgroundColor = UIColor(red: 78/255.0, green: 102/255.0, blue: 131/255.0, alpha: 1.0)
         view1.text = "1"
         view1.textAlignment = .Center
         view1.font = UIFont.boldSystemFontOfSize(20)
         view1.textColor = UIColor.whiteColor()
-        anchorView.addSubview(view1)
+        anchorViewA.addSubview(view1)
 
         view2.backgroundColor = UIColor(red: 132/255.0, green: 169/255.0, blue: 57/255.0, alpha: 1.0)
         view2.text = "2"
         view2.textAlignment = .Center
         view2.font = UIFont.boldSystemFontOfSize(20)
         view2.textColor = UIColor.whiteColor()
-        anchorView.addSubview(view2)
+        anchorViewA.addSubview(view2)
 
         view3.backgroundColor = UIColor(red: 78/255.0, green: 102/255.0, blue: 131/255.0, alpha: 1.0)
         view3.text = "3"
         view3.textAlignment = .Center
         view3.font = UIFont.boldSystemFontOfSize(20)
         view3.textColor = UIColor.whiteColor()
-        anchorView2.addSubview(view3)
+        anchorViewA.addSubview(view3)
 
         view4.backgroundColor = UIColor(red: 132/255.0, green: 169/255.0, blue: 57/255.0, alpha: 1.0)
         view4.text = "4"
         view4.textAlignment = .Center
         view4.font = UIFont.boldSystemFontOfSize(20)
         view4.textColor = UIColor.whiteColor()
-        anchorView2.addSubview(view4)
+        anchorViewB.addSubview(view4)
 
         view5.backgroundColor = UIColor(red: 78/255.0, green: 102/255.0, blue: 131/255.0, alpha: 1.0)
         view5.text = "5"
         view5.textAlignment = .Center
         view5.font = UIFont.boldSystemFontOfSize(20)
         view5.textColor = UIColor.whiteColor()
-        anchorView3.addSubview(view5)
+        anchorViewB.addSubview(view5)
 
         view6.backgroundColor = UIColor(red: 132/255.0, green: 169/255.0, blue: 57/255.0, alpha: 1.0)
         view6.text = "6"
         view6.textAlignment = .Center
         view6.font = UIFont.boldSystemFontOfSize(20)
         view6.textColor = UIColor.whiteColor()
-        anchorView3.addSubview(view6)
+        anchorViewB.addSubview(view6)
     }
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
 
-        view.groupAgainstEdge(group: .Horizontal, views: [anchorView, anchorView2, anchorView3], againstEdge: .Top, padding: 100, width: 200, height: 200)
-//        anchorView.anchorInCenter(width: 200, height: 200)
+        view.groupAgainstEdge(group: .Horizontal, views: [anchorViewA, anchorViewB], againstEdge: .Top, padding: 120, width: 300, height: 300)
+//        anchorViewA.anchorInCorner(.TopLeft, xPad: 150, yPad: 100, width: 200, height: 200)
+//        anchorViewB.anchorInCorner(.TopRight, xPad: 150, yPad: 100, width: 200, height: 200)
+//        anchorViewC.anchorInCorner(.BottomLeft, xPad: 150, yPad: 100, width: 200, height: 200)
+//        anchorViewD.anchorInCorner(.BottomRight, xPad: 150, yPad: 100, width: 200, height: 200)
+
         let padding : CGFloat = 10.0
         let size : CGFloat = 50.0
 
-        view1.anchorInCorner(.TopLeft, xPad: padding, yPad: padding, width: size, height: size)
-        view2.alignAndFillWidth(align: .ToTheRightMatchingTop, relativeTo: view1, padding: padding, height: size / 2.0)
-
-        view3.anchorInCorner(.BottomRight, xPad: padding, yPad: padding, width: size, height: size)
-        view4.alignAndFillHeight(align: .AboveCentered, relativeTo: view3, padding: padding, width: size / 2.0)
-
-        view5.anchorInCorner(.TopRight, xPad: padding, yPad: padding, width: size, height: size)
-        view6.alignAndFill(align: .ToTheLeftMatchingTop, relativeTo: view5, padding: padding)
+        anchorViewA.groupAgainstEdge(group: .Horizontal, views: [view1, view2, view3], againstEdge: .Left, padding: padding, width: size, height: size)
+        anchorViewB.groupAgainstEdge(group: .Vertical, views: [view4, view5, view6], againstEdge: .Bottom, padding: padding, width: size, height: size)
     }
 }
