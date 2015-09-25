@@ -4,7 +4,7 @@
 
 Neon is built around how user interfaces are naturally designed - primary views are anchored to the sides / corners of the screen, and secondary views are laid out relative to them. Views expand and shrink to fill the screen, so building dynamic layouts that look great on the smallest phones all the way up to biggest tablets is quick and easy. No more springs and struts. No more whacky visual format language. No more auto layout contraints. We're not robots, so why should we build our UIs like we are?
 
-#### More will be coming very soon, so stay tuned! In the meantime, here's an intentionally convoluted example to show how easy it is to build very complex and dynamic layouts with Neon. The following layout was created with only *20 lines of code*. That's one line of code per view!
+### Neon is currently in beta, but more will be coming very soon, so stay tuned! In the meantime, here's an intentionally convoluted example to show how easy it is to build very complex and dynamic layouts with Neon. The following layout was created with only *20 lines of code*. That's one line of code per view!
 
 ![Demo](Screenshots/demo.gif)
 
