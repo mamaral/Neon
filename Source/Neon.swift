@@ -1305,6 +1305,51 @@ extension UIView {
     }
 
 
+    func groupAndFill(group group: Group, views: [UIView], padding: CGFloat) {
+        if superview == nil {
+            print("[NEON] Warning: Attempted to group subviews but view doesn't have a superview of its own.")
+            return
+        }
+
+        if views.count == 0 {
+            print("[NEON] Warning: No subviews provided to groupAgainstEdge().")
+            return
+        }
+
+        var xOrigin : CGFloat = padding
+        var yOrigin : CGFloat = padding
+        var width : CGFloat = 0.0
+        var height : CGFloat = 0.0
+        var xAdjust : CGFloat = 0.0
+        var yAdjust : CGFloat = 0.0
+
+        switch group {
+        case .Horizontal:
+            width = (self.width() - (CGFloat(views.count + 1) * padding)) / CGFloat(views.count)
+            height = self.height() - (2 * padding)
+            xAdjust = width + padding
+            break
+
+        case .Vertical:
+            width = self.width() - (2 * padding)
+            height = (self.height() - (CGFloat(views.count + 1) * padding)) / CGFloat(views.count)
+            yAdjust = height + padding
+            break
+        }
+
+        for view in views {
+            if view.superview != self {
+                fatalError("[NEON] Can't group view that is a subview of another view!")
+            }
+
+            view.frame = CGRectMake(xOrigin, yOrigin, width, height)
+
+            xOrigin += xAdjust
+            yOrigin += yAdjust
+        }
+    }
+
+
 
     // MARK: Private utils
     //
