@@ -195,5 +195,11 @@ class NeonTests: XCTestCase {
     
     // TODO: test alignAndFillWidth()
     // TODO: test alignAndFillHeight()
-    // TODO: test all grouping methods
+    // TODO: test alignAndFill()
+    // TODO: test alignBetweenHorizontal()
+    // TODO: test alignBetweenVertical()
+    // TODO: test groupInCenter()
+    // TODO: test groupInCorner()
+    // TODO: test groupAgainstEdge()
+    // TODO: test groupAndAlign()
 }
