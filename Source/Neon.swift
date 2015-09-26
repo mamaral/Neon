@@ -1614,7 +1614,4 @@ extension UIView {
             yOrigin += yAdjust
         }
     }
-
-
-    // TODO: I think I can put pictures in documentation?
 }
