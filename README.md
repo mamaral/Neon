@@ -4,11 +4,47 @@
 
 Neon is built around how user interfaces are naturally designed - primary views are anchored to the sides / corners of the screen, and secondary views are laid out relative to them. Views expand and shrink to fill the screen, so building dynamic layouts that look great on the smallest phones all the way up to biggest tablets is quick and easy. No more springs and struts. No more whacky visual format language. No more auto layout contraints. We're not robots, so why should we build our UIs like we are?
 
-### Neon is currently in beta, but more will be coming very soon, so stay tuned! In the meantime, here's an intentionally convoluted example to show how easy it is to build very complex and dynamic layouts with Neon. The following layout was created with only *20 lines of code*. That's one line of code per view!
+
+## Example
+
+Rather than design some arbitrary layout, I figured a good test for the practicality of Neon would be to replicate an existing screen from a major app. How about my Facebook profile?
+
+![facebook](Screenshots/facebook_app.png)
+
+The above screen was probably built using some form of `UITableView` or `UICollectionView`, but for the sake of simple demonstration I'm going to build the top-most major components of the profile in a normal `UIViewController`. After all the customization of the subviews to make them as close to Facebook's design as possible, this is what I came up with for the layout:
+
+```swift
+let isLandscape : Bool = UIDevice.currentDevice().orientation.isLandscape.boolValue
+let bannerHeight : CGFloat = view.height() * 0.43
+let avatarHeightMultipler : CGFloat = isLandscape ? 0.75 : 0.43
+let avatarSize = bannerHeight * avatarHeightMultipler
+
+searchBar.fillSuperview()
+bannerImageView.anchorAndFillEdge(.Top, xPad: 0, yPad: 0, otherSize: bannerHeight)
+bannerMaskView.fillSuperview()
+avatarImageView.anchorInCorner(.BottomLeft, xPad: 15, yPad: 15, width: avatarSize, height: avatarSize)
+nameLabel.alignAndFillWidth(align: .ToTheRightCentered, relativeTo: avatarImageView, padding: 15, height: 120)
+cameraButton.anchorInCorner(.BottomRight, xPad: 10, yPad: 7, width: 28, height: 28)
+buttonContainerView.alignAndFillWidth(align: .UnderCentered, relativeTo: bannerImageView, padding: 0, height: 62)
+buttonContainerView.groupAndFill(group: .Horizontal, views: [postButton, updateInfoButton, activityLogButton, moreButton], padding: 10)
+buttonContainerView2.alignAndFillWidth(align: .UnderCentered, relativeTo: buttonContainerView, padding: 0, height: 128)
+buttonContainerView2.groupAndFill(group: .Horizontal, views: [aboutView, photosView, friendsView], padding: 10)
+```
+
+![portrait](Screenshots/portrait.png)
+
+
+Now, ***unlike Facebook's iPhone app*** my layout is ***dynamic***. It is able to handle rotation on all-sized devices with no problem:
+
+![landscape](Screenshots/landscape.png)
+
+###Not bad for 10 lines of code!
+
+
+> ***Neon is currently in beta***, but more will be coming very soon, so stay tuned! In the meantime, here's an intentionally convoluted example to show how easy it is to build very complex and dynamic layouts with Neon. The following layout was created with only *20 lines of code*. That's one line of code per view!
 
 ![Demo](Screenshots/demo.gif)
 
----
 
 ## Anchoring Views
 
