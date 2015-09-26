@@ -1165,11 +1165,11 @@ extension UIView {
     func groupInCorner(group group: Group, views: [UIView], inCorner corner: Corner, padding: CGFloat, width: CGFloat, height: CGFloat) {
         switch group {
         case .Horizontal:
-            groupInCornerHorizontally(views, inCorner: corner, padding: padding, width: width, height: height)
+            groupInCornerHorizontal(views, inCorner: corner, padding: padding, width: width, height: height)
             break
 
         case .Vertical:
-            groupInCornerVertically(views, inCorner: corner, padding: padding, width: width, height: height)
+            groupInCornerVertical(views, inCorner: corner, padding: padding, width: width, height: height)
             break
         }
     }
@@ -1308,7 +1308,7 @@ extension UIView {
 
     // MARK: Private utils
     //
-    private func groupInCornerHorizontally(views: [UIView], inCorner corner: Corner, padding: CGFloat, width: CGFloat, height: CGFloat) {
+    private func groupInCornerHorizontal(views: [UIView], inCorner corner: Corner, padding: CGFloat, width: CGFloat, height: CGFloat) {
         if superview == nil {
             print("[NEON] Warning: Attempted to group subviews but view doesn't have a superview of its own.")
             return
@@ -1356,7 +1356,7 @@ extension UIView {
         }
     }
 
-    private func groupInCornerVertically(views: [UIView], inCorner corner: Corner, padding: CGFloat, width: CGFloat, height: CGFloat) {
+    private func groupInCornerVertical(views: [UIView], inCorner corner: Corner, padding: CGFloat, width: CGFloat, height: CGFloat) {
         if superview == nil {
             print("[NEON] Warning: Attempted to group subviews but view doesn't have a superview of its own.")
             return
