@@ -15,7 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         self.window = UIWindow.init(frame: UIScreen.mainScreen().bounds)
         self.window?.backgroundColor = UIColor.whiteColor()
-        self.window?.rootViewController = ViewController()
+
+        UINavigationBar.appearance().barTintColor = UIColor(red: 80/255.0, green: 108/255.0, blue: 163/255.0, alpha: 1.0)
+        UINavigationBar.appearance().translucent = false
+
+        self.window?.rootViewController = UINavigationController(rootViewController: TwitterProfileExampleViewController())
         self.window?.makeKeyAndVisible()
         return true
     }
