@@ -7,9 +7,9 @@ Neon is built around how user interfaces are naturally and intuitively designed.
 
 ## Example
 
-Rather than design some arbitrary layout for a demonstration, I figured a good test for the practicality of Neon would be to replicate an existing screen from a major app, one that everyone could recognize. The screenshot on the left is my profile in the Facebook app, and the screenshot on the right is from the Neon demo project:
-
 ![facebook](Screenshots/side_by_side.png)
+
+Rather than design some arbitrary layout for a demonstration, I figured a good test for the practicality of Neon would be to replicate an existing screen from a major app, one that everyone could recognize. The above screenshot on the left is my profile in the Facebook app, and the screenshot on the right is from the Neon demo project.
 
 Facebook's profile screen was surely built using some form of `UITableView` or `UICollectionView`, but for the sake of simple demonstration I built the top-most major components of the profile in a normal `UIViewController`. After all the customization of the subviews to make them as close to Facebook's design as possible *(I tried my best)*, this is what I came up with for the layout:
 
