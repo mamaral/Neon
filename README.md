@@ -40,7 +40,7 @@ Looks pretty good on every device size! Now, keep in mind you'll probably want c
 ###Not bad for 10 lines of code!
 
 
-> ***Neon is currently in beta***, but more will be coming very soon, so stay tuned! In the meantime, here's an intentionally convoluted example to show how easy it is to build very complex and dynamic layouts with Neon. The following layout was created with only *20 lines of code*. That's one line of code per view!
+> ***Neon is currently in beta***, but more will be coming very soon, so stay tuned! In the meantime, here's an intentionally convoluted example to show how easy it is to build very complex and dynamic layouts with Neon. The following layout was created with only *20 lines of code*. That's one line of code per view! While impressive, this layout is horrifying and should never be used in an actual app... ever...
 
 ![Demo](Screenshots/demo.gif)
 
