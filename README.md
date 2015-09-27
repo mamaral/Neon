@@ -31,12 +31,9 @@ buttonContainerView2.alignAndFillWidth(align: .UnderCentered, relativeTo: button
 buttonContainerView2.groupAndFill(group: .Horizontal, views: [aboutView, photosView, friendsView], padding: 10)
 ```
 
-Looks pretty good on every device size! Now, keep in mind you'll probably want constants defined for many of these size/padding values, in order to keep the code cleaner and easier to maintain, but I decided to use real numbers for most of the values to make the code less obscure when new people  are reading through the demonstration.
-
 ![portrait](Screenshots/portrait.png)
 
-
-Now, ***unlike Facebook's iPhone app*** the layout built with Neon is ***dynamic***. It is able to handle rotation on all-sized devices with no problem:
+Looks pretty good on every device size! Now, keep in mind you'll probably want constants defined for many of these size/padding values, in order to keep the code cleaner and easier to maintain, but I decided to use real numbers for most of the values to make the code less obscure when new people  are reading through the demonstration. Now, ***unlike Facebook's iPhone app*** the layout built with Neon is ***dynamic***. It is able to handle rotation on all-sized devices with no problem:
 
 ![landscape](Screenshots/landscape.png)
 
