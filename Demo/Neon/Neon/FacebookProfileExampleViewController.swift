@@ -116,7 +116,7 @@ class TwitterProfileExampleViewController: UIViewController {
 
     func layoutFrames() {
         let isLandscape : Bool = UIDevice.currentDevice().orientation.isLandscape.boolValue
-        let bannerHeight : CGFloat = view.height() * 0.43
+        let bannerHeight : CGFloat = view.height() * 0.465
         let avatarHeightMultipler : CGFloat = isLandscape ? 0.75 : 0.43
         let avatarSize = bannerHeight * avatarHeightMultipler
 
@@ -128,8 +128,8 @@ class TwitterProfileExampleViewController: UIViewController {
         cameraButton.anchorInCorner(.BottomRight, xPad: 10, yPad: 7, width: 28, height: 28)
         buttonContainerView.alignAndFillWidth(align: .UnderCentered, relativeTo: bannerImageView, padding: 0, height: 62)
         buttonContainerView.groupAndFill(group: .Horizontal, views: [postButton, updateInfoButton, activityLogButton, moreButton], padding: 10)
-        buttonContainerView2.alignAndFillWidth(align: .UnderCentered, relativeTo: buttonContainerView, padding: 0, height: 128)
-        buttonContainerView2.groupAndFill(group: .Horizontal, views: [aboutView, photosView, friendsView], padding: 10)
+        buttonContainerView2.alignAndFillWidth(align: .UnderCentered, relativeTo: buttonContainerView, padding: 0, height: 120)
+        buttonContainerView2.groupAndFill(group: .Horizontal, views: [aboutView, photosView, friendsView], padding: 8)
     }
 }
 

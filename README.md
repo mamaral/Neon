@@ -2,16 +2,16 @@
 
 ### Build dynamic and beautiful user interfaces like a boss, with Swift.
 
-Neon is built around how user interfaces are naturally designed - primary views are anchored to the sides / corners of the screen, and secondary views are laid out relative to them. Views expand and shrink to fill the screen, so building dynamic layouts that look great on the smallest phones all the way up to biggest tablets is quick and easy. No more springs and struts. No more whacky visual format language. No more auto layout contraints. We're not robots, so why should we build our UIs like we are?
+Neon is built around how user interfaces are naturally and intuitively designed. No more springs and struts. No more whacky visual format language. No more auto layout contraints. We're not robots, so why should we build our UIs like we are?
 
 
 ## Example
 
-Rather than design some arbitrary layout, I figured a good test for the practicality of Neon would be to replicate an existing screen from a major app. How about my Facebook profile?
+Rather than design some arbitrary layout for a demonstration, I figured a good test for the practicality of Neon would be to replicate an existing screen from a major app, one that everyone could recognize. The screenshot on the left is my profile in the Facebook app, and the screenshot on the right is from the Neon demo project:
 
-![facebook](Screenshots/facebook_app.png)
+![facebook](Screenshots/side_by_side.png)
 
-The above screen was probably built using some form of `UITableView` or `UICollectionView`, but for the sake of simple demonstration I'm going to build the top-most major components of the profile in a normal `UIViewController`. After all the customization of the subviews to make them as close to Facebook's design as possible, this is what I came up with for the layout:
+Facebook's profile screen was surely built using some form of `UITableView` or `UICollectionView`, but for the sake of simple demonstration I built the top-most major components of the profile in a normal `UIViewController`. After all the customization of the subviews to make them as close to Facebook's design as possible *(I tried my best)*, this is what I came up with for the layout:
 
 ```swift
 let isLandscape : Bool = UIDevice.currentDevice().orientation.isLandscape.boolValue
@@ -31,10 +31,12 @@ buttonContainerView2.alignAndFillWidth(align: .UnderCentered, relativeTo: button
 buttonContainerView2.groupAndFill(group: .Horizontal, views: [aboutView, photosView, friendsView], padding: 10)
 ```
 
+Looks pretty good on every device size! Now, keep in mind you'll probably want constants defined for many of these size/padding values, in order to keep the code cleaner and easier to maintain, but I decided to use real numbers for most of the values to make the code less obscure when new people  are reading through the demonstration.
+
 ![portrait](Screenshots/portrait.png)
 
 
-Now, ***unlike Facebook's iPhone app*** my layout is ***dynamic***. It is able to handle rotation on all-sized devices with no problem:
+Now, ***unlike Facebook's iPhone app*** the layout built with Neon is ***dynamic***. It is able to handle rotation on all-sized devices with no problem:
 
 ![landscape](Screenshots/landscape.png)
 

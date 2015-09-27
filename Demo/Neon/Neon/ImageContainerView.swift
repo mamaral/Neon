@@ -27,7 +27,7 @@ class ImageContainerView: UIView {
 
         label.textAlignment = .Center
         label.textColor = UIColor.blackColor()
-        label.font = UIFont.boldSystemFontOfSize(15.0)
+        label.font = UIFont.boldSystemFontOfSize(14.0)
         self.addSubview(label)
     }
 
