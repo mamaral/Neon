@@ -56,7 +56,7 @@ class TestViewController: UIViewController {
         view1.textAlignment = .Center
         view1.font = UIFont.boldSystemFontOfSize(20)
         view1.textColor = UIColor.whiteColor()
-        anchorViewA.addSubview(view1)
+        view.addSubview(view1)
 
         view2.backgroundColor = UIColor(red: 132/255.0, green: 169/255.0, blue: 57/255.0, alpha: 1.0)
         view2.text = "2"
@@ -97,11 +97,7 @@ class TestViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
 
-        let padding : CGFloat = 10
-
-        view.groupAgainstEdge(group: .Horizontal, views: [anchorViewA, anchorViewB], againstEdge: .Top, padding: 70, width: 200, height: 90)
-
-        anchorViewA.groupAndFill(group: .Horizontal, views: [view1, view2, view3], padding: padding)
-        anchorViewB.groupAndFill(group: .Vertical, views: [view4, view5, view6], padding: padding)
+        anchorViewA.anchorInCorner(.BottomLeft, xPad: 10, yPad: 10, width: 50, height: 50)
+        view1.alignAndFill(align: .ToTheRightCentered, relativeTo: anchorViewA, padding: 10)
     }
 }
