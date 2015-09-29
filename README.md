@@ -1,5 +1,3 @@
-#[Livestreaming right now on LiveCoding.tv!](https://www.livecoding.tv/mamaral/)
-
 # Neon
 
 ### Build dynamic and beautiful user interfaces like a boss, with Swift.
