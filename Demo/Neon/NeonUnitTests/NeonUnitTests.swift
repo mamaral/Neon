@@ -241,7 +241,23 @@ class NeonTests: XCTestCase {
         XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(940, 10, 40, 920)))
     }
 
-    // TODO: test alignAndFill()
+    func testAlignAndFill() {
+        testAnchorView.anchorInCorner(.TopLeft, xPad: 10, yPad: 10, width: 50, height: 50)
+
+        testSiblingView.alignAndFill(align: .ToTheRightMatchingTop, relativeTo: testAnchorView, padding: 10)
+        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(70, 10, 920, 980)))
+
+        testAnchorView.anchorToEdge(.Left, padding: 10, width: 50, height: 50)
+
+        testSiblingView.alignAndFill(align: .ToTheRightCentered, relativeTo: testAnchorView, padding: 10)
+        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(70, 10, 920, 980)))
+
+        testAnchorView.anchorInCorner(.BottomLeft, xPad: 10, yPad: 10, width: 50, height: 50)
+
+        testSiblingView.alignAndFill(align: .ToTheRightCentered, relativeTo: testAnchorView, padding: 10)
+        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(70, 10, 920, 980)))
+    }
+
     // TODO: test alignBetweenHorizontal()
     // TODO: test alignBetweenVertical()
     // TODO: test groupInCenter()
