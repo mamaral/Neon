@@ -205,15 +205,6 @@ class NeonTests: XCTestCase {
         testSiblingView.alignAndFillWidth(align: .ToTheRightMatchingBottom, relativeTo: testAnchorView, padding: 10, height: 30)
         XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(70, 30, 920, 30)))
 
-        testSiblingView.alignAndFillHeight(align: .UnderMatchingLeft, relativeTo: testAnchorView, padding: 10, width: 100)
-        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(10, 70, 100, 920)))
-
-        testSiblingView.alignAndFillHeight(align: .UnderCentered, relativeTo: testAnchorView, padding: 20, width: 30)
-        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(20, 80, 30, 900)))
-
-        testSiblingView.alignAndFillHeight(align: .UnderMatchingRight, relativeTo: testAnchorView, padding: 10, width: 40)
-        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(20, 70, 40, 920)))
-
         testAnchorView.anchorInCorner(.TopRight, xPad: 10, yPad: 10, width: 50, height: 50)
 
         testSiblingView.alignAndFillWidth(align: .ToTheLeftMatchingTop, relativeTo: testAnchorView, padding: 10, height: 30)
@@ -224,6 +215,19 @@ class NeonTests: XCTestCase {
 
         testSiblingView.alignAndFillWidth(align: .ToTheLeftMatchingBottom, relativeTo: testAnchorView, padding: 15, height: 40)
         XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(15, 20, 910, 40)))
+    }
+
+    func testAlignAndFillHeight() {
+        testAnchorView.anchorInCorner(.TopLeft, xPad: 10, yPad: 10, width: 50, height: 50)
+
+        testSiblingView.alignAndFillHeight(align: .UnderMatchingLeft, relativeTo: testAnchorView, padding: 10, width: 100)
+        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(10, 70, 100, 920)))
+
+        testSiblingView.alignAndFillHeight(align: .UnderCentered, relativeTo: testAnchorView, padding: 20, width: 30)
+        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(20, 80, 30, 900)))
+
+        testSiblingView.alignAndFillHeight(align: .UnderMatchingRight, relativeTo: testAnchorView, padding: 10, width: 40)
+        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(20, 70, 40, 920)))
 
         testAnchorView.anchorInCorner(.BottomRight, xPad: 10, yPad: 10, width: 50, height: 50)
 
@@ -237,7 +241,6 @@ class NeonTests: XCTestCase {
         XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(940, 10, 40, 920)))
     }
 
-    // TODO: test alignAndFillHeight()
     // TODO: test alignAndFill()
     // TODO: test alignBetweenHorizontal()
     // TODO: test alignBetweenVertical()
