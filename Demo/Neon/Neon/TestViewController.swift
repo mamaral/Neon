@@ -97,16 +97,11 @@ class TestViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
 
-        view.groupAgainstEdge(group: .Horizontal, views: [anchorViewA, anchorViewB], againstEdge: .Top, padding: 120, width: 300, height: 300)
-//        anchorViewA.anchorInCorner(.TopLeft, xPad: 150, yPad: 100, width: 200, height: 200)
-//        anchorViewB.anchorInCorner(.TopRight, xPad: 150, yPad: 100, width: 200, height: 200)
-//        anchorViewC.anchorInCorner(.BottomLeft, xPad: 150, yPad: 100, width: 200, height: 200)
-//        anchorViewD.anchorInCorner(.BottomRight, xPad: 150, yPad: 100, width: 200, height: 200)
+        let padding : CGFloat = 10
 
-        let padding : CGFloat = 10.0
-        let size : CGFloat = 50.0
+        view.groupAgainstEdge(group: .Horizontal, views: [anchorViewA, anchorViewB], againstEdge: .Top, padding: 70, width: 200, height: 90)
 
-        anchorViewA.groupAgainstEdge(group: .Horizontal, views: [view1, view2, view3], againstEdge: .Left, padding: padding, width: size, height: size)
-        anchorViewB.groupAgainstEdge(group: .Vertical, views: [view4, view5, view6], againstEdge: .Bottom, padding: padding, width: size, height: size)
+        anchorViewA.groupAndFill(group: .Horizontal, views: [view1, view2, view3], padding: padding)
+        anchorViewB.groupAndFill(group: .Vertical, views: [view4, view5, view6], padding: padding)
     }
 }
