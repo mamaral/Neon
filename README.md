@@ -204,6 +204,14 @@ anchorViewB.groupAgainstEdge(group: .Vertical, views: [view4, view5, view6], aga
 
 ![Group against edge](Screenshots/group_against_edge.png)
 
+You can also specify that you want a group of subviews to fill their superview, either horizontally or vertically:
+
+```swift
+anchorViewA.groupAndFill(group: .Horizontal, views: [view1, view2, view3], padding: padding)
+anchorViewB.groupAndFill(group: .Vertical, views: [view4, view5, view6], padding: padding)
+```
+![Group and fill](Screenshots/group_and_fill.png)
+
 
 ## License
 
