@@ -1304,7 +1304,17 @@ extension UIView {
         }
     }
 
-
+    /// Tell a view to group an array of its subviews filling the width and height of the superview, specifying the padding between
+    /// each subview and the superview.
+    ///
+    /// - parameters:
+    ///   - group: The `Group` type specifying if the subviews will be laid out horizontally or vertically.
+    ///
+    ///   - views: The array of views to be grouped against the sibling. Depending on if the views are grouped horizontally
+    /// or vertically, they will be positions in-order from left-to-right and top-to-bottom, respectively.
+    ///
+    ///   - padding: The padding to be applied between each of the subviews and the sibling.
+    ///
     func groupAndFill(group group: Group, views: [UIView], padding: CGFloat) {
         if superview == nil {
             print("[NEON] Warning: Attempted to group subviews but view doesn't have a superview of its own.")
