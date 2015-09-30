@@ -474,7 +474,7 @@ extension UIView {
     ///
     func align(align: Align, relativeTo sibling: UIView, padding: CGFloat, width: CGFloat, height: CGFloat) {
         guard let superview = superview else {
-            print("[NEON] Warning: Can't anchor view without superview!")
+            print("[NEON] Warning: Can't align view without superview!")
             return
         }
       
@@ -572,7 +572,7 @@ extension UIView {
     ///
     func alignAndFillWidth(align align: Align, relativeTo sibling: UIView, padding: CGFloat, height: CGFloat) {
         guard let superview = superview else {
-            print("[NEON] Warning: Can't anchor view without superview!")
+            print("[NEON] Warning: Can't align view without superview!")
             return
         }
 
@@ -687,7 +687,7 @@ extension UIView {
     ///
     func alignAndFillHeight(align align: Align, relativeTo sibling: UIView, padding: CGFloat, width: CGFloat) {
         guard let superview = superview else {
-            print("[NEON] Warning: Can't anchor view without superview!")
+            print("[NEON] Warning: Can't align view without superview!")
             return
         }
 
@@ -800,7 +800,7 @@ extension UIView {
     ///
     func alignAndFill(align align: Align, relativeTo sibling: UIView, padding: CGFloat) {
         guard let superview = superview else {
-            print("[NEON] Warning: Can't anchor view without superview!")
+            print("[NEON] Warning: Can't align view without superview!")
             return
         }
 
@@ -936,7 +936,7 @@ extension UIView {
     ///
     func alignBetweenHorizontal(align align: Align, primaryView: UIView, secondaryView: UIView, padding: CGFloat, height: CGFloat) {
         guard let superview = superview else {
-            print("[NEON] Warning: Can't anchor view without superview!")
+            print("[NEON] Warning: Can't align view without superview!")
             return
         }
 
@@ -1018,7 +1018,7 @@ extension UIView {
     ///
     func alignBetweenVertical(align align: Align, primaryView: UIView, secondaryView: UIView, padding: CGFloat, width: CGFloat) {
         guard let superview = superview else {
-            print("[NEON] Warning: Can't anchor view without superview!")
+            print("[NEON] Warning: Can't align view without superview!")
             return
         }
 
@@ -1104,7 +1104,7 @@ extension UIView {
     ///
     func groupInCenter(group group: Group, views: [UIView], padding: CGFloat, width: CGFloat, height: CGFloat) {
         guard let superview = superview else {
-            print("[NEON] Warning: Can't anchor view without superview!")
+            print("[NEON] Warning: Attempted to group subviews but view doesn't have a superview of its own.")
             return
         }
 
@@ -1195,7 +1195,7 @@ extension UIView {
     ///
     func groupAgainstEdge(group group: Group, views: [UIView], againstEdge edge: Edge, padding: CGFloat, width: CGFloat, height: CGFloat) {
         guard let superview = superview else {
-            print("[NEON] Warning: Can't anchor view without superview!")
+            print("[NEON] Warning: Attempted to group subviews but view doesn't have a superview of its own.")
             return
         }
 
@@ -1317,7 +1317,7 @@ extension UIView {
     ///
     func groupAndFill(group group: Group, views: [UIView], padding: CGFloat) {
         guard let superview = superview else {
-            print("[NEON] Warning: Can't anchor view without superview!")
+            print("[NEON] Warning: Attempted to group subviews but view doesn't have a superview of its own.")
             return
         }
 
@@ -1365,7 +1365,7 @@ extension UIView {
     //
     private func groupInCornerHorizontal(views: [UIView], inCorner corner: Corner, padding: CGFloat, width: CGFloat, height: CGFloat) {
         guard let superview = superview else {
-            print("[NEON] Warning: Can't anchor view without superview!")
+            print("[NEON] Warning: Attempted to group subviews but view doesn't have a superview of its own.")
             return
         }
 
@@ -1413,7 +1413,7 @@ extension UIView {
 
     private func groupInCornerVertical(views: [UIView], inCorner corner: Corner, padding: CGFloat, width: CGFloat, height: CGFloat) {
         guard let superview = superview else {
-            print("[NEON] Warning: Can't anchor view without superview!")
+            print("[NEON] Warning: Attempted to group subviews but view doesn't have a superview of its own.")
             return
         }
 
@@ -1461,7 +1461,7 @@ extension UIView {
 
     private func groupAndAlignHorizontal(align: Align, views: [UIView], relativeTo sibling: UIView, padding: CGFloat, width: CGFloat, height: CGFloat) {
         guard let superview = superview else {
-            print("[NEON] Warning: Can't anchor view without superview!")
+            print("[NEON] Warning: Attempted to group subviews but view doesn't have a superview of its own.")
             return
         }
 
@@ -1552,7 +1552,7 @@ extension UIView {
 
     private func groupAndAlignVertical(align: Align, views: [UIView], relativeTo sibling: UIView, padding: CGFloat, width: CGFloat, height: CGFloat) {
         guard let superview = superview else {
-            print("[NEON] Warning: Can't anchor view without superview!")
+            print("[NEON] Warning: Attempted to group subviews but view doesn't have a superview of its own.")
             return
         }
 
