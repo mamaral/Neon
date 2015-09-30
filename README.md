@@ -1,4 +1,4 @@
--#[Livestreaming right now on LiveCoding.tv!](https://www.livecoding.tv/mamaral/)
+#[Livestreaming right now on LiveCoding.tv!](https://www.livecoding.tv/mamaral/)
 
 # Neon
 
