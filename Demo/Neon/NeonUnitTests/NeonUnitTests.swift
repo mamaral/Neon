@@ -316,9 +316,52 @@ class NeonTests: XCTestCase {
         XCTAssert(CGRectEqualToRect(testSiblingView4.frame, CGRectMake(40, 65, 20, 20)))
     }
 
-    // TODO: test groupInCorner()
-    func testGroupInCorner() {
+    func testGroupInCornerHorizontal() {
+        testAnchorView.anchorInCorner(.TopLeft, xPad: 0, yPad: 0, width: 500, height: 500)
 
+        testAnchorView.groupInCorner(group: .Horizontal, views: [testSiblingView2, testSiblingView3, testSiblingView4], inCorner: .TopLeft, padding: 10, width: 30, height: 30)
+        XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(10, 10, 30, 30)))
+        XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(50, 10, 30, 30)))
+        XCTAssert(CGRectEqualToRect(testSiblingView4.frame, CGRectMake(90, 10, 30, 30)))
+
+        testAnchorView.groupInCorner(group: .Horizontal, views: [testSiblingView2, testSiblingView3, testSiblingView4], inCorner: .TopRight, padding: 10, width: 30, height: 30)
+        XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(380, 10, 30, 30)))
+        XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(420, 10, 30, 30)))
+        XCTAssert(CGRectEqualToRect(testSiblingView4.frame, CGRectMake(460, 10, 30, 30)))
+
+        testAnchorView.groupInCorner(group: .Horizontal, views: [testSiblingView2, testSiblingView3, testSiblingView4], inCorner: .BottomLeft, padding: 10, width: 30, height: 30)
+        XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(10, 460, 30, 30)))
+        XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(50, 460, 30, 30)))
+        XCTAssert(CGRectEqualToRect(testSiblingView4.frame, CGRectMake(90, 460, 30, 30)))
+
+        testAnchorView.groupInCorner(group: .Horizontal, views: [testSiblingView2, testSiblingView3, testSiblingView4], inCorner: .BottomRight, padding: 10, width: 30, height: 30)
+        XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(380, 460, 30, 30)))
+        XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(420, 460, 30, 30)))
+        XCTAssert(CGRectEqualToRect(testSiblingView4.frame, CGRectMake(460, 460, 30, 30)))
+    }
+
+    func testGroupInCornerVertical() {
+        testAnchorView.anchorInCorner(.TopLeft, xPad: 0, yPad: 0, width: 500, height: 500)
+
+        testAnchorView.groupInCorner(group: .Vertical, views: [testSiblingView2, testSiblingView3, testSiblingView4], inCorner: .TopLeft, padding: 10, width: 30, height: 30)
+        XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(10, 10, 30, 30)))
+        XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(10, 50, 30, 30)))
+        XCTAssert(CGRectEqualToRect(testSiblingView4.frame, CGRectMake(10, 90, 30, 30)))
+
+        testAnchorView.groupInCorner(group: .Vertical, views: [testSiblingView2, testSiblingView3, testSiblingView4], inCorner: .TopRight, padding: 10, width: 30, height: 30)
+        XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(460, 10, 30, 30)))
+        XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(460, 50, 30, 30)))
+        XCTAssert(CGRectEqualToRect(testSiblingView4.frame, CGRectMake(460, 90, 30, 30)))
+
+        testAnchorView.groupInCorner(group: .Vertical, views: [testSiblingView2, testSiblingView3, testSiblingView4], inCorner: .BottomLeft, padding: 10, width: 30, height: 30)
+        XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(10, 380, 30, 30)))
+        XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(10, 420, 30, 30)))
+        XCTAssert(CGRectEqualToRect(testSiblingView4.frame, CGRectMake(10, 460, 30, 30)))
+
+        testAnchorView.groupInCorner(group: .Vertical, views: [testSiblingView2, testSiblingView3, testSiblingView4], inCorner: .BottomRight, padding: 10, width: 30, height: 30)
+        XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(460, 380, 30, 30)))
+        XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(460, 420, 30, 30)))
+        XCTAssert(CGRectEqualToRect(testSiblingView4.frame, CGRectMake(460, 460, 30, 30)))
     }
 
     // TODO: test groupAgainstEdge()
