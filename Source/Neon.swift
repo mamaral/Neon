@@ -493,62 +493,50 @@ extension UIView {
         case .ToTheRightMatchingTop:
             xOrigin = sibling.xMax() + padding
             yOrigin = sibling.y()
-            break
 
         case .ToTheRightMatchingBottom:
             xOrigin = sibling.xMax() + padding
             yOrigin = sibling.yMax() - height
-            break
 
         case .ToTheRightCentered:
             xOrigin = sibling.xMax() + padding
             yOrigin = sibling.yMid() - (height / 2.0)
-            break
 
         case .ToTheLeftMatchingTop:
             xOrigin = sibling.x() - width - padding
             yOrigin = sibling.y()
-            break
 
         case .ToTheLeftMatchingBottom:
             xOrigin = sibling.x() - width - padding
             yOrigin = sibling.yMax() - height
-            break
 
         case .ToTheLeftCentered:
             xOrigin = sibling.x() - width - padding
             yOrigin = sibling.yMid() - (height / 2.0)
-            break
 
         case .UnderMatchingLeft:
             xOrigin = sibling.x()
             yOrigin = sibling.yMax() + padding
-            break
 
         case .UnderMatchingRight:
             xOrigin = sibling.xMax() - width
             yOrigin = sibling.yMax() + padding
-            break
 
         case .UnderCentered:
             xOrigin = sibling.xMid() - (width / 2.0)
             yOrigin = sibling.yMax() + padding
-            break
 
         case .AboveMatchingLeft:
             xOrigin = sibling.x()
             yOrigin = sibling.y() - padding - height
-            break
 
         case .AboveMatchingRight:
             xOrigin = sibling.xMax() - width
             yOrigin = sibling.y() - padding - height
-            break
 
         case .AboveCentered:
             xOrigin = sibling.xMid() - (width / 2.0)
             yOrigin = sibling.y() - padding - height
-            break
         }
 
         frame = CGRectMake(xOrigin, yOrigin, width, height)
@@ -594,73 +582,61 @@ extension UIView {
             xOrigin = sibling.xMax() + padding
             yOrigin = sibling.y()
             width = superviewWidth - xOrigin - padding
-            break
 
         case .ToTheRightMatchingBottom:
             xOrigin = sibling.xMax() + padding
             yOrigin = sibling.yMax() - height
             width = superviewWidth - xOrigin - padding
-            break
 
         case .ToTheRightCentered:
             xOrigin = sibling.xMax() + padding
             yOrigin = sibling.yMid() - (height / 2.0)
             width = superviewWidth - xOrigin - padding
-            break
 
         case .ToTheLeftMatchingTop:
             xOrigin = padding
             yOrigin = sibling.y()
             width = sibling.x() - (2 * padding)
-            break
 
         case .ToTheLeftMatchingBottom:
             xOrigin = padding
             yOrigin = sibling.yMax() - height
             width = sibling.x() - (2 * padding)
-            break
 
         case .ToTheLeftCentered:
             xOrigin = padding
             yOrigin = sibling.yMid() - (height / 2.0)
             width = sibling.x() - (2 * padding)
-            break
 
         case .UnderMatchingLeft:
             xOrigin = sibling.x()
             yOrigin = sibling.yMax() + padding
             width = superviewWidth - xOrigin - padding
-            break
 
         case .UnderMatchingRight:
             xOrigin = padding
             yOrigin = sibling.yMax() + padding
             width = superviewWidth - (superviewWidth - sibling.xMax()) - padding
-            break
 
         case .UnderCentered:
             xOrigin = padding
             yOrigin = sibling.yMax() + padding
             width = superviewWidth - (2 * padding)
-            break
 
         case .AboveMatchingLeft:
             xOrigin = sibling.x()
             yOrigin = sibling.y() - padding - height
             width = superviewWidth - xOrigin - padding
-            break
 
         case .AboveMatchingRight:
             xOrigin = padding
             yOrigin = sibling.y() - padding - height
             width = superviewWidth - (superviewWidth - sibling.xMax()) - padding
-            break
 
         case .AboveCentered:
             xOrigin = padding
             yOrigin = sibling.y() - padding - height
             width = superviewWidth - (2 * padding)
-            break
         }
 
         if width < 0.0 {
@@ -709,73 +685,61 @@ extension UIView {
             xOrigin = sibling.xMax() + padding
             yOrigin = sibling.y()
             height = superviewHeight - sibling.y() - padding
-            break
 
         case .ToTheRightMatchingBottom:
             xOrigin = sibling.xMax() + padding
             yOrigin = padding
             height = superviewHeight - (superviewHeight - sibling.yMax()) - padding
-            break
 
         case .ToTheRightCentered:
             xOrigin = sibling.xMax() + padding
             yOrigin = padding
             height = superviewHeight - (2 * padding)
-            break
 
         case .ToTheLeftMatchingTop:
             xOrigin = sibling.x() - width - padding
             yOrigin = sibling.y()
             height = superviewHeight - sibling.y() - padding
-            break
 
         case .ToTheLeftMatchingBottom:
             xOrigin = sibling.x() - width - padding
             yOrigin = padding
             height = superviewHeight - (superviewHeight - sibling.yMax()) - padding
-            break
 
         case .ToTheLeftCentered:
             xOrigin = sibling.x() - width - padding
             yOrigin = padding
             height = superviewHeight - (2 * padding)
-            break
 
         case .UnderMatchingLeft:
             xOrigin = sibling.x()
             yOrigin = sibling.yMax() + padding
             height = superviewHeight - yOrigin - padding
-            break
 
         case .UnderMatchingRight:
             xOrigin = sibling.xMax() - width
             yOrigin = sibling.yMax() + padding
             height = superviewHeight - yOrigin - padding
-            break
 
         case .UnderCentered:
             xOrigin = sibling.xMid() - (width / 2.0)
             yOrigin = sibling.yMax() + padding
             height = superviewHeight - yOrigin - padding
-            break
 
         case .AboveMatchingLeft:
             xOrigin = sibling.x()
             yOrigin = padding
             height = sibling.y() - (2 * padding)
-            break
 
         case .AboveMatchingRight:
             xOrigin = sibling.xMax() - width
             yOrigin = padding
             height = sibling.y() - (2 * padding)
-            break
 
         case .AboveCentered:
             xOrigin = sibling.xMid() - (width / 2.0)
             yOrigin = padding
             height = sibling.y() - (2 * padding)
-            break
         }
 
         if height < 0.0 {
@@ -825,84 +789,72 @@ extension UIView {
             yOrigin = sibling.y()
             width = superviewWidth - xOrigin - padding
             height = superviewHeight - yOrigin - padding
-            break
 
         case .ToTheRightMatchingBottom:
             xOrigin = sibling.xMax() + padding
             yOrigin = padding
             width = superviewWidth - xOrigin - padding
             height = superviewHeight - (superviewHeight - sibling.yMax()) - padding
-            break
 
         case .ToTheRightCentered:
             xOrigin = sibling.xMax() + padding
             yOrigin = padding
             width = superviewWidth - xOrigin - padding
             height = superviewHeight - (2 * padding)
-            break
 
         case .ToTheLeftMatchingTop:
             xOrigin = padding
             yOrigin = sibling.y()
             width = superviewWidth - (superviewWidth - sibling.x()) - (2 * padding)
             height = superviewHeight - yOrigin - padding
-            break
 
         case .ToTheLeftMatchingBottom:
             xOrigin = padding
             yOrigin = padding
             width = superviewWidth - (superviewWidth - sibling.x()) - (2 * padding)
             height = superviewHeight - (superviewHeight - sibling.yMax()) - padding
-            break
 
         case .ToTheLeftCentered:
             xOrigin = padding
             yOrigin = padding
             width = superviewWidth - (superviewWidth - sibling.x()) - (2 * padding)
             height = superviewHeight - (2 * padding)
-            break
 
         case .UnderMatchingLeft:
             xOrigin = sibling.x()
             yOrigin = sibling.yMax() + padding
             width = superviewWidth - xOrigin - padding
             height = superviewHeight - yOrigin - padding
-            break
 
         case .UnderMatchingRight:
             xOrigin = padding
             yOrigin = sibling.yMax() + padding
             width = superviewWidth - (superviewWidth - sibling.xMax()) - padding
             height = superviewHeight - yOrigin - padding
-            break
 
         case .UnderCentered:
             xOrigin = padding
             yOrigin = sibling.yMax() + padding
             width = superviewWidth - (2 * padding)
             height = superviewHeight - yOrigin - padding
-            break
 
         case .AboveMatchingLeft:
             xOrigin = sibling.x()
             yOrigin = padding
             width = superviewWidth - xOrigin - padding
             height = superviewHeight - (superviewHeight - sibling.y()) - (2 * padding)
-            break
 
         case .AboveMatchingRight:
             xOrigin = padding
             yOrigin = padding
             width = superviewWidth - (superviewWidth - sibling.xMax()) - padding
             height = superviewHeight - (superviewHeight - sibling.y()) - (2 * padding)
-            break
 
         case .AboveCentered:
             xOrigin = padding
             yOrigin = padding
             width = superviewWidth - (2 * padding)
             height = superviewHeight - (superviewHeight - sibling.y()) - (2 * padding)
-            break
         }
 
         if width < 0.0 {
@@ -958,37 +910,31 @@ extension UIView {
             xOrigin = primaryView.xMax() + padding
             yOrigin = primaryView.y()
             width = superviewWidth - primaryView.xMax() - (superviewWidth - secondaryView.x()) - (2 * padding)
-            break
 
         case .ToTheRightMatchingBottom:
             xOrigin = primaryView.xMax() + padding
             yOrigin = primaryView.yMax() - height
             width = superviewWidth - primaryView.xMax() - (superviewWidth - secondaryView.x()) - (2 * padding)
-            break
 
         case .ToTheRightCentered:
             xOrigin = primaryView.xMax() + padding
             yOrigin = primaryView.yMid() - (height / 2.0)
             width = superviewWidth - primaryView.xMax() - (superviewWidth - secondaryView.x()) - (2 * padding)
-            break
 
         case .ToTheLeftMatchingTop:
             xOrigin = secondaryView.xMax() + padding
             yOrigin = primaryView.y()
             width = superviewWidth - secondaryView.xMax() - (superviewWidth - primaryView.x()) - (2 * padding)
-            break
 
         case .ToTheLeftMatchingBottom:
             xOrigin = secondaryView.xMax() + padding
             yOrigin = primaryView.yMax() - height
             width = superviewWidth - secondaryView.xMax() - (superviewWidth - primaryView.x()) - (2 * padding)
-            break
 
         case .ToTheLeftCentered:
             xOrigin = secondaryView.xMax() + padding
             yOrigin = primaryView.yMid() - (height / 2.0)
             width = superviewWidth - secondaryView.xMax() - (superviewWidth - primaryView.x()) - (2 * padding)
-            break
 
         case .UnderMatchingLeft, .UnderMatchingRight, .UnderCentered,  .AboveMatchingLeft, .AboveMatchingRight, .AboveCentered:
             fatalError("[NEON] Invalid Align specified for alignBetweenHorizonal().")
@@ -1040,37 +986,31 @@ extension UIView {
             xOrigin = primaryView.x()
             yOrigin = primaryView.yMax() + padding
             height = superviewHeight - primaryView.yMax() - (superviewHeight - secondaryView.y()) - (2 * padding)
-            break
 
         case .UnderMatchingRight:
             xOrigin = primaryView.xMax() - width
             yOrigin = primaryView.yMax() + padding
             height = superviewHeight - primaryView.yMax() - (superviewHeight - secondaryView.y()) - (2 * padding)
-            break
 
         case .UnderCentered:
             xOrigin = primaryView.xMid() - (width / 2.0)
             yOrigin = primaryView.yMax() + padding
             height = superviewHeight - primaryView.yMax() - (superviewHeight - secondaryView.y()) - (2 * padding)
-            break
 
         case .AboveMatchingLeft:
             xOrigin = primaryView.x()
             yOrigin = secondaryView.yMax() + padding
             height = superviewHeight - secondaryView.yMax() - (superviewHeight - primaryView.y()) - (2 * padding)
-            break
 
         case .AboveMatchingRight:
             xOrigin = primaryView.xMax() - width
             yOrigin = secondaryView.yMax() + padding
             height = superviewHeight - secondaryView.yMax() - (superviewHeight - primaryView.y()) - (2 * padding)
-            break
 
         case .AboveCentered:
             xOrigin = primaryView.xMid() - (width / 2.0)
             yOrigin = secondaryView.yMax() + padding
             height = superviewHeight - secondaryView.yMax() - (superviewHeight - primaryView.y()) - (2 * padding)
-            break
 
         case .ToTheLeftMatchingTop, .ToTheLeftMatchingBottom, .ToTheLeftCentered, .ToTheRightMatchingTop, .ToTheRightMatchingBottom, .ToTheRightCentered:
             fatalError("[NEON] Invalid Align specified for alignBetweenVertical().")
@@ -1123,13 +1063,11 @@ extension UIView {
             xOrigin = (self.width() - (CGFloat(views.count) * width) - (CGFloat(views.count - 1) * padding)) / 2.0
             yOrigin = (self.height() / 2.0) - (height / 2.0)
             xAdjust = width + padding
-            break
 
         case .Vertical:
             xOrigin = (self.width() / 2.0) - (width / 2.0)
             yOrigin = (self.height() - (CGFloat(views.count) * height) - (CGFloat(views.count - 1) * padding)) / 2.0
             yAdjust = height + padding
-            break
         }
 
         for view in views {
@@ -1166,11 +1104,9 @@ extension UIView {
         switch group {
         case .Horizontal:
             groupInCornerHorizontal(views, inCorner: corner, padding: padding, width: width, height: height)
-            break
 
         case .Vertical:
             groupInCornerVertical(views, inCorner: corner, padding: padding, width: width, height: height)
-            break
         }
     }
 
@@ -1220,7 +1156,6 @@ extension UIView {
             }
 
             yOrigin = padding
-            break
 
         case .Left:
             if group == .Horizontal {
@@ -1232,7 +1167,6 @@ extension UIView {
             }
 
             xOrigin = padding
-            break
 
         case .Bottom:
             if group == .Horizontal {
@@ -1244,7 +1178,6 @@ extension UIView {
                 yOrigin = self.height() - (CGFloat(views.count) * height) - (CGFloat(views.count) * padding)
                 yAdjust = height + padding
             }
-            break
 
         case .Right:
             if group == .Horizontal {
@@ -1256,7 +1189,6 @@ extension UIView {
                 yOrigin = (self.height() - (CGFloat(views.count) * height) - (CGFloat(views.count - 1) * padding)) / 2.0
                 yAdjust = height + padding
             }
-            break
         }
 
         for view in views {
@@ -1296,11 +1228,9 @@ extension UIView {
         switch group {
         case .Horizontal:
             groupAndAlignHorizontal(align, views: views, relativeTo: sibling, padding: padding, width: width, height: height)
-            break
 
         case .Vertical:
             groupAndAlignVertical(align, views: views, relativeTo: sibling, padding: padding, width: width, height: height)
-            break
         }
     }
 
@@ -1338,13 +1268,11 @@ extension UIView {
             width = (self.width() - (CGFloat(views.count + 1) * padding)) / CGFloat(views.count)
             height = self.height() - (2 * padding)
             xAdjust = width + padding
-            break
 
         case .Vertical:
             width = self.width() - (2 * padding)
             height = (self.height() - (CGFloat(views.count + 1) * padding)) / CGFloat(views.count)
             yAdjust = height + padding
-            break
         }
 
         for view in views {
@@ -1382,22 +1310,18 @@ extension UIView {
         case .TopLeft:
             xOrigin = padding
             yOrigin = padding
-            break
 
         case .TopRight:
             xOrigin = self.width() - ((CGFloat(views.count) * width) + (CGFloat(views.count) * padding))
             yOrigin = padding
-            break
 
         case .BottomLeft:
             xOrigin = padding
             yOrigin = self.height() - height - padding
-            break
 
         case .BottomRight:
             xOrigin = self.width() - ((CGFloat(views.count) * width) + (CGFloat(views.count) * padding))
             yOrigin = self.height() - height - padding
-            break
         }
 
         for view in views {
@@ -1430,22 +1354,18 @@ extension UIView {
         case .TopLeft:
             xOrigin = padding
             yOrigin = padding
-            break
 
         case .TopRight:
             xOrigin = self.width() - width - padding
             yOrigin = padding
-            break
 
         case .BottomLeft:
             xOrigin = padding
             yOrigin = self.height() - ((CGFloat(views.count) * height) + (CGFloat(views.count) * padding))
-            break
 
         case .BottomRight:
             xOrigin = self.width() - width - padding
             yOrigin = self.height() - ((CGFloat(views.count) * height) + (CGFloat(views.count) * padding))
-            break
         }
 
         for view in views {
@@ -1478,65 +1398,53 @@ extension UIView {
         case .ToTheRightMatchingTop:
             xOrigin = sibling.xMax() + padding
             yOrigin = sibling.y()
-            break
 
         case .ToTheRightMatchingBottom:
             xOrigin = sibling.xMax() + padding
             yOrigin = sibling.yMax() - height
-            break
 
         case .ToTheRightCentered:
             xOrigin = sibling.xMax() + padding
             yOrigin = sibling.yMid() - (height / 2.0)
-            break
 
         case .ToTheLeftMatchingTop:
             xOrigin = sibling.x() - width - padding
             yOrigin = sibling.y()
             xAdjust = -xAdjust
-            break
 
         case .ToTheLeftMatchingBottom:
             xOrigin = sibling.x() - width - padding
             yOrigin = sibling.yMax() - height
             xAdjust = -xAdjust
-            break
 
         case .ToTheLeftCentered:
             xOrigin = sibling.x() - width - padding
             yOrigin = sibling.yMid() - (height / 2.0)
             xAdjust = -xAdjust
-            break
 
         case .UnderMatchingLeft:
             xOrigin = sibling.x()
             yOrigin = sibling.yMax() + padding
-            break
 
         case .UnderMatchingRight:
             xOrigin = sibling.xMax() - (CGFloat(views.count) * width) - (CGFloat(views.count - 1) * padding)
             yOrigin = sibling.yMax() + padding
-            break
 
         case .UnderCentered:
             xOrigin = sibling.xMid() - ((CGFloat(views.count) * width) + (CGFloat(views.count - 1) * padding)) / 2.0
             yOrigin = sibling.yMax() + padding
-            break
 
         case .AboveMatchingLeft:
             xOrigin = sibling.x()
             yOrigin = sibling.y() - height - padding
-            break
 
         case .AboveMatchingRight:
             xOrigin = sibling.xMax() - (CGFloat(views.count) * width) - (CGFloat(views.count - 1) * padding)
             yOrigin = sibling.y() - height - padding
-            break
 
         case .AboveCentered:
             xOrigin = sibling.xMid() - ((CGFloat(views.count) * width) + (CGFloat(views.count - 1) * padding)) / 2.0
             yOrigin = sibling.y() - height - padding
-            break
         }
 
         for view in views {
@@ -1569,65 +1477,53 @@ extension UIView {
         case .ToTheRightMatchingTop:
             xOrigin = sibling.xMax() + padding
             yOrigin = sibling.y()
-            break
 
         case .ToTheRightMatchingBottom:
             xOrigin = sibling.xMax() + padding
             yOrigin = sibling.yMax() - (CGFloat(views.count) * height) - (CGFloat(views.count - 1) * padding)
-            break
 
         case .ToTheRightCentered:
             xOrigin = sibling.xMax() + padding
             yOrigin = sibling.yMid() - ((CGFloat(views.count) * height) + CGFloat(views.count - 1) * padding) / 2.0
-            break
 
         case .ToTheLeftMatchingTop:
             xOrigin = sibling.x() - width - padding
             yOrigin = sibling.y()
-            break
 
         case .ToTheLeftMatchingBottom:
             xOrigin = sibling.x() - width - padding
             yOrigin = sibling.yMax() - (CGFloat(views.count) * height) - (CGFloat(views.count - 1) * padding)
-            break
 
         case .ToTheLeftCentered:
             xOrigin = sibling.x() - width - padding
             yOrigin = sibling.yMid() - ((CGFloat(views.count) * height) + CGFloat(views.count - 1) * padding) / 2.0
-            break
 
         case .UnderMatchingLeft:
             xOrigin = sibling.x()
             yOrigin = sibling.yMax() + padding
-            break
 
         case .UnderMatchingRight:
             xOrigin = sibling.xMax() - width
             yOrigin = sibling.yMax() + padding
-            break
 
         case .UnderCentered:
             xOrigin = sibling.xMid() - (width / 2.0)
             yOrigin = sibling.yMax() + padding
-            break
 
         case .AboveMatchingLeft:
             xOrigin = sibling.x()
             yOrigin = sibling.y() - height - padding
             yAdjust = -yAdjust
-            break
 
         case .AboveMatchingRight:
             xOrigin = sibling.xMax() - width
             yOrigin = sibling.y() - height - padding
             yAdjust = -yAdjust
-            break
 
         case .AboveCentered:
             xOrigin = sibling.xMid() - (width / 2.0)
             yOrigin = sibling.y() - height - padding
             yAdjust = -yAdjust
-            break
         }
 
         for view in views {
