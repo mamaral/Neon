@@ -1248,14 +1248,13 @@ extension UIView {
 
         case .Right:
             if group == .Horizontal {
+                xOrigin = self.width() - (CGFloat(views.count) * width) - (CGFloat(views.count) * padding)
                 yOrigin = (self.height() / 2.0) - (height / 2.0)
-                xAdjust = -(width + padding)
+                xAdjust = width + padding
             } else {
                 yOrigin = (self.height() - (CGFloat(views.count) * height) - (CGFloat(views.count - 1) * padding)) / 2.0
                 yAdjust = height + padding
             }
-
-            xOrigin = self.width() - width - padding
             break
         }
 

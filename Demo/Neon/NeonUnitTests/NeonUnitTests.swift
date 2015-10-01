@@ -364,9 +364,28 @@ class NeonTests: XCTestCase {
         XCTAssert(CGRectEqualToRect(testSiblingView4.frame, CGRectMake(460, 460, 30, 30)))
     }
 
-    // TODO: test groupAgainstEdge()
-    func testGroupAgainstEdge() {
+    func testGroupAgainstEdgeHorizontal() {
+        testAnchorView.anchorInCorner(.TopLeft, xPad: 0, yPad: 0, width: 500, height: 500)
 
+        testAnchorView.groupAgainstEdge(group: .Horizontal, views: [testSiblingView2, testSiblingView3, testSiblingView4], againstEdge: .Top, padding: 5, width: 40, height: 40)
+        XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(185, 5, 40, 40)))
+        XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(230, 5, 40, 40)))
+        XCTAssert(CGRectEqualToRect(testSiblingView4.frame, CGRectMake(275, 5, 40, 40)))
+
+        testAnchorView.groupAgainstEdge(group: .Horizontal, views: [testSiblingView2, testSiblingView3, testSiblingView4], againstEdge: .Left, padding: 5, width: 40, height: 40)
+        XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(5, 230, 40, 40)))
+        XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(50, 230, 40, 40)))
+        XCTAssert(CGRectEqualToRect(testSiblingView4.frame, CGRectMake(95, 230, 40, 40)))
+
+        testAnchorView.groupAgainstEdge(group: .Horizontal, views: [testSiblingView2, testSiblingView3, testSiblingView4], againstEdge: .Bottom, padding: 5, width: 40, height: 40)
+        XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(185, 455, 40, 40)))
+        XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(230, 455, 40, 40)))
+        XCTAssert(CGRectEqualToRect(testSiblingView4.frame, CGRectMake(275, 455, 40, 40)))
+
+        testAnchorView.groupAgainstEdge(group: .Horizontal, views: [testSiblingView2, testSiblingView3, testSiblingView4], againstEdge: .Right, padding: 5, width: 40, height: 40)
+        XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(365, 230, 40, 40)))
+        XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(410, 230, 40, 40)))
+        XCTAssert(CGRectEqualToRect(testSiblingView4.frame, CGRectMake(455, 230, 40, 40)))
     }
 
     // TODO: test groupAndAlign()
