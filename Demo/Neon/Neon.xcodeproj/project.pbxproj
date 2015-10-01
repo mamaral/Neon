@@ -38,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		279EA75D1BBCCE61008147D1 /* TestPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestPlayground.playground; sourceTree = "<group>"; };
 		27BE8FA31BAF8FDC00D41957 /* NeonUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeonUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BE8FA51BAF8FDC00D41957 /* NeonUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeonUnitTests.swift; sourceTree = "<group>"; };
 		27BE8FA71BAF8FDC00D41957 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -121,6 +122,7 @@
 				27C04DE11BB7359D00C3A559 /* FacebookProfileExampleViewController.swift */,
 				27C04DE31BB7507700C3A559 /* ImageContainerView.swift */,
 				27C04DE51BB753D500C3A559 /* IconButton.swift */,
+				279EA75D1BBCCE61008147D1 /* TestPlayground.playground */,
 				27D253A01BAF735300FA4FED /* Supporting Files */,
 			);
 			name = Demo;
