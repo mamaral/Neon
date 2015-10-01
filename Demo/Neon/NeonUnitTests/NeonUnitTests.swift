@@ -262,8 +262,34 @@ class NeonTests: XCTestCase {
         XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(70, 10, 920, 980)))
     }
 
-    // TODO: test alignBetweenHorizontal()
-    // TODO: test alignBetweenVertical()
+    func testAlignBetweenHorizontal() {
+        testAnchorView.anchorInCorner(.TopLeft, xPad: 0, yPad: 0, width: 50, height: 50)
+        testAnchorView2.anchorInCorner(.TopRight, xPad: 0, yPad: 0, width: 50, height: 50)
+
+        testSiblingView.alignBetweenHorizontal(align: .ToTheRightMatchingTop, primaryView: testAnchorView, secondaryView: testAnchorView2, padding: 10, height: 40)
+        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(60, 0, 880, 40)))
+
+        testSiblingView.alignBetweenHorizontal(align: .ToTheRightCentered, primaryView: testAnchorView, secondaryView: testAnchorView2, padding: 20, height: 10)
+        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(70, 20, 860, 10)))
+
+        testSiblingView.alignBetweenHorizontal(align: .ToTheRightMatchingBottom, primaryView: testAnchorView, secondaryView: testAnchorView2, padding: 5, height: 40)
+        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(55, 10, 890, 40)))
+    }
+
+    func testAlignBetweenVertical() {
+        testAnchorView.anchorInCorner(.TopLeft, xPad: 0, yPad: 0, width: 100, height: 100)
+        testAnchorView2.anchorInCorner(.BottomLeft, xPad: 0, yPad: 0, width: 100, height: 100)
+
+        testSiblingView.alignBetweenVertical(align: .UnderMatchingLeft, primaryView: testAnchorView, secondaryView: testAnchorView2, padding: 10, width: 50)
+        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(0, 110, 50, 780)))
+
+        testSiblingView.alignBetweenVertical(align: .UnderCentered, primaryView: testAnchorView, secondaryView: testAnchorView2, padding: 15, width: 30)
+        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(35, 115, 30, 770)))
+
+        testSiblingView.alignBetweenVertical(align: .UnderMatchingRight, primaryView: testAnchorView, secondaryView: testAnchorView2, padding: 3, width: 10)
+        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(90, 103, 10, 794)))
+    }
+
     // TODO: test groupInCenter()
     // TODO: test groupInCorner()
     // TODO: test groupAgainstEdge()
