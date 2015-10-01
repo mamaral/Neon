@@ -1237,13 +1237,13 @@ extension UIView {
         case .Bottom:
             if group == .Horizontal {
                 xOrigin = (self.width() - (CGFloat(views.count) * width) - (CGFloat(views.count - 1) * padding)) / 2.0
+                yOrigin = self.height() - height - padding
                 xAdjust = width + padding
             } else {
                 xOrigin = (self.width() / 2.0) - (width / 2.0)
-                yAdjust = -(height + padding)
+                yOrigin = self.height() - (CGFloat(views.count) * height) - (CGFloat(views.count) * padding)
+                yAdjust = height + padding
             }
-
-            yOrigin = self.height() - height - padding
             break
 
         case .Right:
@@ -1252,6 +1252,7 @@ extension UIView {
                 yOrigin = (self.height() / 2.0) - (height / 2.0)
                 xAdjust = width + padding
             } else {
+                xOrigin = self.width() - width - padding
                 yOrigin = (self.height() - (CGFloat(views.count) * height) - (CGFloat(views.count - 1) * padding)) / 2.0
                 yAdjust = height + padding
             }
