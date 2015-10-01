@@ -14,6 +14,9 @@ class NeonTests: XCTestCase {
     let testAnchorView : UIView = UIView()
     let testAnchorView2 : UIView = UIView()
     let testSiblingView : UIView = UIView()
+    let testSiblingView2 : UIView = UIView()
+    let testSiblingView3 : UIView = UIView()
+    let testSiblingView4 : UIView = UIView()
 
     override func setUp() {
         super.setUp()
@@ -21,16 +24,25 @@ class NeonTests: XCTestCase {
         testSuperview.addSubview(testAnchorView)
         testSuperview.addSubview(testAnchorView2)
         testSuperview.addSubview(testSiblingView)
+        testAnchorView.addSubview(testSiblingView2)
+        testAnchorView.addSubview(testSiblingView3)
+        testAnchorView.addSubview(testSiblingView4)
 
         testAnchorView.frame = CGRectZero
         testAnchorView2.frame = CGRectZero
         testSiblingView.frame = CGRectMake(500, 500, 100, 100)
+        testSiblingView2.frame = CGRectZero
+        testSiblingView3.frame = CGRectZero
+        testSiblingView4.frame = CGRectZero
     }
 
     override func tearDown() {
         testAnchorView.frame = CGRectZero
         testAnchorView2.frame = CGRectZero
         testSiblingView.frame = CGRectZero
+        testSiblingView2.frame = CGRectZero
+        testSiblingView3.frame = CGRectZero
+        testSiblingView4.frame = CGRectZero
 
         super.tearDown()
     }
@@ -290,9 +302,18 @@ class NeonTests: XCTestCase {
         XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(90, 103, 10, 794)))
     }
 
-    // TODO: test groupInCenter()
     func testGroupInCenter() {
+        testAnchorView.anchorInCorner(.TopLeft, xPad: 0, yPad: 0, width: 100, height: 100)
 
+        testAnchorView.groupInCenter(group: .Horizontal, views: [testSiblingView2, testSiblingView3, testSiblingView4], padding: 5, width: 20, height: 20)
+        XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(15, 40, 20, 20)))
+        XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(40, 40, 20, 20)))
+        XCTAssert(CGRectEqualToRect(testSiblingView4.frame, CGRectMake(65, 40, 20, 20)))
+
+        testAnchorView.groupInCenter(group: .Vertical, views: [testSiblingView2, testSiblingView3, testSiblingView4], padding: 5, width: 20, height: 20)
+        XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(40, 15, 20, 20)))
+        XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(40, 40, 20, 20)))
+        XCTAssert(CGRectEqualToRect(testSiblingView4.frame, CGRectMake(40, 65, 20, 20)))
     }
 
     // TODO: test groupInCorner()
