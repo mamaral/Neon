@@ -412,6 +412,7 @@ class NeonTests: XCTestCase {
         XCTAssert(CGRectEqualToRect(testSiblingView4.frame, CGRectMake(430, 290, 60, 60)))
     }
 
+    // TODO: test groupAndAlign()
     func testGroupAndAlign() {
 
     }
