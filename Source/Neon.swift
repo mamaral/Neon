@@ -259,13 +259,13 @@ extension UIView {
     ///   - bottom: The padding between the bottom of the view and the superview.
     ///
     func fillSuperview(left left: CGFloat = 0, right: CGFloat = 0, top: CGFloat = 0, bottom: CGFloat = 0) {
-        if superview == nil {
+        guard let superview = superview else {
             print("[NEON] Warning: Can't anchor view without superview!")
             return
         }
 
-        let width : CGFloat = superview!.width() - (left + right)
-        let height : CGFloat = superview!.height() - (top + bottom)
+        let width : CGFloat = superview.width() - (left + right)
+        let height : CGFloat = superview.height() - (top + bottom)
 
         frame = CGRectMake(left, top, width, height)
     }
@@ -282,13 +282,13 @@ extension UIView {
     ///   - height: The height of the view.
     ///
     func anchorInCenter(width width: CGFloat, height: CGFloat) {
-        if superview == nil {
+        guard let superview = superview else {
             print("[NEON] Warning: Can't anchor view without superview!")
             return
         }
 
-        let xOrigin : CGFloat = (superview!.width() / 2.0) - (width / 2.0)
-        let yOrigin : CGFloat = (superview!.height() / 2.0) - (height / 2.0)
+        let xOrigin : CGFloat = (superview.width() / 2.0) - (width / 2.0)
+        let yOrigin : CGFloat = (superview.height() / 2.0) - (height / 2.0)
 
         frame = CGRectMake(xOrigin, yOrigin, width, height)
     }
@@ -310,7 +310,7 @@ extension UIView {
     ///   - height: The height of the view.
     ///
     func anchorInCorner(corner: Corner, xPad: CGFloat, yPad: CGFloat, width: CGFloat, height: CGFloat) {
-        if superview == nil {
+        guard let superview = superview else {
             print("[NEON] Warning: Can't anchor view without superview!")
             return
         }
@@ -325,15 +325,15 @@ extension UIView {
 
         case .BottomLeft:
             xOrigin = xPad
-            yOrigin = superview!.height() - height - yPad
+            yOrigin = superview.height() - height - yPad
 
         case .TopRight:
-            xOrigin = superview!.width() - width - xPad
+            xOrigin = superview.width() - width - xPad
             yOrigin = yPad
 
         case .BottomRight:
-            xOrigin = superview!.width() - width - xPad
-            yOrigin = superview!.height() - height - yPad
+            xOrigin = superview.width() - width - xPad
+            yOrigin = superview.height() - height - yPad
         }
 
         frame = CGRectMake(xOrigin, yOrigin, width, height)
@@ -357,7 +357,7 @@ extension UIView {
     ///   - height: The height of the view.
     ///
     func anchorToEdge(edge: Edge, padding: CGFloat, width: CGFloat, height: CGFloat) {
-        if superview == nil {
+        guard let superview = superview else {
             print("[NEON] Warning: Can't anchor view without superview!")
             return
         }
@@ -367,20 +367,20 @@ extension UIView {
 
         switch edge {
         case .Top:
-            xOrigin = (superview!.width() / 2.0) - (width / 2.0)
+            xOrigin = (superview.width() / 2.0) - (width / 2.0)
             yOrigin = padding
 
         case .Left:
             xOrigin = padding
-            yOrigin = (superview!.height() / 2.0) - (height / 2.0)
+            yOrigin = (superview.height() / 2.0) - (height / 2.0)
 
         case .Bottom:
-            xOrigin = (superview!.width() / 2.0) - (width / 2.0)
-            yOrigin = superview!.height() - height - padding
+            xOrigin = (superview.width() / 2.0) - (width / 2.0)
+            yOrigin = superview.height() - height - padding
 
         case .Right:
-            xOrigin = superview!.width() - width - padding
-            yOrigin = (superview!.height() / 2.0) - (height / 2.0)
+            xOrigin = superview.width() - width - padding
+            yOrigin = (superview.height() / 2.0) - (height / 2.0)
         }
 
         frame = CGRectMake(xOrigin, yOrigin, width, height)
@@ -411,7 +411,7 @@ extension UIView {
     /// automatically calculated.
     ///
     func anchorAndFillEdge(edge: Edge, xPad: CGFloat, yPad: CGFloat, otherSize: CGFloat) {
-        if superview == nil {
+        guard let superview = superview else {
             print("[NEON] Warning: Can't anchor view without superview!")
             return
         }
@@ -425,26 +425,26 @@ extension UIView {
         case .Top:
             xOrigin = xPad
             yOrigin = yPad
-            width = superview!.width() - (2 * xPad)
+            width = superview.width() - (2 * xPad)
             height = otherSize
 
         case .Left:
             xOrigin = xPad
             yOrigin = yPad
             width = otherSize
-            height = superview!.height() - (2 * yPad)
+            height = superview.height() - (2 * yPad)
 
         case .Bottom:
             xOrigin = xPad
-            yOrigin = superview!.height() - otherSize - yPad
-            width = superview!.width() - (2 * xPad)
+            yOrigin = superview.height() - otherSize - yPad
+            width = superview.width() - (2 * xPad)
             height = otherSize
 
         case .Right:
-            xOrigin = superview!.width() - otherSize - xPad
+            xOrigin = superview.width() - otherSize - xPad
             yOrigin = yPad
             width = otherSize
-            height = superview!.height() - (2 * yPad)
+            height = superview.height() - (2 * yPad)
         }
         
         frame = CGRectMake(xOrigin, yOrigin, width, height)
@@ -473,11 +473,11 @@ extension UIView {
     ///   - height: The height of the view.
     ///
     func align(align: Align, relativeTo sibling: UIView, padding: CGFloat, width: CGFloat, height: CGFloat) {
-        if superview == nil {
+        guard let superview = superview else {
             print("[NEON] Warning: Can't align view without superview!")
             return
         }
-        
+      
         if self == sibling {
             fatalError("[NEON] Can't align view relative to itself!")
         }
@@ -559,7 +559,7 @@ extension UIView {
     ///   - height: The height of the view.
     ///
     func alignAndFillWidth(align align: Align, relativeTo sibling: UIView, padding: CGFloat, height: CGFloat) {
-        if superview == nil {
+        guard let superview = superview else {
             print("[NEON] Warning: Can't align view without superview!")
             return
         }
@@ -572,7 +572,7 @@ extension UIView {
             fatalError("[NEON] Can't align view relative to another view in a different superview!")
         }
 
-        let superviewWidth = superview!.width()
+        let superviewWidth = superview.width()
         var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0
         var width : CGFloat = 0.0
@@ -662,7 +662,7 @@ extension UIView {
     ///   - width: The width of the view.
     ///
     func alignAndFillHeight(align align: Align, relativeTo sibling: UIView, padding: CGFloat, width: CGFloat) {
-        if superview == nil {
+        guard let superview = superview else {
             print("[NEON] Warning: Can't align view without superview!")
             return
         }
@@ -675,7 +675,7 @@ extension UIView {
             fatalError("[NEON] Can't align view relative to another view in a different superview!")
         }
 
-        let superviewHeight = superview!.height()
+        let superviewHeight = superview.height()
         var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0
         var height : CGFloat = 0.0
@@ -763,7 +763,7 @@ extension UIView {
     ///   - padding: The padding to be applied between this view, the sibling view and the superview.
     ///
     func alignAndFill(align align: Align, relativeTo sibling: UIView, padding: CGFloat) {
-        if superview == nil {
+        guard let superview = superview else {
             print("[NEON] Warning: Can't align view without superview!")
             return
         }
@@ -776,8 +776,8 @@ extension UIView {
             fatalError("[NEON] Can't align view relative to another view in a different superview!")
         }
 
-        let superviewWidth = superview!.width()
-        let superviewHeight = superview!.height()
+        let superviewWidth = superview.width()
+        let superviewHeight = superview.height()
         var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0
         var width : CGFloat = 0.0
@@ -887,7 +887,7 @@ extension UIView {
     ///   - height: The height of the view.
     ///
     func alignBetweenHorizontal(align align: Align, primaryView: UIView, secondaryView: UIView, padding: CGFloat, height: CGFloat) {
-        if superview == nil {
+        guard let superview = superview else {
             print("[NEON] Warning: Can't align view without superview!")
             return
         }
@@ -900,7 +900,7 @@ extension UIView {
             fatalError("[NEON] Can't align view relative to another view in a different superview!")
         }
 
-        let superviewWidth : CGFloat = superview!.width()
+        let superviewWidth : CGFloat = superview.width()
         var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0
         var width : CGFloat = 0.0
@@ -963,7 +963,7 @@ extension UIView {
     ///   - width: The width of the view.
     ///
     func alignBetweenVertical(align align: Align, primaryView: UIView, secondaryView: UIView, padding: CGFloat, width: CGFloat) {
-        if superview == nil {
+        guard let superview = superview else {
             print("[NEON] Warning: Can't align view without superview!")
             return
         }
@@ -976,7 +976,7 @@ extension UIView {
             fatalError("[NEON] Can't align view relative to another view in a different superview!")
         }
 
-        let superviewHeight : CGFloat = superview!.height()
+        let superviewHeight : CGFloat = superview.height()
         var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0
         var height : CGFloat = 0.0
@@ -1043,7 +1043,7 @@ extension UIView {
     ///   - height: The height of each subview.
     ///
     func groupInCenter(group group: Group, views: [UIView], padding: CGFloat, width: CGFloat, height: CGFloat) {
-        if superview == nil {
+        guard let superview = superview else {
             print("[NEON] Warning: Attempted to group subviews but view doesn't have a superview of its own.")
             return
         }
@@ -1130,7 +1130,7 @@ extension UIView {
     ///   - height: The height of each subview.
     ///
     func groupAgainstEdge(group group: Group, views: [UIView], againstEdge edge: Edge, padding: CGFloat, width: CGFloat, height: CGFloat) {
-        if superview == nil {
+        guard let superview = superview else {
             print("[NEON] Warning: Attempted to group subviews but view doesn't have a superview of its own.")
             return
         }
@@ -1246,7 +1246,7 @@ extension UIView {
     ///   - padding: The padding to be applied between each of the subviews and the sibling.
     ///
     func groupAndFill(group group: Group, views: [UIView], padding: CGFloat) {
-        if superview == nil {
+        guard let superview = superview else {
             print("[NEON] Warning: Attempted to group subviews but view doesn't have a superview of its own.")
             return
         }
@@ -1292,7 +1292,7 @@ extension UIView {
     // MARK: Private utils
     //
     private func groupInCornerHorizontal(views: [UIView], inCorner corner: Corner, padding: CGFloat, width: CGFloat, height: CGFloat) {
-        if superview == nil {
+        guard let superview = superview else {
             print("[NEON] Warning: Attempted to group subviews but view doesn't have a superview of its own.")
             return
         }
@@ -1336,7 +1336,7 @@ extension UIView {
     }
 
     private func groupInCornerVertical(views: [UIView], inCorner corner: Corner, padding: CGFloat, width: CGFloat, height: CGFloat) {
-        if superview == nil {
+        guard let superview = superview else {
             print("[NEON] Warning: Attempted to group subviews but view doesn't have a superview of its own.")
             return
         }
@@ -1380,7 +1380,7 @@ extension UIView {
     }
 
     private func groupAndAlignHorizontal(align: Align, views: [UIView], relativeTo sibling: UIView, padding: CGFloat, width: CGFloat, height: CGFloat) {
-        if superview == nil {
+        guard let superview = superview else {
             print("[NEON] Warning: Attempted to group subviews but view doesn't have a superview of its own.")
             return
         }
@@ -1459,7 +1459,7 @@ extension UIView {
     }
 
     private func groupAndAlignVertical(align: Align, views: [UIView], relativeTo sibling: UIView, padding: CGFloat, width: CGFloat, height: CGFloat) {
-        if superview == nil {
+        guard let superview = superview else {
             print("[NEON] Warning: Attempted to group subviews but view doesn't have a superview of its own.")
             return
         }
