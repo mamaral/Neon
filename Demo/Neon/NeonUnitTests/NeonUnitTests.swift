@@ -291,8 +291,27 @@ class NeonTests: XCTestCase {
     }
 
     // TODO: test groupInCenter()
+    func testGroupInCenter() {
+
+    }
+
     // TODO: test groupInCorner()
+    func testGroupInCorner() {
+
+    }
+
     // TODO: test groupAgainstEdge()
+    func testGroupAgainstEdge() {
+
+    }
+
     // TODO: test groupAndAlign()
+    func testGroupAndAlign() {
+
+    }
+
     // TODO: test groupAndFill()
+    func testGroupAndFill() {
+
+    }
 }
