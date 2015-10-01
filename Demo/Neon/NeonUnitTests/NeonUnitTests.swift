@@ -12,20 +12,24 @@ import XCTest
 class NeonTests: XCTestCase {
     let testSuperview : UIView = UIView(frame: CGRectMake(0, 0, 1000, 1000))
     let testAnchorView : UIView = UIView()
+    let testAnchorView2 : UIView = UIView()
     let testSiblingView : UIView = UIView()
 
     override func setUp() {
         super.setUp()
 
         testSuperview.addSubview(testAnchorView)
+        testSuperview.addSubview(testAnchorView2)
         testSuperview.addSubview(testSiblingView)
 
         testAnchorView.frame = CGRectZero
+        testAnchorView2.frame = CGRectZero
         testSiblingView.frame = CGRectMake(500, 500, 100, 100)
     }
 
     override func tearDown() {
         testAnchorView.frame = CGRectZero
+        testAnchorView2.frame = CGRectZero
         testSiblingView.frame = CGRectZero
 
         super.tearDown()
