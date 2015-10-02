@@ -46,7 +46,7 @@ extension CALayer : Frameable, Anchorable, Alignable, Groupable {
 ///
 /// **BottomRight**: The upper-right corner of the frame.
 ///
-enum Corner {
+public enum Corner {
     case TopLeft
     case TopRight
     case BottomLeft
@@ -67,7 +67,7 @@ enum Corner {
 ///
 /// **Right**: The right edge of the frame.
 ///
-enum Edge {
+public enum Edge {
     case Top
     case Left
     case Bottom
@@ -118,7 +118,7 @@ enum Edge {
 /// **AboveCentered**: Specifies that the view should be aligned above a sibling, and will be centered to either match
 /// the horizontal center of the sibling's frame or centered horizontally within the superview, depending on the context.
 ///
-enum Align {
+public enum Align {
     case ToTheRightMatchingTop
     case ToTheRightMatchingBottom
     case ToTheRightCentered
@@ -143,7 +143,7 @@ enum Align {
 ///
 /// **Vertical**: Specifies that the views should be aligned relative to eachother vertically.
 ///
-enum Group {
+public enum Group {
     case Horizontal
     case Vertical
 }
