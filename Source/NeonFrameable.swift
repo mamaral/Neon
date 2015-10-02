@@ -8,9 +8,12 @@
 
 import UIKit
 
-
-protocol Frameable {
-    var frame: CGRect { get }
+/// Types adopting the `Frameable` protocol calculate specific `frame` information, as well as provide the
+/// frame information about their `superview` or `superlayer`.
+///
+protocol Frameable : class {
+    var frame: CGRect { get set }
+    var superFrame: CGRect { get }
 
     /// Get the x origin of a view.
     ///
@@ -107,6 +110,7 @@ protocol Frameable {
     ///
     var height: CGFloat { get }
 }
+
 
 extension Frameable {
     var x: CGFloat {

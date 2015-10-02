@@ -9,6 +9,7 @@
 import UIKit
 
 class TestViewController: UIViewController {
+    let anchorLayer : CALayer = CALayer()
     let anchorViewA : UILabel = UILabel()
     let anchorViewB : UILabel = UILabel()
     let anchorViewC : UILabel = UILabel()
@@ -22,6 +23,9 @@ class TestViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        anchorLayer.backgroundColor = UIColor.redColor().CGColor
+        view.layer.addSublayer(anchorLayer)
 
         anchorViewA.backgroundColor = UIColor(red: 229/255.0, green: 72/255.0, blue: 26/255.0, alpha: 1.0)
         anchorViewA.text = ""

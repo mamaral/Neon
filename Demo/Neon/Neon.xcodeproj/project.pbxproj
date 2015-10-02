@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		278982EF1BBDFAB000FF44DD /* NeonFrameable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278982EE1BBDFAB000FF44DD /* NeonFrameable.swift */; settings = {ASSET_TAGS = (); }; };
 		278982F11BBDFC4D00FF44DD /* NeonAnchorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278982F01BBDFC4D00FF44DD /* NeonAnchorable.swift */; settings = {ASSET_TAGS = (); }; };
+		278982F31BBDFFAB00FF44DD /* NeonAlignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278982F21BBDFFAB00FF44DD /* NeonAlignable.swift */; settings = {ASSET_TAGS = (); }; };
+		278982F51BBE033600FF44DD /* NeonGroupable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278982F41BBE033600FF44DD /* NeonGroupable.swift */; settings = {ASSET_TAGS = (); }; };
 		27BE8FA61BAF8FDC00D41957 /* NeonUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BE8FA51BAF8FDC00D41957 /* NeonUnitTests.swift */; };
 		27BE8FAE1BAF905C00D41957 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BE8FAD1BAF905C00D41957 /* TestViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		27C04DE21BB7359D00C3A559 /* FacebookProfileExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C04DE11BB7359D00C3A559 /* FacebookProfileExampleViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -42,6 +44,8 @@
 /* Begin PBXFileReference section */
 		278982EE1BBDFAB000FF44DD /* NeonFrameable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeonFrameable.swift; sourceTree = "<group>"; };
 		278982F01BBDFC4D00FF44DD /* NeonAnchorable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeonAnchorable.swift; sourceTree = "<group>"; };
+		278982F21BBDFFAB00FF44DD /* NeonAlignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeonAlignable.swift; sourceTree = "<group>"; };
+		278982F41BBE033600FF44DD /* NeonGroupable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeonGroupable.swift; sourceTree = "<group>"; };
 		279EA75D1BBCCE61008147D1 /* TestPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestPlayground.playground; sourceTree = "<group>"; };
 		27BE8FA31BAF8FDC00D41957 /* NeonUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeonUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BE8FA51BAF8FDC00D41957 /* NeonUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeonUnitTests.swift; sourceTree = "<group>"; };
@@ -148,6 +152,8 @@
 				27D2539A1BAF720300FA4FED /* Neon.swift */,
 				278982EE1BBDFAB000FF44DD /* NeonFrameable.swift */,
 				278982F01BBDFC4D00FF44DD /* NeonAnchorable.swift */,
+				278982F21BBDFFAB00FF44DD /* NeonAlignable.swift */,
+				278982F41BBE033600FF44DD /* NeonGroupable.swift */,
 			);
 			name = Source;
 			path = ../../Source;
@@ -302,11 +308,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				278982F51BBE033600FF44DD /* NeonGroupable.swift in Sources */,
 				27C04DE41BB7507700C3A559 /* ImageContainerView.swift in Sources */,
 				27D2539D1BAF721200FA4FED /* ViewController.swift in Sources */,
 				278982F11BBDFC4D00FF44DD /* NeonAnchorable.swift in Sources */,
 				27C04DE61BB753D500C3A559 /* IconButton.swift in Sources */,
 				27C04DE21BB7359D00C3A559 /* FacebookProfileExampleViewController.swift in Sources */,
+				278982F31BBDFFAB00FF44DD /* NeonAlignable.swift in Sources */,
 				27D2539B1BAF720300FA4FED /* Neon.swift in Sources */,
 				278982EF1BBDFAB000FF44DD /* NeonFrameable.swift in Sources */,
 				27BE8FAE1BAF905C00D41957 /* TestViewController.swift in Sources */,

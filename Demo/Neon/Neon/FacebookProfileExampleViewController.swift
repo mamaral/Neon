@@ -116,7 +116,7 @@ class TwitterProfileExampleViewController: UIViewController {
 
     func layoutFrames() {
         let isLandscape : Bool = UIDevice.currentDevice().orientation.isLandscape.boolValue
-        let bannerHeight : CGFloat = view.height() * 0.465
+        let bannerHeight : CGFloat = view.height * 0.465
         let avatarHeightMultipler : CGFloat = isLandscape ? 0.75 : 0.43
         let avatarSize = bannerHeight * avatarHeightMultipler
 
