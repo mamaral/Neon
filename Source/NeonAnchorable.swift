@@ -8,9 +8,7 @@
 
 import UIKit
 
-protocol Anchorable : Frameable {
-
-}
+protocol Anchorable : Frameable {}
 
 extension Anchorable {
 

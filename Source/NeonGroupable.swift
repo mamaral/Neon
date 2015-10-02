@@ -8,9 +8,7 @@
 
 import UIKit
 
-protocol Groupable : Frameable {
-
-}
+protocol Groupable : Frameable {}
 
 extension Groupable {
     /// Tell a view to group an array of its subviews centered, specifying the padding between each subview,

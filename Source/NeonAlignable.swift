@@ -8,9 +8,7 @@
 
 import UIKit
 
-protocol Alignable : Frameable {
-    
-}
+protocol Alignable : Frameable {}
 
 extension Alignable {
     /// Align a view relative to a sibling view in the same superview.
