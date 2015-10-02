@@ -9,6 +9,7 @@
 import UIKit
 
 class TestViewController: UIViewController {
+    let anchorLayer : CALayer = CALayer()
     let anchorViewA : UILabel = UILabel()
     let anchorViewB : UILabel = UILabel()
     let anchorViewC : UILabel = UILabel()
@@ -22,6 +23,9 @@ class TestViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        anchorLayer.backgroundColor = UIColor.redColor().CGColor
+        view.layer.addSublayer(anchorLayer)
 
         anchorViewA.backgroundColor = UIColor(red: 229/255.0, green: 72/255.0, blue: 26/255.0, alpha: 1.0)
         anchorViewA.text = ""
@@ -96,8 +100,5 @@ class TestViewController: UIViewController {
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-
-        anchorViewA.anchorInCorner(.TopLeft, xPad: 50, yPad: 50, width: 500, height: 500)
-        anchorViewA.groupAgainstEdge(group: .Vertical, views: [view1, view2, view3], againstEdge: .Right, padding: 10, width: 50, height: 50)
     }
 }

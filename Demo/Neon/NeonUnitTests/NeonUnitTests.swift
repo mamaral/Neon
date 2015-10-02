@@ -49,24 +49,24 @@ class NeonTests: XCTestCase {
 
     func testFrameUtils() {
         testAnchorView.frame = CGRectZero
-        XCTAssertEqual(testAnchorView.x(), 0)
-        XCTAssertEqual(testAnchorView.xMid(), 0)
-        XCTAssertEqual(testAnchorView.xMax(), 0)
-        XCTAssertEqual(testAnchorView.y(), 0)
-        XCTAssertEqual(testAnchorView.yMid(), 0)
-        XCTAssertEqual(testAnchorView.yMax(), 0)
-        XCTAssertEqual(testAnchorView.width(), 0)
-        XCTAssertEqual(testAnchorView.height(), 0)
+        XCTAssertEqual(testAnchorView.x, 0)
+        XCTAssertEqual(testAnchorView.xMid, 0)
+        XCTAssertEqual(testAnchorView.xMax, 0)
+        XCTAssertEqual(testAnchorView.y, 0)
+        XCTAssertEqual(testAnchorView.yMid, 0)
+        XCTAssertEqual(testAnchorView.yMax, 0)
+        XCTAssertEqual(testAnchorView.width, 0)
+        XCTAssertEqual(testAnchorView.height, 0)
 
         testAnchorView.frame = CGRectMake(10, 20, 30, 40)
-        XCTAssertEqual(testAnchorView.x(), 10)
-        XCTAssertEqual(testAnchorView.xMid(), 25)
-        XCTAssertEqual(testAnchorView.xMax(), 40)
-        XCTAssertEqual(testAnchorView.y(), 20)
-        XCTAssertEqual(testAnchorView.yMid(), 40)
-        XCTAssertEqual(testAnchorView.yMax(), 60)
-        XCTAssertEqual(testAnchorView.width(), 30)
-        XCTAssertEqual(testAnchorView.height(), 40)
+        XCTAssertEqual(testAnchorView.x, 10)
+        XCTAssertEqual(testAnchorView.xMid, 25)
+        XCTAssertEqual(testAnchorView.xMax, 40)
+        XCTAssertEqual(testAnchorView.y, 20)
+        XCTAssertEqual(testAnchorView.yMid, 40)
+        XCTAssertEqual(testAnchorView.yMax, 60)
+        XCTAssertEqual(testAnchorView.width, 30)
+        XCTAssertEqual(testAnchorView.height, 40)
     }
 
     func testFillSuperview() {
@@ -124,12 +124,6 @@ class NeonTests: XCTestCase {
     }
 
     func testAnchorToEdge() {
-        testAnchorView.removeFromSuperview()
-        testAnchorView.anchorToEdge(.Top, padding: 10, width: 10, height: 10)
-        XCTAssert(CGRectEqualToRect(testAnchorView.frame, CGRectZero))
-
-        testSuperview.addSubview(testAnchorView)
-
         testAnchorView.anchorToEdge(.Top, padding: 10, width: 30, height: 40)
         XCTAssert(CGRectEqualToRect(testAnchorView.frame, CGRectMake(485, 10, 30, 40)))
 
@@ -144,12 +138,6 @@ class NeonTests: XCTestCase {
     }
 
     func testAnchorAndFillEdge() {
-        testAnchorView.removeFromSuperview()
-        testAnchorView.anchorAndFillEdge(.Top, xPad: 10, yPad: 10, otherSize: 10)
-        XCTAssert(CGRectEqualToRect(testAnchorView.frame, CGRectZero))
-
-        testSuperview.addSubview(testAnchorView)
-
         testAnchorView.anchorAndFillEdge(.Top, xPad: 10, yPad: 20, otherSize: 30)
         XCTAssert(CGRectEqualToRect(testAnchorView.frame, CGRectMake(10, 20, 980, 30)))
 
@@ -163,15 +151,7 @@ class NeonTests: XCTestCase {
         XCTAssert(CGRectEqualToRect(testAnchorView.frame, CGRectMake(960, 20, 30, 960)))
     }
 
-    // TODO: Determine if/how swift handles unit testing fatalError, similar to XCTAssertThrows in Obj-C,
-    // so we can unit test these conditions.
     func testAlign() {
-        testAnchorView.removeFromSuperview()
-        testAnchorView.align(.ToTheRightMatchingTop, relativeTo: testSiblingView, padding: 10, width: 30, height: 40)
-        XCTAssert(CGRectEqualToRect(testAnchorView.frame, CGRectZero))
-
-        testSuperview.addSubview(testAnchorView)
-
         testAnchorView.align(.ToTheRightMatchingTop, relativeTo: testSiblingView, padding: 10, width: 30, height: 40)
         XCTAssert(CGRectEqualToRect(testAnchorView.frame, CGRectMake(610, 500, 30, 40)))
 

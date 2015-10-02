@@ -203,21 +203,21 @@ class ViewController: UIViewController {
         view7.alignAndFillHeight(align: .AboveMatchingRight, relativeTo: view1, padding: 10, width: 60)
         view8.alignAndFillWidth(align: .ToTheLeftMatchingTop, relativeTo: view7, padding: 10, height: 70)
         view9.alignBetweenVertical(align: .UnderMatchingLeft, primaryView: view8, secondaryView: anchorView, padding: 10, width: 100)
-        view10.alignBetweenHorizontal(align: .ToTheRightMatchingTop, primaryView: view9, secondaryView: view7, padding: 10, height: view9.height())
+        view10.alignBetweenHorizontal(align: .ToTheRightMatchingTop, primaryView: view9, secondaryView: view7, padding: 10, height: view9.height)
         view14.anchorInCorner(.BottomLeft, xPad: 10, yPad: 10, width: 100, height: 100)
         view15.alignBetweenVertical(align: .UnderMatchingLeft, primaryView: view9, secondaryView: view14, padding: 10, width: 50)
         view16.alignBetweenHorizontal(align: .ToTheRightMatchingBottom, primaryView: view14, secondaryView: view6, padding: 10, height: 40)
         view17.alignBetweenHorizontal(align: .ToTheRightMatchingTop, primaryView: view15, secondaryView: anchorView, padding: 10, height: 100)
-        view18.alignBetweenVertical(align: .UnderMatchingLeft, primaryView: anchorView, secondaryView: view16, padding: 10, width: anchorView.width())
+        view18.alignBetweenVertical(align: .UnderMatchingLeft, primaryView: anchorView, secondaryView: view16, padding: 10, width: anchorView.width)
         view19.alignBetweenHorizontal(align: .ToTheRightMatchingTop, primaryView: view14, secondaryView: view18, padding: 10, height: 50)
-        view20.alignBetweenVertical(align: .UnderCentered, primaryView: view17, secondaryView: view19, padding: 10, width: view17.width())
+        view20.alignBetweenVertical(align: .UnderCentered, primaryView: view17, secondaryView: view19, padding: 10, width: view17.width)
     }
 
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         let touch : UITouch = touches.first!
         let point = touch.locationInView(containerView)
 
-        anchorView.frame = CGRectMake(point.x - (anchorView.width() / 2.0), point.y - (anchorView.height() / 2.0), anchorView.width(), anchorView.height())
+        anchorView.frame = CGRectMake(point.x - (anchorView.width / 2.0), point.y - (anchorView.height / 2.0), anchorView.width, anchorView.height)
 
         layoutFrames()
     }
