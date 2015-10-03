@@ -249,9 +249,9 @@
 			productReference = 036A08321BBF919E000B093A /* NeonUnitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		03EDD3821BBF89910006C4A9 /* Neon-iOS */ = {
+		03EDD3821BBF89910006C4A9 /* Neon iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 03EDD38C1BBF89910006C4A9 /* Build configuration list for PBXNativeTarget "Neon-iOS" */;
+			buildConfigurationList = 03EDD38C1BBF89910006C4A9 /* Build configuration list for PBXNativeTarget "Neon iOS" */;
 			buildPhases = (
 				03EDD37E1BBF89910006C4A9 /* Sources */,
 				03EDD37F1BBF89910006C4A9 /* Frameworks */,
@@ -262,14 +262,14 @@
 			);
 			dependencies = (
 			);
-			name = "Neon-iOS";
+			name = "Neon iOS";
 			productName = "Neon-iOS";
 			productReference = 03EDD3831BBF89910006C4A9 /* Neon.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		03EDD3961BBF8A4F0006C4A9 /* Neon-OSX */ = {
+		03EDD3961BBF8A4F0006C4A9 /* Neon OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 03EDD39C1BBF8A4F0006C4A9 /* Build configuration list for PBXNativeTarget "Neon-OSX" */;
+			buildConfigurationList = 03EDD39C1BBF8A4F0006C4A9 /* Build configuration list for PBXNativeTarget "Neon OSX" */;
 			buildPhases = (
 				03EDD3921BBF8A4F0006C4A9 /* Sources */,
 				03EDD3931BBF8A4F0006C4A9 /* Frameworks */,
@@ -280,14 +280,14 @@
 			);
 			dependencies = (
 			);
-			name = "Neon-OSX";
+			name = "Neon OSX";
 			productName = "Neon-OSX";
 			productReference = 03EDD3971BBF8A4F0006C4A9 /* Neon.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		27D253651BAF71AB00FA4FED /* Neon-Demo */ = {
+		27D253651BAF71AB00FA4FED /* Neon Demo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 27D2538E1BAF71AB00FA4FED /* Build configuration list for PBXNativeTarget "Neon-Demo" */;
+			buildConfigurationList = 27D2538E1BAF71AB00FA4FED /* Build configuration list for PBXNativeTarget "Neon Demo" */;
 			buildPhases = (
 				27D253621BAF71AB00FA4FED /* Sources */,
 				27D253631BAF71AB00FA4FED /* Frameworks */,
@@ -299,7 +299,7 @@
 			dependencies = (
 				03EDD3891BBF89910006C4A9 /* PBXTargetDependency */,
 			);
-			name = "Neon-Demo";
+			name = "Neon Demo";
 			productName = Neon;
 			productReference = 27D253661BAF71AB00FA4FED /* Neon_Demo.app */;
 			productType = "com.apple.product-type.application";
@@ -341,9 +341,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				03EDD3821BBF89910006C4A9 /* Neon-iOS */,
-				03EDD3961BBF8A4F0006C4A9 /* Neon-OSX */,
-				27D253651BAF71AB00FA4FED /* Neon-Demo */,
+				03EDD3821BBF89910006C4A9 /* Neon iOS */,
+				03EDD3961BBF8A4F0006C4A9 /* Neon OSX */,
+				27D253651BAF71AB00FA4FED /* Neon Demo */,
 				036A08311BBF919E000B093A /* NeonUnitTests */,
 			);
 		};
@@ -433,12 +433,12 @@
 /* Begin PBXTargetDependency section */
 		036A08391BBF919E000B093A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 03EDD3821BBF89910006C4A9 /* Neon-iOS */;
+			target = 03EDD3821BBF89910006C4A9 /* Neon iOS */;
 			targetProxy = 036A08381BBF919E000B093A /* PBXContainerItemProxy */;
 		};
 		03EDD3891BBF89910006C4A9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 03EDD3821BBF89910006C4A9 /* Neon-iOS */;
+			target = 03EDD3821BBF89910006C4A9 /* Neon iOS */;
 			targetProxy = 03EDD3881BBF89910006C4A9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -695,8 +695,9 @@
 				036A083C1BBF919E000B093A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		03EDD38C1BBF89910006C4A9 /* Build configuration list for PBXNativeTarget "Neon-iOS" */ = {
+		03EDD38C1BBF89910006C4A9 /* Build configuration list for PBXNativeTarget "Neon iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				03EDD38D1BBF89910006C4A9 /* Debug */,
@@ -705,7 +706,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		03EDD39C1BBF8A4F0006C4A9 /* Build configuration list for PBXNativeTarget "Neon-OSX" */ = {
+		03EDD39C1BBF8A4F0006C4A9 /* Build configuration list for PBXNativeTarget "Neon OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				03EDD39D1BBF8A4F0006C4A9 /* Debug */,
@@ -723,7 +724,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		27D2538E1BAF71AB00FA4FED /* Build configuration list for PBXNativeTarget "Neon-Demo" */ = {
+		27D2538E1BAF71AB00FA4FED /* Build configuration list for PBXNativeTarget "Neon Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				27D2538F1BAF71AB00FA4FED /* Debug */,

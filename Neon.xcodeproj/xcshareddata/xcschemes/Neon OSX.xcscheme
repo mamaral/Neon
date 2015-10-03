@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "03EDD3821BBF89910006C4A9"
+               BlueprintIdentifier = "03EDD3961BBF8A4F0006C4A9"
                BuildableName = "Neon.framework"
-               BlueprintName = "Neon-iOS"
+               BlueprintName = "Neon OSX"
                ReferencedContainer = "container:Neon.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "03EDD3821BBF89910006C4A9"
+            BlueprintIdentifier = "03EDD3961BBF8A4F0006C4A9"
             BuildableName = "Neon.framework"
-            BlueprintName = "Neon-iOS"
+            BlueprintName = "Neon OSX"
             ReferencedContainer = "container:Neon.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "03EDD3821BBF89910006C4A9"
+            BlueprintIdentifier = "03EDD3961BBF8A4F0006C4A9"
             BuildableName = "Neon.framework"
-            BlueprintName = "Neon-iOS"
+            BlueprintName = "Neon OSX"
             ReferencedContainer = "container:Neon.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
