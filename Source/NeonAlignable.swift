@@ -16,6 +16,7 @@
 public protocol Alignable : Frameable {}
 
 public extension Alignable {
+    
     /// Align a view relative to a sibling view in the same superview.
     ///
     /// - parameters:

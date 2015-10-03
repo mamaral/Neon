@@ -6,7 +6,6 @@
 //  Copyright © 2015 Mike Amaral. All rights reserved.
 //
 
-
 #if os(iOS)
   import UIKit
   typealias View = UIView
@@ -27,6 +26,7 @@ extension View : Frameable, Anchorable, Alignable, Groupable {
         return superview.frame
     }
 }
+
 
 // MARK: CALayer implementation of the Neon protocols.
 //

@@ -189,9 +189,9 @@
 			isa = PBXGroup;
 			children = (
 				03EDD3AE1BBF8BC90006C4A9 /* Neon.swift */,
-				03EDD3AF1BBF8BC90006C4A9 /* NeonAlignable.swift */,
-				03EDD3B01BBF8BC90006C4A9 /* NeonAnchorable.swift */,
 				03EDD3B11BBF8BC90006C4A9 /* NeonFrameable.swift */,
+				03EDD3B01BBF8BC90006C4A9 /* NeonAnchorable.swift */,
+				03EDD3AF1BBF8BC90006C4A9 /* NeonAlignable.swift */,
 				03EDD3B21BBF8BC90006C4A9 /* NeonGroupable.swift */,
 				03EDD39F1BBF8A6A0006C4A9 /* Supporting Files */,
 			);
