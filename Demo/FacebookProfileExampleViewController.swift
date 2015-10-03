@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Neon
+
 
 class TwitterProfileExampleViewController: UIViewController {
     let searchBar : UIImageView = UIImageView()

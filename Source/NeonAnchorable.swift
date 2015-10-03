@@ -6,11 +6,16 @@
 //  Copyright © 2015 Mike Amaral. All rights reserved.
 //
 
-import UIKit
+#if os(iOS)
+  import UIKit
+#else
+  import Cocoa
+#endif
 
-protocol Anchorable : Frameable {}
 
-extension Anchorable {
+public protocol Anchorable : Frameable {}
+
+public extension Anchorable {
 
     /// Fill the superview, with optional padding values.
     ///
@@ -25,7 +30,7 @@ extension Anchorable {
     ///
     ///   - bottom: The padding between the bottom of the view and the superview.
     ///
-    func fillSuperview(left left: CGFloat = 0, right: CGFloat = 0, top: CGFloat = 0, bottom: CGFloat = 0) {
+    public func fillSuperview(left left: CGFloat = 0, right: CGFloat = 0, top: CGFloat = 0, bottom: CGFloat = 0) {
         let width : CGFloat = superFrame.width - (left + right)
         let height : CGFloat = superFrame.height - (top + bottom)
 
@@ -40,7 +45,7 @@ extension Anchorable {
     ///
     ///   - height: The height of the view.
     ///
-    func anchorInCenter(width width: CGFloat, height: CGFloat) {
+    public func anchorInCenter(width width: CGFloat, height: CGFloat) {
         let xOrigin : CGFloat = (superFrame.width / 2.0) - (width / 2.0)
         let yOrigin : CGFloat = (superFrame.height / 2.0) - (height / 2.0)
 
@@ -63,7 +68,7 @@ extension Anchorable {
     ///
     ///   - height: The height of the view.
     ///
-    func anchorInCorner(corner: Corner, xPad: CGFloat, yPad: CGFloat, width: CGFloat, height: CGFloat) {
+    public func anchorInCorner(corner: Corner, xPad: CGFloat, yPad: CGFloat, width: CGFloat, height: CGFloat) {
         var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0
 
@@ -105,7 +110,7 @@ extension Anchorable {
     ///
     ///   - height: The height of the view.
     ///
-    func anchorToEdge(edge: Edge, padding: CGFloat, width: CGFloat, height: CGFloat) {
+    public func anchorToEdge(edge: Edge, padding: CGFloat, width: CGFloat, height: CGFloat) {
         var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0
 
@@ -154,7 +159,7 @@ extension Anchorable {
     /// the `.Left` and `.Right` will have `otherSize` applied to their width as their heights are
     /// automatically calculated.
     ///
-    func anchorAndFillEdge(edge: Edge, xPad: CGFloat, yPad: CGFloat, otherSize: CGFloat) {
+    public func anchorAndFillEdge(edge: Edge, xPad: CGFloat, yPad: CGFloat, otherSize: CGFloat) {
         var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0
         var width : CGFloat = 0.0

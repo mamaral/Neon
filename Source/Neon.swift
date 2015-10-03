@@ -6,12 +6,20 @@
 //  Copyright © 2015 Mike Amaral. All rights reserved.
 //
 
-import UIKit
+
+#if os(iOS)
+  import UIKit
+  typealias View = UIView
+#else
+  import Cocoa
+  typealias View = NSView
+#endif
+
 
 // MARK: UIView implementation of the Neon protocols.
 //
-extension UIView : Frameable, Anchorable, Alignable, Groupable {
-    var superFrame: CGRect {
+extension View : Frameable, Anchorable, Alignable, Groupable {
+    public var superFrame: CGRect {
         guard let superview = superview else {
             return CGRectZero
         }
@@ -23,7 +31,7 @@ extension UIView : Frameable, Anchorable, Alignable, Groupable {
 // MARK: CALayer implementation of the Neon protocols.
 //
 extension CALayer : Frameable, Anchorable, Alignable, Groupable {
-    var superFrame: CGRect {
+    public var superFrame: CGRect {
         guard let superlayer = superlayer else {
             return CGRectZero
         }
