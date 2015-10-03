@@ -124,7 +124,7 @@ extension Frameable {
         return CGRectGetMinX(frame)
     }
 
-   public  var xMid: CGFloat {
+    public  var xMid: CGFloat {
         return CGRectGetMinX(frame) + (CGRectGetWidth(frame) / 2.0)
     }
 
