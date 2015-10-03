@@ -16,6 +16,7 @@
 public protocol Groupable : Frameable {}
 
 public extension Groupable {
+
     /// Tell a view to group an array of its subviews centered, specifying the padding between each subview,
     /// as well as the size of each.
     ///
@@ -218,7 +219,7 @@ public extension Groupable {
     ///
     public func groupAndFill(group group: Group, views: [Frameable], padding: CGFloat) {
         if views.count == 0 {
-            print("[NEON] Warning: No subviews provided to groupAgainstEdge().")
+            print("[NEON] Warning: No subviews provided to groupAndFill().")
             return
         }
 
@@ -325,7 +326,7 @@ public extension Groupable {
 
     private func groupAndAlignHorizontal(align: Align, views: [Frameable], relativeTo sibling: Frameable, padding: CGFloat, width: CGFloat, height: CGFloat) {
         if views.count == 0 {
-            print("[NEON] Warning: No subviews provided to groupAgainstEdge().")
+            print("[NEON] Warning: No subviews provided to groupAndAlign().")
             return
         }
 
@@ -395,7 +396,7 @@ public extension Groupable {
 
     private func groupAndAlignVertical(align: Align, views: [Frameable], relativeTo sibling: Frameable, padding: CGFloat, width: CGFloat, height: CGFloat) {
         if views.count == 0 {
-            print("[NEON] Warning: No subviews provided to groupAgainstEdge().")
+            print("[NEON] Warning: No subviews provided to groupAndAlign().")
             return
         }
 
