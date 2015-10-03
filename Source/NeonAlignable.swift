@@ -6,11 +6,16 @@
 //  Copyright © 2015 Mike Amaral. All rights reserved.
 //
 
-import UIKit
+#if os(iOS)
+  import UIKit
+#else
+  import Cocoa
+#endif
 
-protocol Alignable : Frameable {}
 
-extension Alignable {
+public protocol Alignable : Frameable {}
+
+public extension Alignable {
     /// Align a view relative to a sibling view in the same superview.
     ///
     /// - parameters:
@@ -29,7 +34,7 @@ extension Alignable {
     ///
     ///   - height: The height of the view.
     ///
-    func align(align: Align, relativeTo sibling: Frameable, padding: CGFloat, width: CGFloat, height: CGFloat) {
+    public func align(align: Align, relativeTo sibling: Frameable, padding: CGFloat, width: CGFloat, height: CGFloat) {
         var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0
 
@@ -102,7 +107,7 @@ extension Alignable {
     ///
     ///   - height: The height of the view.
     ///
-    func alignAndFillWidth(align align: Align, relativeTo sibling: Frameable, padding: CGFloat, height: CGFloat) {
+    public func alignAndFillWidth(align align: Align, relativeTo sibling: Frameable, padding: CGFloat, height: CGFloat) {
         let superviewWidth = superFrame.width
         var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0
@@ -192,7 +197,7 @@ extension Alignable {
     ///
     ///   - width: The width of the view.
     ///
-    func alignAndFillHeight(align align: Align, relativeTo sibling: Frameable, padding: CGFloat, width: CGFloat) {
+    public func alignAndFillHeight(align align: Align, relativeTo sibling: Frameable, padding: CGFloat, width: CGFloat) {
         let superviewHeight : CGFloat = superFrame.height
         var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0
@@ -280,7 +285,7 @@ extension Alignable {
     ///
     ///   - padding: The padding to be applied between this view, the sibling view and the superview.
     ///
-    func alignAndFill(align align: Align, relativeTo sibling: Frameable, padding: CGFloat) {
+    public func alignAndFill(align align: Align, relativeTo sibling: Frameable, padding: CGFloat) {
         let superviewWidth : CGFloat = superFrame.width
         let superviewHeight : CGFloat = superFrame.height
         var xOrigin : CGFloat = 0.0
@@ -387,7 +392,7 @@ extension Alignable {
     ///
     ///   - height: The height of the view.
     ///
-    func alignBetweenHorizontal(align align: Align, primaryView: Frameable, secondaryView: Frameable, padding: CGFloat, height: CGFloat) {
+    public func alignBetweenHorizontal(align align: Align, primaryView: Frameable, secondaryView: Frameable, padding: CGFloat, height: CGFloat) {
         let superviewWidth : CGFloat = superFrame.width
         var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0
@@ -450,7 +455,7 @@ extension Alignable {
     ///
     ///   - width: The width of the view.
     ///
-    func alignBetweenVertical(align align: Align, primaryView: Frameable, secondaryView: Frameable, padding: CGFloat, width: CGFloat) {
+    public func alignBetweenVertical(align align: Align, primaryView: Frameable, secondaryView: Frameable, padding: CGFloat, width: CGFloat) {
         let superviewHeight : CGFloat = superFrame.height
         var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0

@@ -6,12 +6,19 @@
 //  Copyright © 2015 Mike Amaral. All rights reserved.
 //
 
-import UIKit
+
+#if os(iOS)
+  import UIKit
+#else
+  import Cocoa
+#endif
+
 
 /// Types adopting the `Frameable` protocol calculate specific `frame` information, as well as provide the
 /// frame information about their `superview` or `superlayer`.
 ///
-protocol Frameable : class {
+public protocol Frameable : class {
+  
     var frame: CGRect { get set }
     var superFrame: CGRect { get }
 
@@ -113,35 +120,36 @@ protocol Frameable : class {
 
 
 extension Frameable {
-    var x: CGFloat {
+  
+    public var x: CGFloat {
         return CGRectGetMinX(frame)
     }
 
-    var xMid: CGFloat {
+   public  var xMid: CGFloat {
         return CGRectGetMinX(frame) + (CGRectGetWidth(frame) / 2.0)
     }
 
-    var xMax: CGFloat {
+    public var xMax: CGFloat {
         return CGRectGetMaxX(frame)
     }
 
-    var y: CGFloat {
+    public var y: CGFloat {
         return CGRectGetMinY(frame)
     }
 
-    var yMid: CGFloat {
+    public var yMid: CGFloat {
         return CGRectGetMinY(frame) + (CGRectGetHeight(frame) / 2.0)
     }
 
-    var yMax: CGFloat {
+    public var yMax: CGFloat {
         return CGRectGetMaxY(frame)
     }
 
-    var width: CGFloat {
+    public var width: CGFloat {
         return CGRectGetWidth(frame)
     }
 
-    var height: CGFloat {
+    public var height: CGFloat {
         return CGRectGetHeight(frame)
     }
 }

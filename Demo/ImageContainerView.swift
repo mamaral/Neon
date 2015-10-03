@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neon
 
 class ImageContainerView: UIView {
     let imageView : UIImageView = UIImageView()
