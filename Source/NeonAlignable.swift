@@ -379,6 +379,7 @@ public extension Alignable {
         frame = CGRectMake(xOrigin, yOrigin, width, height)
     }
 
+
     /// Align a view between two sibling views horizontally, automatically expanding the width to extend the full
     /// horizontal span between the `primaryView` and the `secondaryView`, with equal padding on both sides.
     ///
