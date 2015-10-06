@@ -333,7 +333,7 @@ public extension Groupable {
 
         var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0
-        var xAdjust : CGFloat = width + padding
+        let xAdjust : CGFloat = width + padding
 
         switch align {
         case .ToTheRightMatchingTop:
@@ -349,19 +349,16 @@ public extension Groupable {
             yOrigin = sibling.yMid - (height / 2.0)
 
         case .ToTheLeftMatchingTop:
-            xOrigin = sibling.x - width - padding
+            xOrigin = sibling.x - (CGFloat(views.count) * width) - (CGFloat(views.count) * padding)
             yOrigin = sibling.y
-            xAdjust = -xAdjust
 
         case .ToTheLeftMatchingBottom:
-            xOrigin = sibling.x - width - padding
+            xOrigin = sibling.x - (CGFloat(views.count) * width) - (CGFloat(views.count) * padding)
             yOrigin = sibling.yMax - height
-            xAdjust = -xAdjust
 
         case .ToTheLeftCentered:
-            xOrigin = sibling.x - width - padding
+            xOrigin = sibling.x - (CGFloat(views.count) * width) - (CGFloat(views.count) * padding)
             yOrigin = sibling.yMid - (height / 2.0)
-            xAdjust = -xAdjust
 
         case .UnderMatchingLeft:
             xOrigin = sibling.x
