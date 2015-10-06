@@ -1,0 +1,5 @@
+before_install: gem install cocoapods xcpretty obcd slather -N
+xcode_sdk: iphonesimulator
+xcode_project: Neon.xcodeproj
+xcode_scheme: NeonUnitTests
+after_success: slather

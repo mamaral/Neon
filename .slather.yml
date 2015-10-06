@@ -1,0 +1,3 @@
+coverage_service: coveralls
+xcodeproj: Neon.xcodeproj
+source_directory: Source
