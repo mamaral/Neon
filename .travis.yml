@@ -1,4 +1,7 @@
 before_install: gem install cocoapods xcpretty obcd slather -N
+osx_image: xcode7
+env:
+  - DESTINATION="OS=9.0,name=iPhone 6" SCHEME="NeonUnitTests" SDK=iphonesimulator9.0
 xcode_sdk: iphonesimulator
 xcode_project: Neon.xcodeproj
 xcode_scheme: NeonUnitTests
