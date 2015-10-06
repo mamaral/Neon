@@ -471,6 +471,67 @@ class NeonTests: XCTestCase {
         XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(105, 0, 20, 20)))
         XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(105, 25, 20, 20)))
         XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(105, 50, 20, 20)))
+
+        testSuperview.groupAndAlign(group: .Vertical, andAlign: .ToTheRightCentered, views: [testSiblingView, testSiblingView2, testSiblingView3], relativeTo: testAnchorView, padding: 5, width: 20, height: 20)
+        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(105, 15, 20, 20)))
+        XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(105, 40, 20, 20)))
+        XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(105, 65, 20, 20)))
+
+        testSuperview.groupAndAlign(group: .Vertical, andAlign: .ToTheRightMatchingBottom, views: [testSiblingView, testSiblingView2, testSiblingView3], relativeTo: testAnchorView, padding: 5, width: 20, height: 20)
+        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(105, 30, 20, 20)))
+        XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(105, 55, 20, 20)))
+        XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(105, 80, 20, 20)))
+
+        testAnchorView.anchorInCorner(.TopRight, xPad: 0, yPad: 0, width: 100, height: 100)
+
+        testSuperview.groupAndAlign(group: .Vertical, andAlign: .ToTheLeftMatchingTop, views: [testSiblingView, testSiblingView2, testSiblingView3], relativeTo: testAnchorView, padding: 5, width: 20, height: 20)
+        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(875, 0, 20, 20)))
+        XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(875, 25, 20, 20)))
+        XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(875, 50, 20, 20)))
+
+        testSuperview.groupAndAlign(group: .Vertical, andAlign: .ToTheLeftCentered, views: [testSiblingView, testSiblingView2, testSiblingView3], relativeTo: testAnchorView, padding: 5, width: 20, height: 20)
+        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(875, 15, 20, 20)))
+        XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(875, 40, 20, 20)))
+        XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(875, 65, 20, 20)))
+
+        testSuperview.groupAndAlign(group: .Vertical, andAlign: .ToTheLeftMatchingBottom, views: [testSiblingView, testSiblingView2, testSiblingView3], relativeTo: testAnchorView, padding: 5, width: 20, height: 20)
+        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(875, 30, 20, 20)))
+        XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(875, 55, 20, 20)))
+        XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(875, 80, 20, 20)))
+
+        testAnchorView.anchorInCorner(.TopLeft, xPad: 0, yPad: 0, width: 100, height: 100)
+
+        testSuperview.groupAndAlign(group: .Vertical, andAlign: .UnderMatchingLeft, views: [testSiblingView, testSiblingView2, testSiblingView3], relativeTo: testAnchorView, padding: 5, width: 20, height: 20)
+        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(0, 105, 20, 20)))
+        XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(0, 130, 20, 20)))
+        XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(0, 155, 20, 20)))
+
+        testSuperview.groupAndAlign(group: .Vertical, andAlign: .UnderCentered, views: [testSiblingView, testSiblingView2, testSiblingView3], relativeTo: testAnchorView, padding: 5, width: 20, height: 20)
+        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(40, 105, 20, 20)))
+        XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(40, 130, 20, 20)))
+        XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(40, 155, 20, 20)))
+
+        testSuperview.groupAndAlign(group: .Vertical, andAlign: .UnderMatchingRight, views: [testSiblingView, testSiblingView2, testSiblingView3], relativeTo: testAnchorView, padding: 5, width: 20, height: 20)
+        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(80, 105, 20, 20)))
+        XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(80, 130, 20, 20)))
+        XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(80, 155, 20, 20)))
+
+        testAnchorView.anchorInCorner(.BottomLeft, xPad: 0, yPad: 0, width: 100, height: 100)
+
+        testSuperview.groupAndAlign(group: .Vertical, andAlign: .AboveMatchingLeft, views: [testSiblingView, testSiblingView2, testSiblingView3], relativeTo: testAnchorView, padding: 5, width: 20, height: 20)
+        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(0, 825, 20, 20)))
+        XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(0, 850, 20, 20)))
+        XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(0, 875, 20, 20)))
+
+        testSuperview.groupAndAlign(group: .Vertical, andAlign: .AboveCentered, views: [testSiblingView, testSiblingView2, testSiblingView3], relativeTo: testAnchorView, padding: 5, width: 20, height: 20)
+        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(40, 825, 20, 20)))
+        XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(40, 850, 20, 20)))
+        XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(40, 875, 20, 20)))
+
+        testSuperview.groupAndAlign(group: .Vertical, andAlign: .AboveMatchingRight, views: [testSiblingView, testSiblingView2, testSiblingView3], relativeTo: testAnchorView, padding: 5, width: 20, height: 20)
+        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(80, 825, 20, 20)))
+        XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(80, 850, 20, 20)))
+        XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(80, 875, 20, 20)))
     }
   
   // TODO: test groupAndFill()
