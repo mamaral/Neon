@@ -2,6 +2,8 @@
 
 ### Build dynamic and beautiful user interfaces like a boss, with Swift.
 
+[![License](https://img.shields.io/cocoapods/l/Neon.svg)](http://doge.mit-license.org) [![Build Status](https://img.shields.io/travis/mamaral/Neon.svg)](https://travis-ci.org/mamaral/Neon/) [![Badge w/ Version](https://img.shields.io/cocoapods/v/Neon.svg)](https://img.shields.io/cocoapods/v/Neon.svg) [![Coverage Status](https://coveralls.io/repos/mamaral/Neon/badge.svg?branch=master)](https://coveralls.io/r/mamaral/Neon?branch=master) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
 Neon is built around how user interfaces are naturally and intuitively designed. No more springs and struts. No more whacky visual format language. No more auto layout contraints. We're not robots, so why should we build our UIs like we are?
 
 > ***Neon is currently in beta***, but more will be coming very soon, so stay tuned! 
