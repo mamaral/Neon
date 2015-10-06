@@ -204,6 +204,15 @@ anchorViewB.groupAgainstEdge(group: .Vertical, views: [view4, view5, view6], aga
 
 ![Group against edge](Screenshots/group_against_edge.png)
 
+Grouping views relative to a sibling view can be done as well:
+
+```swift
+view.groupAndAlign(group: .Horizontal, andAlign: .ToTheRightMatchingTop, views: [view1, view2, view3], relativeTo: anchorViewA, padding: padding, width: size, height: size)
+view.groupAndAlign(group: .Vertical, andAlign: .UnderCentered, views: [view4, view5, view6], relativeTo: anchorViewA, padding: padding, width: size, height: size)
+```
+
+![Group relative](Screenshots/group_relative.png)
+
 You can also specify that you want a group of subviews to fill their superview, either horizontally or vertically:
 
 ```swift

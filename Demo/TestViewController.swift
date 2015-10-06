@@ -60,45 +60,49 @@ class TestViewController: UIViewController {
         view1.textAlignment = .Center
         view1.font = UIFont.boldSystemFontOfSize(20)
         view1.textColor = UIColor.whiteColor()
-        anchorViewA.addSubview(view1)
+        view.addSubview(view1)
 
         view2.backgroundColor = UIColor(red: 132/255.0, green: 169/255.0, blue: 57/255.0, alpha: 1.0)
         view2.text = "2"
         view2.textAlignment = .Center
         view2.font = UIFont.boldSystemFontOfSize(20)
         view2.textColor = UIColor.whiteColor()
-        anchorViewA.addSubview(view2)
+        view.addSubview(view2)
 
         view3.backgroundColor = UIColor(red: 78/255.0, green: 102/255.0, blue: 131/255.0, alpha: 1.0)
         view3.text = "3"
         view3.textAlignment = .Center
         view3.font = UIFont.boldSystemFontOfSize(20)
         view3.textColor = UIColor.whiteColor()
-        anchorViewA.addSubview(view3)
+        view.addSubview(view3)
 
         view4.backgroundColor = UIColor(red: 132/255.0, green: 169/255.0, blue: 57/255.0, alpha: 1.0)
         view4.text = "4"
         view4.textAlignment = .Center
         view4.font = UIFont.boldSystemFontOfSize(20)
         view4.textColor = UIColor.whiteColor()
-        anchorViewB.addSubview(view4)
+        view.addSubview(view4)
 
         view5.backgroundColor = UIColor(red: 78/255.0, green: 102/255.0, blue: 131/255.0, alpha: 1.0)
         view5.text = "5"
         view5.textAlignment = .Center
         view5.font = UIFont.boldSystemFontOfSize(20)
         view5.textColor = UIColor.whiteColor()
-        anchorViewB.addSubview(view5)
+        view.addSubview(view5)
 
         view6.backgroundColor = UIColor(red: 132/255.0, green: 169/255.0, blue: 57/255.0, alpha: 1.0)
         view6.text = "6"
         view6.textAlignment = .Center
         view6.font = UIFont.boldSystemFontOfSize(20)
         view6.textColor = UIColor.whiteColor()
-        anchorViewB.addSubview(view6)
+        view.addSubview(view6)
     }
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
+
+        anchorViewA.anchorInCenter(width: 200, height: 200)
+        view.groupAndAlign(group: .Horizontal, andAlign: .ToTheRightMatchingTop, views: [view1, view2, view3], relativeTo: anchorViewA, padding: 10, width: 50, height: 50)
+        view.groupAndAlign(group: .Vertical, andAlign: .UnderCentered, views: [view4, view5, view6], relativeTo: anchorViewA, padding: 10, width: 50, height: 50)
     }
 }
