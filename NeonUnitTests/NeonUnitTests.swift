@@ -533,9 +533,32 @@ class NeonTests: XCTestCase {
         XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(80, 850, 20, 20)))
         XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(80, 875, 20, 20)))
     }
-  
-  // TODO: test groupAndFill()
-  func testGroupAndFill() {
-    
-  }
+
+    func testGroupAndFill() {
+        testSuperview.addSubview(testSiblingView2)
+        testSuperview.addSubview(testSiblingView3)
+        testSuperview.addSubview(testSiblingView4)
+
+        testSuperview.groupAndFill(group: .Horizontal, views: [testSiblingView, testSiblingView2, testSiblingView3], padding: 10)
+        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(10, 10, 320, 980)))
+        XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(340, 10, 320, 980)))
+        XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(670, 10, 320, 980)))
+
+        testSuperview.groupAndFill(group: .Horizontal, views: [testSiblingView, testSiblingView2, testSiblingView3, testSiblingView4], padding: 2)
+        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(2, 2, 247.5, 996)))
+        XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(251.5, 2, 247.5, 996)))
+        XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(501, 2, 247.5, 996)))
+        XCTAssert(CGRectEqualToRect(testSiblingView4.frame, CGRectMake(750.5, 2, 247.5, 996)))
+
+        testSuperview.groupAndFill(group: .Vertical, views: [testSiblingView, testSiblingView2, testSiblingView3], padding: 10)
+        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(10, 10, 980, 320)))
+        XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(10, 340, 980, 320)))
+        XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(10, 670, 980, 320)))
+
+        testSuperview.groupAndFill(group: .Vertical, views: [testSiblingView, testSiblingView2, testSiblingView3, testSiblingView4], padding: 2)
+        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(2, 2, 996, 247.5)))
+        XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(2, 251.5, 996, 247.5)))
+        XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(2, 501, 996, 247.5)))
+        XCTAssert(CGRectEqualToRect(testSiblingView4.frame, CGRectMake(2, 750.5, 996, 247.5)))
+    }
 }
