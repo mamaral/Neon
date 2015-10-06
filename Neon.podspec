@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'Neon'
-  s.version = '0.0.1'
+  s.version = 'v0.0.1'
   s.license = 'MIT'
   s.summary = 'A powerful Swift programmatic UI layout framework.'
   s.homepage = 'https://github.com/mamaral/neon'
