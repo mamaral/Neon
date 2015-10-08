@@ -128,7 +128,7 @@ view4.anchorAndFillEdge(.Right, xPad: padding, yPad: padding, otherSize: size)
 
 ## Align
 
-Now that we've anchored primary views, we can start making our UI more complex by aligning other views *relative to other sibling views*, using the (you guessed it) `Align` value. **Sibling views** are views that share the same superview directly. There are twelve `Align` types, and they are all pretty self-explanatory - here's an example using all nine with the `align()` function:
+Now that we've anchored primary views, we can start making our UI more complex by aligning other views *relative to other sibling views*, using the (you guessed it) `Align` value. **Sibling views** are views that share the same superview directly. There are twelve `Align` types, and they are all pretty self-explanatory - here's an example using all twelve with the `align()` function:
 
 ```
 view1.align(.AboveMatchingLeft, relativeTo: anchorView, padding: padding, width: size, height: size)
