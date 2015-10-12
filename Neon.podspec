@@ -8,6 +8,15 @@ Pod::Spec.new do |s|
   s.authors = { 'Mike Amaral' => 'mike.amaral36@gmail.com' }
   s.source = { :git => 'https://github.com/mamaral/neon.git', :tag => "v0.0.1" }
   s.ios.deployment_target = '8.0'
-  s.source_files = 'Source/*.swift'
   s.requires_arc = true
+  s.default_subspec = 'Core'
+
+  s.subspec 'Core' do |sp|
+    sp.source_files = 'Source/*.swift'
+  end
+
+  s.subspec 'ASDK' do |sp|
+    sp.dependency 'AsyncDisplayKit', '~> 1.0'
+    sp.source_files = 'Source/ASDK/*.swift'
+  end
 end
