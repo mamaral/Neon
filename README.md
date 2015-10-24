@@ -174,6 +174,22 @@ view4.alignBetweenVertical(align: .AboveMatchingRight, primaryView: anchorViewC,
 
 ![Align Between Fill](Screenshots/align_between_fill.png)
 
+## What about labels?
+
+One of the more complicated parts of working with dynamic layouts, is dealing with labels that may have 1 -> n lines, and as such passing in a specific height isn't always possible without causing a migraine. Neon makes this easy by introducing the `AutoHeight` constant. Pass this value into methods that accept a `height` param, and we will first set the width of the frame, tell the view to `sizeToFit()` so the height is automatically set based on its contents, and then align the view appropriately. For example:
+
+```swift
+testLabel.alignBetweenHorizontal(align: .ToTheRightMatchingBottom, primaryView: anchorViewA, secondaryView: anchorViewB, padding: padding, height: AutoHeight)
+```
+
+![Auto Height 1](Screenshots/auto_height_1.png)
+
+Note that changing the text to something with more characters still produces the same desired result:
+
+![Auto Height 2](Screenshots/auto_height_2.png)
+
+> It's important to note that the using `AutoHeight` with something like a `CALayer`, or passing it in to any of the grouping methods (see below) will have undesired consequences, as it almost doesn't *make sense* in this context. Use `AutoHeight` with anything that implements `sizeToFit()` and you should be OK. The vast majority of cases where you'll want to use this is with `UILabel` objects.
+
 
 ## Grouping
 
