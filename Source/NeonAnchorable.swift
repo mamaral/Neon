@@ -50,6 +50,11 @@ public extension Anchorable {
         let yOrigin : CGFloat = (superFrame.height / 2.0) - (height / 2.0)
 
         frame = CGRectMake(xOrigin, yOrigin, width, height)
+
+        if height == AutoHeight {
+            self.setHeightAutomatically()
+            self.anchorInCenter(width: width, height: self.height)
+        }
     }
 
 
@@ -91,6 +96,11 @@ public extension Anchorable {
         }
 
         frame = CGRectMake(xOrigin, yOrigin, width, height)
+
+        if height == AutoHeight {
+            self.setHeightAutomatically()
+            self.anchorInCorner(corner, xPad: xPad, yPad: yPad, width: width, height: self.height)
+        }
     }
 
 
@@ -133,6 +143,11 @@ public extension Anchorable {
         }
 
         frame = CGRectMake(xOrigin, yOrigin, width, height)
+
+        if height == AutoHeight {
+            self.setHeightAutomatically()
+            self.anchorToEdge(edge, padding: padding, width: width, height: self.height)
+        }
     }
 
 
@@ -164,6 +179,7 @@ public extension Anchorable {
         var yOrigin : CGFloat = 0.0
         var width : CGFloat = 0.0
         var height : CGFloat = 0.0
+        var autoSize : Bool = false
 
         switch edge {
         case .Top:
@@ -171,6 +187,7 @@ public extension Anchorable {
             yOrigin = yPad
             width = superFrame.width - (2 * xPad)
             height = otherSize
+            autoSize = true
 
         case .Left:
             xOrigin = xPad
@@ -183,6 +200,7 @@ public extension Anchorable {
             yOrigin = superFrame.height - otherSize - yPad
             width = superFrame.width - (2 * xPad)
             height = otherSize
+            autoSize = true
 
         case .Right:
             xOrigin = superFrame.width - otherSize - xPad
@@ -192,5 +210,10 @@ public extension Anchorable {
         }
         
         frame = CGRectMake(xOrigin, yOrigin, width, height)
+
+        if height == AutoHeight && autoSize {
+            self.setHeightAutomatically()
+            self.anchorAndFillEdge(edge, xPad: xPad, yPad: yPad, otherSize: self.height)
+        }
     }
 }

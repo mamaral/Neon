@@ -115,6 +115,12 @@ public protocol Frameable : class {
     ///     frame.height() // returns 7.0
     ///
     var height: CGFloat { get }
+
+
+    /// *To be used internally* TODO: Determine how to make this either private or internal.
+    ///
+    ///
+    func setHeightAutomatically()
 }
 
 
