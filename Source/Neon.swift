@@ -25,6 +25,10 @@ extension View : Frameable, Anchorable, Alignable, Groupable {
 
         return superview.frame
     }
+
+    public func setHeightAutomatically() {
+        self.sizeToFit()
+    }
 }
 
 
@@ -38,7 +42,18 @@ extension CALayer : Frameable, Anchorable, Alignable, Groupable {
 
         return superlayer.frame
     }
+
+    public func setHeightAutomatically() { /* no-op here as this shouldn't apply to CALayers */ }
 }
+
+
+// MARK: AutoHeight
+//
+///
+/// `CGFloat` constant used to specify that you want the height to be automatically calculated
+/// using `sizeToFit()`.
+///
+public let AutoHeight : CGFloat = -1
 
 
 // MARK: Corner
