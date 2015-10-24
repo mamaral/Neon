@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neon
 
 class TestViewController: UIViewController {
     let anchorLayer : CALayer = CALayer()
@@ -20,6 +21,7 @@ class TestViewController: UIViewController {
     let view4 : UILabel = UILabel()
     let view5 : UILabel = UILabel()
     let view6 : UILabel = UILabel()
+    let testLabel : UILabel = UILabel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,13 +98,22 @@ class TestViewController: UIViewController {
         view6.font = UIFont.boldSystemFontOfSize(20)
         view6.textColor = UIColor.whiteColor()
         view.addSubview(view6)
+
+        testLabel.backgroundColor = UIColor(red: 132/255.0, green: 169/255.0, blue: 57/255.0, alpha: 1.0)
+        testLabel.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        testLabel.textAlignment = .Center
+        testLabel.font = UIFont.boldSystemFontOfSize(14)
+        testLabel.textColor = UIColor.whiteColor()
+        testLabel.numberOfLines = 0
+        view.addSubview(testLabel)
     }
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
 
-        anchorViewA.anchorInCenter(width: 200, height: 200)
-        view.groupAndAlign(group: .Horizontal, andAlign: .ToTheRightMatchingTop, views: [view1, view2, view3], relativeTo: anchorViewA, padding: 10, width: 50, height: 50)
-        view.groupAndAlign(group: .Vertical, andAlign: .UnderCentered, views: [view4, view5, view6], relativeTo: anchorViewA, padding: 10, width: 50, height: 50)
+//        anchorViewA.anchorInCorner(.TopLeft, xPad: 20, yPad: 20, width: 100, height: 100)
+//        anchorViewB.anchorInCorner(.TopRight, xPad: 20, yPad: 20, width: 100, height: 100)
+//        testLabel.alignAndFillWidth(align: .ToTheRightCentered, relativeTo: anchorViewA, padding: 5, height: AutoHeight)
+        testLabel.anchorToEdge(.Left, padding: 10, width: 400, height: AutoHeight)
     }
 }
