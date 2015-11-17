@@ -506,7 +506,7 @@ class NeonTests: XCTestCase {
         XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(0, 130, 20, 20)))
         XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(0, 155, 20, 20)))
 
-        testSuperview.groupAndAlign(group: .Vertical, andAlign: .UnderCentered, views: [testSiblingView, testSiblingView2, testSiblingView3], relativeTo: testAnchorView, padding: 5, width: 20, height: 20)
+        testSuperview.groupAndAlign(group: .Vertical, andAlign: .UnderCentered, views: [testSiblingView, testSiblingView2, testSiblingView3], relativeTo: testAnchorView, xPad: 5, yPad: 5, width: 20, height: 20)
         XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(40, 105, 20, 20)))
         XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(40, 130, 20, 20)))
         XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(40, 155, 20, 20)))
