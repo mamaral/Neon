@@ -27,7 +27,12 @@ extension View : Frameable, Anchorable, Alignable, Groupable {
     }
 
     public func setHeightAutomatically() {
-        self.sizeToFit()
+        #if os(iOS)
+            self.sizeToFit()
+        #else
+            self.autoresizesSubviews = true
+            self.autoresizingMask = [.ViewWidthSizable, .ViewHeightSizable]
+        #endif
     }
 }
 
