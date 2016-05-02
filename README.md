@@ -20,7 +20,7 @@ pod 'Neon'
 
 ##Manual Installation
 
-1. Download and drop '/Source' in your project.  
+1. Download and drop `/Source` in your project.  
 2. Congratulations!  
 
 
