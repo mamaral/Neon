@@ -8,11 +8,6 @@ Neon is built around how user interfaces are naturally and intuitively designed.
 
 > ***Neon is currently in beta***, but more will be coming very soon, so stay tuned! 
 
-##Installation
-
-1. Download and drop '/Source' in your project.  
-2. Congratulations!  
-
 ## Install via CocoaPods 
 
 You can use [Cocoapods](http://cocoapods.org/) to install `Neon` by adding it to your `Podfile`:
@@ -22,6 +17,12 @@ platform :ios, '8.0'
 use_frameworks!
 pod 'Neon'
 ```
+
+##Manual Installation
+
+1. Download and drop '/Source' in your project.  
+2. Congratulations!  
+
 
 To get the full benefits import `Neon` wherever you have a UIView operation:
 
