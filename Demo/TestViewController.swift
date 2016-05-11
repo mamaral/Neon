@@ -112,8 +112,7 @@ class TestViewController: UIViewController {
         super.viewWillLayoutSubviews()
 
         anchorViewA.anchorInCorner(.TopLeft, xPad: 20, yPad: 20, width: 100, height: 100)
-//        anchorViewB.float(.ToTheRight, relativeTo: anchorViewA, siblingPadding: 10, superViewPadding: 30, width: 50, height: 50)
-//        testLabel.alignAndFillWidth(align: .ToTheRightCentered, relativeTo: anchorViewA, padding: 5, height: AutoHeight)
-        testLabel.float(.ToTheRight, relativeTo: anchorViewA, siblingPadding: 10, superViewPadding: 30, width: 200, height: AutoHeight)
+        view1.align(.ToTheRightMatchingTop, relativeTo: anchorViewA, padding: 20, width: 50, height: 50, offset: 10)
+        view2.align(.UnderMatchingLeft, relativeTo: anchorViewA, padding: 20, width: 50, height: 50, offset: 10)
     }
 }
