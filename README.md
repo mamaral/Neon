@@ -212,6 +212,16 @@ Note that changing the text to something with more characters still produces the
 
 > It's important to note that the using `AutoHeight` with something like a `CALayer`, or passing it in to any of the grouping methods (see below) will have undesired consequences, as it almost doesn't *make sense* in this context. Use `AutoHeight` with anything that implements `sizeToFit()` and you should be OK. The vast majority of cases where you'll want to use this is with `UILabel` objects.
 
+## What if I don't want to align them perfectly?
+
+Sometimes you don't want your views to match their sibling view's *exactly*. Perhaps you want to align a view relative to its sibling, but with a slight offset. You can do this by adding the optional `offset` parameter to any of the above align methods to produce something like the following:
+
+```swift
+view1.align(.ToTheRightMatchingTop, relativeTo: anchorViewA, padding: padding, width: size, height: size, offset: offset)
+view2.align(.UnderMatchingLeft, relativeTo: anchorViewA, padding: padding, width: size, height: size, offset: offset)
+```
+
+![Offset](Screenshots/align_offset.png)
 
 ## Grouping
 
