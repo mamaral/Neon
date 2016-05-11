@@ -214,7 +214,7 @@ Note that changing the text to something with more characters still produces the
 
 ## What if I don't want to align them perfectly?
 
-Sometimes you don't want your views to align with their sibling views *exactly*. Perhaps you want to align a view relative to its sibling, but with a slight offset. You can do this by adding the optional `offset` parameter to any of the above align methods to produce something like the following:
+Sometimes you don't want your views to align with their sibling views *exactly* - tou may want to align a view relative to its sibling, but with a slight offset. You can do this by adding the optional `offset` parameter to any of the above align methods to produce something like the following:
 
 ```swift
 view1.align(.ToTheRightMatchingTop, relativeTo: anchorViewA, padding: padding, width: size, height: size, offset: offset)
