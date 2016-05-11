@@ -162,6 +162,27 @@ public enum Align {
 }
 
 
+// MARK: FloatType
+//
+///
+/// Specifies how a view will float relative to the sibling view.
+///
+/// **ToTheRight**: Specifies that the view should float to the right of a sibling.
+///
+/// **ToTheLeft**: Specifies that the view should float to the left of a sibling.
+///
+/// **Under**: Specifies that the view should float under a sibling.
+///
+/// **Above**: Specifies that the view should float above a sibling.
+///
+public enum FloatType {
+    case ToTheRight
+    case ToTheLeft
+    case Under
+    case Above
+}
+
+
 // MARK: Group Type
 //
 ///

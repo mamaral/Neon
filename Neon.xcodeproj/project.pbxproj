@@ -31,6 +31,7 @@
 		03EDD3C71BBF8CEC0006C4A9 /* ImageContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EDD3C01BBF8CEC0006C4A9 /* ImageContainerView.swift */; };
 		03EDD3C81BBF8CEC0006C4A9 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EDD3C21BBF8CEC0006C4A9 /* TestViewController.swift */; };
 		03EDD3C91BBF8CEC0006C4A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EDD3C31BBF8CEC0006C4A9 /* ViewController.swift */; };
+		27E2B8DD1CE2D57E00330ACF /* NeonFloatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2B8DC1CE2D57E00330ACF /* NeonFloatable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		03EDD3C21BBF8CEC0006C4A9 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestViewController.swift; path = Demo/TestViewController.swift; sourceTree = SOURCE_ROOT; };
 		03EDD3C31BBF8CEC0006C4A9 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Demo/ViewController.swift; sourceTree = SOURCE_ROOT; };
 		27D253661BAF71AB00FA4FED /* Neon_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neon_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		27E2B8DC1CE2D57E00330ACF /* NeonFloatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NeonFloatable.swift; path = Source/NeonFloatable.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 				03EDD3B01BBF8BC90006C4A9 /* NeonAnchorable.swift */,
 				03EDD3AF1BBF8BC90006C4A9 /* NeonAlignable.swift */,
 				03EDD3B21BBF8BC90006C4A9 /* NeonGroupable.swift */,
+				27E2B8DC1CE2D57E00330ACF /* NeonFloatable.swift */,
 				03EDD39F1BBF8A6A0006C4A9 /* Supporting Files */,
 			);
 			name = Source;
@@ -395,6 +398,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27E2B8DD1CE2D57E00330ACF /* NeonFloatable.swift in Sources */,
 				03EDD3B31BBF8BC90006C4A9 /* Neon.swift in Sources */,
 				03EDD3BB1BBF8BCA0006C4A9 /* NeonGroupable.swift in Sources */,
 				03EDD3B91BBF8BCA0006C4A9 /* NeonFrameable.swift in Sources */,
