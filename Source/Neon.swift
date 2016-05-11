@@ -17,7 +17,7 @@
 
 // MARK: UIView implementation of the Neon protocols.
 //
-extension View : Frameable, Anchorable, Alignable, Groupable {
+extension View : Frameable, Anchorable, Alignable, Groupable, Floatable {
     public var superFrame: CGRect {
         guard let superview = superview else {
             return CGRectZero
@@ -39,7 +39,7 @@ extension View : Frameable, Anchorable, Alignable, Groupable {
 
 // MARK: CALayer implementation of the Neon protocols.
 //
-extension CALayer : Frameable, Anchorable, Alignable, Groupable {
+extension CALayer : Frameable, Anchorable, Alignable, Groupable, Floatable {
     public var superFrame: CGRect {
         guard let superlayer = superlayer else {
             return CGRectZero
