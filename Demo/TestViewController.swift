@@ -111,8 +111,8 @@ class TestViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
 
-        anchorViewA.anchorInCorner(.TopLeft, xPad: 20, yPad: 20, width: 100, height: 100)
-        view1.align(.ToTheRightMatchingTop, relativeTo: anchorViewA, padding: 20, width: 50, height: 50, offset: 10)
-        view2.align(.UnderMatchingLeft, relativeTo: anchorViewA, padding: 20, width: 50, height: 50, offset: 10)
+        anchorViewA.anchorInCorner(.TopLeft, xPad: 20, yPad: 20, width: 200, height: 200)
+        view1.align(.ToTheRightMatchingTop, relativeTo: anchorViewA, padding: 20, width: 100, height: 100, offset: 20)
+        view2.align(.UnderMatchingLeft, relativeTo: anchorViewA, padding: 20, width: 100, height: 100, offset: 20)
     }
 }
