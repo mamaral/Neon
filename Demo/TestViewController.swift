@@ -111,9 +111,9 @@ class TestViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
 
-//        anchorViewA.anchorInCorner(.TopLeft, xPad: 20, yPad: 20, width: 100, height: 100)
-//        anchorViewB.anchorInCorner(.TopRight, xPad: 20, yPad: 20, width: 100, height: 100)
+        anchorViewA.anchorInCorner(.TopLeft, xPad: 20, yPad: 20, width: 100, height: 100)
+//        anchorViewB.float(.ToTheRight, relativeTo: anchorViewA, siblingPadding: 10, superViewPadding: 30, width: 50, height: 50)
 //        testLabel.alignAndFillWidth(align: .ToTheRightCentered, relativeTo: anchorViewA, padding: 5, height: AutoHeight)
-        testLabel.anchorToEdge(.Left, padding: 10, width: 400, height: AutoHeight)
+        testLabel.float(.ToTheRight, relativeTo: anchorViewA, siblingPadding: 10, superViewPadding: 30, width: 200, height: AutoHeight)
     }
 }
