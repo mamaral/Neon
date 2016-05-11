@@ -17,7 +17,7 @@
 
 // MARK: UIView implementation of the Neon protocols.
 //
-extension View : Frameable, Anchorable, Alignable, Groupable, Floatable {
+extension View : Frameable, Anchorable, Alignable, Groupable {
     public var superFrame: CGRect {
         guard let superview = superview else {
             return CGRectZero
@@ -39,7 +39,7 @@ extension View : Frameable, Anchorable, Alignable, Groupable, Floatable {
 
 // MARK: CALayer implementation of the Neon protocols.
 //
-extension CALayer : Frameable, Anchorable, Alignable, Groupable, Floatable {
+extension CALayer : Frameable, Anchorable, Alignable, Groupable {
     public var superFrame: CGRect {
         guard let superlayer = superlayer else {
             return CGRectZero
@@ -159,27 +159,6 @@ public enum Align {
     case AboveMatchingLeft
     case AboveMatchingRight
     case AboveCentered
-}
-
-
-// MARK: FloatType
-//
-///
-/// Specifies how a view will float relative to the sibling view.
-///
-/// **ToTheRight**: Specifies that the view should float to the right of a sibling.
-///
-/// **ToTheLeft**: Specifies that the view should float to the left of a sibling.
-///
-/// **Under**: Specifies that the view should float under a sibling.
-///
-/// **Above**: Specifies that the view should float above a sibling.
-///
-public enum FloatType {
-    case ToTheRight
-    case ToTheLeft
-    case Under
-    case Above
 }
 
 

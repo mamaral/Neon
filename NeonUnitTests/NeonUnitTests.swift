@@ -560,21 +560,4 @@ class NeonTests: XCTestCase {
         XCTAssert(CGRectEqualToRect(testSiblingView2.frame, CGRectMake(2, 251.5, 996, 247.5)))
         XCTAssert(CGRectEqualToRect(testSiblingView3.frame, CGRectMake(2, 501, 996, 247.5)))
         XCTAssert(CGRectEqualToRect(testSiblingView4.frame, CGRectMake(2, 750.5, 996, 247.5)))
-    }
-
-    func testFloat() {
-        testAnchorView.frame = CGRectMake(450, 450, 100, 100)
-
-        testSiblingView.float(.ToTheRight, relativeTo: testAnchorView, siblingPadding: 10, superViewPadding: 20, width: 30, height: 40)
-        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(560, 20, 30, 40)))
-
-        testSiblingView.float(.ToTheLeft, relativeTo: testAnchorView, siblingPadding: 50, superViewPadding: 100, width: 18, height: 25)
-        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(382, 100, 18, 25)))
-
-        testSiblingView.float(.Under, relativeTo: testAnchorView, siblingPadding: 20, superViewPadding: 25, width: 50, height: 100)
-        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(25, 570, 50, 100)))
-
-        testSiblingView.float(.Above, relativeTo: testAnchorView, siblingPadding: 30, superViewPadding: 1, width: 100, height: 90)
-        XCTAssert(CGRectEqualToRect(testSiblingView.frame, CGRectMake(1, 330, 100, 90)))
-    }
 }
