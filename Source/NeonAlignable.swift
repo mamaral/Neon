@@ -16,7 +16,7 @@
 public protocol Alignable : Frameable {}
 
 public extension Alignable {
-    
+
     /// Align a view relative to a sibling view in the same superview.
     ///
     /// - parameters:
@@ -98,6 +98,10 @@ public extension Alignable {
         if height == AutoHeight {
             self.setDimensionAutomatically()
             self.align(align, relativeTo: sibling, padding: padding, width: width, height: self.height, offset: offset)
+        }
+        if width == AutoWidth {
+            self.setDimensionAutomatically()
+            self.align(align, relativeTo: sibling, padding: padding, width: self.width, height: height, offset: offset)
         }
     }
 
@@ -293,6 +297,11 @@ public extension Alignable {
         }
 
         frame = CGRectMake(xOrigin, yOrigin, width, height)
+
+        if height == AutoHeight {
+            self.setDimensionAutomatically()
+            self.alignAndFillHeight(align: align, relativeTo: sibling, padding: padding, width: self.height, offset: offset)
+        }
     }
 
 
@@ -522,30 +531,30 @@ public extension Alignable {
             xOrigin = primaryView.x + offset
             yOrigin = secondaryView.yMax + padding
             height = superviewHeight - secondaryView.yMax - (superviewHeight - primaryView.y) - (2 * padding)
-            
+
         case .AboveMatchingRight:
             xOrigin = primaryView.xMax - width + offset
             yOrigin = secondaryView.yMax + padding
             height = superviewHeight - secondaryView.yMax - (superviewHeight - primaryView.y) - (2 * padding)
-            
+
         case .AboveCentered:
             xOrigin = primaryView.xMid - (width / 2.0) + offset
             yOrigin = secondaryView.yMax + padding
             height = superviewHeight - secondaryView.yMax - (superviewHeight - primaryView.y) - (2 * padding)
-            
+
         case .ToTheLeftMatchingTop, .ToTheLeftMatchingBottom, .ToTheLeftCentered, .ToTheRightMatchingTop, .ToTheRightMatchingBottom, .ToTheRightCentered:
             fatalError("[NEON] Invalid Align specified for alignBetweenVertical().")
         }
-        
+
         if height < 0 {
             height = 0
         }
-        
+
         frame = CGRectMake(xOrigin, yOrigin, width, height)
 
         if width == AutoWidth {
             self.setDimensionAutomatically()
-            self.alignBetweenVertical(align: align, primaryView: primaryView, secondaryView: secondaryView, padding: padding, width: self.height)
+            self.alignBetweenVertical(align: align, primaryView: primaryView, secondaryView: secondaryView, padding: padding, width: self.height, offset: offset)
         }
 
     }
