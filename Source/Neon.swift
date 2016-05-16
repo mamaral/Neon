@@ -26,7 +26,7 @@ extension View : Frameable, Anchorable, Alignable, Groupable {
         return superview.frame
     }
 
-    public func setHeightAutomatically() {
+    public func setDimensionAutomatically() {
         #if os(iOS)
             self.sizeToFit()
         #else
@@ -48,7 +48,7 @@ extension CALayer : Frameable, Anchorable, Alignable, Groupable {
         return superlayer.frame
     }
 
-    public func setHeightAutomatically() { /* no-op here as this shouldn't apply to CALayers */ }
+    public func setDimensionAutomatically() { /* no-op here as this shouldn't apply to CALayers */ }
 }
 
 
@@ -59,6 +59,7 @@ extension CALayer : Frameable, Anchorable, Alignable, Groupable {
 /// using `sizeToFit()`.
 ///
 public let AutoHeight : CGFloat = -1
+public let AutoWidth : CGFloat = -1
 
 
 // MARK: Corner

@@ -120,7 +120,7 @@ public protocol Frameable : class {
     /// *To be used internally* TODO: Determine how to make this either private or internal.
     ///
     ///
-    func setHeightAutomatically()
+    func setDimensionAutomatically()
 }
 
 
