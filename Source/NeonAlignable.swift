@@ -96,7 +96,7 @@ public extension Alignable {
         frame = CGRectMake(xOrigin, yOrigin, width, height)
 
         if height == AutoHeight {
-            self.setHeightAutomatically()
+            self.setDimensionAutomatically()
             self.align(align, relativeTo: sibling, padding: padding, width: width, height: self.height, offset: offset)
         }
     }
@@ -196,7 +196,7 @@ public extension Alignable {
         frame = CGRectMake(xOrigin, yOrigin, width, height)
 
         if height == AutoHeight {
-            self.setHeightAutomatically()
+            self.setDimensionAutomatically()
             self.alignAndFillWidth(align: align, relativeTo: sibling, padding: padding, height: self.height, offset: offset)
         }
     }
@@ -472,7 +472,7 @@ public extension Alignable {
         frame = CGRectMake(xOrigin, yOrigin, width, height)
 
         if height == AutoHeight {
-            self.setHeightAutomatically()
+            self.setDimensionAutomatically()
             self.alignBetweenHorizontal(align: align, primaryView: primaryView, secondaryView: secondaryView, padding: padding, height: self.height)
         }
     }
@@ -544,7 +544,7 @@ public extension Alignable {
         frame = CGRectMake(xOrigin, yOrigin, width, height)
 
         if width == AutoWidth {
-            self.setHeightAutomatically()
+            self.setDimensionAutomatically()
             self.alignBetweenVertical(align: align, primaryView: primaryView, secondaryView: secondaryView, padding: padding, width: self.height)
         }
 

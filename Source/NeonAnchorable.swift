@@ -52,11 +52,11 @@ public extension Anchorable {
         frame = CGRectMake(xOrigin, yOrigin, width, height)
 
         if height == AutoHeight {
-            self.setHeightAutomatically()
+            self.setDimensionAutomatically()
             self.anchorInCenter(width: width, height: self.height)
         }
         if width == AutoWidth {
-            self.setHeightAutomatically()
+            self.setDimensionAutomatically()
             self.anchorInCenter(width: self.width, height: height)
         }
     }
@@ -102,11 +102,11 @@ public extension Anchorable {
         frame = CGRectMake(xOrigin, yOrigin, width, height)
 
         if height == AutoHeight {
-            self.setHeightAutomatically()
+            self.setDimensionAutomatically()
             self.anchorInCorner(corner, xPad: xPad, yPad: yPad, width: width, height: self.height)
         }
         if width == AutoWidth {
-            self.setHeightAutomatically()
+            self.setDimensionAutomatically()
             self.anchorInCorner(corner, xPad: xPad, yPad: yPad, width: self.width, height: height)
         }
 
@@ -154,11 +154,11 @@ public extension Anchorable {
         frame = CGRectMake(xOrigin, yOrigin, width, height)
 
         if height == AutoHeight {
-            self.setHeightAutomatically()
+            self.setDimensionAutomatically()
             self.anchorToEdge(edge, padding: padding, width: width, height: self.height)
         }
         if width == AutoWidth {
-            self.setHeightAutomatically()
+            self.setDimensionAutomatically()
             self.anchorToEdge(edge, padding: padding, width: self.width, height: height)
         }
     }
@@ -225,7 +225,7 @@ public extension Anchorable {
         frame = CGRectMake(xOrigin, yOrigin, width, height)
 
         if height == AutoHeight && autoSize {
-            self.setHeightAutomatically()
+            self.setDimensionAutomatically()
             self.anchorAndFillEdge(edge, xPad: xPad, yPad: yPad, otherSize: self.height)
         }
     }
