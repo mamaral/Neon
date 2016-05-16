@@ -59,6 +59,7 @@ extension CALayer : Frameable, Anchorable, Alignable, Groupable {
 /// using `sizeToFit()`.
 ///
 public let AutoHeight : CGFloat = -1
+public let AutoWidth : CGFloat = -1
 
 
 // MARK: Corner

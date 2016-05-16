@@ -55,6 +55,10 @@ public extension Anchorable {
             self.setHeightAutomatically()
             self.anchorInCenter(width: width, height: self.height)
         }
+        if width == AutoWidth {
+            self.setHeightAutomatically()
+            self.anchorInCenter(width: self.width, height: height)
+        }
     }
 
 
@@ -101,6 +105,11 @@ public extension Anchorable {
             self.setHeightAutomatically()
             self.anchorInCorner(corner, xPad: xPad, yPad: yPad, width: width, height: self.height)
         }
+        if width == AutoWidth {
+            self.setHeightAutomatically()
+            self.anchorInCorner(corner, xPad: xPad, yPad: yPad, width: self.width, height: height)
+        }
+
     }
 
 
@@ -147,6 +156,10 @@ public extension Anchorable {
         if height == AutoHeight {
             self.setHeightAutomatically()
             self.anchorToEdge(edge, padding: padding, width: width, height: self.height)
+        }
+        if width == AutoWidth {
+            self.setHeightAutomatically()
+            self.anchorToEdge(edge, padding: padding, width: self.width, height: height)
         }
     }
 

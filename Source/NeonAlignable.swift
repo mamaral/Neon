@@ -542,5 +542,11 @@ public extension Alignable {
         }
         
         frame = CGRectMake(xOrigin, yOrigin, width, height)
+
+        if width == AutoWidth {
+            self.setHeightAutomatically()
+            self.alignBetweenVertical(align: align, primaryView: primaryView, secondaryView: secondaryView, padding: padding, width: self.height)
+        }
+
     }
 }
