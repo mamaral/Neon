@@ -44,6 +44,20 @@ public extension Alignable {
         var yOrigin : CGFloat = 0.0
 
         switch align {
+        case .ToTheRightMatchingTopWrapping:
+            xOrigin = sibling.xMax + padding
+            yOrigin = sibling.y + offset
+
+            if (xOrigin + self.width) > (self.superFrame.minX+self.superFrame.width) {
+                xOrigin = 0 + padding
+                yOrigin = sibling.yMax + padding
+            }
+
+        case .UnderMatchingLeftFollowing:
+            xOrigin = 0 + padding
+            yOrigin = sibling.yMax + padding
+
+
         case .ToTheRightMatchingTop:
             xOrigin = sibling.xMax + padding
             yOrigin = sibling.y + offset
@@ -167,6 +181,11 @@ public extension Alignable {
             yOrigin = sibling.yMax + padding
             width = superviewWidth - xOrigin - padding
 
+        case .UnderMatchingLeftFollowing:
+            xOrigin = 0 + padding + offset
+            yOrigin = sibling.yMax + padding
+            width = superviewWidth - xOrigin - padding
+
         case .UnderMatchingRight:
             xOrigin = padding + offset
             yOrigin = sibling.yMax + padding
@@ -191,6 +210,9 @@ public extension Alignable {
             xOrigin = padding + offset
             yOrigin = sibling.y - padding - height
             width = superviewWidth - (2 * padding)
+
+        case .ToTheRightMatchingTopWrapping:
+            fatalError("[NEON] Invalid Align specified for align().")
         }
 
         if width < 0.0 {
@@ -290,6 +312,9 @@ public extension Alignable {
             xOrigin = sibling.xMid - (width / 2.0) + offset
             yOrigin = padding
             height = sibling.y - (2 * padding)
+
+        case .UnderMatchingLeftFollowing, .ToTheRightMatchingTopWrapping:
+            fatalError("[NEON] Invalid Align specified for alignAndFillHeight().")
         }
 
         if height < 0.0 {
@@ -401,6 +426,9 @@ public extension Alignable {
             yOrigin = padding
             width = superviewWidth - (2 * padding)
             height = superviewHeight - (superviewHeight - sibling.y) - (2 * padding)
+
+        case .UnderMatchingLeftFollowing, .ToTheRightMatchingTopWrapping:
+            fatalError("[NEON] Invalid Align specified for alignAndFill().")
         }
 
         if width < 0.0 {
@@ -470,7 +498,7 @@ public extension Alignable {
             yOrigin = primaryView.yMid - (height / 2.0) + offset
             width = superviewWidth - secondaryView.xMax - (superviewWidth - primaryView.x) - (2 * padding)
 
-        case .UnderMatchingLeft, .UnderMatchingRight, .UnderCentered,  .AboveMatchingLeft, .AboveMatchingRight, .AboveCentered:
+        case .UnderMatchingLeft, .UnderMatchingRight, .UnderCentered,  .AboveMatchingLeft, .AboveMatchingRight, .AboveCentered, .UnderMatchingLeftFollowing, .ToTheRightMatchingTopWrapping:
             fatalError("[NEON] Invalid Align specified for alignBetweenHorizonal().")
         }
 
@@ -542,7 +570,7 @@ public extension Alignable {
             yOrigin = secondaryView.yMax + padding
             height = superviewHeight - secondaryView.yMax - (superviewHeight - primaryView.y) - (2 * padding)
 
-        case .ToTheLeftMatchingTop, .ToTheLeftMatchingBottom, .ToTheLeftCentered, .ToTheRightMatchingTop, .ToTheRightMatchingBottom, .ToTheRightCentered:
+        case .ToTheLeftMatchingTop, .ToTheLeftMatchingBottom, .ToTheLeftCentered, .ToTheRightMatchingTop, .ToTheRightMatchingBottom, .ToTheRightCentered, .UnderMatchingLeftFollowing, .ToTheRightMatchingTopWrapping:
             fatalError("[NEON] Invalid Align specified for alignBetweenVertical().")
         }
 

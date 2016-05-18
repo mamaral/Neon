@@ -383,6 +383,9 @@ public extension Groupable {
         case .AboveCentered:
             xOrigin = sibling.xMid - ((CGFloat(views.count) * width) + (CGFloat(views.count - 1) * padding)) / 2.0
             yOrigin = sibling.y - height - padding
+
+        case .UnderMatchingLeftFollowing, .ToTheRightMatchingTopWrapping:
+            fatalError("[NEON] Invalid Align specified for groupAndAlignHorizontal().")
         }
 
         for view in views {
@@ -450,6 +453,9 @@ public extension Groupable {
         case .AboveCentered:
             xOrigin = sibling.xMid - (width / 2.0)
             yOrigin = sibling.y - (CGFloat(views.count) * height) - (CGFloat(views.count) * padding)
+
+        case .UnderMatchingLeftFollowing, .ToTheRightMatchingTopWrapping:
+            fatalError("[NEON] Invalid Align specified for groupAndAlignVertical().")
         }
         
         for view in views {
