@@ -625,6 +625,9 @@ public extension Groupable {
                 if height == AutoHeight {
                     view.frame.size.width = tempWidth
                 }
+            } else {
+                view.frame.size.width = width
+                view.frame.size.height = height
             }
         }
         
