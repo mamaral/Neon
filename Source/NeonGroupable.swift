@@ -38,15 +38,15 @@ public extension Groupable {
             return
         }
         
-        var xAdjust: CGFloat = 0
-        var yAdjust: CGFloat = 0
+        var xAdjust: CGFloat = 0.0
+        var yAdjust: CGFloat = 0.0
         let adjustedViews: [Frameable] = setAutoWidthAutoHeight(views, width: width, height: height)
         
         switch group {
         case .Horizontal:
-            xAdjust = self.width/2 - getViewCollectionWidth(adjustedViews, padding: padding)/2 + padding/2
+            xAdjust = (self.width / 2.0) - (getViewCollectionWidth(adjustedViews, padding: padding) / 2.0) + (padding / 2.0)
         case .Vertical:
-            yAdjust = self.height/2 - getViewCollectionHeight(adjustedViews, padding: padding)/2 + padding/2
+            yAdjust = (self.height / 2.0) - (getViewCollectionHeight(adjustedViews, padding: padding) / 2.0) + (padding / 2.0)
         }
         
         for view in adjustedViews {
@@ -56,9 +56,9 @@ public extension Groupable {
             switch group {
             case .Horizontal:
                 xOrigin = xAdjust
-                yOrigin = self.height/2 - view.height/2
+                yOrigin = (self.height / 2.0) - (view.height / 2.0)
             case .Vertical:
-                xOrigin = self.width/2 - view.width/2
+                xOrigin = (self.width / 2.0) - (view.width / 2.0)
                 yOrigin = yAdjust
             }
             
@@ -120,15 +120,15 @@ public extension Groupable {
             return
         }
         
-        var xAdjust: CGFloat = 0
-        var yAdjust: CGFloat = 0
+        var xAdjust: CGFloat = 0.0
+        var yAdjust: CGFloat = 0.0
         let adjustedViews: [Frameable] = setAutoWidthAutoHeight(views, width: width, height: height)
         
         switch edge {
         case .Bottom:
             switch group {
             case .Horizontal:
-                xAdjust = self.width/2 - getViewCollectionWidth(adjustedViews, padding: padding)/2 + padding/2
+                xAdjust = (self.width / 2.0) - (getViewCollectionWidth(adjustedViews, padding: padding) / 2.0) + (padding / 2.0)
             case .Vertical:
                 yAdjust = self.height - getViewCollectionHeight(adjustedViews, padding: padding)
             }
@@ -138,23 +138,23 @@ public extension Groupable {
             case .Horizontal:
                 xAdjust = self.width - getViewCollectionWidth(adjustedViews, padding: padding)
             case .Vertical:
-                yAdjust = self.height/2 - getViewCollectionHeight(adjustedViews, padding: padding)/2 + padding/2
+                yAdjust = (self.height / 2.0) - (getViewCollectionHeight(adjustedViews, padding: padding) / 2.0) + (padding / 2.0)
             }
             
         case .Left:
             switch group {
             case .Horizontal:
-                xAdjust = 0; yAdjust = 0
+                xAdjust = 0.0; yAdjust = 0.0
             case .Vertical:
-                yAdjust = self.height/2 - getViewCollectionHeight(adjustedViews, padding: padding)/2 + padding/2
+                yAdjust = (self.height / 2.0) - (getViewCollectionHeight(adjustedViews, padding: padding) / 2.0) + (padding / 2.0)
             }
             
         case .Top:
             switch group {
             case .Horizontal:
-                xAdjust = self.width/2 - getViewCollectionWidth(adjustedViews, padding: padding)/2 + padding/2
+                xAdjust = (self.width / 2.0) - (getViewCollectionWidth(adjustedViews, padding: padding) / 2.0) + (padding / 2.0)
             case .Vertical:
-                xAdjust = 0; yAdjust = 0
+                xAdjust = 0.0; yAdjust = 0.0
             }
         }
         
@@ -169,7 +169,7 @@ public extension Groupable {
                     xOrigin = xAdjust
                     yOrigin = padding
                 case .Vertical:
-                    xOrigin = self.width/2 - view.width/2
+                    xOrigin = (self.width / 2.0) - (view.width / 2.0)
                     yOrigin = padding + yAdjust
                 }
                 
@@ -177,7 +177,7 @@ public extension Groupable {
                 switch group {
                 case .Horizontal:
                     xOrigin = padding + xAdjust
-                    yOrigin = self.height/2 - view.height/2
+                    yOrigin = (self.height / 2.0) - (view.height / 2.0)
                 case .Vertical:
                     xOrigin = padding
                     yOrigin = yAdjust
@@ -189,7 +189,7 @@ public extension Groupable {
                     xOrigin = xAdjust
                     yOrigin = self.height - view.height - padding
                 case .Vertical:
-                    xOrigin = self.width/2 - view.width/2
+                    xOrigin = (self.width / 2.0) - (view.width / 2.0)
                     yOrigin = yAdjust
                 }
                 
@@ -197,7 +197,7 @@ public extension Groupable {
                 switch group {
                 case .Horizontal:
                     xOrigin = xAdjust
-                    yOrigin = self.height/2 - view.height/2
+                    yOrigin = (self.height / 2.0) - (view.height / 2.0)
                 case .Vertical:
                     xOrigin = self.width - view.width - padding
                     yOrigin = yAdjust
@@ -296,7 +296,7 @@ public extension Groupable {
             return
         }
         
-        var xAdjust: CGFloat = 0
+        var xAdjust: CGFloat = 0.0
         let adjustedViews: [Frameable] = setAutoWidthAutoHeight(views, width: width, height: height)
         
         switch corner {
@@ -345,7 +345,7 @@ public extension Groupable {
             return
         }
         
-        var yAdjust: CGFloat = 0
+        var yAdjust: CGFloat = 0.0
         let adjustedViews: [Frameable] = setAutoWidthAutoHeight(views, width: width, height: height)
         
         switch corner {
@@ -393,7 +393,7 @@ public extension Groupable {
             return
         }
         
-        var xAdjust: CGFloat = 0
+        var xAdjust: CGFloat = 0.0
         let adjustedViews: [Frameable] = setAutoWidthAutoHeight(views, width: width, height: height)
         
         switch align {
@@ -410,7 +410,7 @@ public extension Groupable {
             fallthrough
             
         case .ToTheRightMatchingBottom:
-            xAdjust = 0
+            xAdjust = 0.0
             
         case .ToTheLeftMatchingTop:
             fallthrough
@@ -431,7 +431,7 @@ public extension Groupable {
             fallthrough
             
         case .AboveCentered:
-            xAdjust = sibling.xMax - sibling.width/2 - getViewCollectionWidth(views, padding: padding)/2 + padding/2
+            xAdjust = sibling.xMax - (sibling.width / 2.0) - (getViewCollectionWidth(views, padding: padding) / 2.0) + (padding / 2.0)
         }
         
         
@@ -453,7 +453,7 @@ public extension Groupable {
                 yOrigin = sibling.yMax + padding
                 
             case .UnderMatchingLeft:
-                if xAdjust == 0 {
+                if xAdjust == 0.0 {
                     xOrigin = sibling.x
                     yOrigin = sibling.yMax + padding
                 } else {
@@ -467,7 +467,7 @@ public extension Groupable {
                 
             case .ToTheLeftCentered:
                 xOrigin = xAdjust
-                yOrigin = sibling.yMid - view.height/2
+                yOrigin = sibling.yMid - (view.height / 2.0)
                 
             case .ToTheRightMatchingTop:
                 xOrigin = sibling.xMax + xAdjust + padding
@@ -479,7 +479,7 @@ public extension Groupable {
                 
             case .ToTheRightCentered:
                 xOrigin = sibling.xMax + xAdjust + padding
-                yOrigin = sibling.yMid - view.height/2
+                yOrigin = sibling.yMid - (view.height / 2.0)
                 
             case .AboveMatchingRight:
                 xOrigin = xAdjust + padding
@@ -490,7 +490,7 @@ public extension Groupable {
                 yOrigin = sibling.y - view.height - padding
                 
             case .AboveMatchingLeft:
-                if xAdjust == 0 {
+                if xAdjust == 0.0 {
                     xOrigin = sibling.x
                     yOrigin = sibling.y - view.height - padding
                 } else {
@@ -510,7 +510,7 @@ public extension Groupable {
             return
         }
         
-        var yAdjust: CGFloat = 0
+        var yAdjust: CGFloat = 0.0
         let adjustedViews: [Frameable] = setAutoWidthAutoHeight(views, width: width, height: height)
         
         switch align {
@@ -527,7 +527,7 @@ public extension Groupable {
             fallthrough
             
         case .ToTheRightMatchingTop:
-            yAdjust = 0
+            yAdjust = 0.0
             
         case .AboveMatchingLeft:
             fallthrough
@@ -548,7 +548,7 @@ public extension Groupable {
             fallthrough
             
         case .ToTheLeftCentered:
-            yAdjust = sibling.height/2 + sibling.y - getViewCollectionHeight(views, padding: padding)/2 + padding/2
+            yAdjust = (sibling.height / 2.0) + sibling.y - (getViewCollectionHeight(views, padding: padding) / 2.0) + (padding / 2.0)
         }
         
         
@@ -597,11 +597,11 @@ public extension Groupable {
                 yOrigin = yAdjust
                 
             case .UnderCentered:
-                xOrigin = sibling.xMax - sibling.width/2 - view.width/2
+                xOrigin = sibling.xMax - (sibling.width / 2.0) - (view.width / 2.0)
                 yOrigin = sibling.yMax + yAdjust + padding
                 
             case .AboveCentered:
-                xOrigin = sibling.xMax - sibling.width/2 - view.width/2
+                xOrigin = sibling.xMax - (sibling.width / 2.0) - (view.width / 2.0)
                 yOrigin = yAdjust
             }
             
@@ -645,7 +645,7 @@ public extension Groupable {
     }
     
     private func getViewCollectionWidth(views: [Frameable], padding: CGFloat) -> CGFloat {
-        var viewCollectionWidth: CGFloat = 0
+        var viewCollectionWidth: CGFloat = 0.0
         for view in views {
             viewCollectionWidth += view.width + padding
         }
@@ -653,7 +653,7 @@ public extension Groupable {
     }
     
     private func getViewCollectionHeight(views: [Frameable], padding: CGFloat) -> CGFloat {
-        var viewCollectionHeight: CGFloat = 0
+        var viewCollectionHeight: CGFloat = 0.0
         for view in views {
             viewCollectionHeight += view.height + padding
         }
