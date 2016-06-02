@@ -31,7 +31,6 @@
 		03EDD3C71BBF8CEC0006C4A9 /* ImageContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EDD3C01BBF8CEC0006C4A9 /* ImageContainerView.swift */; };
 		03EDD3C81BBF8CEC0006C4A9 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EDD3C21BBF8CEC0006C4A9 /* TestViewController.swift */; };
 		03EDD3C91BBF8CEC0006C4A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EDD3C31BBF8CEC0006C4A9 /* ViewController.swift */; };
-		1ACE67551D008D8300164532 /* CardViewControllerDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACE67541D008D8300164532 /* CardViewControllerDemo.swift */; };
 		1ACE67561D008EAE00164532 /* CardViewControllerDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACE67541D008D8300164532 /* CardViewControllerDemo.swift */; };
 /* End PBXBuildFile section */
 
@@ -404,7 +403,6 @@
 				03EDD3B91BBF8BCA0006C4A9 /* NeonFrameable.swift in Sources */,
 				03EDD3B51BBF8BCA0006C4A9 /* NeonAlignable.swift in Sources */,
 				03EDD3B71BBF8BCA0006C4A9 /* NeonAnchorable.swift in Sources */,
-				1ACE67551D008D8300164532 /* CardViewControllerDemo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
