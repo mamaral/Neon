@@ -24,13 +24,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        self.window?.rootViewController = UINavigationController(rootViewController: TwitterProfileExampleViewController())
 
         // Used for tinkering and testing new methods - uncomment this out if you want to experiment!
-        //self.window?.rootViewController = TestViewController()
+        self.window?.rootViewController = TestViewController()
 
         // This is crazy-complex demo I have on the README. Uncomment this out to experience with that as well,
         // although I really built it for iPads.
 //        self.window?.rootViewController = ViewController()
         
-        self.window?.rootViewController = CardViewControllerDemo()
+        // This is an example of how one might create cards using this library.
+//        self.window?.rootViewController = CardViewControllerDemo()
 
         self.window?.makeKeyAndVisible()
         return true
