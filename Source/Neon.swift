@@ -23,7 +23,7 @@ extension View : Frameable, Anchorable, Alignable, Groupable {
             return CGRectZero
         }
 
-        return superview.frame
+        return superview.bounds
     }
 
     public func setDimensionAutomatically() {
@@ -148,6 +148,8 @@ public enum Edge {
 /// the horizontal center of the sibling's frame or centered horizontally within the superview, depending on the context.
 ///
 public enum Align {
+    case ToTheRightMatchingTopWrapping // ToTheRightMatchingTop
+    case UnderMatchingLeftFollowing // UnderMatchingLeft
     case ToTheRightMatchingTop
     case ToTheRightMatchingBottom
     case ToTheRightCentered

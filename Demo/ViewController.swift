@@ -34,6 +34,19 @@ class ViewController: UIViewController {
     let view19 : UILabel = UILabel()
     let view20 : UILabel = UILabel()
 
+    let labelA : UILabel = UILabel()
+    let labelB : UILabel = UILabel()
+    let labelC : UILabel = UILabel()
+    let labelD : UILabel = UILabel()
+
+    let labelE : UILabel = UILabel()
+    let labelF : UILabel = UILabel()
+    let labelG : UILabel = UILabel()
+    let labelH : UILabel = UILabel()
+
+    let labelI : UILabel = UILabel()
+    let labelJ : UILabel = UILabel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -183,6 +196,77 @@ class ViewController: UIViewController {
         view20.font = UIFont.boldSystemFontOfSize(20)
         view20.textColor = UIColor.whiteColor()
         containerView.addSubview(view20)
+
+        labelA.backgroundColor = UIColor(red: 255/255.0, green: 100/255.0, blue: 50/255.0, alpha: 1.0)
+        labelA.text = "AAAAA"
+        labelA.textAlignment = .Left
+        labelA.font = UIFont.boldSystemFontOfSize(14)
+        labelA.textColor = UIColor.whiteColor()
+        view20.addSubview(labelA)
+
+        labelB.backgroundColor = UIColor(red: 100/255.0, green: 50/255.0, blue: 255/255.0, alpha: 1.0)
+        labelB.text = "BBBBBBBBBBB"
+        labelB.textAlignment = .Left
+        labelB.font = UIFont.boldSystemFontOfSize(14)
+        labelB.textColor = UIColor.whiteColor()
+        view20.addSubview(labelB)
+
+        labelC.backgroundColor = UIColor(red: 50/255.0, green: 255/255.0, blue: 100/255.0, alpha: 1.0)
+        labelC.text = "CCCC"
+        labelC.textAlignment = .Left
+        labelC.font = UIFont.boldSystemFontOfSize(14)
+        labelC.textColor = UIColor.whiteColor()
+        view20.addSubview(labelC)
+
+        labelD.backgroundColor = UIColor(red: 100/255.0, green: 100/255.0, blue: 100/255.0, alpha: 1.0)
+        labelD.text = "DDDDDDDDDD"
+        labelD.textAlignment = .Left
+        labelD.font = UIFont.boldSystemFontOfSize(14)
+        labelD.textColor = UIColor.whiteColor()
+        view20.addSubview(labelD)
+
+        labelE.backgroundColor = UIColor(red: 255/255.0, green: 100/255.0, blue: 255/255.0, alpha: 1.0)
+        labelE.text = "EEEE"
+        labelE.textAlignment = .Left
+        labelE.font = UIFont.boldSystemFontOfSize(14)
+        labelE.textColor = UIColor.whiteColor()
+        view20.addSubview(labelE)
+
+        labelF.backgroundColor = UIColor(red: 100/255.0, green: 50/255.0, blue: 100/255.0, alpha: 1.0)
+        labelF.text = "FFFFFFFF"
+        labelF.textAlignment = .Left
+        labelF.font = UIFont.boldSystemFontOfSize(14)
+        labelF.textColor = UIColor.whiteColor()
+        view20.addSubview(labelF)
+
+        labelG.backgroundColor = UIColor(red: 200/255.0, green: 200/255.0, blue: 0/255.0, alpha: 1.0)
+        labelG.text = "GGGG"
+        labelG.textAlignment = .Left
+        labelG.font = UIFont.boldSystemFontOfSize(14)
+        labelG.textColor = UIColor.whiteColor()
+        view20.addSubview(labelG)
+
+        labelH.backgroundColor = UIColor(red: 150/255.0, green: 100/255.0, blue: 50/255.0, alpha: 1.0)
+        labelH.text = "HHHHHH"
+        labelH.textAlignment = .Left
+        labelH.font = UIFont.boldSystemFontOfSize(14)
+        labelH.textColor = UIColor.whiteColor()
+        view20.addSubview(labelH)
+
+        labelI.backgroundColor = UIColor(red: 150/255.0, green: 100/255.0, blue: 50/255.0, alpha: 1.0)
+        labelI.text = "IXIXIXIXIXI"
+        labelI.textAlignment = .Left
+        labelI.font = UIFont.boldSystemFontOfSize(14)
+        labelI.textColor = UIColor.whiteColor()
+        view20.addSubview(labelI)
+
+        labelJ.backgroundColor = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1.0)
+        labelJ.text = "J"
+        labelJ.textAlignment = .Center
+        labelJ.font = UIFont.boldSystemFontOfSize(14)
+        labelJ.textColor = UIColor.blackColor()
+        view20.addSubview(labelJ)
+
     }
 
     override func viewWillLayoutSubviews() {
@@ -213,6 +297,21 @@ class ViewController: UIViewController {
         view18.alignBetweenVertical(align: .UnderMatchingLeft, primaryView: anchorView, secondaryView: view16, padding: 10, width: anchorView.width)
         view19.alignBetweenHorizontal(align: .ToTheRightMatchingTop, primaryView: view14, secondaryView: view18, padding: 10, height: 50)
         view20.alignBetweenVertical(align: .UnderCentered, primaryView: view17, secondaryView: view19, padding: 10, width: view17.width)
+
+        labelA.anchorInCorner(.TopLeft, xPad: 5, yPad: 5, width: AutoWidth, height: 20)
+        labelB.align(.ToTheRightMatchingTopWrapping, relativeTo: labelA, padding: 5, width: AutoWidth, height: 20)
+        labelC.align(.ToTheRightMatchingTopWrapping, relativeTo: labelB, padding: 5, width: AutoWidth, height: 20)
+        labelD.align(.ToTheRightMatchingTopWrapping, relativeTo: labelC, padding: 5, width: AutoWidth, height: 20)
+
+        labelE.align(.UnderMatchingLeftFollowing, relativeTo: labelD, padding: 5, width: AutoWidth, height: 20)
+        labelF.align(.ToTheRightMatchingTopWrapping, relativeTo: labelE, padding: 5, width: AutoWidth, height: 20)
+        labelG.align(.ToTheRightMatchingTopWrapping, relativeTo: labelF, padding: 5, width: AutoWidth, height: 20)
+        labelH.align(.ToTheRightMatchingTopWrapping, relativeTo: labelG, padding: 5, width: AutoWidth, height: 20)
+
+        labelI.alignAndFillWidth(align: .UnderMatchingLeftFollowing, relativeTo: labelH, padding:5, height:20)
+
+        labelJ.align(.UnderCentered, relativeTo: labelI, padding:20, width:50, height:50)
+
     }
 
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
