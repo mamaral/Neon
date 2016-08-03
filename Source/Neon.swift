@@ -6,6 +6,12 @@
 //  Copyright © 2015 Mike Amaral. All rights reserved.
 //
 
+#if os(iOS)
+    import UIKit
+#else
+    import Cocoa
+#endif
+
 
 // MARK: AutoHeight
 //
