@@ -127,34 +127,34 @@ public protocol Frameable : class {
 extension Frameable {
   
     public var x: CGFloat {
-        return CGRectGetMinX(frame)
+        return frame.minX
     }
 
     public  var xMid: CGFloat {
-        return CGRectGetMinX(frame) + (CGRectGetWidth(frame) / 2.0)
+        return frame.minX + (frame.width / 2.0)
     }
 
     public var xMax: CGFloat {
-        return CGRectGetMaxX(frame)
+        return frame.maxX
     }
 
     public var y: CGFloat {
-        return CGRectGetMinY(frame)
+        return frame.minY
     }
 
     public var yMid: CGFloat {
-        return CGRectGetMinY(frame) + (CGRectGetHeight(frame) / 2.0)
+        return frame.minY + (frame.height / 2.0)
     }
 
     public var yMax: CGFloat {
-        return CGRectGetMaxY(frame)
+        return frame.maxY
     }
 
     public var width: CGFloat {
-        return CGRectGetWidth(frame)
+        return frame.width
     }
 
     public var height: CGFloat {
-        return CGRectGetHeight(frame)
+        return frame.height
     }
 }

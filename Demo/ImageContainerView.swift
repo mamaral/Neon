@@ -14,28 +14,28 @@ class ImageContainerView: UIView {
     let label : UILabel = UILabel()
 
     convenience init() {
-        self.init(frame: CGRectZero)
+        self.init(frame: CGRect.zero)
 
-        self.backgroundColor = UIColor.whiteColor()
+        self.backgroundColor = UIColor.white()
         self.layer.cornerRadius = 4.0
         self.layer.borderWidth = 1.0
-        self.layer.borderColor = UIColor(white: 0.68, alpha: 1.0).CGColor
+        self.layer.borderColor = UIColor(white: 0.68, alpha: 1.0).cgColor
         self.clipsToBounds = true
 
-        imageView.contentMode = .ScaleAspectFill
+        imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         self.addSubview(imageView)
 
-        label.textAlignment = .Center
-        label.textColor = UIColor.blackColor()
-        label.font = UIFont.boldSystemFontOfSize(14.0)
+        label.textAlignment = .center
+        label.textColor = UIColor.black()
+        label.font = UIFont.boldSystemFont(ofSize: 14.0)
         self.addSubview(label)
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        imageView.anchorAndFillEdge(.Top, xPad: 0, yPad: 0, otherSize: self.height * 0.7)
+        imageView.anchorAndFillEdge(edge: .Top, xPad: 0, yPad: 0, otherSize: self.height * 0.7)
         label.alignAndFill(align: .UnderCentered, relativeTo: imageView, padding: 0)
     }
 }

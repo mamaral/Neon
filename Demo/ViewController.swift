@@ -46,142 +46,142 @@ class ViewController: UIViewController {
 
         view1.backgroundColor = UIColor(red: 78/255.0, green: 102/255.0, blue: 131/255.0, alpha: 1.0)
         view1.text = "1"
-        view1.textAlignment = .Center
-        view1.font = UIFont.boldSystemFontOfSize(20)
-        view1.textColor = UIColor.whiteColor()
+        view1.textAlignment = .center
+        view1.font = UIFont.boldSystemFont(ofSize: 20)
+        view1.textColor = UIColor.white()
         containerView.addSubview(view1)
 
         view2.backgroundColor = UIColor(red: 132/255.0, green: 169/255.0, blue: 57/255.0, alpha: 1.0)
         view2.text = "2"
-        view2.textAlignment = .Center
-        view2.font = UIFont.boldSystemFontOfSize(20)
-        view2.textColor = UIColor.whiteColor()
+        view2.textAlignment = .center
+        view2.font = UIFont.boldSystemFont(ofSize: 20)
+        view2.textColor = UIColor.white()
         containerView.addSubview(view2)
 
         view3.backgroundColor = UIColor(red: 146/255.0, green: 83/255.0, blue: 72/255.0, alpha: 1.0)
         view3.text = "3"
-        view3.textAlignment = .Center
-        view3.font = UIFont.boldSystemFontOfSize(20)
-        view3.textColor = UIColor.whiteColor()
+        view3.textAlignment = .center
+        view3.font = UIFont.boldSystemFont(ofSize: 20)
+        view3.textColor = UIColor.white()
         containerView.addSubview(view3)
 
         view4.backgroundColor = UIColor(red: 100/255.0, green: 112/255.0, blue: 108/255.0, alpha: 1.0)
         view4.text = "4"
-        view4.textAlignment = .Center
-        view4.font = UIFont.boldSystemFontOfSize(20)
-        view4.textColor = UIColor.whiteColor()
+        view4.textAlignment = .center
+        view4.font = UIFont.boldSystemFont(ofSize: 20)
+        view4.textColor = UIColor.white()
         containerView.addSubview(view4)
 
         view5.backgroundColor = UIColor(red: 33/255.0, green: 154/255.0, blue: 209/255.0, alpha: 1.0)
         view5.text = "5"
-        view5.textAlignment = .Center
-        view5.font = UIFont.boldSystemFontOfSize(20)
-        view5.textColor = UIColor.whiteColor()
+        view5.textAlignment = .center
+        view5.font = UIFont.boldSystemFont(ofSize: 20)
+        view5.textColor = UIColor.white()
         containerView.addSubview(view5)
 
         view6.backgroundColor = UIColor(red: 229/255.0, green: 174/255.0, blue: 84/255.0, alpha: 1.0)
         view6.text = "6"
-        view6.textAlignment = .Center
-        view6.font = UIFont.boldSystemFontOfSize(20)
-        view6.textColor = UIColor.whiteColor()
+        view6.textAlignment = .center
+        view6.font = UIFont.boldSystemFont(ofSize: 20)
+        view6.textColor = UIColor.white()
         containerView.addSubview(view6)
 
         view7.backgroundColor = UIColor(red: 222/255.0, green: 81/255.0, blue: 62/255.0, alpha: 1.0)
         view7.text = "7"
-        view7.textAlignment = .Center
-        view7.font = UIFont.boldSystemFontOfSize(20)
-        view7.textColor = UIColor.whiteColor()
+        view7.textAlignment = .center
+        view7.font = UIFont.boldSystemFont(ofSize: 20)
+        view7.textColor = UIColor.white()
         containerView.addSubview(view7)
 
         view8.backgroundColor = UIColor(red: 198/255.0, green: 173/255.0, blue: 138/255.0, alpha: 1.0)
         view8.text = "8"
-        view8.textAlignment = .Center
-        view8.font = UIFont.boldSystemFontOfSize(20)
-        view8.textColor = UIColor.whiteColor()
+        view8.textAlignment = .center
+        view8.font = UIFont.boldSystemFont(ofSize: 20)
+        view8.textColor = UIColor.white()
         containerView.addSubview(view8)
 
         view9.backgroundColor = UIColor(red: 157/255.0, green: 104/255.0, blue: 80/255.0, alpha: 1.0)
         view9.text = "9"
-        view9.textAlignment = .Center
-        view9.font = UIFont.boldSystemFontOfSize(20)
-        view9.textColor = UIColor.whiteColor()
+        view9.textAlignment = .center
+        view9.font = UIFont.boldSystemFont(ofSize: 20)
+        view9.textColor = UIColor.white()
         containerView.addSubview(view9)
 
         view10.backgroundColor = UIColor(red: 23/255.0, green: 59/255.0, blue: 140/255.0, alpha: 1.0)
         view10.text = "10"
-        view10.textAlignment = .Center
-        view10.font = UIFont.boldSystemFontOfSize(20)
-        view10.textColor = UIColor.whiteColor()
+        view10.textAlignment = .center
+        view10.font = UIFont.boldSystemFont(ofSize: 20)
+        view10.textColor = UIColor.white()
         containerView.addSubview(view10)
 
         view11.backgroundColor = UIColor(red: 229/255.0, green: 174/255.0, blue: 84/255.0, alpha: 1.0)
         view11.text = "11"
-        view11.textAlignment = .Center
-        view11.font = UIFont.boldSystemFontOfSize(20)
-        view11.textColor = UIColor.whiteColor()
+        view11.textAlignment = .center
+        view11.font = UIFont.boldSystemFont(ofSize: 20)
+        view11.textColor = UIColor.white()
         anchorView.addSubview(view11)
 
         view12.backgroundColor = UIColor(red: 33/255.0, green: 154/255.0, blue: 209/255.0, alpha: 1.0)
         view12.text = "12"
-        view12.textAlignment = .Center
-        view12.font = UIFont.boldSystemFontOfSize(20)
-        view12.textColor = UIColor.whiteColor()
+        view12.textAlignment = .center
+        view12.font = UIFont.boldSystemFont(ofSize: 20)
+        view12.textColor = UIColor.white()
         anchorView.addSubview(view12)
 
         view13.backgroundColor = UIColor(red: 100/255.0, green: 112/255.0, blue: 108/255.0, alpha: 1.0)
         view13.text = "13"
-        view13.textAlignment = .Center
-        view13.font = UIFont.boldSystemFontOfSize(20)
-        view13.textColor = UIColor.whiteColor()
+        view13.textAlignment = .center
+        view13.font = UIFont.boldSystemFont(ofSize: 20)
+        view13.textColor = UIColor.white()
         anchorView.addSubview(view13)
 
         view14.backgroundColor = UIColor(red: 198/255.0, green: 173/255.0, blue: 138/255.0, alpha: 1.0)
         view14.text = "14"
-        view14.textAlignment = .Center
-        view14.font = UIFont.boldSystemFontOfSize(20)
-        view14.textColor = UIColor.whiteColor()
+        view14.textAlignment = .center
+        view14.font = UIFont.boldSystemFont(ofSize: 20)
+        view14.textColor = UIColor.white()
         containerView.addSubview(view14)
 
         view15.backgroundColor = UIColor(red: 146/255.0, green: 83/255.0, blue: 72/255.0, alpha: 1.0)
         view15.text = "15"
-        view15.textAlignment = .Center
-        view15.font = UIFont.boldSystemFontOfSize(20)
-        view15.textColor = UIColor.whiteColor()
+        view15.textAlignment = .center
+        view15.font = UIFont.boldSystemFont(ofSize: 20)
+        view15.textColor = UIColor.white()
         containerView.addSubview(view15)
 
         view16.backgroundColor = UIColor(red: 78/255.0, green: 102/255.0, blue: 131/255.0, alpha: 1.0)
         view16.text = "16"
-        view16.textAlignment = .Center
-        view16.font = UIFont.boldSystemFontOfSize(20)
-        view16.textColor = UIColor.whiteColor()
+        view16.textAlignment = .center
+        view16.font = UIFont.boldSystemFont(ofSize: 20)
+        view16.textColor = UIColor.white()
         containerView.addSubview(view16)
 
         view17.backgroundColor = UIColor(red: 33/255.0, green: 154/255.0, blue: 209/255.0, alpha: 1.0)
         view17.text = "17"
-        view17.textAlignment = .Center
-        view17.font = UIFont.boldSystemFontOfSize(20)
-        view17.textColor = UIColor.whiteColor()
+        view17.textAlignment = .center
+        view17.font = UIFont.boldSystemFont(ofSize: 20)
+        view17.textColor = UIColor.white()
         containerView.addSubview(view17)
 
         view18.backgroundColor = UIColor(red: 146/255.0, green: 83/255.0, blue: 72/255.0, alpha: 1.0)
         view18.text = "18"
-        view18.textAlignment = .Center
-        view18.font = UIFont.boldSystemFontOfSize(20)
-        view18.textColor = UIColor.whiteColor()
+        view18.textAlignment = .center
+        view18.font = UIFont.boldSystemFont(ofSize: 20)
+        view18.textColor = UIColor.white()
         containerView.addSubview(view18)
 
         view19.backgroundColor = UIColor(red: 23/255.0, green: 59/255.0, blue: 140/255.0, alpha: 1.0)
         view19.text = "19"
-        view19.textAlignment = .Center
-        view19.font = UIFont.boldSystemFontOfSize(20)
-        view19.textColor = UIColor.whiteColor()
+        view19.textAlignment = .center
+        view19.font = UIFont.boldSystemFont(ofSize: 20)
+        view19.textColor = UIColor.white()
         containerView.addSubview(view19)
 
         view20.backgroundColor = UIColor(red: 222/255.0, green: 81/255.0, blue: 62/255.0, alpha: 1.0)
         view20.text = "20"
-        view20.textAlignment = .Center
-        view20.font = UIFont.boldSystemFontOfSize(20)
-        view20.textColor = UIColor.whiteColor()
+        view20.textAlignment = .center
+        view20.font = UIFont.boldSystemFont(ofSize: 20)
+        view20.textColor = UIColor.white()
         containerView.addSubview(view20)
     }
 
@@ -206,7 +206,7 @@ class ViewController: UIViewController {
         view8.alignAndFillWidth(align: .ToTheLeftMatchingTop, relativeTo: view7, padding: 10, height: 70)
         view9.alignBetweenVertical(align: .UnderMatchingLeft, primaryView: view8, secondaryView: anchorView, padding: 10, width: 100)
         view10.alignBetweenHorizontal(align: .ToTheRightMatchingTop, primaryView: view9, secondaryView: view7, padding: 10, height: view9.height)
-        view14.anchorInCorner(.BottomLeft, xPad: 10, yPad: 10, width: 100, height: 100)
+        view14.anchorInCorner(corner: .BottomLeft, xPad: 10, yPad: 10, width: 100, height: 100)
         view15.alignBetweenVertical(align: .UnderMatchingLeft, primaryView: view9, secondaryView: view14, padding: 10, width: 50)
         view16.alignBetweenHorizontal(align: .ToTheRightMatchingBottom, primaryView: view14, secondaryView: view6, padding: 10, height: 40)
         view17.alignBetweenHorizontal(align: .ToTheRightMatchingTop, primaryView: view15, secondaryView: anchorView, padding: 10, height: 100)
@@ -215,11 +215,11 @@ class ViewController: UIViewController {
         view20.alignBetweenVertical(align: .UnderCentered, primaryView: view17, secondaryView: view19, padding: 10, width: view17.width)
     }
 
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch : UITouch = touches.first!
-        let point = touch.locationInView(containerView)
+        let point = touch.location(in: containerView)
 
-        anchorView.frame = CGRectMake(point.x - (anchorView.width / 2.0), point.y - (anchorView.height / 2.0), anchorView.width, anchorView.height)
+        anchorView.frame = CGRect(x: point.x - (anchorView.width / 2.0), y: point.y - (anchorView.height / 2.0), width: anchorView.width, height: anchorView.height)
 
         layoutFrames()
     }
