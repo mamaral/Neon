@@ -19,7 +19,7 @@
 extension View : Frameable, Anchorable, Alignable, Groupable {
     public var superFrame: CGRect {
         guard let superview = superview else {
-            return CGRectZero
+            return CGRect.zero
         }
 
         return superview.frame
@@ -41,7 +41,7 @@ extension View : Frameable, Anchorable, Alignable, Groupable {
 extension CALayer : Frameable, Anchorable, Alignable, Groupable {
     public var superFrame: CGRect {
         guard let superlayer = superlayer else {
-            return CGRectZero
+            return CGRect.zero
         }
 
         return superlayer.frame

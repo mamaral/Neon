@@ -16,7 +16,7 @@ class TwitterProfileExampleViewController: UIViewController {
     let bannerMaskView : UIView = UIView()
     let avatarImageView : UIImageView = UIImageView()
     let nameLabel : UILabel = UILabel()
-    let cameraButton : UIButton = UIButton(type: .Custom)
+    let cameraButton : UIButton = UIButton(type: .custom)
 
     let buttonContainerView : UIView = UIView()
     let postButton : IconButton = IconButton()
@@ -35,30 +35,30 @@ class TwitterProfileExampleViewController: UIViewController {
         // So I cheated here... shhhh!
         // (can't take all damn day making this match perfectly!)
         searchBar.image = UIImage(named: "searchBar")
-        searchBar.contentMode = .ScaleAspectFit
+        searchBar.contentMode = .scaleAspectFit
 
         bannerImageView.image = UIImage(named: "banner")
-        bannerImageView.contentMode = .ScaleAspectFill
+        bannerImageView.contentMode = .scaleAspectFill
         bannerImageView.clipsToBounds = true
 
         bannerMaskView.backgroundColor = UIColor(white: 0.0, alpha: 0.2)
 
         avatarImageView.image = UIImage(named: "avatar")
         avatarImageView.layer.cornerRadius = 1.0
-        avatarImageView.layer.borderColor = UIColor.whiteColor().CGColor
+        avatarImageView.layer.borderColor = UIColor.white().cgColor
         avatarImageView.layer.borderWidth = 2.0
         avatarImageView.clipsToBounds = true
 
-        cameraButton.setImage(UIImage(named: "camera"), forState: .Normal)
+        cameraButton.setImage(UIImage(named: "camera"), for: .normal)
 
-        nameLabel.textColor = UIColor.whiteColor()
+        nameLabel.textColor = UIColor.white()
         nameLabel.text = "Mike\nAmaral"
         nameLabel.numberOfLines = 2
         nameLabel.font = UIFont(name: "HelveticaNeue-Light", size: 33)
 
-        buttonContainerView.backgroundColor = UIColor.whiteColor()
-        buttonContainerView.layer.shadowColor = UIColor.blackColor().CGColor
-        buttonContainerView.layer.shadowOffset = CGSizeMake(0, 0.5)
+        buttonContainerView.backgroundColor = UIColor.white()
+        buttonContainerView.layer.shadowColor = UIColor.black().cgColor
+        buttonContainerView.layer.shadowOffset = CGSize(width: 0, height: 0.5)
         buttonContainerView.layer.shadowOpacity = 0.4
 
         postButton.label.text = "Post"
@@ -73,7 +73,7 @@ class TwitterProfileExampleViewController: UIViewController {
         moreButton.label.text = "More"
         moreButton.imageView.image = UIImage(named: "more")
 
-        buttonContainerView2.backgroundColor = UIColor.clearColor()
+        buttonContainerView2.backgroundColor = UIColor.clear()
 
         aboutView.imageView.image = UIImage(named: "about")
         aboutView.label.text = "About"
@@ -117,7 +117,7 @@ class TwitterProfileExampleViewController: UIViewController {
     }
 
     func layoutFrames() {
-        let isLandscape : Bool = UIDevice.currentDevice().orientation.isLandscape.boolValue
+        let isLandscape : Bool = UIDevice.current().orientation.isLandscape.boolValue
         let bannerHeight : CGFloat = view.height * 0.465
         let avatarHeightMultipler : CGFloat = isLandscape ? 0.75 : 0.43
         let avatarSize = bannerHeight * avatarHeightMultipler

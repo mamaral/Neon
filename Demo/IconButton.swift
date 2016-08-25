@@ -15,14 +15,14 @@ class IconButton: UIView {
     let label : UILabel = UILabel()
 
     convenience init() {
-        self.init(frame: CGRectZero)
+        self.init(frame: CGRect.zero)
 
-        imageView.contentMode = .ScaleAspectFill
+        imageView.contentMode = .scaleAspectFill
         self.addSubview(imageView)
 
-        label.textAlignment = .Center
+        label.textAlignment = .center
         label.textColor = UIColor(red: 106/255.0, green: 113/255.0, blue: 127/255.0, alpha: 1.0)
-        label.font = UIFont.systemFontOfSize(13.0)
+        label.font = UIFont.systemFont(ofSize: 13.0)
         self.addSubview(label)
     }
 
@@ -30,6 +30,6 @@ class IconButton: UIView {
         super.layoutSubviews()
 
         imageView.anchorToEdge(.Top, padding: 0, width: 24, height: 24)
-        label.align(.UnderCentered, relativeTo: imageView, padding: 5, width: self.width, height: 15)
+        label.align(align: .UnderCentered, relativeTo: imageView, padding: 5, width: self.width, height: 15)
     }
 }
