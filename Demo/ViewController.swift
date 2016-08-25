@@ -206,7 +206,7 @@ class ViewController: UIViewController {
         view8.alignAndFillWidth(align: .ToTheLeftMatchingTop, relativeTo: view7, padding: 10, height: 70)
         view9.alignBetweenVertical(align: .UnderMatchingLeft, primaryView: view8, secondaryView: anchorView, padding: 10, width: 100)
         view10.alignBetweenHorizontal(align: .ToTheRightMatchingTop, primaryView: view9, secondaryView: view7, padding: 10, height: view9.height)
-        view14.anchorInCorner(corner: .BottomLeft, xPad: 10, yPad: 10, width: 100, height: 100)
+        view14.anchorInCorner(.BottomLeft, xPad: 10, yPad: 10, width: 100, height: 100)
         view15.alignBetweenVertical(align: .UnderMatchingLeft, primaryView: view9, secondaryView: view14, padding: 10, width: 50)
         view16.alignBetweenHorizontal(align: .ToTheRightMatchingBottom, primaryView: view14, secondaryView: view6, padding: 10, height: 40)
         view17.alignBetweenHorizontal(align: .ToTheRightMatchingTop, primaryView: view15, secondaryView: anchorView, padding: 10, height: 100)

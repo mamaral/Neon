@@ -77,7 +77,7 @@ public extension Anchorable {
     ///
     ///   - height: The height of the view.
     ///
-    public func anchorInCorner(corner: Corner, xPad: CGFloat, yPad: CGFloat, width: CGFloat, height: CGFloat) {
+    public func anchorInCorner(_ corner: Corner, xPad: CGFloat, yPad: CGFloat, width: CGFloat, height: CGFloat) {
         var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0
 
@@ -103,11 +103,11 @@ public extension Anchorable {
 
         if height == AutoHeight {
             self.setDimensionAutomatically()
-            self.anchorInCorner(corner: corner, xPad: xPad, yPad: yPad, width: width, height: self.height)
+            self.anchorInCorner(corner, xPad: xPad, yPad: yPad, width: width, height: self.height)
         }
         if width == AutoWidth {
             self.setDimensionAutomatically()
-            self.anchorInCorner(corner: corner, xPad: xPad, yPad: yPad, width: self.width, height: height)
+            self.anchorInCorner(corner, xPad: xPad, yPad: yPad, width: self.width, height: height)
         }
 
     }
@@ -129,7 +129,7 @@ public extension Anchorable {
     ///
     ///   - height: The height of the view.
     ///
-    public func anchorToEdge(edge: Edge, padding: CGFloat, width: CGFloat, height: CGFloat) {
+    public func anchorToEdge(_ edge: Edge, padding: CGFloat, width: CGFloat, height: CGFloat) {
         var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0
 
@@ -155,11 +155,11 @@ public extension Anchorable {
 
         if height == AutoHeight {
             self.setDimensionAutomatically()
-            self.anchorToEdge(edge: edge, padding: padding, width: width, height: self.height)
+            self.anchorToEdge(edge, padding: padding, width: width, height: self.height)
         }
         if width == AutoWidth {
             self.setDimensionAutomatically()
-            self.anchorToEdge(edge: edge, padding: padding, width: self.width, height: height)
+            self.anchorToEdge(edge, padding: padding, width: self.width, height: height)
         }
     }
 
@@ -187,7 +187,7 @@ public extension Anchorable {
     /// the `.Left` and `.Right` will have `otherSize` applied to their width as their heights are
     /// automatically calculated.
     ///
-    public func anchorAndFillEdge(edge: Edge, xPad: CGFloat, yPad: CGFloat, otherSize: CGFloat) {
+    public func anchorAndFillEdge(_ edge: Edge, xPad: CGFloat, yPad: CGFloat, otherSize: CGFloat) {
         var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0
         var width : CGFloat = 0.0
@@ -226,7 +226,7 @@ public extension Anchorable {
 
         if height == AutoHeight && autoSize {
             self.setDimensionAutomatically()
-            self.anchorAndFillEdge(edge: edge, xPad: xPad, yPad: yPad, otherSize: self.height)
+            self.anchorAndFillEdge(edge, xPad: xPad, yPad: yPad, otherSize: self.height)
         }
     }
 }

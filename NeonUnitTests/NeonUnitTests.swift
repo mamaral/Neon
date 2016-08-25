@@ -102,38 +102,38 @@ class NeonTests: XCTestCase {
 
     func testAnchorInCorner() {
         testAnchorView.removeFromSuperview()
-        testAnchorView.anchorInCorner(corner: .TopLeft, xPad: 0, yPad: 0, width: 0, height: 0)
+        testAnchorView.anchorInCorner(.TopLeft, xPad: 0, yPad: 0, width: 0, height: 0)
         XCTAssert(testAnchorView.frame == CGRect.zero)
 
         testSuperview.addSubview(testAnchorView)
 
-        testAnchorView.anchorInCorner(corner: .TopLeft, xPad: 0, yPad: 0, width: 0, height: 0)
+        testAnchorView.anchorInCorner(.TopLeft, xPad: 0, yPad: 0, width: 0, height: 0)
         XCTAssert(testAnchorView.frame == CGRect.zero)
 
-        testAnchorView.anchorInCorner(corner: .TopLeft, xPad: 10, yPad: 20, width: 30, height: 40)
+        testAnchorView.anchorInCorner(.TopLeft, xPad: 10, yPad: 20, width: 30, height: 40)
         XCTAssert(testAnchorView.frame == CGRect(x:  10, y: 20, width: 30, height: 40))
 
-        testAnchorView.anchorInCorner(corner: .TopRight, xPad: 10, yPad: 20, width: 30, height: 40)
+        testAnchorView.anchorInCorner(.TopRight, xPad: 10, yPad: 20, width: 30, height: 40)
         XCTAssert(testAnchorView.frame == CGRect(x:  960, y: 20, width: 30, height: 40))
 
-        testAnchorView.anchorInCorner(corner: .BottomLeft, xPad: 10, yPad: 940, width: 30, height: 40)
+        testAnchorView.anchorInCorner(.BottomLeft, xPad: 10, yPad: 940, width: 30, height: 40)
         XCTAssert(testAnchorView.frame == CGRect(x:  10, y: 20, width: 30, height: 40))
 
-        testAnchorView.anchorInCorner(corner: .BottomRight, xPad: 10, yPad: 20, width: 30, height: 40)
+        testAnchorView.anchorInCorner(.BottomRight, xPad: 10, yPad: 20, width: 30, height: 40)
         XCTAssert(testAnchorView.frame == CGRect(x:  960, y: 940, width: 30, height: 40))
     }
 
     func testAnchorToEdge() {
-        testAnchorView.anchorToEdge(edge: .Top, padding: 10, width: 30, height: 40)
+        testAnchorView.anchorToEdge(.Top, padding: 10, width: 30, height: 40)
         XCTAssert(testAnchorView.frame == CGRect(x: 485, y: 10, width: 30, height: 40))
 
-        testAnchorView.anchorToEdge(edge: .Left, padding: 10, width: 30, height: 40)
+        testAnchorView.anchorToEdge(.Left, padding: 10, width: 30, height: 40)
         XCTAssert(testAnchorView.frame == CGRect(x: 10, y: 480, width: 30, height: 40))
 
-        testAnchorView.anchorToEdge(edge: .Bottom, padding: 10, width: 30, height: 40)
+        testAnchorView.anchorToEdge(.Bottom, padding: 10, width: 30, height: 40)
         XCTAssert(testAnchorView.frame == CGRect(x: 485, y: 950, width: 30, height: 40))
 
-        testAnchorView.anchorToEdge(edge: .Right, padding: 10, width: 30, height: 40)
+        testAnchorView.anchorToEdge(.Right, padding: 10, width: 30, height: 40)
         XCTAssert(testAnchorView.frame == CGRect(x: 960, y: 480, width: 30, height: 40))
     }
 //
