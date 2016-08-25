@@ -6,7 +6,7 @@
 
 Neon is built around how user interfaces are naturally and intuitively designed. No more springs and struts. No more whacky visual format language. No more auto layout constraints. We're not robots, so why should we build our UIs like we are?
 
-> ***Neon has been updated to Swift 3.0, bt is still currently in beta***.
+> ***Neon has been updated to Swift 3.0, but is still currently in beta!***
 
 ## Install via CocoaPods 
 
