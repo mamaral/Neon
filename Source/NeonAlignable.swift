@@ -39,7 +39,7 @@ public extension Alignable {
     /// match the specified `Align`. For example, if you specify `.ToTheRightMatchingTop` and provide an offset value of `5`, the
     /// view's y origin will be lower than the sibling view's y origin by 5 points.
     ///
-    public func align(align: Align, relativeTo sibling: Frameable, padding: CGFloat, width: CGFloat, height: CGFloat, offset: CGFloat = 0) {
+    public func align(_ align: Align, relativeTo sibling: Frameable, padding: CGFloat, width: CGFloat, height: CGFloat, offset: CGFloat = 0) {
         var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0
 
@@ -97,11 +97,11 @@ public extension Alignable {
 
         if height == AutoHeight {
             self.setDimensionAutomatically()
-            self.align(align: align, relativeTo: sibling, padding: padding, width: width, height: self.height, offset: offset)
+            self.align(align, relativeTo: sibling, padding: padding, width: width, height: self.height, offset: offset)
         }
         if width == AutoWidth {
             self.setDimensionAutomatically()
-            self.align(align: align, relativeTo: sibling, padding: padding, width: self.width, height: height, offset: offset)
+            self.align(align, relativeTo: sibling, padding: padding, width: self.width, height: height, offset: offset)
         }
     }
 

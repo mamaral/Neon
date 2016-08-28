@@ -7,6 +7,7 @@ Pod::Spec.new do |s|
   s.social_media_url = 'http://twitter.com/MikeAmaral'
   s.authors = { 'Mike Amaral' => 'mike.amaral36@gmail.com' }
   s.source = { :git => 'https://github.com/mamaral/neon.git', :tag => "v0.3.0" }
+  s.osx.deployment_target = '10.7'
   s.ios.deployment_target = '8.0'
   s.source_files = 'Source/*.swift'
   s.requires_arc = true
