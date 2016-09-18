@@ -112,7 +112,7 @@ class TestViewController: UIViewController {
         super.viewWillLayoutSubviews()
 
         anchorViewA.anchorInCorner(.topLeft, xPad: 20, yPad: 20, width: 200, height: 200)
-        view1.align(.toTheRightMatchingTop, relativeTo: anchorViewA, padding: 20, width: 100, height: 100, offset: 20)
-        view2.align(.underMatchingLeft, relativeTo: anchorViewA, padding: 20, width: 100, height: 100, offset: 20)
+        view1.align(align: .toTheRightMatchingTop, relativeTo: anchorViewA, padding: 20, width: 100, height: 100, offset: 20)
+        view2.align(align: .underMatchingLeft, relativeTo: anchorViewA, padding: 20, width: 100, height: 100, offset: 20)
     }
 }

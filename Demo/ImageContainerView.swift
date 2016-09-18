@@ -36,6 +36,6 @@ class ImageContainerView: UIView {
         super.layoutSubviews()
 
         imageView.anchorAndFillEdge(.top, xPad: 0, yPad: 0, otherSize: self.height * 0.7)
-        label.alignAndFill(.underCentered, relativeTo: imageView, padding: 0)
+        label.alignAndFill(align: .underCentered, relativeTo: imageView, padding: 0)
     }
 }

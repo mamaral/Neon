@@ -28,13 +28,13 @@ public let AutoWidth : CGFloat = -1
 ///
 /// Specifies a corner of a frame.
 ///
-/// **TopLeft**: The upper-left corner of the frame.
+/// **topLeft**: The upper-left corner of the frame.
 ///
-/// **TopRight**: The upper-right corner of the frame.
+/// **topRight**: The upper-right corner of the frame.
 ///
-/// **BottomLeft**: The bottom-left corner of the frame.
+/// **bottomLeft**: The bottom-left corner of the frame.
 ///
-/// **BottomRight**: The upper-right corner of the frame.
+/// **bottomRight**: The upper-right corner of the frame.
 ///
 public enum Corner {
     case topLeft
@@ -49,13 +49,13 @@ public enum Corner {
 ///
 /// Specifies an edge, or face, of a frame.
 ///
-/// **Top**: The top edge of the frame.
+/// **top**: The top edge of the frame.
 ///
-/// **Left**: The left edge of the frame.
+/// **left**: The left edge of the frame.
 ///
-/// **Bottom**: The bottom edge of the frame.
+/// **bottom**: The bottom edge of the frame.
 ///
-/// **Right**: The right edge of the frame.
+/// **right**: The right edge of the frame.
 ///
 public enum Edge {
     case top
@@ -70,42 +70,42 @@ public enum Edge {
 ///
 /// Specifies how a view will be aligned relative to the sibling view.
 ///
-/// **ToTheRightMatchingTop**: Specifies that the view should be aligned to the right of a sibling, matching the
+/// **toTheRightMatchingTop**: Specifies that the view should be aligned to the right of a sibling, matching the
 /// top, or y origin, of the sibling's frame.
 ///
-/// **ToTheRightMatchingBottom**: Specifies that the view should be aligned to the right of a sibling, matching
+/// **toTheRightMatchingBottom**: Specifies that the view should be aligned to the right of a sibling, matching
 /// the bottom, or max y value, of the sibling's frame.
 ///
-/// **ToTheRightCentered**: Specifies that the view should be aligned to the right of a sibling, and will be centered
+/// **toTheRightCentered**: Specifies that the view should be aligned to the right of a sibling, and will be centered
 /// to either match the vertical center of the sibling's frame or centered vertically within the superview, depending
 /// on the context.
 ///
-/// **ToTheLeftMatchingTop**: Specifies that the view should be aligned to the left of a sibling, matching the top,
+/// **toTheLeftMatchingTop**: Specifies that the view should be aligned to the left of a sibling, matching the top,
 /// or y origin, of the sibling's frame.
 ///
-/// **ToTheLeftMatchingBottom**: Specifies that the view should be aligned to the left of a sibling, matching the
+/// **toTheLeftMatchingBottom**: Specifies that the view should be aligned to the left of a sibling, matching the
 /// bottom, or max y value, of the sibling's frame.
 ///
-/// **ToTheLeftCentered**: Specifies that the view should be aligned to the left of a sibling, and will be centered
+/// **toTheLeftCentered**: Specifies that the view should be aligned to the left of a sibling, and will be centered
 /// to either match the vertical center of the sibling's frame or centered vertically within the superview, depending
 /// on the context.
 ///
-/// **UnderMatchingLeft**: Specifies that the view should be aligned under a sibling, matching the left, or x origin,
+/// **underMatchingLeft**: Specifies that the view should be aligned under a sibling, matching the left, or x origin,
 /// of the sibling's frame.
 ///
-/// **UnderMatchingRight**: Specifies that the view should be aligned under a sibling, matching the right, or max y
+/// **underMatchingRight**: Specifies that the view should be aligned under a sibling, matching the right, or max y
 /// of the sibling's frame.
 ///
-/// **UnderCentered**: Specifies that the view should be aligned under a sibling, and will be centered to either match
+/// **underCentered**: Specifies that the view should be aligned under a sibling, and will be centered to either match
 /// the horizontal center of the sibling's frame or centered horizontally within the superview, depending on the context.
 ///
-/// **AboveMatchingLeft**: Specifies that the view should be aligned above a sibling, matching the left, or x origin
+/// **aboveMatchingLeft**: Specifies that the view should be aligned above a sibling, matching the left, or x origin
 /// of the sibling's frame.
 ///
-/// **AboveMatchingRight**: Specifies that the view should be aligned above a sibling, matching the right, or max x
+/// **aboveMatchingRight**: Specifies that the view should be aligned above a sibling, matching the right, or max x
 /// of the sibling's frame.
 ///
-/// **AboveCentered**: Specifies that the view should be aligned above a sibling, and will be centered to either match
+/// **aboveCentered**: Specifies that the view should be aligned above a sibling, and will be centered to either match
 /// the horizontal center of the sibling's frame or centered horizontally within the superview, depending on the context.
 ///
 public enum Align {
@@ -129,9 +129,9 @@ public enum Align {
 ///
 /// Specifies how a group will be laid out.
 ///
-/// **Horizontal**: Specifies that the views should be aligned relative to eachother horizontally.
+/// **horizontal**: Specifies that the views should be aligned relative to eachother horizontally.
 ///
-/// **Vertical**: Specifies that the views should be aligned relative to eachother vertically.
+/// **vertical**: Specifies that the views should be aligned relative to eachother vertically.
 ///
 public enum Group {
     case horizontal
