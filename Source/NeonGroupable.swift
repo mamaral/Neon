@@ -167,8 +167,8 @@ public extension Groupable {
             }
         }
 
-        for _ in views {
-            frame = CGRect(x: xOrigin, y: yOrigin, width: width, height: height)
+        for view in views {
+            view.frame = CGRect(x: xOrigin, y: yOrigin, width: width, height: height)
 
             xOrigin += xAdjust
             yOrigin += yAdjust
@@ -243,8 +243,8 @@ public extension Groupable {
             yAdjust = height + padding
         }
 
-        for _ in views {
-            frame = CGRect(x: xOrigin, y: yOrigin, width: width, height: height)
+        for view in views {
+            view.frame = CGRect(x: xOrigin, y: yOrigin, width: width, height: height)
 
             xOrigin += xAdjust
             yOrigin += yAdjust
