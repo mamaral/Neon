@@ -129,9 +129,9 @@ class TwitterProfileExampleViewController: UIViewController {
         nameLabel.alignAndFillWidth(align: .toTheRightCentered, relativeTo: avatarImageView, padding: 15, height: 120)
         cameraButton.anchorInCorner(.bottomRight, xPad: 10, yPad: 7, width: 28, height: 28)
         buttonContainerView.alignAndFillWidth(align: .underCentered, relativeTo: bannerImageView, padding: 0, height: 62)
-        buttonContainerView.groupAndFill(.horizontal, views: [postButton, updateInfoButton, activityLogButton, moreButton], padding: 10)
+        buttonContainerView.groupAndFill(group: .horizontal, views: [postButton, updateInfoButton, activityLogButton, moreButton], padding: 10)
         buttonContainerView2.alignAndFillWidth(align: .underCentered, relativeTo: buttonContainerView, padding: 0, height: 120)
-        buttonContainerView2.groupAndFill(.horizontal, views: [aboutView, photosView, friendsView], padding: 8)
+        buttonContainerView2.groupAndFill(group: .horizontal, views: [aboutView, photosView, friendsView], padding: 8)
     }
 }
 

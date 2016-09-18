@@ -81,13 +81,13 @@ public extension Groupable {
     ///
     ///   - height: The height of each subview.
     ///
-    public func groupInCorner(_ group: Group, views: [Frameable], inCorner corner: Corner, padding: CGFloat, width: CGFloat, height: CGFloat) {
+    public func groupInCorner(group: Group, views: [Frameable], inCorner corner: Corner, padding: CGFloat, width: CGFloat, height: CGFloat) {
         switch group {
         case .horizontal:
-            groupInCornerHorizontal(views, inCorner: corner, padding: padding, width: width, height: height)
+            groupInCornerHorizontal(views: views, inCorner: corner, padding: padding, width: width, height: height)
 
         case .vertical:
-            groupInCornerVertical(views, inCorner: corner, padding: padding, width: width, height: height)
+            groupInCornerVertical(views: views, inCorner: corner, padding: padding, width: width, height: height)
         }
     }
 
@@ -110,7 +110,7 @@ public extension Groupable {
     ///
     ///   - height: The height of each subview.
     ///
-    public func groupAgainstEdge(_ group: Group, views: [Frameable], againstEdge edge: Edge, padding: CGFloat, width: CGFloat, height: CGFloat) {
+    public func groupAgainstEdge(group: Group, views: [Frameable], againstEdge edge: Edge, padding: CGFloat, width: CGFloat, height: CGFloat) {
         if views.count == 0 {
             print("[NEON] Warning: No subviews provided to groupAgainstEdge().")
             return
@@ -196,13 +196,13 @@ public extension Groupable {
     ///
     ///   - height: The height of each subview.
     ///
-    public func groupAndAlign(_ group: Group, andAlign align: Align, views: [Frameable], relativeTo sibling: Frameable, padding: CGFloat, width: CGFloat, height: CGFloat) {
+    public func groupAndAlign(group: Group, andAlign align: Align, views: [Frameable], relativeTo sibling: Frameable, padding: CGFloat, width: CGFloat, height: CGFloat) {
         switch group {
         case .horizontal:
-            groupAndAlignHorizontal(align, views: views, relativeTo: sibling, padding: padding, width: width, height: height)
+            groupAndAlignHorizontal(align: align, views: views, relativeTo: sibling, padding: padding, width: width, height: height)
 
         case .vertical:
-            groupAndAlignVertical(align, views: views, relativeTo: sibling, padding: padding, width: width, height: height)
+            groupAndAlignVertical(align: align, views: views, relativeTo: sibling, padding: padding, width: width, height: height)
         }
     }
 
@@ -218,7 +218,7 @@ public extension Groupable {
     ///
     ///   - padding: The padding to be applied between each of the subviews and the sibling.
     ///
-    public func groupAndFill(_ group: Group, views: [Frameable], padding: CGFloat) {
+    public func groupAndFill(group: Group, views: [Frameable], padding: CGFloat) {
         if views.count == 0 {
             print("[NEON] Warning: No subviews provided to groupAndFill().")
             return
@@ -255,7 +255,7 @@ public extension Groupable {
 
     // MARK: Private utils
     //
-    fileprivate func groupInCornerHorizontal(_ views: [Frameable], inCorner corner: Corner, padding: CGFloat, width: CGFloat, height: CGFloat) {
+    fileprivate func groupInCornerHorizontal(views: [Frameable], inCorner corner: Corner, padding: CGFloat, width: CGFloat, height: CGFloat) {
         if views.count == 0 {
             print("[NEON] Warning: No subviews provided to groupInCorner().")
             return
@@ -290,7 +290,7 @@ public extension Groupable {
         }
     }
 
-    fileprivate func groupInCornerVertical(_ views: [Frameable], inCorner corner: Corner, padding: CGFloat, width: CGFloat, height: CGFloat) {
+    fileprivate func groupInCornerVertical(views: [Frameable], inCorner corner: Corner, padding: CGFloat, width: CGFloat, height: CGFloat) {
         if views.count == 0 {
             print("[NEON] Warning: No subviews provided to groupInCorner().")
             return
@@ -325,7 +325,7 @@ public extension Groupable {
         }
     }
 
-    fileprivate func groupAndAlignHorizontal(_ align: Align, views: [Frameable], relativeTo sibling: Frameable, padding: CGFloat, width: CGFloat, height: CGFloat) {
+    fileprivate func groupAndAlignHorizontal(align: Align, views: [Frameable], relativeTo sibling: Frameable, padding: CGFloat, width: CGFloat, height: CGFloat) {
         if views.count == 0 {
             print("[NEON] Warning: No subviews provided to groupAndAlign().")
             return
@@ -392,7 +392,7 @@ public extension Groupable {
         }
     }
 
-    fileprivate func groupAndAlignVertical(_ align: Align, views: [Frameable], relativeTo sibling: Frameable, padding: CGFloat, width: CGFloat, height: CGFloat) {
+    fileprivate func groupAndAlignVertical(align: Align, views: [Frameable], relativeTo sibling: Frameable, padding: CGFloat, width: CGFloat, height: CGFloat) {
         if views.count == 0 {
             print("[NEON] Warning: No subviews provided to groupAndAlign().")
             return

@@ -197,9 +197,9 @@ class ViewController: UIViewController {
     }
 
     func layoutFrames() {
-        anchorView.groupInCorner(.vertical, views: [view11, view12, view13], inCorner: .topRight, padding: 10, width: 40, height: 40)
+        anchorView.groupInCorner(group: .vertical, views: [view11, view12, view13], inCorner: .topRight, padding: 10, width: 40, height: 40)
         view1.alignAndFillWidth(align: .toTheRightMatchingTop, relativeTo: anchorView, padding: 10, height: 50)
-        containerView.groupAndAlign(.horizontal, andAlign: .underMatchingLeft, views: [view2, view3, view4], relativeTo: view1, padding: 10, width: 60, height: 60)
+        containerView.groupAndAlign(group: .horizontal, andAlign: .underMatchingLeft, views: [view2, view3, view4], relativeTo: view1, padding: 10, width: 60, height: 60)
         view5.alignAndFillWidth(align: .toTheRightMatchingTop, relativeTo: view4, padding: 10, height: 60)
         view6.alignAndFill(align: .underMatchingLeft, relativeTo: view2, padding: 10)
         view7.alignAndFillHeight(align: .aboveMatchingRight, relativeTo: view1, padding: 10, width: 60)
