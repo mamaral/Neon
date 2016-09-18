@@ -198,12 +198,12 @@ class ViewController: UIViewController {
 
     func layoutFrames() {
         anchorView.groupInCorner(.vertical, views: [view11, view12, view13], inCorner: .topRight, padding: 10, width: 40, height: 40)
-        view1.alignAndFillWidth(.toTheRightMatchingTop, relativeTo: anchorView, padding: 10, height: 50)
+        view1.alignAndFillWidth(align: .toTheRightMatchingTop, relativeTo: anchorView, padding: 10, height: 50)
         containerView.groupAndAlign(.horizontal, andAlign: .underMatchingLeft, views: [view2, view3, view4], relativeTo: view1, padding: 10, width: 60, height: 60)
-        view5.alignAndFillWidth(.toTheRightMatchingTop, relativeTo: view4, padding: 10, height: 60)
+        view5.alignAndFillWidth(align: .toTheRightMatchingTop, relativeTo: view4, padding: 10, height: 60)
         view6.alignAndFill(.underMatchingLeft, relativeTo: view2, padding: 10)
         view7.alignAndFillHeight(.aboveMatchingRight, relativeTo: view1, padding: 10, width: 60)
-        view8.alignAndFillWidth(.toTheLeftMatchingTop, relativeTo: view7, padding: 10, height: 70)
+        view8.alignAndFillWidth(align: .toTheLeftMatchingTop, relativeTo: view7, padding: 10, height: 70)
         view9.alignBetweenVertical(.underMatchingLeft, primaryView: view8, secondaryView: anchorView, padding: 10, width: 100)
         view10.alignBetweenHorizontal(.toTheRightMatchingTop, primaryView: view9, secondaryView: view7, padding: 10, height: view9.height)
         view14.anchorInCorner(.bottomLeft, xPad: 10, yPad: 10, width: 100, height: 100)
