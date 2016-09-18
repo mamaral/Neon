@@ -32,7 +32,7 @@ public extension Groupable {
     ///
     ///   - height: The height of each subview.
     ///
-    public func groupInCenter(group: Group, views: [Frameable], padding: CGFloat, width: CGFloat, height: CGFloat) {
+    public func groupInCenter(_ group: Group, views: [Frameable], padding: CGFloat, width: CGFloat, height: CGFloat) {
         if views.count == 0 {
             print("[NEON] Warning: No subviews provided to groupInCenter().")
             return
@@ -44,12 +44,12 @@ public extension Groupable {
         var yAdjust : CGFloat = 0.0
 
         switch group {
-        case .Horizontal:
+        case .horizontal:
             xOrigin = (self.width - (CGFloat(views.count) * width) - (CGFloat(views.count - 1) * padding)) / 2.0
             yOrigin = (self.height / 2.0) - (height / 2.0)
             xAdjust = width + padding
 
-        case .Vertical:
+        case .vertical:
             xOrigin = (self.width / 2.0) - (width / 2.0)
             yOrigin = (self.height - (CGFloat(views.count) * height) - (CGFloat(views.count - 1) * padding)) / 2.0
             yAdjust = height + padding
@@ -81,13 +81,13 @@ public extension Groupable {
     ///
     ///   - height: The height of each subview.
     ///
-    public func groupInCorner(group: Group, views: [Frameable], inCorner corner: Corner, padding: CGFloat, width: CGFloat, height: CGFloat) {
+    public func groupInCorner(_ group: Group, views: [Frameable], inCorner corner: Corner, padding: CGFloat, width: CGFloat, height: CGFloat) {
         switch group {
-        case .Horizontal:
-            groupInCornerHorizontal(views: views, inCorner: corner, padding: padding, width: width, height: height)
+        case .horizontal:
+            groupInCornerHorizontal(views, inCorner: corner, padding: padding, width: width, height: height)
 
-        case .Vertical:
-            groupInCornerVertical(views: views, inCorner: corner, padding: padding, width: width, height: height)
+        case .vertical:
+            groupInCornerVertical(views, inCorner: corner, padding: padding, width: width, height: height)
         }
     }
 
@@ -110,7 +110,7 @@ public extension Groupable {
     ///
     ///   - height: The height of each subview.
     ///
-    public func groupAgainstEdge(group: Group, views: [Frameable], againstEdge edge: Edge, padding: CGFloat, width: CGFloat, height: CGFloat) {
+    public func groupAgainstEdge(_ group: Group, views: [Frameable], againstEdge edge: Edge, padding: CGFloat, width: CGFloat, height: CGFloat) {
         if views.count == 0 {
             print("[NEON] Warning: No subviews provided to groupAgainstEdge().")
             return
@@ -122,8 +122,8 @@ public extension Groupable {
         var yAdjust : CGFloat = 0.0
 
         switch edge {
-        case .Top:
-            if group == .Horizontal {
+        case .top:
+            if group == .horizontal {
                 xOrigin = (self.width - (CGFloat(views.count) * width) - (CGFloat(views.count - 1) * padding)) / 2.0
                 xAdjust = width + padding
             } else {
@@ -133,8 +133,8 @@ public extension Groupable {
 
             yOrigin = padding
 
-        case .Left:
-            if group == .Horizontal {
+        case .left:
+            if group == .horizontal {
                 yOrigin = (self.height / 2.0) - (height / 2.0)
                 xAdjust = width + padding
             } else {
@@ -144,8 +144,8 @@ public extension Groupable {
 
             xOrigin = padding
 
-        case .Bottom:
-            if group == .Horizontal {
+        case .bottom:
+            if group == .horizontal {
                 xOrigin = (self.width - (CGFloat(views.count) * width) - (CGFloat(views.count - 1) * padding)) / 2.0
                 yOrigin = self.height - height - padding
                 xAdjust = width + padding
@@ -155,8 +155,8 @@ public extension Groupable {
                 yAdjust = height + padding
             }
 
-        case .Right:
-            if group == .Horizontal {
+        case .right:
+            if group == .horizontal {
                 xOrigin = self.width - (CGFloat(views.count) * width) - (CGFloat(views.count) * padding)
                 yOrigin = (self.height / 2.0) - (height / 2.0)
                 xAdjust = width + padding
@@ -196,13 +196,13 @@ public extension Groupable {
     ///
     ///   - height: The height of each subview.
     ///
-    public func groupAndAlign(group: Group, andAlign align: Align, views: [Frameable], relativeTo sibling: Frameable, padding: CGFloat, width: CGFloat, height: CGFloat) {
+    public func groupAndAlign(_ group: Group, andAlign align: Align, views: [Frameable], relativeTo sibling: Frameable, padding: CGFloat, width: CGFloat, height: CGFloat) {
         switch group {
-        case .Horizontal:
-            groupAndAlignHorizontal(align: align, views: views, relativeTo: sibling, padding: padding, width: width, height: height)
+        case .horizontal:
+            groupAndAlignHorizontal(align, views: views, relativeTo: sibling, padding: padding, width: width, height: height)
 
-        case .Vertical:
-            groupAndAlignVertical(align: align, views: views, relativeTo: sibling, padding: padding, width: width, height: height)
+        case .vertical:
+            groupAndAlignVertical(align, views: views, relativeTo: sibling, padding: padding, width: width, height: height)
         }
     }
 
@@ -218,7 +218,7 @@ public extension Groupable {
     ///
     ///   - padding: The padding to be applied between each of the subviews and the sibling.
     ///
-    public func groupAndFill(group: Group, views: [Frameable], padding: CGFloat) {
+    public func groupAndFill(_ group: Group, views: [Frameable], padding: CGFloat) {
         if views.count == 0 {
             print("[NEON] Warning: No subviews provided to groupAndFill().")
             return
@@ -232,12 +232,12 @@ public extension Groupable {
         var yAdjust : CGFloat = 0.0
 
         switch group {
-        case .Horizontal:
+        case .horizontal:
             width = (self.width - (CGFloat(views.count + 1) * padding)) / CGFloat(views.count)
             height = self.height - (2 * padding)
             xAdjust = width + padding
 
-        case .Vertical:
+        case .vertical:
             width = self.width - (2 * padding)
             height = (self.height - (CGFloat(views.count + 1) * padding)) / CGFloat(views.count)
             yAdjust = height + padding
@@ -255,7 +255,7 @@ public extension Groupable {
 
     // MARK: Private utils
     //
-    private func groupInCornerHorizontal(views: [Frameable], inCorner corner: Corner, padding: CGFloat, width: CGFloat, height: CGFloat) {
+    fileprivate func groupInCornerHorizontal(_ views: [Frameable], inCorner corner: Corner, padding: CGFloat, width: CGFloat, height: CGFloat) {
         if views.count == 0 {
             print("[NEON] Warning: No subviews provided to groupInCorner().")
             return
@@ -266,19 +266,19 @@ public extension Groupable {
         let xAdjust : CGFloat = width + padding
 
         switch corner {
-        case .TopLeft:
+        case .topLeft:
             xOrigin = padding
             yOrigin = padding
 
-        case .TopRight:
+        case .topRight:
             xOrigin = self.width - ((CGFloat(views.count) * width) + (CGFloat(views.count) * padding))
             yOrigin = padding
 
-        case .BottomLeft:
+        case .bottomLeft:
             xOrigin = padding
             yOrigin = self.height - height - padding
 
-        case .BottomRight:
+        case .bottomRight:
             xOrigin = self.width - ((CGFloat(views.count) * width) + (CGFloat(views.count) * padding))
             yOrigin = self.height - height - padding
         }
@@ -290,7 +290,7 @@ public extension Groupable {
         }
     }
 
-    private func groupInCornerVertical(views: [Frameable], inCorner corner: Corner, padding: CGFloat, width: CGFloat, height: CGFloat) {
+    fileprivate func groupInCornerVertical(_ views: [Frameable], inCorner corner: Corner, padding: CGFloat, width: CGFloat, height: CGFloat) {
         if views.count == 0 {
             print("[NEON] Warning: No subviews provided to groupInCorner().")
             return
@@ -301,19 +301,19 @@ public extension Groupable {
         let yAdjust : CGFloat = height + padding
 
         switch corner {
-        case .TopLeft:
+        case .topLeft:
             xOrigin = padding
             yOrigin = padding
 
-        case .TopRight:
+        case .topRight:
             xOrigin = self.width - width - padding
             yOrigin = padding
 
-        case .BottomLeft:
+        case .bottomLeft:
             xOrigin = padding
             yOrigin = self.height - ((CGFloat(views.count) * height) + (CGFloat(views.count) * padding))
 
-        case .BottomRight:
+        case .bottomRight:
             xOrigin = self.width - width - padding
             yOrigin = self.height - ((CGFloat(views.count) * height) + (CGFloat(views.count) * padding))
         }
@@ -325,7 +325,7 @@ public extension Groupable {
         }
     }
 
-    private func groupAndAlignHorizontal(align: Align, views: [Frameable], relativeTo sibling: Frameable, padding: CGFloat, width: CGFloat, height: CGFloat) {
+    fileprivate func groupAndAlignHorizontal(_ align: Align, views: [Frameable], relativeTo sibling: Frameable, padding: CGFloat, width: CGFloat, height: CGFloat) {
         if views.count == 0 {
             print("[NEON] Warning: No subviews provided to groupAndAlign().")
             return
@@ -336,51 +336,51 @@ public extension Groupable {
         let xAdjust : CGFloat = width + padding
 
         switch align {
-        case .ToTheRightMatchingTop:
+        case .toTheRightMatchingTop:
             xOrigin = sibling.xMax + padding
             yOrigin = sibling.y
 
-        case .ToTheRightMatchingBottom:
+        case .toTheRightMatchingBottom:
             xOrigin = sibling.xMax + padding
             yOrigin = sibling.yMax - height
 
-        case .ToTheRightCentered:
+        case .toTheRightCentered:
             xOrigin = sibling.xMax + padding
             yOrigin = sibling.yMid - (height / 2.0)
 
-        case .ToTheLeftMatchingTop:
+        case .toTheLeftMatchingTop:
             xOrigin = sibling.x - (CGFloat(views.count) * width) - (CGFloat(views.count) * padding)
             yOrigin = sibling.y
 
-        case .ToTheLeftMatchingBottom:
+        case .toTheLeftMatchingBottom:
             xOrigin = sibling.x - (CGFloat(views.count) * width) - (CGFloat(views.count) * padding)
             yOrigin = sibling.yMax - height
 
-        case .ToTheLeftCentered:
+        case .toTheLeftCentered:
             xOrigin = sibling.x - (CGFloat(views.count) * width) - (CGFloat(views.count) * padding)
             yOrigin = sibling.yMid - (height / 2.0)
 
-        case .UnderMatchingLeft:
+        case .underMatchingLeft:
             xOrigin = sibling.x
             yOrigin = sibling.yMax + padding
 
-        case .UnderMatchingRight:
+        case .underMatchingRight:
             xOrigin = sibling.xMax - (CGFloat(views.count) * width) - (CGFloat(views.count - 1) * padding)
             yOrigin = sibling.yMax + padding
 
-        case .UnderCentered:
+        case .underCentered:
             xOrigin = sibling.xMid - ((CGFloat(views.count) * width) + (CGFloat(views.count - 1) * padding)) / 2.0
             yOrigin = sibling.yMax + padding
 
-        case .AboveMatchingLeft:
+        case .aboveMatchingLeft:
             xOrigin = sibling.x
             yOrigin = sibling.y - height - padding
 
-        case .AboveMatchingRight:
+        case .aboveMatchingRight:
             xOrigin = sibling.xMax - (CGFloat(views.count) * width) - (CGFloat(views.count - 1) * padding)
             yOrigin = sibling.y - height - padding
 
-        case .AboveCentered:
+        case .aboveCentered:
             xOrigin = sibling.xMid - ((CGFloat(views.count) * width) + (CGFloat(views.count - 1) * padding)) / 2.0
             yOrigin = sibling.y - height - padding
         }
@@ -392,7 +392,7 @@ public extension Groupable {
         }
     }
 
-    private func groupAndAlignVertical(align: Align, views: [Frameable], relativeTo sibling: Frameable, padding: CGFloat, width: CGFloat, height: CGFloat) {
+    fileprivate func groupAndAlignVertical(_ align: Align, views: [Frameable], relativeTo sibling: Frameable, padding: CGFloat, width: CGFloat, height: CGFloat) {
         if views.count == 0 {
             print("[NEON] Warning: No subviews provided to groupAndAlign().")
             return
@@ -403,51 +403,51 @@ public extension Groupable {
         let yAdjust : CGFloat = height + padding
 
         switch align {
-        case .ToTheRightMatchingTop:
+        case .toTheRightMatchingTop:
             xOrigin = sibling.xMax + padding
             yOrigin = sibling.y
 
-        case .ToTheRightMatchingBottom:
+        case .toTheRightMatchingBottom:
             xOrigin = sibling.xMax + padding
             yOrigin = sibling.yMax - (CGFloat(views.count) * height) - (CGFloat(views.count - 1) * padding)
 
-        case .ToTheRightCentered:
+        case .toTheRightCentered:
             xOrigin = sibling.xMax + padding
             yOrigin = sibling.yMid - ((CGFloat(views.count) * height) + CGFloat(views.count - 1) * padding) / 2.0
 
-        case .ToTheLeftMatchingTop:
+        case .toTheLeftMatchingTop:
             xOrigin = sibling.x - width - padding
             yOrigin = sibling.y
 
-        case .ToTheLeftMatchingBottom:
+        case .toTheLeftMatchingBottom:
             xOrigin = sibling.x - width - padding
             yOrigin = sibling.yMax - (CGFloat(views.count) * height) - (CGFloat(views.count - 1) * padding)
 
-        case .ToTheLeftCentered:
+        case .toTheLeftCentered:
             xOrigin = sibling.x - width - padding
             yOrigin = sibling.yMid - ((CGFloat(views.count) * height) + CGFloat(views.count - 1) * padding) / 2.0
 
-        case .UnderMatchingLeft:
+        case .underMatchingLeft:
             xOrigin = sibling.x
             yOrigin = sibling.yMax + padding
 
-        case .UnderMatchingRight:
+        case .underMatchingRight:
             xOrigin = sibling.xMax - width
             yOrigin = sibling.yMax + padding
 
-        case .UnderCentered:
+        case .underCentered:
             xOrigin = sibling.xMid - (width / 2.0)
             yOrigin = sibling.yMax + padding
 
-        case .AboveMatchingLeft:
+        case .aboveMatchingLeft:
             xOrigin = sibling.x
             yOrigin = sibling.y - (CGFloat(views.count) * height) - (CGFloat(views.count) * padding)
             
-        case .AboveMatchingRight:
+        case .aboveMatchingRight:
             xOrigin = sibling.xMax - width
             yOrigin = sibling.y - (CGFloat(views.count) * height) - (CGFloat(views.count) * padding)
             
-        case .AboveCentered:
+        case .aboveCentered:
             xOrigin = sibling.xMid - (width / 2.0)
             yOrigin = sibling.y - (CGFloat(views.count) * height) - (CGFloat(views.count) * padding)
         }

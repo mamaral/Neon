@@ -11,10 +11,10 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        self.window = UIWindow.init(frame: UIScreen.main().bounds)
-        self.window?.backgroundColor = UIColor.white()
+        self.window = UIWindow.init(frame: UIScreen.main.bounds)
+        self.window?.backgroundColor = UIColor.white
 
         // The facebook example from the README.... Don't ask why the file name is FacebookProfileExampleViewController
         // but the class referenced here is TwitterProfileExampleViewController... I didn't realize you can't yet refactor
