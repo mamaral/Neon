@@ -32,7 +32,7 @@ public extension Groupable {
     ///
     ///   - height: The height of each subview.
     ///
-    public func groupInCenter(_ group: Group, views: [Frameable], padding: CGFloat, width: CGFloat, height: CGFloat) {
+    public func groupInCenter(group: Group, views: [Frameable], padding: CGFloat, width: CGFloat, height: CGFloat) {
         if views.count == 0 {
             print("[NEON] Warning: No subviews provided to groupInCenter().")
             return
