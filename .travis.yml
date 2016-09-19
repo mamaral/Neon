@@ -1,4 +1,4 @@
-language: swift
+language: objective-c
 osx_image: xcode8
 before_install: gem install cocoapods xcpretty obcd slather -N
 xcode_sdk: iphonesimulator10.0
