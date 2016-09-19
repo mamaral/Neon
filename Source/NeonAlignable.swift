@@ -39,56 +39,56 @@ public extension Alignable {
     /// match the specified `Align`. For example, if you specify `.ToTheRightMatchingTop` and provide an offset value of `5`, the
     /// view's y origin will be lower than the sibling view's y origin by 5 points.
     ///
-    public func align(_ align: Align, relativeTo sibling: Frameable, padding: CGFloat, width: CGFloat, height: CGFloat, offset: CGFloat = 0) {
+    public func align(align: Align, relativeTo sibling: Frameable, padding: CGFloat, width: CGFloat, height: CGFloat, offset: CGFloat = 0) {
         var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0
 
         switch align {
-        case .ToTheRightMatchingTop:
+        case .toTheRightMatchingTop:
             xOrigin = sibling.xMax + padding
             yOrigin = sibling.y + offset
 
-        case .ToTheRightMatchingBottom:
+        case .toTheRightMatchingBottom:
             xOrigin = sibling.xMax + padding
             yOrigin = sibling.yMax - height + offset
 
-        case .ToTheRightCentered:
+        case .toTheRightCentered:
             xOrigin = sibling.xMax + padding
             yOrigin = sibling.yMid - (height / 2.0) + offset
 
-        case .ToTheLeftMatchingTop:
+        case .toTheLeftMatchingTop:
             xOrigin = sibling.x - width - padding
             yOrigin = sibling.y + offset
 
-        case .ToTheLeftMatchingBottom:
+        case .toTheLeftMatchingBottom:
             xOrigin = sibling.x - width - padding
             yOrigin = sibling.yMax - height + offset
 
-        case .ToTheLeftCentered:
+        case .toTheLeftCentered:
             xOrigin = sibling.x - width - padding
             yOrigin = sibling.yMid - (height / 2.0) + offset
 
-        case .UnderMatchingLeft:
+        case .underMatchingLeft:
             xOrigin = sibling.x + offset
             yOrigin = sibling.yMax + padding
 
-        case .UnderMatchingRight:
+        case .underMatchingRight:
             xOrigin = sibling.xMax - width + offset
             yOrigin = sibling.yMax + padding
 
-        case .UnderCentered:
+        case .underCentered:
             xOrigin = sibling.xMid - (width / 2.0) + offset
             yOrigin = sibling.yMax + padding
 
-        case .AboveMatchingLeft:
+        case .aboveMatchingLeft:
             xOrigin = sibling.x + offset
             yOrigin = sibling.y - padding - height
 
-        case .AboveMatchingRight:
+        case .aboveMatchingRight:
             xOrigin = sibling.xMax - width + offset
             yOrigin = sibling.y - padding - height
 
-        case .AboveCentered:
+        case .aboveCentered:
             xOrigin = sibling.xMid - (width / 2.0) + offset
             yOrigin = sibling.y - padding - height
         }
@@ -97,11 +97,11 @@ public extension Alignable {
 
         if height == AutoHeight {
             self.setDimensionAutomatically()
-            self.align(align, relativeTo: sibling, padding: padding, width: width, height: self.height, offset: offset)
+            self.align(align: align, relativeTo: sibling, padding: padding, width: width, height: self.height, offset: offset)
         }
         if width == AutoWidth {
             self.setDimensionAutomatically()
-            self.align(align, relativeTo: sibling, padding: padding, width: self.width, height: height, offset: offset)
+            self.align(align: align, relativeTo: sibling, padding: padding, width: self.width, height: height, offset: offset)
         }
     }
 
@@ -132,62 +132,62 @@ public extension Alignable {
         var width : CGFloat = 0.0
 
         switch align {
-        case .ToTheRightMatchingTop:
+        case .toTheRightMatchingTop:
             xOrigin = sibling.xMax + padding
             yOrigin = sibling.y + offset
             width = superviewWidth - xOrigin - padding
 
-        case .ToTheRightMatchingBottom:
+        case .toTheRightMatchingBottom:
             xOrigin = sibling.xMax + padding
             yOrigin = sibling.yMax - height + offset
             width = superviewWidth - xOrigin - padding
 
-        case .ToTheRightCentered:
+        case .toTheRightCentered:
             xOrigin = sibling.xMax + padding
             yOrigin = sibling.yMid - (height / 2.0) + offset
             width = superviewWidth - xOrigin - padding
 
-        case .ToTheLeftMatchingTop:
+        case .toTheLeftMatchingTop:
             xOrigin = padding
             yOrigin = sibling.y + offset
             width = sibling.x - (2 * padding)
 
-        case .ToTheLeftMatchingBottom:
+        case .toTheLeftMatchingBottom:
             xOrigin = padding
             yOrigin = sibling.yMax - height + offset
             width = sibling.x - (2 * padding)
 
-        case .ToTheLeftCentered:
+        case .toTheLeftCentered:
             xOrigin = padding
             yOrigin = sibling.yMid - (height / 2.0) + offset
             width = sibling.x - (2 * padding)
 
-        case .UnderMatchingLeft:
+        case .underMatchingLeft:
             xOrigin = sibling.x + offset
             yOrigin = sibling.yMax + padding
             width = superviewWidth - xOrigin - padding
 
-        case .UnderMatchingRight:
+        case .underMatchingRight:
             xOrigin = padding + offset
             yOrigin = sibling.yMax + padding
             width = superviewWidth - (superviewWidth - sibling.xMax) - padding
 
-        case .UnderCentered:
+        case .underCentered:
             xOrigin = padding + offset
             yOrigin = sibling.yMax + padding
             width = superviewWidth - (2 * padding)
 
-        case .AboveMatchingLeft:
+        case .aboveMatchingLeft:
             xOrigin = sibling.x + offset
             yOrigin = sibling.y - padding - height
             width = superviewWidth - xOrigin - padding
 
-        case .AboveMatchingRight:
+        case .aboveMatchingRight:
             xOrigin = padding + offset
             yOrigin = sibling.y - padding - height
             width = superviewWidth - (superviewWidth - sibling.xMax) - padding
 
-        case .AboveCentered:
+        case .aboveCentered:
             xOrigin = padding + offset
             yOrigin = sibling.y - padding - height
             width = superviewWidth - (2 * padding)
@@ -231,62 +231,62 @@ public extension Alignable {
         var height : CGFloat = 0.0
 
         switch align {
-        case .ToTheRightMatchingTop:
+        case .toTheRightMatchingTop:
             xOrigin = sibling.xMax + padding
             yOrigin = sibling.y + offset
             height = superviewHeight - sibling.y - padding
 
-        case .ToTheRightMatchingBottom:
+        case .toTheRightMatchingBottom:
             xOrigin = sibling.xMax + padding
             yOrigin = padding + offset
             height = superviewHeight - (superviewHeight - sibling.yMax) - padding
 
-        case .ToTheRightCentered:
+        case .toTheRightCentered:
             xOrigin = sibling.xMax + padding
             yOrigin = padding + offset
             height = superviewHeight - (2 * padding)
 
-        case .ToTheLeftMatchingTop:
+        case .toTheLeftMatchingTop:
             xOrigin = sibling.x - width - padding
             yOrigin = sibling.y + offset
             height = superviewHeight - sibling.y - padding
 
-        case .ToTheLeftMatchingBottom:
+        case .toTheLeftMatchingBottom:
             xOrigin = sibling.x - width - padding
             yOrigin = padding + offset
             height = superviewHeight - (superviewHeight - sibling.yMax) - padding
 
-        case .ToTheLeftCentered:
+        case .toTheLeftCentered:
             xOrigin = sibling.x - width - padding
             yOrigin = padding + offset
             height = superviewHeight - (2 * padding)
 
-        case .UnderMatchingLeft:
+        case .underMatchingLeft:
             xOrigin = sibling.x + offset
             yOrigin = sibling.yMax + padding
             height = superviewHeight - yOrigin - padding
 
-        case .UnderMatchingRight:
+        case .underMatchingRight:
             xOrigin = sibling.xMax - width + offset
             yOrigin = sibling.yMax + padding
             height = superviewHeight - yOrigin - padding
 
-        case .UnderCentered:
+        case .underCentered:
             xOrigin = sibling.xMid - (width / 2.0) + offset
             yOrigin = sibling.yMax + padding
             height = superviewHeight - yOrigin - padding
 
-        case .AboveMatchingLeft:
+        case .aboveMatchingLeft:
             xOrigin = sibling.x + offset
             yOrigin = padding
             height = sibling.y - (2 * padding)
 
-        case .AboveMatchingRight:
+        case .aboveMatchingRight:
             xOrigin = sibling.xMax - width + offset
             yOrigin = padding
             height = sibling.y - (2 * padding)
 
-        case .AboveCentered:
+        case .aboveCentered:
             xOrigin = sibling.xMid - (width / 2.0) + offset
             yOrigin = padding
             height = sibling.y - (2 * padding)
@@ -330,73 +330,73 @@ public extension Alignable {
         var height : CGFloat = 0.0
 
         switch align {
-        case .ToTheRightMatchingTop:
+        case .toTheRightMatchingTop:
             xOrigin = sibling.xMax + padding
             yOrigin = sibling.y + offset
             width = superviewWidth - xOrigin - padding
             height = superviewHeight - yOrigin - padding
 
-        case .ToTheRightMatchingBottom:
+        case .toTheRightMatchingBottom:
             xOrigin = sibling.xMax + padding
             yOrigin = padding + offset
             width = superviewWidth - xOrigin - padding
             height = superviewHeight - (superviewHeight - sibling.yMax) - padding
 
-        case .ToTheRightCentered:
+        case .toTheRightCentered:
             xOrigin = sibling.xMax + padding
             yOrigin = padding + offset
             width = superviewWidth - xOrigin - padding
             height = superviewHeight - (2 * padding)
 
-        case .ToTheLeftMatchingTop:
+        case .toTheLeftMatchingTop:
             xOrigin = padding
             yOrigin = sibling.y + offset
             width = superviewWidth - (superviewWidth - sibling.x) - (2 * padding)
             height = superviewHeight - yOrigin - padding
 
-        case .ToTheLeftMatchingBottom:
+        case .toTheLeftMatchingBottom:
             xOrigin = padding
             yOrigin = padding + offset
             width = superviewWidth - (superviewWidth - sibling.x) - (2 * padding)
             height = superviewHeight - (superviewHeight - sibling.yMax) - padding
 
-        case .ToTheLeftCentered:
+        case .toTheLeftCentered:
             xOrigin = padding
             yOrigin = padding + offset
             width = superviewWidth - (superviewWidth - sibling.x) - (2 * padding)
             height = superviewHeight - (2 * padding)
 
-        case .UnderMatchingLeft:
+        case .underMatchingLeft:
             xOrigin = sibling.x + offset
             yOrigin = sibling.yMax + padding
             width = superviewWidth - xOrigin - padding
             height = superviewHeight - yOrigin - padding
 
-        case .UnderMatchingRight:
+        case .underMatchingRight:
             xOrigin = padding + offset
             yOrigin = sibling.yMax + padding
             width = superviewWidth - (superviewWidth - sibling.xMax) - padding
             height = superviewHeight - yOrigin - padding
 
-        case .UnderCentered:
+        case .underCentered:
             xOrigin = padding + offset
             yOrigin = sibling.yMax + padding
             width = superviewWidth - (2 * padding)
             height = superviewHeight - yOrigin - padding
 
-        case .AboveMatchingLeft:
+        case .aboveMatchingLeft:
             xOrigin = sibling.x + offset
             yOrigin = padding
             width = superviewWidth - xOrigin - padding
             height = superviewHeight - (superviewHeight - sibling.y) - (2 * padding)
 
-        case .AboveMatchingRight:
+        case .aboveMatchingRight:
             xOrigin = padding + offset
             yOrigin = padding
             width = superviewWidth - (superviewWidth - sibling.xMax) - padding
             height = superviewHeight - (superviewHeight - sibling.y) - (2 * padding)
 
-        case .AboveCentered:
+        case .aboveCentered:
             xOrigin = padding + offset
             yOrigin = padding
             width = superviewWidth - (2 * padding)
@@ -440,37 +440,37 @@ public extension Alignable {
         var width : CGFloat = 0.0
 
         switch align {
-        case .ToTheRightMatchingTop:
+        case .toTheRightMatchingTop:
             xOrigin = primaryView.xMax + padding
             yOrigin = primaryView.y + offset
             width = superviewWidth - primaryView.xMax - (superviewWidth - secondaryView.x) - (2 * padding)
 
-        case .ToTheRightMatchingBottom:
+        case .toTheRightMatchingBottom:
             xOrigin = primaryView.xMax + padding
             yOrigin = primaryView.yMax - height + offset
             width = superviewWidth - primaryView.xMax - (superviewWidth - secondaryView.x) - (2 * padding)
 
-        case .ToTheRightCentered:
+        case .toTheRightCentered:
             xOrigin = primaryView.xMax + padding
             yOrigin = primaryView.yMid - (height / 2.0) + offset
             width = superviewWidth - primaryView.xMax - (superviewWidth - secondaryView.x) - (2 * padding)
 
-        case .ToTheLeftMatchingTop:
+        case .toTheLeftMatchingTop:
             xOrigin = secondaryView.xMax + padding
             yOrigin = primaryView.y + offset
             width = superviewWidth - secondaryView.xMax - (superviewWidth - primaryView.x) - (2 * padding)
 
-        case .ToTheLeftMatchingBottom:
+        case .toTheLeftMatchingBottom:
             xOrigin = secondaryView.xMax + padding
             yOrigin = primaryView.yMax - height + offset
             width = superviewWidth - secondaryView.xMax - (superviewWidth - primaryView.x) - (2 * padding)
 
-        case .ToTheLeftCentered:
+        case .toTheLeftCentered:
             xOrigin = secondaryView.xMax + padding
             yOrigin = primaryView.yMid - (height / 2.0) + offset
             width = superviewWidth - secondaryView.xMax - (superviewWidth - primaryView.x) - (2 * padding)
 
-        case .UnderMatchingLeft, .UnderMatchingRight, .UnderCentered,  .AboveMatchingLeft, .AboveMatchingRight, .AboveCentered:
+        case .underMatchingLeft, .underMatchingRight, .underCentered,  .aboveMatchingLeft, .aboveMatchingRight, .aboveCentered:
             fatalError("[NEON] Invalid Align specified for alignBetweenHorizonal().")
         }
 
@@ -512,37 +512,37 @@ public extension Alignable {
         var height : CGFloat = 0.0
 
         switch align {
-        case .UnderMatchingLeft:
+        case .underMatchingLeft:
             xOrigin = primaryView.x + offset
             yOrigin = primaryView.yMax + padding
             height = superviewHeight - primaryView.yMax - (superviewHeight - secondaryView.y) - (2 * padding)
 
-        case .UnderMatchingRight:
+        case .underMatchingRight:
             xOrigin = primaryView.xMax - width + offset
             yOrigin = primaryView.yMax + padding
             height = superviewHeight - primaryView.yMax - (superviewHeight - secondaryView.y) - (2 * padding)
 
-        case .UnderCentered:
+        case .underCentered:
             xOrigin = primaryView.xMid - (width / 2.0) + offset
             yOrigin = primaryView.yMax + padding
             height = superviewHeight - primaryView.yMax - (superviewHeight - secondaryView.y) - (2 * padding)
 
-        case .AboveMatchingLeft:
+        case .aboveMatchingLeft:
             xOrigin = primaryView.x + offset
             yOrigin = secondaryView.yMax + padding
             height = superviewHeight - secondaryView.yMax - (superviewHeight - primaryView.y) - (2 * padding)
 
-        case .AboveMatchingRight:
+        case .aboveMatchingRight:
             xOrigin = primaryView.xMax - width + offset
             yOrigin = secondaryView.yMax + padding
             height = superviewHeight - secondaryView.yMax - (superviewHeight - primaryView.y) - (2 * padding)
 
-        case .AboveCentered:
+        case .aboveCentered:
             xOrigin = primaryView.xMid - (width / 2.0) + offset
             yOrigin = secondaryView.yMax + padding
             height = superviewHeight - secondaryView.yMax - (superviewHeight - primaryView.y) - (2 * padding)
 
-        case .ToTheLeftMatchingTop, .ToTheLeftMatchingBottom, .ToTheLeftCentered, .ToTheRightMatchingTop, .ToTheRightMatchingBottom, .ToTheRightCentered:
+        case .toTheLeftMatchingTop, .toTheLeftMatchingBottom, .toTheLeftCentered, .toTheRightMatchingTop, .toTheRightMatchingBottom, .toTheRightCentered:
             fatalError("[NEON] Invalid Align specified for alignBetweenVertical().")
         }
 

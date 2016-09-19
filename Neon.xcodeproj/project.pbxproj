@@ -323,12 +323,16 @@
 					};
 					03EDD3821BBF89910006C4A9 = {
 						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 0800;
 					};
 					03EDD3961BBF8A4F0006C4A9 = {
 						CreatedOnToolsVersion = 7.1;
 					};
 					27D253651BAF71AB00FA4FED = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 9W3UPW3F39;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -511,6 +515,7 @@
 				PRODUCT_NAME = Neon;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -539,6 +544,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.MikeAmaral.NeoniOS;
 				PRODUCT_NAME = Neon;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -693,6 +699,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 9W3UPW3F39;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
@@ -702,6 +710,7 @@
 				PRODUCT_MODULE_NAME = Neon_Demo;
 				PRODUCT_NAME = Neon_Demo;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -710,6 +719,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 9W3UPW3F39;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
@@ -718,6 +729,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.MikeAmaral.NeonDemo;
 				PRODUCT_MODULE_NAME = Neon_Demo;
 				PRODUCT_NAME = Neon_Demo;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

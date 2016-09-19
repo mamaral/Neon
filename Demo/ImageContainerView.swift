@@ -16,7 +16,7 @@ class ImageContainerView: UIView {
     convenience init() {
         self.init(frame: CGRect.zero)
 
-        self.backgroundColor = UIColor.white()
+        self.backgroundColor = UIColor.white
         self.layer.cornerRadius = 4.0
         self.layer.borderWidth = 1.0
         self.layer.borderColor = UIColor(white: 0.68, alpha: 1.0).cgColor
@@ -27,7 +27,7 @@ class ImageContainerView: UIView {
         self.addSubview(imageView)
 
         label.textAlignment = .center
-        label.textColor = UIColor.black()
+        label.textColor = UIColor.black
         label.font = UIFont.boldSystemFont(ofSize: 14.0)
         self.addSubview(label)
     }
@@ -35,7 +35,7 @@ class ImageContainerView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        imageView.anchorAndFillEdge(.Top, xPad: 0, yPad: 0, otherSize: self.height * 0.7)
-        label.alignAndFill(align: .UnderCentered, relativeTo: imageView, padding: 0)
+        imageView.anchorAndFillEdge(.top, xPad: 0, yPad: 0, otherSize: self.height * 0.7)
+        label.alignAndFill(align: .underCentered, relativeTo: imageView, padding: 0)
     }
 }

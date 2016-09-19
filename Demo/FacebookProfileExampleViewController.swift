@@ -45,19 +45,19 @@ class TwitterProfileExampleViewController: UIViewController {
 
         avatarImageView.image = UIImage(named: "avatar")
         avatarImageView.layer.cornerRadius = 1.0
-        avatarImageView.layer.borderColor = UIColor.white().cgColor
+        avatarImageView.layer.borderColor = UIColor.white.cgColor
         avatarImageView.layer.borderWidth = 2.0
         avatarImageView.clipsToBounds = true
 
         cameraButton.setImage(UIImage(named: "camera"), for: .normal)
 
-        nameLabel.textColor = UIColor.white()
+        nameLabel.textColor = UIColor.white
         nameLabel.text = "Mike\nAmaral"
         nameLabel.numberOfLines = 2
         nameLabel.font = UIFont(name: "HelveticaNeue-Light", size: 33)
 
-        buttonContainerView.backgroundColor = UIColor.white()
-        buttonContainerView.layer.shadowColor = UIColor.black().cgColor
+        buttonContainerView.backgroundColor = UIColor.white
+        buttonContainerView.layer.shadowColor = UIColor.black.cgColor
         buttonContainerView.layer.shadowOffset = CGSize(width: 0, height: 0.5)
         buttonContainerView.layer.shadowOpacity = 0.4
 
@@ -73,7 +73,7 @@ class TwitterProfileExampleViewController: UIViewController {
         moreButton.label.text = "More"
         moreButton.imageView.image = UIImage(named: "more")
 
-        buttonContainerView2.backgroundColor = UIColor.clear()
+        buttonContainerView2.backgroundColor = UIColor.clear
 
         aboutView.imageView.image = UIImage(named: "about")
         aboutView.label.text = "About"
@@ -117,21 +117,21 @@ class TwitterProfileExampleViewController: UIViewController {
     }
 
     func layoutFrames() {
-        let isLandscape : Bool = UIDevice.current().orientation.isLandscape.boolValue
+        let isLandscape : Bool = UIDevice.current.orientation.isLandscape
         let bannerHeight : CGFloat = view.height * 0.465
         let avatarHeightMultipler : CGFloat = isLandscape ? 0.75 : 0.43
         let avatarSize = bannerHeight * avatarHeightMultipler
 
         searchBar.fillSuperview()
-        bannerImageView.anchorAndFillEdge(.Top, xPad: 0, yPad: 0, otherSize: bannerHeight)
+        bannerImageView.anchorAndFillEdge(.top, xPad: 0, yPad: 0, otherSize: bannerHeight)
         bannerMaskView.fillSuperview()
-        avatarImageView.anchorInCorner(.BottomLeft, xPad: 15, yPad: 15, width: avatarSize, height: avatarSize)
-        nameLabel.alignAndFillWidth(align: .ToTheRightCentered, relativeTo: avatarImageView, padding: 15, height: 120)
-        cameraButton.anchorInCorner(.BottomRight, xPad: 10, yPad: 7, width: 28, height: 28)
-        buttonContainerView.alignAndFillWidth(align: .UnderCentered, relativeTo: bannerImageView, padding: 0, height: 62)
-        buttonContainerView.groupAndFill(group: .Horizontal, views: [postButton, updateInfoButton, activityLogButton, moreButton], padding: 10)
-        buttonContainerView2.alignAndFillWidth(align: .UnderCentered, relativeTo: buttonContainerView, padding: 0, height: 120)
-        buttonContainerView2.groupAndFill(group: .Horizontal, views: [aboutView, photosView, friendsView], padding: 8)
+        avatarImageView.anchorInCorner(.bottomLeft, xPad: 15, yPad: 15, width: avatarSize, height: avatarSize)
+        nameLabel.alignAndFillWidth(align: .toTheRightCentered, relativeTo: avatarImageView, padding: 15, height: 120)
+        cameraButton.anchorInCorner(.bottomRight, xPad: 10, yPad: 7, width: 28, height: 28)
+        buttonContainerView.alignAndFillWidth(align: .underCentered, relativeTo: bannerImageView, padding: 0, height: 62)
+        buttonContainerView.groupAndFill(group: .horizontal, views: [postButton, updateInfoButton, activityLogButton, moreButton], padding: 10)
+        buttonContainerView2.alignAndFillWidth(align: .underCentered, relativeTo: buttonContainerView, padding: 0, height: 120)
+        buttonContainerView2.groupAndFill(group: .horizontal, views: [aboutView, photosView, friendsView], padding: 8)
     }
 }
 
