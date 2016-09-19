@@ -30,6 +30,6 @@ class IconButton: UIView {
         super.layoutSubviews()
 
         imageView.anchorToEdge(.top, padding: 0, width: 24, height: 24)
-        label.align(align: .underCentered, relativeTo: imageView, padding: 5, width: self.width, height: 15)
+        label.align(.underCentered, relativeTo: imageView, padding: 5, width: self.width, height: 15)
     }
 }
