@@ -6,9 +6,12 @@ Pod::Spec.new do |s|
   s.homepage = 'https://github.com/mamaral/neon'
   s.social_media_url = 'http://twitter.com/MikeAmaral'
   s.authors = { 'Mike Amaral' => 'mike.amaral36@gmail.com' }
-  s.source = { :git => 'https://github.com/mamaral/neon.git', :tag => "v0.3.3" }
+  s.source = { :git => 'https://github.com/mamaral/neon.git', :tag => s.version }
   s.osx.deployment_target = '10.7'
   s.ios.deployment_target = '8.0'
   s.source_files = 'Source/*.swift'
   s.requires_arc = true
+  s.xcconfig = {
+    'SWIFT_VERSION' => '3.0'
+  }
 end
