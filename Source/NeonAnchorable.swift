@@ -30,7 +30,7 @@ public extension Anchorable {
     ///
     ///   - bottom: The padding between the bottom of the view and the superview.
     ///
-    public func fillSuperview(_ left: CGFloat = 0, right: CGFloat = 0, top: CGFloat = 0, bottom: CGFloat = 0) {
+    public func fillSuperview(left: CGFloat = 0, right: CGFloat = 0, top: CGFloat = 0, bottom: CGFloat = 0) {
         let width : CGFloat = superFrame.width - (left + right)
         let height : CGFloat = superFrame.height - (top + bottom)
 
@@ -45,7 +45,7 @@ public extension Anchorable {
     ///
     ///   - height: The height of the view.
     ///
-    public func anchorInCenter(_ width: CGFloat, height: CGFloat) {
+    public func anchorInCenter(width: CGFloat, height: CGFloat) {
         let xOrigin : CGFloat = (superFrame.width / 2.0) - (width / 2.0)
         let yOrigin : CGFloat = (superFrame.height / 2.0) - (height / 2.0)
 
@@ -53,11 +53,12 @@ public extension Anchorable {
 
         if height == AutoHeight {
             self.setDimensionAutomatically()
-            self.anchorInCenter(width, height: self.height)
+            self.anchorInCenter(width: width, height: self.height)
         }
+
         if width == AutoWidth {
             self.setDimensionAutomatically()
-            self.anchorInCenter(self.width, height: height)
+            self.anchorInCenter(width: self.width, height: height)
         }
     }
 
@@ -105,6 +106,7 @@ public extension Anchorable {
             self.setDimensionAutomatically()
             self.anchorInCorner(corner, xPad: xPad, yPad: yPad, width: width, height: self.height)
         }
+
         if width == AutoWidth {
             self.setDimensionAutomatically()
             self.anchorInCorner(corner, xPad: xPad, yPad: yPad, width: self.width, height: height)
