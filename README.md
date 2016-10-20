@@ -14,7 +14,7 @@ Neon is built around how user interfaces are naturally and intuitively designed.
 You can use [Cocoapods](http://cocoapods.org/) to install `Neon` by adding it to your `Podfile`:
 
 ```ruby
-platform :ios, '8.0'
+platform :ios, '9.0'
 use_frameworks!
 pod 'Neon'
 ```
