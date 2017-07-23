@@ -25,6 +25,14 @@ extension View : Frameable, Anchorable, Alignable, Groupable {
         return superview.frame
     }
 
+    public var isLTR: Bool {
+        #if os(iOS)
+            return UIView.userInterfaceLayoutDirection(for: self.semanticContentAttribute) != .rightToLeft
+        #else
+            return self.userInterfaceLayoutDirection != NSUserInterfaceLayoutDirectionRightToLeft
+        #endif
+    }
+
     public func setDimensionAutomatically() {
         #if os(iOS)
             self.sizeToFit()
@@ -45,6 +53,14 @@ extension CALayer : Frameable, Anchorable, Alignable, Groupable {
         }
 
         return superlayer.frame
+    }
+
+    public var isLTR: Bool {
+        #if os(iOS)
+            return UIView.userInterfaceLayoutDirection(for: UIView().semanticContentAttribute) != .rightToLeft
+        #else
+            return self.userInterfaceLayoutDirection != NSUserInterfaceLayoutDirectionRightToLeft
+        #endif
     }
 
     public func setDimensionAutomatically() { /* no-op here as this shouldn't apply to CALayers */ }

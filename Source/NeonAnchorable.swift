@@ -22,19 +22,20 @@ public extension Anchorable {
     /// - note: If you don't want padding, simply call `fillSuperview()` with no parameters.
     ///
     /// - parameters:
-    ///   - left: The padding between the left side of the view and the superview.
+    ///   - leading: The padding between the leading edge of the view and the superview.
     ///
-    ///   - right: The padding between the right side of the view and the superview.
+    ///   - trailing: The padding between the trailing edge of the view and the superview.
     ///
     ///   - top: The padding between the top of the view and the superview.
     ///
     ///   - bottom: The padding between the bottom of the view and the superview.
     ///
-    public func fillSuperview(left: CGFloat = 0, right: CGFloat = 0, top: CGFloat = 0, bottom: CGFloat = 0) {
-        let width : CGFloat = superFrame.width - (left + right)
-        let height : CGFloat = superFrame.height - (top + bottom)
+    public func fillSuperview(leading: CGFloat = 0, trailing: CGFloat = 0, top: CGFloat = 0, bottom: CGFloat = 0) {
+        let width: CGFloat = superFrame.width - (leading + trailing)
+        let height: CGFloat = superFrame.height - (top + bottom)
+        let x: CGFloat = isLTR ? leading : (trailing)
 
-        frame = CGRect(x: left, y: top, width: width, height: height)
+        frame = CGRect(x: x, y: top, width: width, height: height)
     }
 
 
@@ -69,7 +70,7 @@ public extension Anchorable {
     ///   - corner: The `CornerType` value used to specify in which corner the view will be anchored.
     ///
     ///   - xPad: The *horizontal* padding applied to the view inside its superview, which can be applied
-    /// to the left or right side of the view, depending upon the `CornerType` specified.
+    /// to the leading or trailing edge of the view, depending upon the `CornerType` specified.
     ///
     ///   - yPad: The *vertical* padding applied to the view inside its supeview, which will either be on
     /// the top or bottom of the view, depending upon the `CornerType` specified.
@@ -124,8 +125,8 @@ public extension Anchorable {
     ///   - padding: The padding applied to the view inside its superview. How this padding is applied
     /// will vary depending on the `Edge` provided. Views centered against the top or bottom of
     /// their superview will have the padding applied above or below them respectively, whereas views
-    /// centered against the left or right side of their superview will have the padding applied to the
-    /// right and left sides respectively.
+    /// centered against the leading or trailing edge of their superview will have the padding applied to the
+    /// leading and trailing edges respectively.
     ///
     ///   - width: The width of the view.
     ///
@@ -140,16 +141,16 @@ public extension Anchorable {
             xOrigin = (superFrame.width / 2.0) - (width / 2.0)
             yOrigin = padding
 
-        case .left:
-            xOrigin = padding
+        case .leading:
+            xOrigin = isLTR ? padding : superFrame.width - width - padding
             yOrigin = (superFrame.height / 2.0) - (height / 2.0)
 
         case .bottom:
             xOrigin = (superFrame.width / 2.0) - (width / 2.0)
             yOrigin = superFrame.height - height - padding
 
-        case .right:
-            xOrigin = superFrame.width - width - padding
+        case .trailing:
+            xOrigin = isLTR ? superFrame.width - width - padding : padding
             yOrigin = (superFrame.height / 2.0) - (height / 2.0)
         }
 
@@ -167,26 +168,26 @@ public extension Anchorable {
 
 
     /// Anchor a view in its superview, centered on a given edge and filling either the width or
-    /// height of that edge. For example, views anchored to the `.Top` or `.Bottom` will have
+    /// height of that edge. For example, views anchored to the `.top` or `.bottom` will have
     /// their widths automatically sized to fill their superview, with the xPad applied to both
-    /// the left and right sides of the view.
+    /// the leading and trailing edges of the view.
     ///
     /// - parameters:
     ///   - edge: The `Edge` used to specify which face of the superview the view
     /// will be anchored against, centered relative to, and expanded to fill.
     ///
     ///   - xPad: The horizontal padding applied to the view inside its superview. If the `Edge`
-    /// specified is `.Top` or `.Bottom`, this padding will be applied to the left and right sides
+    /// specified is `.top` or `.bottom`, this padding will be applied to the leadig and trailing edges
     /// of the view when it fills the width superview.
     ///
     ///   - yPad: The vertical padding applied to the view inside its superview. If the `Edge`
-    /// specified is `.Left` or `.Right`, this padding will be applied to the top and bottom sides
+    /// specified is `.leading` or `.trailing`, this padding will be applied to the top and bottom sides
     /// of the view when it fills the height of the superview.
     ///
     ///   - otherSize: The size parameter that is *not automatically calculated* based on the provided
     /// edge. For example, views anchored to the `.Top` or `.Bottom` will have their widths automatically
     /// calculated, so `otherSize` will be applied to their height, and subsequently views anchored to
-    /// the `.Left` and `.Right` will have `otherSize` applied to their width as their heights are
+    /// the `.leading` and `.trailing` will have `otherSize` applied to their width as their heights are
     /// automatically calculated.
     ///
     public func anchorAndFillEdge(_ edge: Edge, xPad: CGFloat, yPad: CGFloat, otherSize: CGFloat) {
@@ -204,8 +205,8 @@ public extension Anchorable {
             height = otherSize
             autoSize = true
 
-        case .left:
-            xOrigin = xPad
+        case .leading:
+            xOrigin = isLTR ? xPad : (superFrame.width - otherSize - xPad)
             yOrigin = yPad
             width = otherSize
             height = superFrame.height - (2 * yPad)
@@ -217,8 +218,8 @@ public extension Anchorable {
             height = otherSize
             autoSize = true
 
-        case .right:
-            xOrigin = superFrame.width - otherSize - xPad
+        case .trailing:
+            xOrigin = isLTR ? (superFrame.width - otherSize - xPad) : xPad
             yOrigin = yPad
             width = otherSize
             height = superFrame.height - (2 * yPad)

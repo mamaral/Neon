@@ -190,7 +190,7 @@ class ViewController: UIViewController {
 
         // Static container for the demo.
         //
-        containerView.fillSuperview(left: 10, right: 10, top: 25, bottom: 10)
+        containerView.fillSuperview(leading: 10, trailing: 10, top: 25, bottom: 10)
         anchorView.anchorInCenter(width: 200, height: 200)
 
         layoutFrames()

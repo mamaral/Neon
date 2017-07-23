@@ -51,17 +51,17 @@ public enum Corner {
 ///
 /// **top**: The top edge of the frame.
 ///
-/// **left**: The left edge of the frame.
+/// **leading**: The leading edge of the frame.
 ///
 /// **bottom**: The bottom edge of the frame.
 ///
-/// **right**: The right edge of the frame.
+/// **trailing**: The trailing edge of the frame.
 ///
 public enum Edge {
     case top
-    case left
+    case leading
     case bottom
-    case right
+    case trailing
 }
 
 

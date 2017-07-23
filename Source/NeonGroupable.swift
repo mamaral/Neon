@@ -116,14 +116,15 @@ public extension Groupable {
             return
         }
 
-        var xOrigin : CGFloat = 0.0
-        var yOrigin : CGFloat = 0.0
-        var xAdjust : CGFloat = 0.0
-        var yAdjust : CGFloat = 0.0
+        var xOrigin: CGFloat = 0.0
+        var yOrigin: CGFloat = 0.0
+        var xAdjust: CGFloat = 0.0
+        var yAdjust: CGFloat = 0.0
+        let horizontal: Bool = group == .horizontal
 
         switch edge {
         case .top:
-            if group == .horizontal {
+            if horizontal {
                 xOrigin = (self.width - (CGFloat(views.count) * width) - (CGFloat(views.count - 1) * padding)) / 2.0
                 xAdjust = width + padding
             } else {
@@ -133,8 +134,8 @@ public extension Groupable {
 
             yOrigin = padding
 
-        case .left:
-            if group == .horizontal {
+        case .leading:
+            if horizontal {
                 yOrigin = (self.height / 2.0) - (height / 2.0)
                 xAdjust = width + padding
             } else {
@@ -145,7 +146,7 @@ public extension Groupable {
             xOrigin = padding
 
         case .bottom:
-            if group == .horizontal {
+            if horizontal {
                 xOrigin = (self.width - (CGFloat(views.count) * width) - (CGFloat(views.count - 1) * padding)) / 2.0
                 yOrigin = self.height - height - padding
                 xAdjust = width + padding
@@ -155,8 +156,8 @@ public extension Groupable {
                 yAdjust = height + padding
             }
 
-        case .right:
-            if group == .horizontal {
+        case .trailing:
+            if horizontal {
                 xOrigin = self.width - (CGFloat(views.count) * width) - (CGFloat(views.count) * padding)
                 yOrigin = (self.height / 2.0) - (height / 2.0)
                 xAdjust = width + padding
@@ -167,7 +168,9 @@ public extension Groupable {
             }
         }
 
-        for view in views {
+        let normalizedViews = (!isLTR && horizontal) ? views.reversed() : views
+
+        for view in normalizedViews {
             view.frame = CGRect(x: xOrigin, y: yOrigin, width: width, height: height)
 
             xOrigin += xAdjust

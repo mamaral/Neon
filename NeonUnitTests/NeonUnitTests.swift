@@ -79,10 +79,10 @@ class NeonTests: XCTestCase {
         testAnchorView.fillSuperview()
         XCTAssert(testAnchorView.frame == testSuperview.frame)
 
-        testAnchorView.fillSuperview(left: 0, right: 0, top: 0, bottom: 0)
+        testAnchorView.fillSuperview(leading: 0, trailing: 0, top: 0, bottom: 0)
         XCTAssert(testAnchorView.frame == testSuperview.frame)
 
-        testAnchorView.fillSuperview(left: 10, right: 30, top: 55, bottom: 110)
+        testAnchorView.fillSuperview(leading: 10, trailing: 30, top: 55, bottom: 110)
         XCTAssert(testAnchorView.frame == CGRect(x:  10, y: 55, width: 960, height: 835))
     }
 
@@ -127,13 +127,13 @@ class NeonTests: XCTestCase {
         testAnchorView.anchorToEdge(.top, padding: 10, width: 30, height: 40)
         XCTAssert(testAnchorView.frame == CGRect(x: 485, y: 10, width: 30, height: 40))
 
-        testAnchorView.anchorToEdge(.left, padding: 10, width: 30, height: 40)
+        testAnchorView.anchorToEdge(.leading, padding: 10, width: 30, height: 40)
         XCTAssert(testAnchorView.frame == CGRect(x: 10, y: 480, width: 30, height: 40))
 
         testAnchorView.anchorToEdge(.bottom, padding: 10, width: 30, height: 40)
         XCTAssert(testAnchorView.frame == CGRect(x: 485, y: 950, width: 30, height: 40))
 
-        testAnchorView.anchorToEdge(.right, padding: 10, width: 30, height: 40)
+        testAnchorView.anchorToEdge(.trailing, padding: 10, width: 30, height: 40)
         XCTAssert(testAnchorView.frame == CGRect(x: 960, y: 480, width: 30, height: 40))
     }
 //
