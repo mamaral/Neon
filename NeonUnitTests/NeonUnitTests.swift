@@ -102,24 +102,24 @@ class NeonTests: XCTestCase {
 
     func testAnchorInCorner() {
         testAnchorView.removeFromSuperview()
-        testAnchorView.anchorInCorner(.topLeft, xPad: 0, yPad: 0, width: 0, height: 0)
+        testAnchorView.anchorInCorner(.topLeading, xPad: 0, yPad: 0, width: 0, height: 0)
         XCTAssert(testAnchorView.frame == CGRect.zero)
 
         testSuperview.addSubview(testAnchorView)
 
-        testAnchorView.anchorInCorner(.topLeft, xPad: 0, yPad: 0, width: 0, height: 0)
+        testAnchorView.anchorInCorner(.topLeading, xPad: 0, yPad: 0, width: 0, height: 0)
         XCTAssert(testAnchorView.frame == CGRect.zero)
 
-        testAnchorView.anchorInCorner(.topLeft, xPad: 10, yPad: 20, width: 30, height: 40)
+        testAnchorView.anchorInCorner(.topLeading, xPad: 10, yPad: 20, width: 30, height: 40)
         XCTAssert(testAnchorView.frame == CGRect(x:  10, y: 20, width: 30, height: 40))
 
-        testAnchorView.anchorInCorner(.topRight, xPad: 10, yPad: 20, width: 30, height: 40)
+        testAnchorView.anchorInCorner(.topTrailing, xPad: 10, yPad: 20, width: 30, height: 40)
         XCTAssert(testAnchorView.frame == CGRect(x:  960, y: 20, width: 30, height: 40))
 
-        testAnchorView.anchorInCorner(.bottomLeft, xPad: 10, yPad: 940, width: 30, height: 40)
+        testAnchorView.anchorInCorner(.bottomLeading, xPad: 10, yPad: 940, width: 30, height: 40)
         XCTAssert(testAnchorView.frame == CGRect(x:  10, y: 20, width: 30, height: 40))
 
-        testAnchorView.anchorInCorner(.bottomRight, xPad: 10, yPad: 20, width: 30, height: 40)
+        testAnchorView.anchorInCorner(.bottomTrailing, xPad: 10, yPad: 20, width: 30, height: 40)
         XCTAssert(testAnchorView.frame == CGRect(x:  960, y: 940, width: 30, height: 40))
     }
 

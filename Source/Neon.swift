@@ -28,19 +28,19 @@ public let AutoWidth : CGFloat = -1
 ///
 /// Specifies a corner of a frame.
 ///
-/// **topLeft**: The upper-left corner of the frame.
+/// **topLeading**: The upper-leading corner of the frame.
 ///
-/// **topRight**: The upper-right corner of the frame.
+/// **topTrailing**: The upper-trailing corner of the frame.
 ///
-/// **bottomLeft**: The bottom-left corner of the frame.
+/// **bottomLeading**: The bottom-leading corner of the frame.
 ///
-/// **bottomRight**: The upper-right corner of the frame.
+/// **bottomTrailing**: The upper-trailing corner of the frame.
 ///
 public enum Corner {
-    case topLeft
-    case topRight
-    case bottomLeft
-    case bottomRight
+    case topLeading
+    case topTrailing
+    case bottomLeading
+    case bottomTrailing
 }
 
 

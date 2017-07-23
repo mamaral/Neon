@@ -84,20 +84,20 @@ public extension Anchorable {
         var yOrigin : CGFloat = 0.0
 
         switch corner {
-        case .topLeft:
-            xOrigin = xPad
+        case .topLeading:
+            xOrigin = isLTR ? xPad : (superFrame.width - width - xPad)
             yOrigin = yPad
 
-        case .bottomLeft:
-            xOrigin = xPad
+        case .bottomLeading:
+            xOrigin = isLTR ? xPad : (superFrame.width - width - xPad)
             yOrigin = superFrame.height - height - yPad
 
-        case .topRight:
-            xOrigin = superFrame.width - width - xPad
+        case .topTrailing:
+            xOrigin = isLTR ? (superFrame.width - width - xPad) : xPad
             yOrigin = yPad
 
-        case .bottomRight:
-            xOrigin = superFrame.width - width - xPad
+        case .bottomTrailing:
+            xOrigin = isLTR ? (superFrame.width - width - xPad) : xPad
             yOrigin = superFrame.height - height - yPad
         }
 

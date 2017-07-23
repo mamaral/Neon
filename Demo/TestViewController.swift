@@ -111,6 +111,6 @@ class TestViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
 
-        view1.anchorAndFillEdge(.bottom, xPad: 10, yPad: 10, otherSize: 30)
+        view1.anchorInCorner(.topTrailing, xPad: 10, yPad: 10, width: 50, height: 50)
     }
 }

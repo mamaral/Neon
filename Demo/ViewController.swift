@@ -197,7 +197,7 @@ class ViewController: UIViewController {
     }
 
     func layoutFrames() {
-        anchorView.groupInCorner(group: .vertical, views: [view11, view12, view13], inCorner: .topRight, padding: 10, width: 40, height: 40)
+        anchorView.groupInCorner(group: .vertical, views: [view11, view12, view13], inCorner: .topTrailing, padding: 10, width: 40, height: 40)
         view1.alignAndFillWidth(align: .toTheRightMatchingTop, relativeTo: anchorView, padding: 10, height: 50)
         containerView.groupAndAlign(group: .horizontal, andAlign: .underMatchingLeft, views: [view2, view3, view4], relativeTo: view1, padding: 10, width: 60, height: 60)
         view5.alignAndFillWidth(align: .toTheRightMatchingTop, relativeTo: view4, padding: 10, height: 60)
@@ -206,7 +206,7 @@ class ViewController: UIViewController {
         view8.alignAndFillWidth(align: .toTheLeftMatchingTop, relativeTo: view7, padding: 10, height: 70)
         view9.alignBetweenVertical(align: .underMatchingLeft, primaryView: view8, secondaryView: anchorView, padding: 10, width: 100)
         view10.alignBetweenHorizontal(align: .toTheRightMatchingTop, primaryView: view9, secondaryView: view7, padding: 10, height: view9.height)
-        view14.anchorInCorner(.bottomLeft, xPad: 10, yPad: 10, width: 100, height: 100)
+        view14.anchorInCorner(.bottomLeading, xPad: 10, yPad: 10, width: 100, height: 100)
         view15.alignBetweenVertical(align: .underMatchingLeft, primaryView: view9, secondaryView: view14, padding: 10, width: 50)
         view16.alignBetweenHorizontal(align: .toTheRightMatchingBottom, primaryView: view14, secondaryView: view6, padding: 10, height: 40)
         view17.alignBetweenHorizontal(align: .toTheRightMatchingTop, primaryView: view15, secondaryView: anchorView, padding: 10, height: 100)
