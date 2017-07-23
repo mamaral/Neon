@@ -62,21 +62,21 @@ class TestViewController: UIViewController {
         view1.textAlignment = .center
         view1.font = UIFont.boldSystemFont(ofSize: 20)
         view1.textColor = UIColor.white
-        view.addSubview(view1)
+        anchorViewA.addSubview(view1)
 
         view2.backgroundColor = UIColor(red: 132/255.0, green: 169/255.0, blue: 57/255.0, alpha: 1.0)
         view2.text = "2"
         view2.textAlignment = .center
         view2.font = UIFont.boldSystemFont(ofSize: 20)
         view2.textColor = UIColor.white
-        view.addSubview(view2)
+        anchorViewA.addSubview(view2)
 
         view3.backgroundColor = UIColor(red: 78/255.0, green: 102/255.0, blue: 131/255.0, alpha: 1.0)
         view3.text = "3"
         view3.textAlignment = .center
         view3.font = UIFont.boldSystemFont(ofSize: 20)
         view3.textColor = UIColor.white
-        view.addSubview(view3)
+        anchorViewA.addSubview(view3)
 
         view4.backgroundColor = UIColor(red: 132/255.0, green: 169/255.0, blue: 57/255.0, alpha: 1.0)
         view4.text = "4"
@@ -111,6 +111,7 @@ class TestViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
 
-        view1.anchorInCorner(.topTrailing, xPad: 10, yPad: 10, width: 50, height: 50)
+        anchorViewA.anchorInCenter(width: 400, height: 400)
+        anchorViewA.groupInCorner(group: .horizontal, views: [view1, view2, view3], inCorner: .bottomTrailing, padding: 10, width: 50, height: 50)
     }
 }

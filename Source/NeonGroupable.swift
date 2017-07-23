@@ -264,29 +264,32 @@ public extension Groupable {
             return
         }
 
-        var xOrigin : CGFloat = 0.0
-        var yOrigin : CGFloat = 0.0
-        let xAdjust : CGFloat = width + padding
+        var xOrigin: CGFloat = 0.0
+        var yOrigin: CGFloat = 0.0
+        let xAdjust: CGFloat = (width + padding) * (isLTR ? -1 : 1)
+        let totalOccupiedWidth: CGFloat = ((CGFloat(views.count) * width) + (CGFloat(views.count) * padding))
 
         switch corner {
-        case .topLeft:
-            xOrigin = padding
+        case .topLeading:
+            xOrigin = isLTR ? padding : self.width - totalOccupiedWidth
             yOrigin = padding
 
-        case .topRight:
-            xOrigin = self.width - ((CGFloat(views.count) * width) + (CGFloat(views.count) * padding))
+        case .topTrailing:
+            xOrigin = isLTR ? self.width - totalOccupiedWidth : padding
             yOrigin = padding
 
-        case .bottomLeft:
-            xOrigin = padding
+        case .bottomLeading:
+            xOrigin = isLTR ? padding : self.width - totalOccupiedWidth
             yOrigin = self.height - height - padding
 
-        case .bottomRight:
-            xOrigin = self.width - ((CGFloat(views.count) * width) + (CGFloat(views.count) * padding))
+        case .bottomTrailing:
+            xOrigin = isLTR ? self.width - totalOccupiedWidth : padding
             yOrigin = self.height - height - padding
         }
 
-        for view in views {
+        let normalizedViews = isLTR ? views : views.reversed()
+
+        for view in normalizedViews {
             view.frame = CGRect(x: xOrigin, y: yOrigin, width: width, height: height)
 
             xOrigin += xAdjust
@@ -304,20 +307,20 @@ public extension Groupable {
         let yAdjust : CGFloat = height + padding
 
         switch corner {
-        case .topLeft:
-            xOrigin = padding
+        case .topLeading:
+            xOrigin = isLTR ? padding : (self.width - width - padding)
             yOrigin = padding
 
-        case .topRight:
-            xOrigin = self.width - width - padding
+        case .topTrailing:
+            xOrigin = isLTR ? (self.width - width - padding) : padding
             yOrigin = padding
 
-        case .bottomLeft:
-            xOrigin = padding
+        case .bottomLeading:
+            xOrigin = isLTR ? padding : self.width - width - padding
             yOrigin = self.height - ((CGFloat(views.count) * height) + (CGFloat(views.count) * padding))
 
-        case .bottomRight:
-            xOrigin = self.width - width - padding
+        case .bottomTrailing:
+            xOrigin = isLTR ? (self.width - width - padding) : padding
             yOrigin = self.height - ((CGFloat(views.count) * height) + (CGFloat(views.count) * padding))
         }
 
