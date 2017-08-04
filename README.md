@@ -7,7 +7,7 @@
 
 Neon is built around how user interfaces are naturally and intuitively designed. No more springs and struts. No more whacky visual format language. No more auto layout constraints. We're not robots, so why should we build our UIs like we are?
 
-> ***Neon has been updated to Swift 3.0, but is still currently in beta!***
+## Neon now supports right-to-left layouts!
 
 ## Install via CocoaPods 
 
@@ -19,7 +19,7 @@ use_frameworks!
 pod 'Neon'
 ```
 
-##Manual Installation
+### Manual Installation
 
 1. Download and drop `/Source` in your project.  
 2. Congratulations!  
@@ -47,15 +47,15 @@ let avatarHeightMultipler : CGFloat = isLandscape ? 0.75 : 0.43
 let avatarSize = bannerHeight * avatarHeightMultipler
 
 searchBar.fillSuperview()
-bannerImageView.anchorAndFillEdge(.Top, xPad: 0, yPad: 0, otherSize: bannerHeight)
+bannerImageView.anchorAndFillEdge(.top, xPad: 0, yPad: 0, otherSize: bannerHeight)
 bannerMaskView.fillSuperview()
-avatarImageView.anchorInCorner(.BottomLeft, xPad: 15, yPad: 15, width: avatarSize, height: avatarSize)
-nameLabel.alignAndFillWidth(align: .ToTheRightCentered, relativeTo: avatarImageView, padding: 15, height: 120)
-cameraButton.anchorInCorner(.BottomRight, xPad: 10, yPad: 7, width: 28, height: 28)
-buttonContainerView.alignAndFillWidth(align: .UnderCentered, relativeTo: bannerImageView, padding: 0, height: 62)
-buttonContainerView.groupAndFill(group: .Horizontal, views: [postButton, updateInfoButton, activityLogButton, moreButton], padding: 10)
-buttonContainerView2.alignAndFillWidth(align: .UnderCentered, relativeTo: buttonContainerView, padding: 0, height: 128)
-buttonContainerView2.groupAndFill(group: .Horizontal, views: [aboutView, photosView, friendsView], padding: 10)
+avatarImageView.anchorInCorner(.bottomLeading, xPad: 15, yPad: 15, width: avatarSize, height: avatarSize)
+nameLabel.alignAndFillWidth(align: .leadingCentered, relativeTo: avatarImageView, padding: 15, height: 120)
+cameraButton.anchorInCorner(.bottomTrailing, xPad: 10, yPad: 7, width: 28, height: 28)
+buttonContainerView.alignAndFillWidth(align: .underCentered, relativeTo: bannerImageView, padding: 0, height: 62)
+buttonContainerView.groupAndFill(group: .horizontal, views: [postButton, updateInfoButton, activityLogButton, moreButton], padding: 10)
+buttonContainerView2.alignAndFillWidth(align: .underCentered, relativeTo: buttonContainerView, padding: 0, height: 128)
+buttonContainerView2.groupAndFill(group: .horizontal, views: [aboutView, photosView, friendsView], padding: 10)
 ```
 
 ![portrait](Screenshots/portrait.png)
@@ -64,7 +64,7 @@ Looks pretty good on every device size! Now, keep in mind you'll probably want c
 
 ![landscape](Screenshots/landscape.png)
 
-###Not bad for 10 lines of code!
+### Not bad for 10 lines of code!
 
 
 Here's an intentionally convoluted example to show how easy it is to build very complex and dynamic layouts with Neon. The following layout was created with only *20 lines of code*. That's one line of code per view! While impressive, this layout is horrifying and should never be used in an actual app... ever...
@@ -96,7 +96,7 @@ view.fillSuperview()
 Optionally, if you want a view to fill its superview with padding, you can provide padding instead:
 
 ```swift
-view1.fillSuperview(left: padding, right: padding, top: padding, bottom: padding)
+view1.fillSuperview(leading: padding, trailing: padding, top: padding, bottom: padding)
 ```
 
 ![Fill](Screenshots/fill.png)
@@ -104,13 +104,13 @@ view1.fillSuperview(left: padding, right: padding, top: padding, bottom: padding
 
 ### Corner
 
-The second anchoring method is anchoring a view in its superview's `Corner`. As you might have guessed, the four corners are `.TopLeft`, `.TopRight`, `.BottomLeft`, `.BottomRight`, and coupled with the `anchorInCorner()` function, you can easily anchor a view in any corner like this:
+The second anchoring method is anchoring a view in its superview's `Corner`. As you might have guessed, the four corners are `.topLeading`, `.topTrailing`, `.bottomLeading`, `.bottomTrailing`, and coupled with the `anchorInCorner()` function, you can easily anchor a view in any corner like this:
 
 ```swift
-view1.anchorInCorner(.TopLeft, xPad: padding, yPad: padding, width: size, height: size)
-view2.anchorInCorner(.TopRight, xPad: padding, yPad: padding, width: size, height: size)
-view3.anchorInCorner(.BottomLeft, xPad: padding, yPad: padding, width: size, height: size)
-view4.anchorInCorner(.BottomRight, xPad: padding, yPad: padding, width: size, height: size)
+view1.anchorInCorner(.topLeading, xPad: padding, yPad: padding, width: size, height: size)
+view2.anchorInCorner(.topTrailing, xPad: padding, yPad: padding, width: size, height: size)
+view3.anchorInCorner(.bottomLeading, xPad: padding, yPad: padding, width: size, height: size)
+view4.anchorInCorner(.bottomTrailing, xPad: padding, yPad: padding, width: size, height: size)
 ```
 
 ![Corner](Screenshots/corner.png)
@@ -118,13 +118,13 @@ view4.anchorInCorner(.BottomRight, xPad: padding, yPad: padding, width: size, he
 
 ### Edge
 
-`Edge` is another pretty obvious one to follow - it specifies on what edge of its superview a view will be anchored to. The four types are `.Top`, `.Left`, `.Bottom`, or `.Right`, and similar to previous examples, you can use the `anchorToEdge()` function to anchor a view to an edge:
+`Edge` is another pretty obvious one to follow - it specifies on what edge of its superview a view will be anchored to. The four types are `.top`, `.leading`, `.bottom`, or `.trailing`, and similar to previous examples, you can use the `anchorToEdge()` function to anchor a view to an edge:
 
 ```swift
-view1.anchorToEdge(.Top, padding: padding, width: size, height: size)
-view2.anchorToEdge(.Left, padding: padding, width: size, height: size)
-view3.anchorToEdge(.Bottom, padding: padding, width: size, height: size)
-view4.anchorToEdge(.Right, padding: padding, width: size, height: size)
+view1.anchorToEdge(.top, padding: padding, width: size, height: size)
+view2.anchorToEdge(.leading, padding: padding, width: size, height: size)
+view3.anchorToEdge(.bottom, padding: padding, width: size, height: size)
+view4.anchorToEdge(.trailing, padding: padding, width: size, height: size)
 ```
 
 ![Edge](Screenshots/edge.png)
@@ -136,10 +136,10 @@ view4.anchorToEdge(.Right, padding: padding, width: size, height: size)
 Sometimes, you want to anchor a view against an edge, filling that edge; imagine something like a banner photo for a profile page. Again, this is made as simple as possible using the `anchorAndFillEdge()` function:
 
 ```swift
-view1.anchorAndFillEdge(.Top, xPad: padding, yPad: padding, otherSize: size)
-view2.anchorAndFillEdge(.Bottom, xPad: padding, yPad: padding, otherSize: size)
-view3.anchorAndFillEdge(.Left, xPad: padding, yPad: padding, otherSize: size)
-view4.anchorAndFillEdge(.Right, xPad: padding, yPad: padding, otherSize: size)
+view1.anchorAndFillEdge(.top, xPad: padding, yPad: padding, otherSize: size)
+view2.anchorAndFillEdge(.bottom, xPad: padding, yPad: padding, otherSize: size)
+view3.anchorAndFillEdge(.leading, xPad: padding, yPad: padding, otherSize: size)
+view4.anchorAndFillEdge(.trailing, xPad: padding, yPad: padding, otherSize: size)
 ```
 
 ![Fill Edge](Screenshots/fill_edge.png)
