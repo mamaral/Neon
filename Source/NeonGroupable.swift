@@ -339,11 +339,11 @@ public extension Groupable {
 
         var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0
-        let xAdjust : CGFloat = width + padding
+        let xAdjust : CGFloat = isLTR ? (width + padding) : -(width + padding)
 
         switch align {
-        case .toTheRightMatchingTop:
-            xOrigin = sibling.xMax + padding
+        case .leadingMatchingTop:
+            xOrigin = isLTR ? (sibling.xMax + padding) : (sibling.x - width - padding)
             yOrigin = sibling.y
 
         case .toTheRightMatchingBottom:
@@ -409,8 +409,8 @@ public extension Groupable {
         let yAdjust : CGFloat = height + padding
 
         switch align {
-        case .toTheRightMatchingTop:
-            xOrigin = sibling.xMax + padding
+        case .leadingMatchingTop:
+            xOrigin = isLTR ? (sibling.xMax + padding) : (sibling.x - width - padding)
             yOrigin = sibling.y
 
         case .toTheRightMatchingBottom:

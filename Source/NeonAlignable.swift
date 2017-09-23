@@ -36,7 +36,7 @@ public extension Alignable {
     ///   - height: The height of the view.
     ///
     ///   - offset: An optional parameter that will offset the view by the defined amount such that the view will not perfectly
-    /// match the specified `Align`. For example, if you specify `.ToTheRightMatchingTop` and provide an offset value of `5`, the
+    /// match the specified `Align`. For example, if you specify `.leadingMatchingTop` and provide an offset value of `5`, the
     /// view's y origin will be lower than the sibling view's y origin by 5 points.
     ///
     public func align(_ align: Align, relativeTo sibling: Frameable, padding: CGFloat, width: CGFloat, height: CGFloat, offset: CGFloat = 0) {
@@ -44,8 +44,8 @@ public extension Alignable {
         var yOrigin : CGFloat = 0.0
 
         switch align {
-        case .toTheRightMatchingTop:
-            xOrigin = sibling.xMax + padding
+        case .leadingMatchingTop:
+            xOrigin = isLTR ? (sibling.xMax + padding) : (sibling.x - width - padding)
             yOrigin = sibling.y + offset
 
         case .toTheRightMatchingBottom:
@@ -122,7 +122,7 @@ public extension Alignable {
     ///   - height: The height of the view.
     ///
     ///   - offset: An optional parameter that will offset the view by the defined amount such that the view will not perfectly
-    /// match the specified `Align`. For example, if you specify `.ToTheRightMatchingTop` and provide an offset value of `5`, the
+    /// match the specified `Align`. For example, if you specify `.leadingMatchingTop` and provide an offset value of `5`, the
     /// view's y origin will be lower than the sibling view's y origin by 5 points.
     ///
     public func alignAndFillWidth(align: Align, relativeTo sibling: Frameable, padding: CGFloat, height: CGFloat, offset: CGFloat = 0) {
@@ -132,10 +132,10 @@ public extension Alignable {
         var width : CGFloat = 0.0
 
         switch align {
-        case .toTheRightMatchingTop:
-            xOrigin = sibling.xMax + padding
+        case .leadingMatchingTop:
+            xOrigin = isLTR ? (sibling.xMax + padding) : padding
             yOrigin = sibling.y + offset
-            width = superviewWidth - xOrigin - padding
+            width = isLTR ? (superviewWidth - xOrigin - padding) : (sibling.x - (2 * padding))
 
         case .toTheRightMatchingBottom:
             xOrigin = sibling.xMax + padding
@@ -221,7 +221,7 @@ public extension Alignable {
     ///   - width: The width of the view.
     ///
     ///   - offset: An optional parameter that will offset the view by the defined amount such that the view will not perfectly
-    /// match the specified `Align`. For example, if you specify `.ToTheRightMatchingTop` and provide an offset value of `5`, the
+    /// match the specified `Align`. For example, if you specify `.leadingMatchingTop` and provide an offset value of `5`, the
     /// view's y origin will be lower than the sibling view's y origin by 5 points.
     ///
     public func alignAndFillHeight(align: Align, relativeTo sibling: Frameable, padding: CGFloat, width: CGFloat, offset: CGFloat = 0) {
@@ -231,8 +231,8 @@ public extension Alignable {
         var height : CGFloat = 0.0
 
         switch align {
-        case .toTheRightMatchingTop:
-            xOrigin = sibling.xMax + padding
+        case .leadingMatchingTop:
+            xOrigin = isLTR ? (sibling.xMax + padding) : (sibling.x - width - padding)
             yOrigin = sibling.y + offset
             height = superviewHeight - sibling.y - padding
 
@@ -318,7 +318,7 @@ public extension Alignable {
     ///   - padding: The padding to be applied between this view, the sibling view and the superview.
     ///
     ///   - offset: An optional parameter that will offset the view by the defined amount such that the view will not perfectly
-    /// match the specified `Align`. For example, if you specify `.ToTheRightMatchingTop` and provide an offset value of `5`, the
+    /// match the specified `Align`. For example, if you specify `.leadingMatchingTop` and provide an offset value of `5`, the
     /// view's y origin will be lower than the sibling view's y origin by 5 points.
     ///
     public func alignAndFill(align: Align, relativeTo sibling: Frameable, padding: CGFloat, offset: CGFloat = 0) {
@@ -330,10 +330,10 @@ public extension Alignable {
         var height : CGFloat = 0.0
 
         switch align {
-        case .toTheRightMatchingTop:
-            xOrigin = sibling.xMax + padding
+        case .leadingMatchingTop:
+            xOrigin = isLTR ? (sibling.xMax + padding) : padding
             yOrigin = sibling.y + offset
-            width = superviewWidth - xOrigin - padding
+            width = isLTR ? (superviewWidth - xOrigin - padding) : (sibling.x - (2 * padding))
             height = superviewHeight - yOrigin - padding
 
         case .toTheRightMatchingBottom:
@@ -430,7 +430,7 @@ public extension Alignable {
     ///   - height: The height of the view.
     ///
     ///   - offset: An optional parameter that will offset the view by the defined amount such that the view will not perfectly
-    /// match the specified `Align`. For example, if you specify `.ToTheRightMatchingTop` and provide an offset value of `5`, the
+    /// match the specified `Align`. For example, if you specify `.leadingMatchingTop` and provide an offset value of `5`, the
     /// view's y origin will be lower than the sibling view's y origin by 5 points.
     ///
     public func alignBetweenHorizontal(align: Align, primaryView: Frameable, secondaryView: Frameable, padding: CGFloat, height: CGFloat, offset: CGFloat = 0) {
@@ -438,12 +438,14 @@ public extension Alignable {
         var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0
         var width : CGFloat = 0.0
+        let leadingView = isLTR ? primaryView : secondaryView;
+        let trailingView = isLTR ? secondaryView : primaryView;
 
         switch align {
-        case .toTheRightMatchingTop:
-            xOrigin = primaryView.xMax + padding
+        case .leadingMatchingTop:
+            xOrigin = leadingView.xMax + padding
             yOrigin = primaryView.y + offset
-            width = superviewWidth - primaryView.xMax - (superviewWidth - secondaryView.x) - (2 * padding)
+            width = superviewWidth - leadingView.xMax - (superviewWidth - trailingView.x) - (2 * padding)
 
         case .toTheRightMatchingBottom:
             xOrigin = primaryView.xMax + padding
@@ -502,7 +504,7 @@ public extension Alignable {
     ///   - width: The width of the view.
     ///
     ///   - offset: An optional parameter that will offset the view by the defined amount such that the view will not perfectly
-    /// match the specified `Align`. For example, if you specify `.ToTheRightMatchingTop` and provide an offset value of `5`, the
+    /// match the specified `Align`. For example, if you specify `.leadingMatchingTop` and provide an offset value of `5`, the
     /// view's y origin will be lower than the sibling view's y origin by 5 points.
     ///
     public func alignBetweenVertical(align: Align, primaryView: Frameable, secondaryView: Frameable, padding: CGFloat, width: CGFloat, offset: CGFloat = 0) {
@@ -542,7 +544,7 @@ public extension Alignable {
             yOrigin = secondaryView.yMax + padding
             height = superviewHeight - secondaryView.yMax - (superviewHeight - primaryView.y) - (2 * padding)
 
-        case .toTheLeftMatchingTop, .toTheLeftMatchingBottom, .toTheLeftCentered, .toTheRightMatchingTop, .toTheRightMatchingBottom, .toTheRightCentered:
+        case .toTheLeftMatchingTop, .toTheLeftMatchingBottom, .toTheLeftCentered, .leadingMatchingTop, .toTheRightMatchingBottom, .toTheRightCentered:
             fatalError("[NEON] Invalid Align specified for alignBetweenVertical().")
         }
 

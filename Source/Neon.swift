@@ -68,9 +68,9 @@ public enum Edge {
 // MARK: Align Type
 //
 ///
-/// Specifies how a view will be aligned relative to the sibling view.
+/// Specifies on which edge of a sibling the view will be aligned to.
 ///
-/// **toTheRightMatchingTop**: Specifies that the view should be aligned to the right of a sibling, matching the
+/// **leadingMatchingTop**: Specifies that the view will be aligned against the leading edge of the sibling, matching the
 /// top, or y origin, of the sibling's frame.
 ///
 /// **toTheRightMatchingBottom**: Specifies that the view should be aligned to the right of a sibling, matching
@@ -109,7 +109,7 @@ public enum Edge {
 /// the horizontal center of the sibling's frame or centered horizontally within the superview, depending on the context.
 ///
 public enum Align {
-    case toTheRightMatchingTop
+    case leadingMatchingTop
     case toTheRightMatchingBottom
     case toTheRightCentered
     case toTheLeftMatchingTop
