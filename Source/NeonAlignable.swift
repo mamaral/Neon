@@ -48,12 +48,12 @@ public extension Alignable {
             xOrigin = isLTR ? (sibling.xMax + padding) : (sibling.x - width - padding)
             yOrigin = sibling.y + offset
 
-        case .toTheRightMatchingBottom:
-            xOrigin = sibling.xMax + padding
+        case .leadingMatchingBottom:
+            xOrigin = isLTR ? (sibling.xMax + padding) : (sibling.x - width - padding)
             yOrigin = sibling.yMax - height + offset
 
-        case .toTheRightCentered:
-            xOrigin = sibling.xMax + padding
+        case .leadingCentered:
+            xOrigin = isLTR ? (sibling.xMax + padding) : (sibling.x - width - padding)
             yOrigin = sibling.yMid - (height / 2.0) + offset
 
         case .toTheLeftMatchingTop:
@@ -137,13 +137,13 @@ public extension Alignable {
             yOrigin = sibling.y + offset
             width = isLTR ? (superviewWidth - xOrigin - padding) : (sibling.x - (2 * padding))
 
-        case .toTheRightMatchingBottom:
-            xOrigin = sibling.xMax + padding
+        case .leadingMatchingBottom:
+            xOrigin = isLTR ? (sibling.xMax + padding) : padding
             yOrigin = sibling.yMax - height + offset
             width = superviewWidth - xOrigin - padding
 
-        case .toTheRightCentered:
-            xOrigin = sibling.xMax + padding
+        case .leadingCentered:
+            xOrigin = isLTR ? (sibling.xMax + padding) : padding
             yOrigin = sibling.yMid - (height / 2.0) + offset
             width = superviewWidth - xOrigin - padding
 
@@ -236,13 +236,13 @@ public extension Alignable {
             yOrigin = sibling.y + offset
             height = superviewHeight - sibling.y - padding
 
-        case .toTheRightMatchingBottom:
-            xOrigin = sibling.xMax + padding
+        case .leadingMatchingBottom:
+            xOrigin = isLTR ? (sibling.xMax + padding) : (sibling.x - width - padding)
             yOrigin = padding + offset
             height = superviewHeight - (superviewHeight - sibling.yMax) - padding
 
-        case .toTheRightCentered:
-            xOrigin = sibling.xMax + padding
+        case .leadingCentered:
+            xOrigin = isLTR ? (sibling.xMax + padding) : (sibling.x - width - padding)
             yOrigin = padding + offset
             height = superviewHeight - (2 * padding)
 
@@ -336,14 +336,14 @@ public extension Alignable {
             width = isLTR ? (superviewWidth - xOrigin - padding) : (sibling.x - (2 * padding))
             height = superviewHeight - yOrigin - padding
 
-        case .toTheRightMatchingBottom:
-            xOrigin = sibling.xMax + padding
+        case .leadingMatchingBottom:
+            xOrigin = isLTR ? (sibling.xMax + padding) : padding
             yOrigin = padding + offset
             width = superviewWidth - xOrigin - padding
             height = superviewHeight - (superviewHeight - sibling.yMax) - padding
 
-        case .toTheRightCentered:
-            xOrigin = sibling.xMax + padding
+        case .leadingCentered:
+            xOrigin = isLTR ? (sibling.xMax + padding) : padding
             yOrigin = padding + offset
             width = superviewWidth - xOrigin - padding
             height = superviewHeight - (2 * padding)
@@ -447,13 +447,13 @@ public extension Alignable {
             yOrigin = primaryView.y + offset
             width = superviewWidth - leadingView.xMax - (superviewWidth - trailingView.x) - (2 * padding)
 
-        case .toTheRightMatchingBottom:
-            xOrigin = primaryView.xMax + padding
+        case .leadingMatchingBottom:
+            xOrigin = leadingView.xMax + padding
             yOrigin = primaryView.yMax - height + offset
             width = superviewWidth - primaryView.xMax - (superviewWidth - secondaryView.x) - (2 * padding)
 
-        case .toTheRightCentered:
-            xOrigin = primaryView.xMax + padding
+        case .leadingCentered:
+            xOrigin = leadingView.xMax + padding
             yOrigin = primaryView.yMid - (height / 2.0) + offset
             width = superviewWidth - primaryView.xMax - (superviewWidth - secondaryView.x) - (2 * padding)
 
@@ -544,7 +544,7 @@ public extension Alignable {
             yOrigin = secondaryView.yMax + padding
             height = superviewHeight - secondaryView.yMax - (superviewHeight - primaryView.y) - (2 * padding)
 
-        case .toTheLeftMatchingTop, .toTheLeftMatchingBottom, .toTheLeftCentered, .leadingMatchingTop, .toTheRightMatchingBottom, .toTheRightCentered:
+        case .toTheLeftMatchingTop, .toTheLeftMatchingBottom, .toTheLeftCentered, .leadingMatchingTop, .leadingMatchingBottom, .leadingCentered:
             fatalError("[NEON] Invalid Align specified for alignBetweenVertical().")
         }
 

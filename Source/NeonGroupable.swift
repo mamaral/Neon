@@ -346,12 +346,12 @@ public extension Groupable {
             xOrigin = isLTR ? (sibling.xMax + padding) : (sibling.x - width - padding)
             yOrigin = sibling.y
 
-        case .toTheRightMatchingBottom:
-            xOrigin = sibling.xMax + padding
+        case .leadingMatchingBottom:
+            xOrigin = isLTR ? (sibling.xMax + padding) : (sibling.x - width - padding)
             yOrigin = sibling.yMax - height
 
-        case .toTheRightCentered:
-            xOrigin = sibling.xMax + padding
+        case .leadingCentered:
+            xOrigin = isLTR ? (sibling.xMax + padding) : (sibling.x - width - padding)
             yOrigin = sibling.yMid - (height / 2.0)
 
         case .toTheLeftMatchingTop:
@@ -413,12 +413,12 @@ public extension Groupable {
             xOrigin = isLTR ? (sibling.xMax + padding) : (sibling.x - width - padding)
             yOrigin = sibling.y
 
-        case .toTheRightMatchingBottom:
-            xOrigin = sibling.xMax + padding
+        case .leadingMatchingBottom:
+            xOrigin = isLTR ? (sibling.xMax + padding) : (sibling.x - width - padding)
             yOrigin = sibling.yMax - (CGFloat(views.count) * height) - (CGFloat(views.count - 1) * padding)
 
-        case .toTheRightCentered:
-            xOrigin = sibling.xMax + padding
+        case .leadingCentered:
+            xOrigin = isLTR ? (sibling.xMax + padding) : (sibling.x - width - padding)
             yOrigin = sibling.yMid - ((CGFloat(views.count) * height) + CGFloat(views.count - 1) * padding) / 2.0
 
         case .toTheLeftMatchingTop:

@@ -73,10 +73,10 @@ public enum Edge {
 /// **leadingMatchingTop**: Specifies that the view will be aligned against the leading edge of the sibling, matching the
 /// top, or y origin, of the sibling's frame.
 ///
-/// **toTheRightMatchingBottom**: Specifies that the view should be aligned to the right of a sibling, matching
+/// **leadingMatchingBottom**: Specifies that the view should be aligned against the leading edge of a sibling, matching
 /// the bottom, or max y value, of the sibling's frame.
 ///
-/// **toTheRightCentered**: Specifies that the view should be aligned to the right of a sibling, and will be centered
+/// **leadingCentered**: Specifies that the view should be aligned against the leading edge of a sibling, and will be centered
 /// to either match the vertical center of the sibling's frame or centered vertically within the superview, depending
 /// on the context.
 ///
@@ -110,8 +110,8 @@ public enum Edge {
 ///
 public enum Align {
     case leadingMatchingTop
-    case toTheRightMatchingBottom
-    case toTheRightCentered
+    case leadingMatchingBottom
+    case leadingCentered
     case toTheLeftMatchingTop
     case toTheLeftMatchingBottom
     case toTheLeftCentered
