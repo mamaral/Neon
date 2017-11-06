@@ -30,7 +30,7 @@ extension View : Frameable, Anchorable, Alignable, Groupable {
             self.sizeToFit()
         #else
             self.autoresizesSubviews = true
-            self.autoresizingMask = [.viewWidthSizable, .viewHeightSizable]
+            self.autoresizingMask = [.width, .height]
         #endif
     }
 }
