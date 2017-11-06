@@ -13,6 +13,18 @@
 #endif
 
 
+// MARK: Right to left support
+//
+///
+fileprivate var isRightToLeft: Bool {
+    #if os(iOS)
+        return UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft
+    #else
+        return NSApplication.shared().userInterfaceLayoutDirection == .rightToLeft
+    #endif
+}
+
+
 // MARK: AutoHeight
 //
 ///
@@ -41,6 +53,22 @@ public enum Corner {
     case topRight
     case bottomLeft
     case bottomRight
+    
+    public static var topLeading: Corner {
+        return isRightToLeft ? .topRight : .topLeft
+    }
+    
+    public static var topTrailing: Corner {
+        return isRightToLeft ? .topLeft : .topRight
+    }
+    
+    public static var bottomLeading: Corner {
+        return isRightToLeft ? .bottomRight : .bottomLeft
+    }
+    
+    public static var bottomTrailing: Corner {
+        return isRightToLeft ? .bottomLeft : .bottomRight
+    }
 }
 
 
@@ -62,6 +90,14 @@ public enum Edge {
     case left
     case bottom
     case right
+    
+    public static var leading: Edge {
+        return isRightToLeft ? .right : .left
+    }
+    
+    public static var trailing: Edge {
+        return isRightToLeft ? .left : .right
+    }
 }
 
 
@@ -121,6 +157,46 @@ public enum Align {
     case aboveMatchingLeft
     case aboveMatchingRight
     case aboveCentered
+    
+    public static var toTheLeadingMatchingTop: Align {
+        return isRightToLeft ? .toTheRightMatchingTop : .toTheLeftMatchingTop
+    }
+    
+    public static var toTheTrailingMatchingTop: Align {
+        return isRightToLeft ? .toTheLeftMatchingTop : .toTheRightMatchingTop
+    }
+    
+    public static var toTheLeadingMatchingBottom: Align {
+        return isRightToLeft ? .toTheRightMatchingBottom : .toTheLeftMatchingBottom
+    }
+    
+    public static var toTheTrailingMatchingBottom: Align {
+        return isRightToLeft ? .toTheLeftMatchingBottom : .toTheRightMatchingBottom
+    }
+    
+    public static var toTheLeadingCentered: Align {
+        return isRightToLeft ? .toTheRightCentered : .toTheLeftCentered
+    }
+    
+    public static var toTheTrailingCentered: Align {
+        return isRightToLeft ? .toTheLeftCentered : .toTheRightCentered
+    }
+    
+    public static var underMatchingLeading: Align {
+        return isRightToLeft ? .underMatchingRight : .underMatchingLeft
+    }
+    
+    public static var underMatchingTrailing: Align {
+        return isRightToLeft ? .underMatchingLeft : .underMatchingRight
+    }
+    
+    public static var aboveMatchingLeading: Align {
+        return isRightToLeft ? .aboveMatchingRight : .aboveMatchingLeft
+    }
+    
+    public static var aboveMatchingTrailing: Align {
+        return isRightToLeft ? .aboveMatchingLeft : .aboveMatchingRight
+    }
 }
 
 
