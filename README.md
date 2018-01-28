@@ -7,7 +7,7 @@
 
 Neon is built around how user interfaces are naturally and intuitively designed. No more springs and struts. No more whacky visual format language. No more auto layout constraints. We're not robots, so why should we build our UIs like we are?
 
-> ***Neon has been updated to Swift 3.0, but is still currently in beta!***
+> ***Neon has been updated to Swift 4.0, but is still currently in beta!***
 
 ## Install via CocoaPods 
 
@@ -19,7 +19,7 @@ use_frameworks!
 pod 'Neon'
 ```
 
-##Manual Installation
+## Manual Installation
 
 1. Download and drop `/Source` in your project.  
 2. Congratulations!  
@@ -64,7 +64,7 @@ Looks pretty good on every device size! Now, keep in mind you'll probably want c
 
 ![landscape](Screenshots/landscape.png)
 
-###Not bad for 10 lines of code!
+### Not bad for 10 lines of code!
 
 
 Here's an intentionally convoluted example to show how easy it is to build very complex and dynamic layouts with Neon. The following layout was created with only *20 lines of code*. That's one line of code per view! While impressive, this layout is horrifying and should never be used in an actual app... ever...
