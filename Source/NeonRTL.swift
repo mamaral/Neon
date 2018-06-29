@@ -111,7 +111,6 @@ internal extension Align {
         case .aboveCentered:
             return .aboveCentered
 
-
         case .toTheLeadingMatchingTop:
             return view.isRightToLeft ? .toTheRightMatchingTop : .toTheLeftMatchingTop
 
