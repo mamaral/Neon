@@ -117,6 +117,13 @@ public protocol Frameable : class {
     var height: CGFloat { get }
 
 
+    /// If the current layout is right-to-left.
+    ///
+    /// - returns: true if the current layout is right-to-left, false if left-to-right.
+    ///
+    var isRightToLeft: Bool { get }
+
+
     /// *To be used internally* TODO: Determine how to make this either private or internal.
     ///
     ///

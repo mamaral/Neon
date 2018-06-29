@@ -43,7 +43,7 @@ public extension Alignable {
         var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0
 
-        switch align {
+        switch align.toInternal(self) {
         case .toTheRightMatchingTop:
             xOrigin = sibling.xMax + padding
             yOrigin = sibling.y + offset
@@ -131,7 +131,7 @@ public extension Alignable {
         var yOrigin : CGFloat = 0.0
         var width : CGFloat = 0.0
 
-        switch align {
+        switch align.toInternal(self) {
         case .toTheRightMatchingTop:
             xOrigin = sibling.xMax + padding
             yOrigin = sibling.y + offset
@@ -230,7 +230,7 @@ public extension Alignable {
         var yOrigin : CGFloat = 0.0
         var height : CGFloat = 0.0
 
-        switch align {
+        switch align.toInternal(self) {
         case .toTheRightMatchingTop:
             xOrigin = sibling.xMax + padding
             yOrigin = sibling.y + offset
@@ -329,7 +329,7 @@ public extension Alignable {
         var width : CGFloat = 0.0
         var height : CGFloat = 0.0
 
-        switch align {
+        switch align.toInternal(self) {
         case .toTheRightMatchingTop:
             xOrigin = sibling.xMax + padding
             yOrigin = sibling.y + offset
@@ -439,7 +439,7 @@ public extension Alignable {
         var yOrigin : CGFloat = 0.0
         var width : CGFloat = 0.0
 
-        switch align {
+        switch align.toInternal(self) {
         case .toTheRightMatchingTop:
             xOrigin = primaryView.xMax + padding
             yOrigin = primaryView.y + offset
@@ -511,7 +511,7 @@ public extension Alignable {
         var yOrigin : CGFloat = 0.0
         var height : CGFloat = 0.0
 
-        switch align {
+        switch align.toInternal(self) {
         case .underMatchingLeft:
             xOrigin = primaryView.x + offset
             yOrigin = primaryView.yMax + padding

@@ -33,6 +33,8 @@
 		03EDD3C91BBF8CEC0006C4A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EDD3C31BBF8CEC0006C4A9 /* ViewController.swift */; };
 		52E7D6F71D520983007288D6 /* NeonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D6F61D520983007288D6 /* NeonExtensions.swift */; };
 		52E7D6F81D520983007288D6 /* NeonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D6F61D520983007288D6 /* NeonExtensions.swift */; };
+		8C3B3B7720E674B600F6023F /* NeonRTL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3B3B7620E674B500F6023F /* NeonRTL.swift */; };
+		8C3B3B7820E674B600F6023F /* NeonRTL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3B3B7620E674B500F6023F /* NeonRTL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,7 @@
 		03EDD3C31BBF8CEC0006C4A9 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Demo/ViewController.swift; sourceTree = SOURCE_ROOT; };
 		27D253661BAF71AB00FA4FED /* Neon_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neon_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E7D6F61D520983007288D6 /* NeonExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NeonExtensions.swift; path = Source/NeonExtensions.swift; sourceTree = SOURCE_ROOT; };
+		8C3B3B7620E674B500F6023F /* NeonRTL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NeonRTL.swift; path = Source/NeonRTL.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +194,7 @@
 		27D253971BAF71C700FA4FED /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				8C3B3B7620E674B500F6023F /* NeonRTL.swift */,
 				03EDD3AE1BBF8BC90006C4A9 /* Neon.swift */,
 				52E7D6F61D520983007288D6 /* NeonExtensions.swift */,
 				03EDD3B11BBF8BC90006C4A9 /* NeonFrameable.swift */,
@@ -409,6 +413,7 @@
 				52E7D6F71D520983007288D6 /* NeonExtensions.swift in Sources */,
 				03EDD3BB1BBF8BCA0006C4A9 /* NeonGroupable.swift in Sources */,
 				03EDD3B91BBF8BCA0006C4A9 /* NeonFrameable.swift in Sources */,
+				8C3B3B7720E674B600F6023F /* NeonRTL.swift in Sources */,
 				03EDD3B51BBF8BCA0006C4A9 /* NeonAlignable.swift in Sources */,
 				03EDD3B71BBF8BCA0006C4A9 /* NeonAnchorable.swift in Sources */,
 			);
@@ -422,6 +427,7 @@
 				52E7D6F81D520983007288D6 /* NeonExtensions.swift in Sources */,
 				03EDD3BC1BBF8BCA0006C4A9 /* NeonGroupable.swift in Sources */,
 				03EDD3BA1BBF8BCA0006C4A9 /* NeonFrameable.swift in Sources */,
+				8C3B3B7820E674B600F6023F /* NeonRTL.swift in Sources */,
 				03EDD3B61BBF8BCA0006C4A9 /* NeonAlignable.swift in Sources */,
 				03EDD3B81BBF8BCA0006C4A9 /* NeonAnchorable.swift in Sources */,
 			);
@@ -510,6 +516,7 @@
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-D",
@@ -541,6 +548,7 @@
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-D",
@@ -730,6 +738,7 @@
 				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MikeAmaral.NeonDemo;
 				PRODUCT_MODULE_NAME = Neon_Demo;
@@ -751,6 +760,7 @@
 				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MikeAmaral.NeonDemo;
 				PRODUCT_MODULE_NAME = Neon_Demo;
