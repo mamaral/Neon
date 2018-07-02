@@ -290,9 +290,9 @@ public extension Alignable {
 
         frame = CGRect(x: xOrigin, y: yOrigin, width: max(width, 0), height: max(height, 0))
 
-        if height == AutoHeight {
+        if width == AutoWidth {
             self.setDimensionAutomatically()
-            self.alignAndFillHeight(align: align, relativeTo: sibling, padding: padding, width: self.height, offset: offset)
+            self.alignAndFillHeight(align: align, relativeTo: sibling, padding: padding, width: self.width, offset: offset)
         }
     }
 
