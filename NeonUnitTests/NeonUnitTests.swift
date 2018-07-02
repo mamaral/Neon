@@ -47,6 +47,30 @@ class NeonTests: XCTestCase {
         super.tearDown()
     }
 
+    func testAutoHeightWithRestrictedWidth() {
+        let label = UILabel()
+        label.text = String(repeating: "some text ", count: 100)
+        label.numberOfLines = 0
+
+        testSuperview.addSubview(label)
+        label.anchorInCorner(.topLeft, xPad: 0, yPad: 0, width: 100, height: AutoHeight)
+
+        let targetLabelSize = label.sizeThatFits(CGSize(width: 100, height: 0))
+        XCTAssertEqual(label.frame, CGRect(x: 0, y: 0, width: targetLabelSize.width, height: targetLabelSize.height))
+    }
+
+    func testAutoWidthHeight() {
+        let label = UILabel()
+        label.text = "some text"
+        label.numberOfLines = 0
+
+        testSuperview.addSubview(label)
+        label.anchorInCorner(.topLeft, xPad: 0, yPad: 0, width: AutoWidth, height: AutoHeight)
+
+        let targetLabelSize = label.sizeThatFits(.zero)
+        XCTAssertEqual(label.frame, CGRect(x: 0, y: 0, width: targetLabelSize.width, height: targetLabelSize.height))
+    }
+
     func testFrameUtils() {
         testAnchorView.frame = CGRect.zero
         XCTAssertEqual(testAnchorView.x, 0)
