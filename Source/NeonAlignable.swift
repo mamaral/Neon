@@ -93,7 +93,7 @@ public extension Alignable {
             yOrigin = sibling.y - padding - height
         }
 
-        frame = CGRect(x: xOrigin, y: yOrigin, width: width, height: height)
+        frame = CGRect(x: xOrigin, y: yOrigin, width: max(width, 0), height: max(height, 0))
 
         if height == AutoHeight {
             self.setDimensionAutomatically()
@@ -193,11 +193,7 @@ public extension Alignable {
             width = superviewWidth - (2 * padding)
         }
 
-        if width < 0.0 {
-            width = 0.0
-        }
-
-        frame = CGRect(x: xOrigin, y: yOrigin, width: width, height: height)
+        frame = CGRect(x: xOrigin, y: yOrigin, width: max(width, 0), height: max(height, 0))
 
         if height == AutoHeight {
             self.setDimensionAutomatically()
@@ -292,11 +288,7 @@ public extension Alignable {
             height = sibling.y - (2 * padding)
         }
 
-        if height < 0.0 {
-            height = 0.0
-        }
-
-        frame = CGRect(x: xOrigin, y: yOrigin, width: width, height: height)
+        frame = CGRect(x: xOrigin, y: yOrigin, width: max(width, 0), height: max(height, 0))
 
         if height == AutoHeight {
             self.setDimensionAutomatically()
@@ -403,15 +395,7 @@ public extension Alignable {
             height = superviewHeight - (superviewHeight - sibling.y) - (2 * padding)
         }
 
-        if width < 0.0 {
-            width = 0.0
-        }
-
-        if height < 0.0 {
-            height = 0.0
-        }
-
-        frame = CGRect(x: xOrigin, y: yOrigin, width: width, height: height)
+        frame = CGRect(x: xOrigin, y: yOrigin, width: max(width, 0), height: max(height, 0))
     }
 
 
@@ -474,11 +458,7 @@ public extension Alignable {
             fatalError("[NEON] Invalid Align specified for alignBetweenHorizonal().")
         }
 
-        if width < 0.0 {
-            width = 0.0
-        }
-
-        frame = CGRect(x: xOrigin, y: yOrigin, width: width, height: height)
+        frame = CGRect(x: xOrigin, y: yOrigin, width: max(width, 0), height: max(height, 0))
 
         if height == AutoHeight {
             self.setDimensionAutomatically()
@@ -546,11 +526,7 @@ public extension Alignable {
             fatalError("[NEON] Invalid Align specified for alignBetweenVertical().")
         }
 
-        if height < 0 {
-            height = 0
-        }
-
-        frame = CGRect(x: xOrigin, y: yOrigin, width: width, height: height)
+        frame = CGRect(x: xOrigin, y: yOrigin, width: max(width, 0), height: max(height, 0))
 
         if width == AutoWidth {
             self.setDimensionAutomatically()

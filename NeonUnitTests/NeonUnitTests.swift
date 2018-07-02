@@ -55,8 +55,8 @@ class NeonTests: XCTestCase {
         testSuperview.addSubview(label)
         label.anchorInCorner(.topLeft, xPad: 0, yPad: 0, width: 100, height: AutoHeight)
 
-        let targetLabelSize = label.sizeThatFits(CGSize(width: 100, height: 0))
-        XCTAssertEqual(label.frame, CGRect(x: 0, y: 0, width: targetLabelSize.width, height: targetLabelSize.height))
+        let targetLabelHeight = label.sizeThatFits(CGSize(width: 100, height: 0)).height
+        XCTAssertEqual(label.frame, CGRect(x: 0, y: 0, width: 100, height: targetLabelHeight))
     }
 
     func testAutoWidthHeight() {
