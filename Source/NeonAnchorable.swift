@@ -49,7 +49,7 @@ public extension Anchorable {
         let xOrigin : CGFloat = (superFrame.width / 2.0) - (width / 2.0)
         let yOrigin : CGFloat = (superFrame.height / 2.0) - (height / 2.0)
 
-        frame = CGRect(x: xOrigin, y: yOrigin, width: width, height: height)
+        frame = CGRect(x: xOrigin, y: yOrigin, width: max(width, 0), height: max(height, 0))
 
         if height == AutoHeight {
             self.setDimensionAutomatically()
@@ -100,7 +100,7 @@ public extension Anchorable {
             yOrigin = superFrame.height - height - yPad
         }
 
-        frame = CGRect(x: xOrigin, y: yOrigin, width: width, height: height)
+        frame = CGRect(x: xOrigin, y: yOrigin, width: max(width, 0), height: max(height, 0))
 
         if height == AutoHeight {
             self.setDimensionAutomatically()
@@ -153,7 +153,7 @@ public extension Anchorable {
             yOrigin = (superFrame.height / 2.0) - (height / 2.0)
         }
 
-        frame = CGRect(x: xOrigin, y: yOrigin, width: width, height: height)
+        frame = CGRect(x: xOrigin, y: yOrigin, width: max(width, 0), height: max(height, 0))
 
         if height == AutoHeight {
             self.setDimensionAutomatically()
@@ -224,7 +224,7 @@ public extension Anchorable {
             height = superFrame.height - (2 * yPad)
         }
         
-        frame = CGRect(x: xOrigin, y: yOrigin, width: width, height: height)
+        frame = CGRect(x: xOrigin, y: yOrigin, width: max(width, 0), height: max(height, 0))
 
         if height == AutoHeight && autoSize {
             self.setDimensionAutomatically()
