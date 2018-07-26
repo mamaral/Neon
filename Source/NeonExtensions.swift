@@ -29,7 +29,7 @@ extension View : Frameable, Anchorable, Alignable, Groupable {
         #if os(iOS)
             return UIView.userInterfaceLayoutDirection(for: self.semanticContentAttribute) == .rightToLeft
         #else
-            return self.userInterfaceLayoutDirection == NSUserInterfaceLayoutDirectionRightToLeft
+            return self.userInterfaceLayoutDirection == .rightToLeft
         #endif
     }
 
@@ -59,7 +59,7 @@ extension CALayer : Frameable, Anchorable, Alignable, Groupable {
         #if os(iOS)
             return UIView.userInterfaceLayoutDirection(for: UIView().semanticContentAttribute) == .rightToLeft
         #else
-            return self.userInterfaceLayoutDirection == NSUserInterfaceLayoutDirectionRightToLeft
+            return NSView().userInterfaceLayoutDirection == .rightToLeft
         #endif
     }
 
