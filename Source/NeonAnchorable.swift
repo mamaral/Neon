@@ -82,7 +82,7 @@ public extension Anchorable {
         var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0
 
-        switch corner {
+        switch corner.toInternal(self) {
         case .topLeft:
             xOrigin = xPad
             yOrigin = yPad
@@ -135,7 +135,7 @@ public extension Anchorable {
         var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0
 
-        switch edge {
+        switch edge.toInternal(self) {
         case .top:
             xOrigin = (superFrame.width / 2.0) - (width / 2.0)
             yOrigin = padding
@@ -196,7 +196,7 @@ public extension Anchorable {
         var height : CGFloat = 0.0
         var autoSize : Bool = false
 
-        switch edge {
+        switch edge.toInternal(self) {
         case .top:
             xOrigin = xPad
             yOrigin = yPad

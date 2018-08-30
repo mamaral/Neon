@@ -36,11 +36,23 @@ public let AutoWidth : CGFloat = -1
 ///
 /// **bottomRight**: The upper-right corner of the frame.
 ///
+/// **topLeading**: The upper-leading corner of the frame.
+///
+/// **topTrailing**: The upper-trailing corner of the frame.
+///
+/// **bottomLeading**: The bottom-leading corner of the frame.
+///
+/// **bottomTrailing**: The upper-trailing corner of the frame.
+///
 public enum Corner {
     case topLeft
     case topRight
     case bottomLeft
     case bottomRight
+    case topLeading
+    case topTrailing
+    case bottomLeading
+    case bottomTrailing
 }
 
 
@@ -57,11 +69,17 @@ public enum Corner {
 ///
 /// **right**: The right edge of the frame.
 ///
+/// **leading**: The leading edge of the frame.
+///
+/// **trailing**: The trailing edge of the frame.
+///
 public enum Edge {
     case top
     case left
     case bottom
     case right
+    case leading
+    case trailing
 }
 
 
@@ -108,6 +126,39 @@ public enum Edge {
 /// **aboveCentered**: Specifies that the view should be aligned above a sibling, and will be centered to either match
 /// the horizontal center of the sibling's frame or centered horizontally within the superview, depending on the context.
 ///
+/// **toTheLeadingMatchingTop**: Specifies that the view should be aligned to the leading of a sibling, matching the
+/// top, or y origin, of the sibling's frame.
+///
+/// **toTheTrailingMatchingTop**: Specifies that the view should be aligned to the trailing of a sibling, matching the
+/// top, or y origin, of the sibling's frame.
+///
+/// **toTheLeadingMatchingBottom**: Specifies that the view should be aligned to the leading of a sibling, matching the
+/// bottom, or max y value, of the sibling's frame.
+///
+/// **toTheTrailingMatchingBottom**: Specifies that the view should be aligned to the trailing of a sibling, matching the
+/// bottom, or max y value, of the sibling's frame.
+///
+/// **toTheLeadingCentered**: Specifies that the view should be aligned to the leading of a sibling, and will be centered
+/// to either match the vertical center of the sibling's frame or centered vertically within the superview, depending
+/// on the context.
+///
+/// **toTheTrailingCentered**: Specifies that the view should be aligned to the trailing of a sibling, and will be centered
+/// to either match the vertical center of the sibling's frame or centered vertically within the superview, depending
+/// on the context.
+///
+/// **underMatchingLeading**: Specifies that the view should be aligned under a sibling, matching the leading of the
+/// sibling's frame.
+///
+/// **underMatchingTrailing**: Specifies that the view should be aligned under a sibling, matching the trailing of the
+/// sibling's frame.
+///
+/// **aboveMatchingLeading**: Specifies that the view should be aligned above a sibling, matching the leading of the
+/// sibling's frame.
+///
+/// **aboveMatchingTrailing**: Specifies that the view should be aligned above a sibling, matching the trailing of the
+/// sibling's frame.
+///
+
 public enum Align {
     case toTheRightMatchingTop
     case toTheRightMatchingBottom
@@ -121,6 +172,16 @@ public enum Align {
     case aboveMatchingLeft
     case aboveMatchingRight
     case aboveCentered
+    case toTheLeadingMatchingTop
+    case toTheTrailingMatchingTop
+    case toTheLeadingMatchingBottom
+    case toTheTrailingMatchingBottom
+    case toTheLeadingCentered
+    case toTheTrailingCentered
+    case underMatchingLeading
+    case underMatchingTrailing
+    case aboveMatchingLeading
+    case aboveMatchingTrailing
 }
 
 

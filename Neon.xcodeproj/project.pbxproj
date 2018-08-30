@@ -7,32 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		033D78F11BBF900A0034752F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 033D78F01BBF900A0034752F /* Assets.xcassets */; };
-		033D78F81BBF90860034752F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033D78F61BBF90860034752F /* LaunchScreen.storyboard */; };
 		036A08351BBF919E000B093A /* NeonUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A08341BBF919E000B093A /* NeonUnitTests.swift */; };
 		036A08371BBF919E000B093A /* Neon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03EDD3831BBF89910006C4A9 /* Neon.framework */; };
-		03EDD38A1BBF89910006C4A9 /* Neon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03EDD3831BBF89910006C4A9 /* Neon.framework */; };
-		03EDD38B1BBF89910006C4A9 /* Neon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03EDD3831BBF89910006C4A9 /* Neon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		03EDD3911BBF89E90006C4A9 /* Neon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03EDD3901BBF89E90006C4A9 /* Neon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		03EDD3A11BBF8A820006C4A9 /* Neon.h in Headers */ = {isa = PBXBuildFile; fileRef = 03EDD3901BBF89E90006C4A9 /* Neon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		03EDD3B31BBF8BC90006C4A9 /* Neon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EDD3AE1BBF8BC90006C4A9 /* Neon.swift */; };
-		03EDD3B41BBF8BCA0006C4A9 /* Neon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EDD3AE1BBF8BC90006C4A9 /* Neon.swift */; };
-		03EDD3B51BBF8BCA0006C4A9 /* NeonAlignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EDD3AF1BBF8BC90006C4A9 /* NeonAlignable.swift */; };
-		03EDD3B61BBF8BCA0006C4A9 /* NeonAlignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EDD3AF1BBF8BC90006C4A9 /* NeonAlignable.swift */; };
-		03EDD3B71BBF8BCA0006C4A9 /* NeonAnchorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EDD3B01BBF8BC90006C4A9 /* NeonAnchorable.swift */; };
-		03EDD3B81BBF8BCA0006C4A9 /* NeonAnchorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EDD3B01BBF8BC90006C4A9 /* NeonAnchorable.swift */; };
-		03EDD3B91BBF8BCA0006C4A9 /* NeonFrameable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EDD3B11BBF8BC90006C4A9 /* NeonFrameable.swift */; };
-		03EDD3BA1BBF8BCA0006C4A9 /* NeonFrameable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EDD3B11BBF8BC90006C4A9 /* NeonFrameable.swift */; };
-		03EDD3BB1BBF8BCA0006C4A9 /* NeonGroupable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EDD3B21BBF8BC90006C4A9 /* NeonGroupable.swift */; };
-		03EDD3BC1BBF8BCA0006C4A9 /* NeonGroupable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EDD3B21BBF8BC90006C4A9 /* NeonGroupable.swift */; };
-		03EDD3C41BBF8CEC0006C4A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EDD3BD1BBF8CEC0006C4A9 /* AppDelegate.swift */; };
-		03EDD3C51BBF8CEC0006C4A9 /* FacebookProfileExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EDD3BE1BBF8CEC0006C4A9 /* FacebookProfileExampleViewController.swift */; };
-		03EDD3C61BBF8CEC0006C4A9 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EDD3BF1BBF8CEC0006C4A9 /* IconButton.swift */; };
-		03EDD3C71BBF8CEC0006C4A9 /* ImageContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EDD3C01BBF8CEC0006C4A9 /* ImageContainerView.swift */; };
-		03EDD3C81BBF8CEC0006C4A9 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EDD3C21BBF8CEC0006C4A9 /* TestViewController.swift */; };
-		03EDD3C91BBF8CEC0006C4A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EDD3C31BBF8CEC0006C4A9 /* ViewController.swift */; };
-		52E7D6F71D520983007288D6 /* NeonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D6F61D520983007288D6 /* NeonExtensions.swift */; };
-		52E7D6F81D520983007288D6 /* NeonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7D6F61D520983007288D6 /* NeonExtensions.swift */; };
+		8C1C480C20E67D14004B7B5F /* Neon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03EDD3831BBF89910006C4A9 /* Neon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8C3B3B8320E679D900F6023F /* Neon.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C3B3B7A20E679D900F6023F /* Neon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8C3B3B8420E679D900F6023F /* Neon.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C3B3B7A20E679D900F6023F /* Neon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8C3B3B8520E679D900F6023F /* NeonFrameable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3B3B7B20E679D900F6023F /* NeonFrameable.swift */; };
+		8C3B3B8620E679D900F6023F /* NeonFrameable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3B3B7B20E679D900F6023F /* NeonFrameable.swift */; };
+		8C3B3B8720E679D900F6023F /* NeonGroupable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3B3B7C20E679D900F6023F /* NeonGroupable.swift */; };
+		8C3B3B8820E679D900F6023F /* NeonGroupable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3B3B7C20E679D900F6023F /* NeonGroupable.swift */; };
+		8C3B3B8920E679D900F6023F /* NeonAnchorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3B3B7D20E679D900F6023F /* NeonAnchorable.swift */; };
+		8C3B3B8A20E679D900F6023F /* NeonAnchorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3B3B7D20E679D900F6023F /* NeonAnchorable.swift */; };
+		8C3B3B8B20E679D900F6023F /* NeonAlignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3B3B7E20E679D900F6023F /* NeonAlignable.swift */; };
+		8C3B3B8C20E679D900F6023F /* NeonAlignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3B3B7E20E679D900F6023F /* NeonAlignable.swift */; };
+		8C3B3B8D20E679D900F6023F /* NeonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3B3B7F20E679D900F6023F /* NeonExtensions.swift */; };
+		8C3B3B8E20E679D900F6023F /* NeonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3B3B7F20E679D900F6023F /* NeonExtensions.swift */; };
+		8C3B3B8F20E679D900F6023F /* NeonRTL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3B3B8020E679D900F6023F /* NeonRTL.swift */; };
+		8C3B3B9020E679D900F6023F /* NeonRTL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3B3B8020E679D900F6023F /* NeonRTL.swift */; };
+		8C3B3B9120E679D900F6023F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C3B3B8120E679D900F6023F /* Info.plist */; };
+		8C3B3B9220E679D900F6023F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C3B3B8120E679D900F6023F /* Info.plist */; };
+		8C3B3B9320E679D900F6023F /* Neon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3B3B8220E679D900F6023F /* Neon.swift */; };
+		8C3B3B9420E679D900F6023F /* Neon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3B3B8220E679D900F6023F /* Neon.swift */; };
+		8C3B3BBE20E67A1300F6023F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3B3BB420E67A1300F6023F /* ViewController.swift */; };
+		8C3B3BBF20E67A1300F6023F /* FacebookProfileExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3B3BB520E67A1300F6023F /* FacebookProfileExampleViewController.swift */; };
+		8C3B3BC020E67A1300F6023F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C3B3BB620E67A1300F6023F /* Assets.xcassets */; };
+		8C3B3BC120E67A1300F6023F /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3B3BB720E67A1300F6023F /* IconButton.swift */; };
+		8C3B3BC220E67A1300F6023F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C3B3BB820E67A1300F6023F /* LaunchScreen.storyboard */; };
+		8C3B3BC320E67A1300F6023F /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3B3BBA20E67A1300F6023F /* TestViewController.swift */; };
+		8C3B3BC420E67A1300F6023F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3B3BBB20E67A1300F6023F /* AppDelegate.swift */; };
+		8C3B3BC520E67A1300F6023F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C3B3BBC20E67A1300F6023F /* Info.plist */; };
+		8C3B3BC620E67A1300F6023F /* ImageContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3B3BBD20E67A1300F6023F /* ImageContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,23 +47,23 @@
 			remoteGlobalIDString = 03EDD3821BBF89910006C4A9;
 			remoteInfo = "Neon-iOS";
 		};
-		03EDD3881BBF89910006C4A9 /* PBXContainerItemProxy */ = {
+		8C1C480D20E67D14004B7B5F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 27D2535E1BAF71AB00FA4FED /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 03EDD3821BBF89910006C4A9;
-			remoteInfo = "Neon-iOS";
+			remoteInfo = "Neon iOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		03EDD38F1BBF89910006C4A9 /* Embed Frameworks */ = {
+		8C1C480F20E67D14004B7B5F /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				03EDD38B1BBF89910006C4A9 /* Neon.framework in Embed Frameworks */,
+				8C1C480C20E67D14004B7B5F /* Neon.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,29 +71,30 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		033D78F01BBF900A0034752F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Demo/Assets.xcassets; sourceTree = SOURCE_ROOT; };
-		033D78F21BBF90140034752F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Demo/Info.plist; sourceTree = SOURCE_ROOT; };
-		033D78F71BBF90860034752F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Demo/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		036A08321BBF919E000B093A /* NeonUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeonUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		036A08341BBF919E000B093A /* NeonUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeonUnitTests.swift; sourceTree = "<group>"; };
 		036A08361BBF919E000B093A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03EDD3831BBF89910006C4A9 /* Neon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Neon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		03EDD3901BBF89E90006C4A9 /* Neon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Neon.h; path = Source/Neon.h; sourceTree = SOURCE_ROOT; };
 		03EDD3971BBF8A4F0006C4A9 /* Neon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Neon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		03EDD3A01BBF8A7E0006C4A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Source/Info.plist; sourceTree = SOURCE_ROOT; };
-		03EDD3AE1BBF8BC90006C4A9 /* Neon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Neon.swift; path = Source/Neon.swift; sourceTree = SOURCE_ROOT; };
-		03EDD3AF1BBF8BC90006C4A9 /* NeonAlignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NeonAlignable.swift; path = Source/NeonAlignable.swift; sourceTree = SOURCE_ROOT; };
-		03EDD3B01BBF8BC90006C4A9 /* NeonAnchorable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NeonAnchorable.swift; path = Source/NeonAnchorable.swift; sourceTree = SOURCE_ROOT; };
-		03EDD3B11BBF8BC90006C4A9 /* NeonFrameable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NeonFrameable.swift; path = Source/NeonFrameable.swift; sourceTree = SOURCE_ROOT; };
-		03EDD3B21BBF8BC90006C4A9 /* NeonGroupable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NeonGroupable.swift; path = Source/NeonGroupable.swift; sourceTree = SOURCE_ROOT; };
-		03EDD3BD1BBF8CEC0006C4A9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Demo/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
-		03EDD3BE1BBF8CEC0006C4A9 /* FacebookProfileExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FacebookProfileExampleViewController.swift; path = Demo/FacebookProfileExampleViewController.swift; sourceTree = SOURCE_ROOT; };
-		03EDD3BF1BBF8CEC0006C4A9 /* IconButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IconButton.swift; path = Demo/IconButton.swift; sourceTree = SOURCE_ROOT; };
-		03EDD3C01BBF8CEC0006C4A9 /* ImageContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageContainerView.swift; path = Demo/ImageContainerView.swift; sourceTree = SOURCE_ROOT; };
-		03EDD3C21BBF8CEC0006C4A9 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestViewController.swift; path = Demo/TestViewController.swift; sourceTree = SOURCE_ROOT; };
-		03EDD3C31BBF8CEC0006C4A9 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Demo/ViewController.swift; sourceTree = SOURCE_ROOT; };
 		27D253661BAF71AB00FA4FED /* Neon_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neon_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		52E7D6F61D520983007288D6 /* NeonExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NeonExtensions.swift; path = Source/NeonExtensions.swift; sourceTree = SOURCE_ROOT; };
+		8C3B3B7A20E679D900F6023F /* Neon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Neon.h; sourceTree = "<group>"; };
+		8C3B3B7B20E679D900F6023F /* NeonFrameable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeonFrameable.swift; sourceTree = "<group>"; };
+		8C3B3B7C20E679D900F6023F /* NeonGroupable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeonGroupable.swift; sourceTree = "<group>"; };
+		8C3B3B7D20E679D900F6023F /* NeonAnchorable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeonAnchorable.swift; sourceTree = "<group>"; };
+		8C3B3B7E20E679D900F6023F /* NeonAlignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeonAlignable.swift; sourceTree = "<group>"; };
+		8C3B3B7F20E679D900F6023F /* NeonExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeonExtensions.swift; sourceTree = "<group>"; };
+		8C3B3B8020E679D900F6023F /* NeonRTL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeonRTL.swift; sourceTree = "<group>"; };
+		8C3B3B8120E679D900F6023F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C3B3B8220E679D900F6023F /* Neon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Neon.swift; sourceTree = "<group>"; };
+		8C3B3BB420E67A1300F6023F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8C3B3BB520E67A1300F6023F /* FacebookProfileExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookProfileExampleViewController.swift; sourceTree = "<group>"; };
+		8C3B3BB620E67A1300F6023F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8C3B3BB720E67A1300F6023F /* IconButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
+		8C3B3BB920E67A1300F6023F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8C3B3BBA20E67A1300F6023F /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		8C3B3BBB20E67A1300F6023F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8C3B3BBC20E67A1300F6023F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C3B3BBD20E67A1300F6023F /* ImageContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +124,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03EDD38A1BBF89910006C4A9 /* Neon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,30 +139,13 @@
 			path = NeonUnitTests;
 			sourceTree = "<group>";
 		};
-		03EDD37D1BBF89350006C4A9 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Tests;
-			sourceTree = "<group>";
-		};
-		03EDD39F1BBF8A6A0006C4A9 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				03EDD3901BBF89E90006C4A9 /* Neon.h */,
-				03EDD3A01BBF8A7E0006C4A9 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		27D2535D1BAF71AB00FA4FED = {
 			isa = PBXGroup;
 			children = (
-				27D253971BAF71C700FA4FED /* Source */,
-				27D253681BAF71AB00FA4FED /* Demo */,
+				8C3B3B7920E679D900F6023F /* Source */,
+				8C3B3BB320E67A1300F6023F /* Demo */,
 				036A08331BBF919E000B093A /* NeonUnitTests */,
 				27D253671BAF71AB00FA4FED /* Products */,
-				03EDD37D1BBF89350006C4A9 /* Tests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -173,42 +160,50 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		27D253681BAF71AB00FA4FED /* Demo */ = {
+		8C3B3B7920E679D900F6023F /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				03EDD3BD1BBF8CEC0006C4A9 /* AppDelegate.swift */,
-				03EDD3BF1BBF8CEC0006C4A9 /* IconButton.swift */,
-				03EDD3C31BBF8CEC0006C4A9 /* ViewController.swift */,
-				03EDD3C21BBF8CEC0006C4A9 /* TestViewController.swift */,
-				03EDD3C01BBF8CEC0006C4A9 /* ImageContainerView.swift */,
-				03EDD3BE1BBF8CEC0006C4A9 /* FacebookProfileExampleViewController.swift */,
-				27D253A01BAF735300FA4FED /* Supporting Files */,
+				8C3B3B7B20E679D900F6023F /* NeonFrameable.swift */,
+				8C3B3B7C20E679D900F6023F /* NeonGroupable.swift */,
+				8C3B3B7D20E679D900F6023F /* NeonAnchorable.swift */,
+				8C3B3B7E20E679D900F6023F /* NeonAlignable.swift */,
+				8C3B3B7F20E679D900F6023F /* NeonExtensions.swift */,
+				8C3B3B8020E679D900F6023F /* NeonRTL.swift */,
+				8C3B3B8220E679D900F6023F /* Neon.swift */,
+				8C3B3B9520E679ED00F6023F /* Supporting Files */,
 			);
-			name = Demo;
-			path = Neon;
+			path = Source;
 			sourceTree = "<group>";
 		};
-		27D253971BAF71C700FA4FED /* Source */ = {
+		8C3B3B9520E679ED00F6023F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				03EDD3AE1BBF8BC90006C4A9 /* Neon.swift */,
-				52E7D6F61D520983007288D6 /* NeonExtensions.swift */,
-				03EDD3B11BBF8BC90006C4A9 /* NeonFrameable.swift */,
-				03EDD3B01BBF8BC90006C4A9 /* NeonAnchorable.swift */,
-				03EDD3AF1BBF8BC90006C4A9 /* NeonAlignable.swift */,
-				03EDD3B21BBF8BC90006C4A9 /* NeonGroupable.swift */,
-				03EDD39F1BBF8A6A0006C4A9 /* Supporting Files */,
+				8C3B3B7A20E679D900F6023F /* Neon.h */,
+				8C3B3B8120E679D900F6023F /* Info.plist */,
 			);
-			name = Source;
-			path = ../../Source;
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		27D253A01BAF735300FA4FED /* Supporting Files */ = {
+		8C3B3BB320E67A1300F6023F /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				033D78F61BBF90860034752F /* LaunchScreen.storyboard */,
-				033D78F01BBF900A0034752F /* Assets.xcassets */,
-				033D78F21BBF90140034752F /* Info.plist */,
+				8C3B3BB420E67A1300F6023F /* ViewController.swift */,
+				8C3B3BB520E67A1300F6023F /* FacebookProfileExampleViewController.swift */,
+				8C3B3BB720E67A1300F6023F /* IconButton.swift */,
+				8C3B3BBA20E67A1300F6023F /* TestViewController.swift */,
+				8C3B3BBB20E67A1300F6023F /* AppDelegate.swift */,
+				8C3B3BBD20E67A1300F6023F /* ImageContainerView.swift */,
+				8C3B3BC720E67ABD00F6023F /* Supporting Files */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		8C3B3BC720E67ABD00F6023F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8C3B3BBC20E67A1300F6023F /* Info.plist */,
+				8C3B3BB620E67A1300F6023F /* Assets.xcassets */,
+				8C3B3BB820E67A1300F6023F /* LaunchScreen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -220,7 +215,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03EDD3911BBF89E90006C4A9 /* Neon.h in Headers */,
+				8C3B3B8320E679D900F6023F /* Neon.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,7 +223,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03EDD3A11BBF8A820006C4A9 /* Neon.h in Headers */,
+				8C3B3B8420E679D900F6023F /* Neon.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,12 +291,12 @@
 				27D253621BAF71AB00FA4FED /* Sources */,
 				27D253631BAF71AB00FA4FED /* Frameworks */,
 				27D253641BAF71AB00FA4FED /* Resources */,
-				03EDD38F1BBF89910006C4A9 /* Embed Frameworks */,
+				8C1C480F20E67D14004B7B5F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				03EDD3891BBF89910006C4A9 /* PBXTargetDependency */,
+				8C1C480E20E67D14004B7B5F /* PBXTargetDependency */,
 			);
 			name = "Neon Demo";
 			productName = Neon;
@@ -315,7 +310,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Mike Amaral";
 				TargetAttributes = {
 					036A08311BBF919E000B093A = {
@@ -324,6 +319,7 @@
 					};
 					03EDD3821BBF89910006C4A9 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 9W3UPW3F39;
 						LastSwiftMigration = 0900;
 					};
 					03EDD3961BBF8A4F0006C4A9 = {
@@ -371,6 +367,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C3B3B9120E679D900F6023F /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +375,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C3B3B9220E679D900F6023F /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,8 +383,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				033D78F11BBF900A0034752F /* Assets.xcassets in Resources */,
-				033D78F81BBF90860034752F /* LaunchScreen.storyboard in Resources */,
+				8C3B3BC020E67A1300F6023F /* Assets.xcassets in Resources */,
+				8C3B3BC220E67A1300F6023F /* LaunchScreen.storyboard in Resources */,
+				8C3B3BC520E67A1300F6023F /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,12 +404,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03EDD3B31BBF8BC90006C4A9 /* Neon.swift in Sources */,
-				52E7D6F71D520983007288D6 /* NeonExtensions.swift in Sources */,
-				03EDD3BB1BBF8BCA0006C4A9 /* NeonGroupable.swift in Sources */,
-				03EDD3B91BBF8BCA0006C4A9 /* NeonFrameable.swift in Sources */,
-				03EDD3B51BBF8BCA0006C4A9 /* NeonAlignable.swift in Sources */,
-				03EDD3B71BBF8BCA0006C4A9 /* NeonAnchorable.swift in Sources */,
+				8C3B3B8520E679D900F6023F /* NeonFrameable.swift in Sources */,
+				8C3B3B9320E679D900F6023F /* Neon.swift in Sources */,
+				8C3B3B8D20E679D900F6023F /* NeonExtensions.swift in Sources */,
+				8C3B3B8B20E679D900F6023F /* NeonAlignable.swift in Sources */,
+				8C3B3B8720E679D900F6023F /* NeonGroupable.swift in Sources */,
+				8C3B3B8F20E679D900F6023F /* NeonRTL.swift in Sources */,
+				8C3B3B8920E679D900F6023F /* NeonAnchorable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,12 +418,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03EDD3B41BBF8BCA0006C4A9 /* Neon.swift in Sources */,
-				52E7D6F81D520983007288D6 /* NeonExtensions.swift in Sources */,
-				03EDD3BC1BBF8BCA0006C4A9 /* NeonGroupable.swift in Sources */,
-				03EDD3BA1BBF8BCA0006C4A9 /* NeonFrameable.swift in Sources */,
-				03EDD3B61BBF8BCA0006C4A9 /* NeonAlignable.swift in Sources */,
-				03EDD3B81BBF8BCA0006C4A9 /* NeonAnchorable.swift in Sources */,
+				8C3B3B8620E679D900F6023F /* NeonFrameable.swift in Sources */,
+				8C3B3B9420E679D900F6023F /* Neon.swift in Sources */,
+				8C3B3B8E20E679D900F6023F /* NeonExtensions.swift in Sources */,
+				8C3B3B8C20E679D900F6023F /* NeonAlignable.swift in Sources */,
+				8C3B3B8820E679D900F6023F /* NeonGroupable.swift in Sources */,
+				8C3B3B9020E679D900F6023F /* NeonRTL.swift in Sources */,
+				8C3B3B8A20E679D900F6023F /* NeonAnchorable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,12 +432,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03EDD3C91BBF8CEC0006C4A9 /* ViewController.swift in Sources */,
-				03EDD3C81BBF8CEC0006C4A9 /* TestViewController.swift in Sources */,
-				03EDD3C71BBF8CEC0006C4A9 /* ImageContainerView.swift in Sources */,
-				03EDD3C61BBF8CEC0006C4A9 /* IconButton.swift in Sources */,
-				03EDD3C41BBF8CEC0006C4A9 /* AppDelegate.swift in Sources */,
-				03EDD3C51BBF8CEC0006C4A9 /* FacebookProfileExampleViewController.swift in Sources */,
+				8C3B3BC620E67A1300F6023F /* ImageContainerView.swift in Sources */,
+				8C3B3BC120E67A1300F6023F /* IconButton.swift in Sources */,
+				8C3B3BBE20E67A1300F6023F /* ViewController.swift in Sources */,
+				8C3B3BC320E67A1300F6023F /* TestViewController.swift in Sources */,
+				8C3B3BC420E67A1300F6023F /* AppDelegate.swift in Sources */,
+				8C3B3BBF20E67A1300F6023F /* FacebookProfileExampleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,18 +449,18 @@
 			target = 03EDD3821BBF89910006C4A9 /* Neon iOS */;
 			targetProxy = 036A08381BBF919E000B093A /* PBXContainerItemProxy */;
 		};
-		03EDD3891BBF89910006C4A9 /* PBXTargetDependency */ = {
+		8C1C480E20E67D14004B7B5F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 03EDD3821BBF89910006C4A9 /* Neon iOS */;
-			targetProxy = 03EDD3881BBF89910006C4A9 /* PBXContainerItemProxy */;
+			targetProxy = 8C1C480D20E67D14004B7B5F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		033D78F61BBF90860034752F /* LaunchScreen.storyboard */ = {
+		8C3B3BB820E67A1300F6023F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				033D78F71BBF90860034752F /* Base */,
+				8C3B3BB920E67A1300F6023F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -470,6 +471,7 @@
 		036A083B1BBF919E000B093A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				INFOPLIST_FILE = NeonUnitTests/Info.plist;
@@ -484,6 +486,7 @@
 		036A083C1BBF919E000B093A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				INFOPLIST_FILE = NeonUnitTests/Info.plist;
@@ -503,6 +506,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9W3UPW3F39;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -510,6 +514,7 @@
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-D",
@@ -534,6 +539,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9W3UPW3F39;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -541,6 +547,7 @@
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-D",
@@ -625,12 +632,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -681,12 +690,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -730,6 +741,7 @@
 				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MikeAmaral.NeonDemo;
 				PRODUCT_MODULE_NAME = Neon_Demo;
@@ -751,6 +763,7 @@
 				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MikeAmaral.NeonDemo;
 				PRODUCT_MODULE_NAME = Neon_Demo;

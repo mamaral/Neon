@@ -121,7 +121,7 @@ public extension Groupable {
         var xAdjust : CGFloat = 0.0
         var yAdjust : CGFloat = 0.0
 
-        switch edge {
+        switch edge.toInternal(self) {
         case .top:
             if group == .horizontal {
                 xOrigin = (self.width - (CGFloat(views.count) * width) - (CGFloat(views.count - 1) * padding)) / 2.0
@@ -265,7 +265,7 @@ public extension Groupable {
         var yOrigin : CGFloat = 0.0
         let xAdjust : CGFloat = width + padding
 
-        switch corner {
+        switch corner.toInternal(self) {
         case .topLeft:
             xOrigin = padding
             yOrigin = padding
@@ -300,7 +300,7 @@ public extension Groupable {
         var yOrigin : CGFloat = 0.0
         let yAdjust : CGFloat = height + padding
 
-        switch corner {
+        switch corner.toInternal(self) {
         case .topLeft:
             xOrigin = padding
             yOrigin = padding
@@ -335,7 +335,7 @@ public extension Groupable {
         var yOrigin : CGFloat = 0.0
         let xAdjust : CGFloat = width + padding
 
-        switch align {
+        switch align.toInternal(self) {
         case .toTheRightMatchingTop:
             xOrigin = sibling.xMax + padding
             yOrigin = sibling.y
@@ -402,7 +402,7 @@ public extension Groupable {
         var yOrigin : CGFloat = 0.0
         let yAdjust : CGFloat = height + padding
 
-        switch align {
+        switch align.toInternal(self) {
         case .toTheRightMatchingTop:
             xOrigin = sibling.xMax + padding
             yOrigin = sibling.y
