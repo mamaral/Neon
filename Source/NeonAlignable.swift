@@ -39,7 +39,7 @@ public extension Alignable {
     /// match the specified `Align`. For example, if you specify `.ToTheRightMatchingTop` and provide an offset value of `5`, the
     /// view's y origin will be lower than the sibling view's y origin by 5 points.
     ///
-    public func align(_ align: Align, relativeTo sibling: Frameable, padding: CGFloat, width: CGFloat, height: CGFloat, offset: CGFloat = 0) {
+    func align(_ align: Align, relativeTo sibling: Frameable, padding: CGFloat, width: CGFloat, height: CGFloat, offset: CGFloat = 0) {
         var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0
 
@@ -125,7 +125,7 @@ public extension Alignable {
     /// match the specified `Align`. For example, if you specify `.ToTheRightMatchingTop` and provide an offset value of `5`, the
     /// view's y origin will be lower than the sibling view's y origin by 5 points.
     ///
-    public func alignAndFillWidth(align: Align, relativeTo sibling: Frameable, padding: CGFloat, height: CGFloat, offset: CGFloat = 0) {
+    func alignAndFillWidth(align: Align, relativeTo sibling: Frameable, padding: CGFloat, height: CGFloat, offset: CGFloat = 0) {
         let superviewWidth = superFrame.width
         var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0
@@ -224,7 +224,7 @@ public extension Alignable {
     /// match the specified `Align`. For example, if you specify `.ToTheRightMatchingTop` and provide an offset value of `5`, the
     /// view's y origin will be lower than the sibling view's y origin by 5 points.
     ///
-    public func alignAndFillHeight(align: Align, relativeTo sibling: Frameable, padding: CGFloat, width: CGFloat, offset: CGFloat = 0) {
+    func alignAndFillHeight(align: Align, relativeTo sibling: Frameable, padding: CGFloat, width: CGFloat, offset: CGFloat = 0) {
         let superviewHeight : CGFloat = superFrame.height
         var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0
@@ -321,7 +321,7 @@ public extension Alignable {
     /// match the specified `Align`. For example, if you specify `.ToTheRightMatchingTop` and provide an offset value of `5`, the
     /// view's y origin will be lower than the sibling view's y origin by 5 points.
     ///
-    public func alignAndFill(align: Align, relativeTo sibling: Frameable, padding: CGFloat, offset: CGFloat = 0) {
+    func alignAndFill(align: Align, relativeTo sibling: Frameable, padding: CGFloat, offset: CGFloat = 0) {
         let superviewWidth : CGFloat = superFrame.width
         let superviewHeight : CGFloat = superFrame.height
         var xOrigin : CGFloat = 0.0
@@ -433,7 +433,7 @@ public extension Alignable {
     /// match the specified `Align`. For example, if you specify `.ToTheRightMatchingTop` and provide an offset value of `5`, the
     /// view's y origin will be lower than the sibling view's y origin by 5 points.
     ///
-    public func alignBetweenHorizontal(align: Align, primaryView: Frameable, secondaryView: Frameable, padding: CGFloat, height: CGFloat, offset: CGFloat = 0) {
+    func alignBetweenHorizontal(align: Align, primaryView: Frameable, secondaryView: Frameable, padding: CGFloat, height: CGFloat, offset: CGFloat = 0) {
         let superviewWidth : CGFloat = superFrame.width
         var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0
@@ -505,7 +505,7 @@ public extension Alignable {
     /// match the specified `Align`. For example, if you specify `.ToTheRightMatchingTop` and provide an offset value of `5`, the
     /// view's y origin will be lower than the sibling view's y origin by 5 points.
     ///
-    public func alignBetweenVertical(align: Align, primaryView: Frameable, secondaryView: Frameable, padding: CGFloat, width: CGFloat, offset: CGFloat = 0) {
+    func alignBetweenVertical(align: Align, primaryView: Frameable, secondaryView: Frameable, padding: CGFloat, width: CGFloat, offset: CGFloat = 0) {
         let superviewHeight : CGFloat = superFrame.height
         var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0
