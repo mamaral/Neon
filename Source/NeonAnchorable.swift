@@ -30,7 +30,7 @@ public extension Anchorable {
     ///
     ///   - bottom: The padding between the bottom of the view and the superview.
     ///
-    public func fillSuperview(left: CGFloat = 0, right: CGFloat = 0, top: CGFloat = 0, bottom: CGFloat = 0) {
+    func fillSuperview(left: CGFloat = 0, right: CGFloat = 0, top: CGFloat = 0, bottom: CGFloat = 0) {
         let width : CGFloat = superFrame.width - (left + right)
         let height : CGFloat = superFrame.height - (top + bottom)
 
@@ -45,7 +45,7 @@ public extension Anchorable {
     ///
     ///   - height: The height of the view.
     ///
-    public func anchorInCenter(width: CGFloat, height: CGFloat) {
+    func anchorInCenter(width: CGFloat, height: CGFloat) {
         let xOrigin : CGFloat = (superFrame.width / 2.0) - (width / 2.0)
         let yOrigin : CGFloat = (superFrame.height / 2.0) - (height / 2.0)
 
@@ -78,7 +78,7 @@ public extension Anchorable {
     ///
     ///   - height: The height of the view.
     ///
-    public func anchorInCorner(_ corner: Corner, xPad: CGFloat, yPad: CGFloat, width: CGFloat, height: CGFloat) {
+    func anchorInCorner(_ corner: Corner, xPad: CGFloat, yPad: CGFloat, width: CGFloat, height: CGFloat) {
         var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0
 
@@ -131,7 +131,7 @@ public extension Anchorable {
     ///
     ///   - height: The height of the view.
     ///
-    public func anchorToEdge(_ edge: Edge, padding: CGFloat, width: CGFloat, height: CGFloat) {
+    func anchorToEdge(_ edge: Edge, padding: CGFloat, width: CGFloat, height: CGFloat) {
         var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0
 
@@ -189,7 +189,7 @@ public extension Anchorable {
     /// the `.Left` and `.Right` will have `otherSize` applied to their width as their heights are
     /// automatically calculated.
     ///
-    public func anchorAndFillEdge(_ edge: Edge, xPad: CGFloat, yPad: CGFloat, otherSize: CGFloat) {
+    func anchorAndFillEdge(_ edge: Edge, xPad: CGFloat, yPad: CGFloat, otherSize: CGFloat) {
         var xOrigin : CGFloat = 0.0
         var yOrigin : CGFloat = 0.0
         var width : CGFloat = 0.0
